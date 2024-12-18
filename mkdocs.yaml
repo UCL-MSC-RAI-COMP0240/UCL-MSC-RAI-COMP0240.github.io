@@ -1,0 +1,41 @@
+site_name: UCL-MSC-RAI-COMP0240
+theme: readthedocs
+repo_url: https://github.com/UCL-MSC-RAI-COMP2040/.github
+site_description: 'Site for tutorials'
+docs_dir: 'docs'
+copyright: Copyright &copy; 2024 University College London AML Lab
+
+markdown_extensions:
+  - toc:
+      permalink: True
+  - pymdownx.keys:
+      strict: True
+
+plugins:
+  - search
+  - macros
+  - enumerate-headings:
+      toc_depth: 3
+  - mermaid2
+
+nav:
+  - Practical 1:
+    - "Flying Crazyflies": "1_practical_crazyflie.md"
+  - Practical 2: 
+    - "ROS2 Install Checklist": ""
+    - "Gazebo Aruco Challenge": "2_practical_gazebo_aruco.md"
+  - Practical Challenge 3: 
+    - "Simulating a Light Show": "3_challenge_light_show.md"
+    - "Crazyflie Light Show": ""
+  - Practical 4: 
+    - "Introducing Pixhawk and PX4": "4_practical_pixhawk_PX4.md"
+  - Practical Challenge 5:
+    - "Group Drone Challenge": "5_challenge_multi_drone.md"
+    - "Scenario 1: Fire Monitoring": ""
+    - "Scenario 2: Aerial Delivery": ""
+    - "Scenario 3: Formation Following": ""
+    - "Scenario 4: Wind Turbine Inspection": ""
+    - "Scenario 5: Control and Trajectory Tracking": ""
+    - "Scenario 6: In Air Docking & Manipulation": ""
+
+extra_css: [ kbd.css ]
