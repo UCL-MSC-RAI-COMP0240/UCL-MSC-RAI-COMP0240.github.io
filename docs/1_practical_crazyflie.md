@@ -4,24 +4,73 @@ In this first practical we are jumping in and getting hands on with flying crazy
 
 ## Crazyflies
 
+![crazyflie](images/cf21.jpg)
+
 ### What are Crazyflies
+
+The Crazyflie 2.1+. is a versatile open source micro-drone flying development platform that only weighs 27g and fits in the palm of your hand. 
+
+Checkout their website to learn more about them 
+- https://www.bitcraze.io/ 
+
+You will see that they are used for R&D activities all over as its a perfect platform for learning, researching and experimenting with all things drones and drone swarms in a lab setting. 
 
 ### Why are we using them
 
-## Crazyflie Setup and Installation
+Inspired by aerial robotics courses from other institutions, we utilise the crazyflie as an initial teaching platform due to:
 
-For this, let us follow Bitcraze's own introductory tutorials:
+- Ease of use
+- Size & Safety
+- Programmability 
+- Large Community
 
-- https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyflie-2-x/ 
+Through using them, you will learn the basics of constructing a drone platform and how the various physical components fit together. This includes the drone itself but also how you might communicate with a drone through the radio. 
 
+The crazyflie comes with a nice cross-platform user interface for connecting to, configuring and monitoring a drone. This interface allows you to connect a game pad for manual flight of the crazyflie, but also there is an andriod and IOS app for manual flying of the drone over bluetooth. 
 
-## Tasks
+Bitcraze and various research groups have released a lot of open source, freely availble code for programming the drone in python and c++, with many examples. This allows you to more easily implement and experiment with different methods of autonomy for the drone. 
 
-1. Follow ths instructions and setup the physical crazyflie
-2. Setup the software and connect your crazyflie
+Finally due to the small size, there is very little chance of injury (**PROVIDING YOU ARE WEARING YOUR SAFETY GLASSES**) when flying, even if you do collide with something or someone. This makes it ideal for use during a tutorial with many people in a classroom setting. As you will see later, flying with anything larger will require flying within our dedicated flying arena. 
+
+## Safety
+
+### Personal Safety
+
+- **WEAR YOUR SAFETY GLASSES AT ALL TIMES DURING THIS PRACTICAL**
+- It is recommended to wear long sleves and trousers
+- When the drone is flying, it should always be watched
+
+### Battery Safety
+
+- **The Drones use small LIPO batteries and as such we must be careful** 
+
+- **DO NOT DROP, PIERCE, HAMMER OR OTHERWISE DAMAGE THE BATTERIES** 
+
+- **IF A BATTERY LOOKS DAMAGED DO NOT USE IT AND TELL A STAFF MEMBER**
+
+- **IF A BATTERY STARTS SMOKING OR IS ON FIRE TELL THE STAFF AND MOVE AWAY FROM IT**
+
+> We will have a metal sand bucket and long tongs and the battery will go in there 
+
+- **DO NOT ATTEMPT TO PUT OUT THE FIRE YOURSELF** 
+
+## Practical Tasks
+
+### Preliminary Tasks
+
+1. **Get and put on your safety glasses**
+2. Sign out a single crazyflie and associated parts
+3. Clear out a designated 2x2m ish flying space 
+
+### Main Tasks
+
+1. Build the crazyflie
+2. Setup the software and crazy radio and connect your crazyflie
     - Can you see the live sensor feed? 
-3. Can you perform manual flight with the keyboard
-    - How does the crazyflie respond to your keypresses - is it sluggish? fast to react? 
+3. Can you perform manual flight with your phone or game controller
+    - **WATCH OUT - SMALL INPUTS NEEDED OTHERWISE IT WILL HIT THE CEILING / OTHER PEOPLE**
+    - How does the crazyflie respond to your controls - is it sluggish? fast to react? 
+    - How stable is the drone? 
     - Do you think this is a good way to control a drone? 
 4. Using the crazyflie python library, write a simple script which (1) takesoff the drone, (2) flies to another point (3) lands
     - What are the commands needed to achieve takeoff? 
@@ -31,3 +80,11 @@ For this, let us follow Bitcraze's own introductory tutorials:
     - How repeatable is the flight? 
 5. Now make the drone do something interesting
     - e.g. Fly a more interesting pattern? Perform an experiment to find the accuracy of the system? 
+
+
+## Crazyflie Build and Installation
+
+For this, let us follow Bitcraze's own introductory tutorials:
+
+- https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyflie-2-x/ 
+
