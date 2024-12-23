@@ -48,9 +48,23 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#crazyflie-setup-and-installation">1.2 Crazyflie Setup and Installation</a>
+<li class="toctree-l2"><a class="reference internal" href="#safety">1.2 Safety</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#personal-safety">1.2.1 Personal Safety</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#tasks">1.3 Tasks</a>
+<li class="toctree-l3"><a class="reference internal" href="#battery-safety">1.2.2 Battery Safety</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#practical-tasks">1.3 Practical Tasks</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#preliminary-tasks">1.3.1 Preliminary Tasks</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#main-tasks">1.3.2 Main Tasks</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#crazyflie-build-and-installation">1.4 Crazyflie Build and Installation</a>
 </li>
 </ul>
 </li>
@@ -116,22 +130,70 @@
 <h1 id="practical-1-flying-crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Practical 1: Flying Crazyflies<a class="headerlink" href="#practical-1-flying-crazyflies" title="Permanent link">¶</a></h1>
 <p>In this first practical we are jumping in and getting hands on with flying crazyflies around with simple shapes autonomously. </p>
 <h2 id="crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Crazyflies<a class="headerlink" href="#crazyflies" title="Permanent link">¶</a></h2>
+<p><img alt="crazyflie" src="../images/cf21.jpg"/></p>
 <h3 id="what-are-crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.1</span> What are Crazyflies<a class="headerlink" href="#what-are-crazyflies" title="Permanent link">¶</a></h3>
+<p>The Crazyflie 2.1+. is a versatile open source micro-drone flying development platform that only weighs 27g and fits in the palm of your hand. </p>
+<p>Checkout their website to learn more about them 
+- https://www.bitcraze.io/ </p>
+<p>You will see that they are used for R&amp;D activities all over as its a perfect platform for learning, researching and experimenting with all things drones and drone swarms in a lab setting. </p>
 <h3 id="why-are-we-using-them"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.2</span> Why are we using them<a class="headerlink" href="#why-are-we-using-them" title="Permanent link">¶</a></h3>
-<h2 id="crazyflie-setup-and-installation"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Crazyflie Setup and Installation<a class="headerlink" href="#crazyflie-setup-and-installation" title="Permanent link">¶</a></h2>
-<p>For this, let us follow Bitcraze's own introductory tutorials:</p>
+<p>Inspired by aerial robotics courses from other institutions, we utilise the crazyflie as an initial teaching platform due to:</p>
 <ul>
-<li>https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyflie-2-x/ </li>
+<li>Ease of use</li>
+<li>Size &amp; Safety</li>
+<li>Programmability </li>
+<li>Large Community</li>
 </ul>
-<h2 id="tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Tasks<a class="headerlink" href="#tasks" title="Permanent link">¶</a></h2>
+<p>Through using them, you will learn the basics of constructing a drone platform and how the various physical components fit together. This includes the drone itself but also how you might communicate with a drone through the radio. </p>
+<p>The crazyflie comes with a nice cross-platform user interface for connecting to, configuring and monitoring a drone. This interface allows you to connect a game pad for manual flight of the crazyflie, but also there is an andriod and IOS app for manual flying of the drone over bluetooth. </p>
+<p>Bitcraze and various research groups have released a lot of open source, freely availble code for programming the drone in python and c++, with many examples. This allows you to more easily implement and experiment with different methods of autonomy for the drone. </p>
+<p>Finally due to the small size, there is very little chance of injury (<strong>PROVIDING YOU ARE WEARING YOUR SAFETY GLASSES</strong>) when flying, even if you do collide with something or someone. This makes it ideal for use during a tutorial with many people in a classroom setting. As you will see later, flying with anything larger will require flying within our dedicated flying arena. </p>
+<h2 id="safety"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Safety<a class="headerlink" href="#safety" title="Permanent link">¶</a></h2>
+<h3 id="personal-safety"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> Personal Safety<a class="headerlink" href="#personal-safety" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>WEAR YOUR SAFETY GLASSES AT ALL TIMES DURING THIS PRACTICAL</strong></li>
+<li>It is recommended to wear long sleves and trousers</li>
+<li>When the drone is flying, it should always be watched</li>
+</ul>
+<h3 id="battery-safety"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.2</span> Battery Safety<a class="headerlink" href="#battery-safety" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>The Drones use small LIPO batteries and as such we must be careful</strong> </p>
+</li>
+<li>
+<p><strong>DO NOT DROP, PIERCE, HAMMER OR OTHERWISE DAMAGE THE BATTERIES</strong> </p>
+</li>
+<li>
+<p><strong>IF A BATTERY LOOKS DAMAGED DO NOT USE IT AND TELL A STAFF MEMBER</strong></p>
+</li>
+<li>
+<p><strong>IF A BATTERY STARTS SMOKING OR IS ON FIRE TELL THE STAFF AND MOVE AWAY FROM IT</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>We will have a metal sand bucket and long tongs and the battery will go in there </p>
+</blockquote>
+<ul>
+<li><strong>DO NOT ATTEMPT TO PUT OUT THE FIRE YOURSELF</strong> </li>
+</ul>
+<h2 id="practical-tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Practical Tasks<a class="headerlink" href="#practical-tasks" title="Permanent link">¶</a></h2>
+<h3 id="preliminary-tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.1</span> Preliminary Tasks<a class="headerlink" href="#preliminary-tasks" title="Permanent link">¶</a></h3>
 <ol>
-<li>Follow ths instructions and setup the physical crazyflie</li>
-<li>Setup the software and connect your crazyflie<ul>
+<li><strong>Get and put on your safety glasses</strong></li>
+<li>Sign out a single crazyflie and associated parts</li>
+<li>Clear out a designated 2x2m ish flying space </li>
+</ol>
+<h3 id="main-tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2</span> Main Tasks<a class="headerlink" href="#main-tasks" title="Permanent link">¶</a></h3>
+<ol>
+<li>Build the crazyflie</li>
+<li>Setup the software and crazy radio and connect your crazyflie<ul>
 <li>Can you see the live sensor feed? </li>
 </ul>
 </li>
-<li>Can you perform manual flight with the keyboard<ul>
-<li>How does the crazyflie respond to your keypresses - is it sluggish? fast to react? </li>
+<li>Can you perform manual flight with your phone or game controller<ul>
+<li><strong>WATCH OUT - SMALL INPUTS NEEDED OTHERWISE IT WILL HIT THE CEILING / OTHER PEOPLE</strong></li>
+<li>How does the crazyflie respond to your controls - is it sluggish? fast to react? </li>
+<li>How stable is the drone? </li>
 <li>Do you think this is a good way to control a drone? </li>
 </ul>
 </li>
@@ -148,6 +210,11 @@
 </ul>
 </li>
 </ol>
+<h2 id="crazyflie-build-and-installation"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Crazyflie Build and Installation<a class="headerlink" href="#crazyflie-build-and-installation" title="Permanent link">¶</a></h2>
+<p>For this, let us follow Bitcraze's own introductory tutorials:</p>
+<ul>
+<li>https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyflie-2-x/ </li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
