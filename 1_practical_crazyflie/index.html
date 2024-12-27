@@ -66,6 +66,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#crazyflie-build-and-installation">1.4 Crazyflie Build and Installation</a>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#sensor-installation-and-setup">1.5 Sensor Installation and Setup</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#first-time-flight">1.6 First time flight</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#before-you-fly">1.6.1 Before you fly</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#flying">1.6.2 Flying</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#autonomous-flight">1.7 Autonomous Flight</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -128,7 +140,38 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="practical-1-flying-crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Practical 1: Flying Crazyflies<a class="headerlink" href="#practical-1-flying-crazyflies" title="Permanent link">¶</a></h1>
-<p>In this first practical we are jumping in and getting hands on with flying crazyflies around with simple shapes autonomously. </p>
+<p><strong>Week 1 and 2</strong></p>
+<p>In this first practical we are jumping in and getting hands on with flying crazyflies - manually and hopeully if we're lucky autonomously doing simple things. </p>
+<div class="toc">
+<ul>
+<li><a href="#practical-1-flying-crazyflies">1. Practical 1: Flying Crazyflies</a><ul>
+<li><a href="#crazyflies">1.1 Crazyflies</a><ul>
+<li><a href="#what-are-crazyflies">1.1.1 What are Crazyflies</a></li>
+<li><a href="#why-are-we-using-them">1.1.2 Why are we using them</a></li>
+</ul>
+</li>
+<li><a href="#safety">1.2 Safety</a><ul>
+<li><a href="#personal-safety">1.2.1 Personal Safety</a></li>
+<li><a href="#battery-safety">1.2.2 Battery Safety</a></li>
+</ul>
+</li>
+<li><a href="#practical-tasks">1.3 Practical Tasks</a><ul>
+<li><a href="#preliminary-tasks">1.3.1 Preliminary Tasks</a></li>
+<li><a href="#main-tasks">1.3.2 Main Tasks</a></li>
+</ul>
+</li>
+<li><a href="#crazyflie-build-and-installation">1.4 Crazyflie Build and Installation</a></li>
+<li><a href="#sensor-installation-and-setup">1.5 Sensor Installation and Setup</a></li>
+<li><a href="#first-time-flight">1.6 First time flight</a><ul>
+<li><a href="#before-you-fly">1.6.1 Before you fly</a></li>
+<li><a href="#flying">1.6.2 Flying</a></li>
+</ul>
+</li>
+<li><a href="#autonomous-flight">1.7 Autonomous Flight</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <h2 id="crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Crazyflies<a class="headerlink" href="#crazyflies" title="Permanent link">¶</a></h2>
 <p><img alt="crazyflie" src="../images/cf21.jpg"/></p>
 <h3 id="what-are-crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.1</span> What are Crazyflies<a class="headerlink" href="#what-are-crazyflies" title="Permanent link">¶</a></h3>
@@ -158,7 +201,7 @@
 <h3 id="battery-safety"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.2</span> Battery Safety<a class="headerlink" href="#battery-safety" title="Permanent link">¶</a></h3>
 <ul>
 <li>
-<p><strong>The Drones use small LIPO batteries and as such we must be careful</strong> </p>
+<p><strong>The Drones use small Lithium-Polymer batteries and as such we must be careful</strong> </p>
 </li>
 <li>
 <p><strong>DO NOT DROP, PIERCE, HAMMER OR OTHERWISE DAMAGE THE BATTERIES</strong> </p>
@@ -167,7 +210,7 @@
 <p><strong>IF A BATTERY LOOKS DAMAGED DO NOT USE IT AND TELL A STAFF MEMBER</strong></p>
 </li>
 <li>
-<p><strong>IF A BATTERY STARTS SMOKING OR IS ON FIRE TELL THE STAFF AND MOVE AWAY FROM IT</strong></p>
+<p><strong>IF A BATTERY STARTS SMOKING OR IS ON FIRE TELL THE STAFF AND CALMLY MOVE AWAY FROM IT</strong></p>
 </li>
 </ul>
 <blockquote>
@@ -186,6 +229,7 @@
 <h3 id="main-tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2</span> Main Tasks<a class="headerlink" href="#main-tasks" title="Permanent link">¶</a></h3>
 <ol>
 <li>Build the crazyflie</li>
+<li>What are the different sensors and when should each one be used? </li>
 <li>Setup the software and crazy radio and connect your crazyflie<ul>
 <li>Can you see the live sensor feed? </li>
 </ul>
@@ -211,9 +255,114 @@
 </li>
 </ol>
 <h2 id="crazyflie-build-and-installation"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Crazyflie Build and Installation<a class="headerlink" href="#crazyflie-build-and-installation" title="Permanent link">¶</a></h2>
-<p>For this, let us follow Bitcraze's own introductory tutorials:</p>
+<p>The first step is to unbox your crazyflie kit and build your crazyflie! </p>
+<p>To take you through the unboxing and first time setup, let us follow Bitcraze's own introductory tutorial which will hopefully get you to the state of flying!</p>
+<p>Come back when you have finished bench testing and are ready to fly</p>
+<blockquote>
+<p>Notes: Be gentle with the parts - the crazyflie is hardy but the connectors might not be! We have small tools you can borrow if needed.</p>
+</blockquote>
 <ul>
-<li>https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyflie-2-x/ </li>
+<li><a href="https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyflie-2-x/">https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyflie-2-x/</a></li>
+</ul>
+<p>To understand more about the GUI and to connect up a controller see:</p>
+<ul>
+<li><a href="https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/">https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/</a></li>
+</ul>
+<h2 id="sensor-installation-and-setup"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Sensor Installation and Setup<a class="headerlink" href="#sensor-installation-and-setup" title="Permanent link">¶</a></h2>
+<p>If you have followed the tutorial, you should have a built crazyflie 2.1 which you can connect to your laptop via a crazyradio!</p>
+<p>Then you should either have a game controller or have downloaded the app to manually fly the crazyflie. </p>
+<p>At this point, you may have noticed that the drone doesn't have any external sensing capability. 
+This will mean that you would to fly the drone in manual mode where you would not have any assistance from the flight controller apart from maintaining general stability.</p>
+<p>This is different from Autonomous Ground Vehicles (UGVs) which can operate via dead-reckoning with only internal odometry. 
+Drones however, need a method of external sensing on top of internal IMU and gyroscope in order to hover in place and not drift, especially if autonomously flying. </p>
+<p>For commercial and custom drones there are a variety of sensors available, as will be shown in lectures, and this includes sensors like: </p>
+<ul>
+<li>Cameras (Monocular, Stereo, Depth)</li>
+<li>LIDAR (Single Beam, Wedge and 360)</li>
+<li>Laser Rangefinders</li>
+<li>Optical Flow Cameras</li>
+<li>External Position Tracking (Motion Capture, UWB, etc)</li>
+</ul>
+<p>For use with the crazyflies there are several sensor add-on boards available which we may have for the tutorial. </p>
+<ol>
+<li><a href="https://www.bitcraze.io/products/loco-positioning-deck/">Loco Positioning System</a><ul>
+<li>Hopefully we will have access to the loco positioning system which uses ultra wide band signals from multiple anchors placed around the room. </li>
+<li>This enables a tagging board on the drone to work out the drones position to centimeter level accuracy</li>
+<li>You will have been given a Loco Tag add-on board, this will need to be placed on top of the GPIO stack - it replaces the battery holder! <ul>
+<li>Ensure that it is facing in the correct direction!</li>
+</ul>
+</li>
+<li>With this the drone will be able to hover and know its location in the real world</li>
+<li>Read more about how it works here: <a href="https://www.bitcraze.io/documentation/system/positioning/loco-positioning-system/">https://www.bitcraze.io/documentation/system/positioning/loco-positioning-system/</a></li>
+<li>About General Positioning Systems and crazyflies: <a href="https://www.bitcraze.io/documentation/system/positioning/">https://www.bitcraze.io/documentation/system/positioning/</a></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>For the anchors We will likely need to use the Time Difference of Arrival 3 (TDOA3 Mode) to enable all the drones to fly with lots more anchors - consider why this might be. </p>
+</blockquote>
+<ol>
+<li>
+<p><a href="https://www.bitcraze.io/products/flow-deck-v2/">Flow Deck V2</a></p>
+<ul>
+<li>This is a sensor which can be attached to the bottom of the crazyflie and provides hardware optical flow and height information</li>
+<li>If you don't know what Optical Flow is, it is a method of estimating horizontal motion from a camera image <ul>
+<li>See this opencv tutorial for more information: <a href="https://docs.opencv.org/3.4/d4/dee/tutorial_optical_flow.html">https://docs.opencv.org/3.4/d4/dee/tutorial_optical_flow.html</a> </li>
+</ul>
+</li>
+<li>It also has a Time of Flight sensor for measuring its height above ground level</li>
+<li>Together these allow the drone to stabily hover in one location, and estimate its location relative to its take-off location! </li>
+<li>Place the sensor on the bottom of the GPIO stack on the underside of the drone<ul>
+<li>Ensure that it is facing in the correct direction!</li>
+</ul>
+</li>
+<li>Read about the usage here: <a href="https://www.bitcraze.io/documentation/tutorials/getting-started-with-flow-deck/">https://www.bitcraze.io/documentation/tutorials/getting-started-with-flow-deck/</a> </li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.bitcraze.io/products/multi-ranger-deck/">Multi-Ranger Deck</a></p>
+<ul>
+<li>This board has 5 distance time of flight sensors on it allowing the simple perception of the area around the drone. </li>
+<li>This perception gives the drone the capability to react to its surroundings and perform simple obstacle avoidance, detection, wall following and other tasks. </li>
+<li>It also allows to start working on environment-aware problems like Simultaneous Localization And Mapping (SLAM) algorithms.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.bitcraze.io/products/led-ring-deck/">LED Ring Deck</a></p>
+<ul>
+<li>While not a sensor, its an attachment that can go on the bottom of the deck! </li>
+<li>These will hopefully be used for the light-show challenge</li>
+<li>Note that they go on the bottom and do not work at the same time as the flow deck. As a result, will need the loco positioning system to work properly. </li>
+</ul>
+</li>
+</ol>
+<p>There are a number of other sensors and other details too</p>
+<ul>
+<li>Checkout this <a href="https://www.bitcraze.io/documentation/system/platform/cf2-expansiondecks/">link for a full list of expansion decks</a> </li>
+</ul>
+<blockquote>
+<p>See that link for tips on mounting the decks if confused</p>
+</blockquote>
+<h2 id="first-time-flight"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> First time flight<a class="headerlink" href="#first-time-flight" title="Permanent link">¶</a></h2>
+<h3 id="before-you-fly"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.1</span> Before you fly<a class="headerlink" href="#before-you-fly" title="Permanent link">¶</a></h3>
+<p>At this point, the crazyflie will have no external sensors and will rely on its internal odometry to keep itself stable. </p>
+<p><strong>BEFORE YOU FLY PLEASE READ THE FOLLOWING</strong></p>
+<p><strong>WARNING</strong> </p>
+<ul>
+<li>The drone will be in <strong>manual</strong> flight mode and will have no ability to help you fly or stabilise <strong>it will drift</strong>. </li>
+<li>The joysticks will be mapped directly to roll/pitch/yaw and thrust. </li>
+<li>The joystcks control might be quite sensitive so use <strong>small movements</strong> until you get the hang of it</li>
+<li>You must be as smooth as you can with your joystick control - try not to twitch in the opposite direction when something happens - this results in a hard to recover drone! </li>
+<li>Familiarise yourself with the location of the <strong>emergency stop</strong> if you feel uncomfortable press it at any time (the crazyflies can handle heavy landings)</li>
+</ul>
+<p>To understand the coordinate system and roll pitch and yaw see the following link:
+- <a href="https://www.bitcraze.io/documentation/system/platform/cf2-coordinate-system/">https://www.bitcraze.io/documentation/system/platform/cf2-coordinate-system/</a></p>
+<p>When you are ready to fly, <strong>notify an instructor</strong> and place the crazyflie in the middle of your flying space. </p>
+<h3 id="flying"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.2</span> Flying<a class="headerlink" href="#flying" title="Permanent link">¶</a></h3>
+<h2 id="autonomous-flight"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> Autonomous Flight<a class="headerlink" href="#autonomous-flight" title="Permanent link">¶</a></h2>
+<ul>
+<li>Flow Deck <a href="https://www.bitcraze.io/documentation/tutorials/getting-started-with-stem-drone-bundle/">tutorial</a></li>
+<li>Multi-Ranger Deck <a href="https://www.bitcraze.io/documentation/tutorials/getting-started-with-stem-ranging-bundle/">tutorial</a></li>
 </ul>
 </div>
 </div><footer>
