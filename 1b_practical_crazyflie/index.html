@@ -6,15 +6,15 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../img/favicon.ico" rel="shortcut icon"/>
-<title>Flying Crazyflies - UCL-MSC-RAI-COMP0240</title>
+<title>Building Crazyflies - UCL-MSC-RAI-COMP0240</title>
 <link href="../css/theme.css" rel="stylesheet"/>
 <link href="../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <link href="../kbd.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Flying Crazyflies";
-        var mkdocs_page_input_path = "1_practical_crazyflie.md";
+        var mkdocs_page_name = "Building Crazyflies";
+        var mkdocs_page_input_path = "1b_practical_crazyflie.md";
         var mkdocs_page_url = null;
       </script>
 <!--[if lt IE 9]>
@@ -38,71 +38,51 @@
 <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
 <p class="caption"><span class="caption-text">Practical 1</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal current" href="#">Flying Crazyflies</a>
+<li class="toctree-l1"><a class="reference internal" href="../1a_practical_crazyflie/">Introduction</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Building Crazyflies</a>
 <ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#crazyflies">1.1 Crazyflies</a>
+<li class="toctree-l2"><a class="reference internal" href="#build">2.1 Build</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sensor-installation-and-setup">2.2 Sensor Installation and Setup</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#first-time-flight">2.3 First time flight</a>
 <ul>
-<li class="toctree-l3"><a class="reference internal" href="#what-are-crazyflies">1.1.1 What are Crazyflies</a>
+<li class="toctree-l3"><a class="reference internal" href="#before-you-fly">2.3.1 Before you fly</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#why-are-we-using-them">1.1.2 Why are we using them</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#safety">1.2 Safety</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#personal-safety">1.2.1 Personal Safety</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#battery-safety">1.2.2 Battery Safety</a>
+<li class="toctree-l3"><a class="reference internal" href="#flying">2.3.2 Flying</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#practical-tasks">1.3 Practical Tasks</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#preliminary-tasks">1.3.1 Preliminary Tasks</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#main-tasks">1.3.2 Main Tasks</a>
+<li class="toctree-l2"><a class="reference internal" href="#autonomous-flight">2.4 Autonomous Flight</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#crazyflie-build-and-installation">1.4 Crazyflie Build and Installation</a>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#sensor-installation-and-setup">1.5 Sensor Installation and Setup</a>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#first-time-flight">1.6 First time flight</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#before-you-fly">1.6.1 Before you fly</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#flying">1.6.2 Flying</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#autonomous-flight">1.7 Autonomous Flight</a>
-</li>
-</ul>
+<li class="toctree-l1"><a class="reference internal" href="../1c_practical_crazyflie/">Flying Crazyflies</a>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Practical 2</span></p>
 <ul>
-<li class="toctree-l1"><a class="" href="..">ROS2 Install Checklist</a>
+<li class="toctree-l1"><a class="" href="..">Ubuntu &amp; ROS2 Installation</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">Gazebo Aruco Challenge</a>
+<li class="toctree-l1"><a class="reference internal" href="../2b_practical_gazebo_aruco/">Gazebo Aruco Challenge</a>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Practical Challenge 3</span></p>
+<p class="caption"><span class="caption-text">Challenge CW1</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../3_challenge_light_show/">Simulating a Light Show</a>
-</li>
-<li class="toctree-l1"><a class="" href="..">Crazyflie Light Show</a>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Practical 4</span></p>
+<p class="caption"><span class="caption-text">Practical 3</span></p>
 <ul>
-<li class="toctree-l1"><a class="" href="../4_practical_pixhawk_PX4.md">Introducing Pixhawk and PX4</a>
+<li class="toctree-l1"><a class="reference internal" href="../4_practical_pixhawk_PX4/">Introducing Pixhawk and PX4</a>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Practical Challenge 5</span></p>
+<p class="caption"><span class="caption-text">Challenge CW2</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../5_challenge_multi_drone/">Group Drone Challenge</a>
+</li>
+<li class="toctree-l1"><a class="" href="..">Scenario 1: Multi-Drone Light Show</a>
 </li>
 <li class="toctree-l1"><a class="" href="..">Scenario 1: Fire Monitoring</a>
 </li>
@@ -130,131 +110,32 @@
 <ul class="wy-breadcrumbs">
 <li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
 <li class="breadcrumb-item">Practical 1</li>
-<li class="breadcrumb-item active">Flying Crazyflies</li>
+<li class="breadcrumb-item active">Building Crazyflies</li>
 <li class="wy-breadcrumbs-aside">
-<a class="icon icon-github" href="https://github.com/UCL-MSC-RAI-COMP2040/.github/edit/master/docs/1_practical_crazyflie.md"> Edit on GitHub</a>
+<a class="icon icon-github" href="https://github.com/UCL-MSC-RAI-COMP2040/.github/edit/master/docs/1b_practical_crazyflie.md"> Edit on GitHub</a>
 </li>
 </ul>
 <hr/>
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="practical-1-flying-crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Practical 1: Flying Crazyflies<a class="headerlink" href="#practical-1-flying-crazyflies" title="Permanent link">¶</a></h1>
-<p><strong>Week 1 and 2</strong></p>
-<p>In this first practical we are jumping in and getting hands on with flying crazyflies - manually and hopeully if we're lucky autonomously doing simple things. </p>
+<h1 id="practical-1-crazyflie-build-and-installation"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Practical 1: Crazyflie Build and Installation<a class="headerlink" href="#practical-1-crazyflie-build-and-installation" title="Permanent link">¶</a></h1>
 <div class="toc">
 <ul>
-<li><a href="#practical-1-flying-crazyflies">1. Practical 1: Flying Crazyflies</a><ul>
-<li><a href="#crazyflies">1.1 Crazyflies</a><ul>
-<li><a href="#what-are-crazyflies">1.1.1 What are Crazyflies</a></li>
-<li><a href="#why-are-we-using-them">1.1.2 Why are we using them</a></li>
+<li><a href="#practical-1-crazyflie-build-and-installation">2. Practical 1: Crazyflie Build and Installation</a><ul>
+<li><a href="#build">2.1 Build</a></li>
+<li><a href="#sensor-installation-and-setup">2.2 Sensor Installation and Setup</a></li>
+<li><a href="#first-time-flight">2.3 First time flight</a><ul>
+<li><a href="#before-you-fly">2.3.1 Before you fly</a></li>
+<li><a href="#flying">2.3.2 Flying</a></li>
 </ul>
 </li>
-<li><a href="#safety">1.2 Safety</a><ul>
-<li><a href="#personal-safety">1.2.1 Personal Safety</a></li>
-<li><a href="#battery-safety">1.2.2 Battery Safety</a></li>
-</ul>
-</li>
-<li><a href="#practical-tasks">1.3 Practical Tasks</a><ul>
-<li><a href="#preliminary-tasks">1.3.1 Preliminary Tasks</a></li>
-<li><a href="#main-tasks">1.3.2 Main Tasks</a></li>
-</ul>
-</li>
-<li><a href="#crazyflie-build-and-installation">1.4 Crazyflie Build and Installation</a></li>
-<li><a href="#sensor-installation-and-setup">1.5 Sensor Installation and Setup</a></li>
-<li><a href="#first-time-flight">1.6 First time flight</a><ul>
-<li><a href="#before-you-fly">1.6.1 Before you fly</a></li>
-<li><a href="#flying">1.6.2 Flying</a></li>
-</ul>
-</li>
-<li><a href="#autonomous-flight">1.7 Autonomous Flight</a></li>
+<li><a href="#autonomous-flight">2.4 Autonomous Flight</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<h2 id="crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Crazyflies<a class="headerlink" href="#crazyflies" title="Permanent link">¶</a></h2>
-<p><img alt="crazyflie" src="../images/cf21.jpg"/></p>
-<h3 id="what-are-crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.1</span> What are Crazyflies<a class="headerlink" href="#what-are-crazyflies" title="Permanent link">¶</a></h3>
-<p>The Crazyflie 2.1+. is a versatile open source micro-drone flying development platform that only weighs 27g and fits in the palm of your hand. </p>
-<p>Checkout their website to learn more about them 
-- https://www.bitcraze.io/ </p>
-<p>You will see that they are used for R&amp;D activities all over as its a perfect platform for learning, researching and experimenting with all things drones and drone swarms in a lab setting. </p>
-<h3 id="why-are-we-using-them"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.2</span> Why are we using them<a class="headerlink" href="#why-are-we-using-them" title="Permanent link">¶</a></h3>
-<p>Inspired by aerial robotics courses from other institutions, we utilise the crazyflie as an initial teaching platform due to:</p>
-<ul>
-<li>Ease of use</li>
-<li>Size &amp; Safety</li>
-<li>Programmability </li>
-<li>Large Community</li>
-</ul>
-<p>Through using them, you will learn the basics of constructing a drone platform and how the various physical components fit together. This includes the drone itself but also how you might communicate with a drone through the radio. </p>
-<p>The crazyflie comes with a nice cross-platform user interface for connecting to, configuring and monitoring a drone. This interface allows you to connect a game pad for manual flight of the crazyflie, but also there is an andriod and IOS app for manual flying of the drone over bluetooth. </p>
-<p>Bitcraze and various research groups have released a lot of open source, freely availble code for programming the drone in python and c++, with many examples. This allows you to more easily implement and experiment with different methods of autonomy for the drone. </p>
-<p>Finally due to the small size, there is very little chance of injury (<strong>PROVIDING YOU ARE WEARING YOUR SAFETY GLASSES</strong>) when flying, even if you do collide with something or someone. This makes it ideal for use during a tutorial with many people in a classroom setting. As you will see later, flying with anything larger will require flying within our dedicated flying arena. </p>
-<h2 id="safety"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Safety<a class="headerlink" href="#safety" title="Permanent link">¶</a></h2>
-<h3 id="personal-safety"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> Personal Safety<a class="headerlink" href="#personal-safety" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>WEAR YOUR SAFETY GLASSES AT ALL TIMES DURING THIS PRACTICAL</strong></li>
-<li>It is recommended to wear long sleves and trousers</li>
-<li>When the drone is flying, it should always be watched</li>
-</ul>
-<h3 id="battery-safety"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.2</span> Battery Safety<a class="headerlink" href="#battery-safety" title="Permanent link">¶</a></h3>
-<ul>
-<li>
-<p><strong>The Drones use small Lithium-Polymer batteries and as such we must be careful</strong> </p>
-</li>
-<li>
-<p><strong>DO NOT DROP, PIERCE, HAMMER OR OTHERWISE DAMAGE THE BATTERIES</strong> </p>
-</li>
-<li>
-<p><strong>IF A BATTERY LOOKS DAMAGED DO NOT USE IT AND TELL A STAFF MEMBER</strong></p>
-</li>
-<li>
-<p><strong>IF A BATTERY STARTS SMOKING OR IS ON FIRE TELL THE STAFF AND CALMLY MOVE AWAY FROM IT</strong></p>
-</li>
-</ul>
-<blockquote>
-<p>We will have a metal sand bucket and long tongs and the battery will go in there </p>
-</blockquote>
-<ul>
-<li><strong>DO NOT ATTEMPT TO PUT OUT THE FIRE YOURSELF</strong> </li>
-</ul>
-<h2 id="practical-tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Practical Tasks<a class="headerlink" href="#practical-tasks" title="Permanent link">¶</a></h2>
-<h3 id="preliminary-tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.1</span> Preliminary Tasks<a class="headerlink" href="#preliminary-tasks" title="Permanent link">¶</a></h3>
-<ol>
-<li><strong>Get and put on your safety glasses</strong></li>
-<li>Sign out a single crazyflie and associated parts</li>
-<li>Clear out a designated 2x2m ish flying space </li>
-</ol>
-<h3 id="main-tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2</span> Main Tasks<a class="headerlink" href="#main-tasks" title="Permanent link">¶</a></h3>
-<ol>
-<li>Build the crazyflie</li>
-<li>What are the different sensors and when should each one be used? </li>
-<li>Setup the software and crazy radio and connect your crazyflie<ul>
-<li>Can you see the live sensor feed? </li>
-</ul>
-</li>
-<li>Can you perform manual flight with your phone or game controller<ul>
-<li><strong>WATCH OUT - SMALL INPUTS NEEDED OTHERWISE IT WILL HIT THE CEILING / OTHER PEOPLE</strong></li>
-<li>How does the crazyflie respond to your controls - is it sluggish? fast to react? </li>
-<li>How stable is the drone? </li>
-<li>Do you think this is a good way to control a drone? </li>
-</ul>
-</li>
-<li>Using the crazyflie python library, write a simple script which (1) takesoff the drone, (2) flies to another point (3) lands<ul>
-<li>What are the commands needed to achieve takeoff? </li>
-<li>How accurate is the drones takeoff height? </li>
-<li>How well does it fly to the other point, can you characterise it? </li>
-<li>How good is the landing? </li>
-<li>How repeatable is the flight? </li>
-</ul>
-</li>
-<li>Now make the drone do something interesting<ul>
-<li>e.g. Fly a more interesting pattern? Perform an experiment to find the accuracy of the system? </li>
-</ul>
-</li>
-</ol>
-<h2 id="crazyflie-build-and-installation"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Crazyflie Build and Installation<a class="headerlink" href="#crazyflie-build-and-installation" title="Permanent link">¶</a></h2>
+<h2 id="build"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Build<a class="headerlink" href="#build" title="Permanent link">¶</a></h2>
 <p>The first step is to unbox your crazyflie kit and build your crazyflie! </p>
 <p>To take you through the unboxing and first time setup, let us follow Bitcraze's own introductory tutorial which will hopefully get you to the state of flying!</p>
 <p>Come back when you have finished bench testing and are ready to fly</p>
@@ -268,7 +149,7 @@
 <ul>
 <li><a href="https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/">https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/</a></li>
 </ul>
-<h2 id="sensor-installation-and-setup"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Sensor Installation and Setup<a class="headerlink" href="#sensor-installation-and-setup" title="Permanent link">¶</a></h2>
+<h2 id="sensor-installation-and-setup"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> Sensor Installation and Setup<a class="headerlink" href="#sensor-installation-and-setup" title="Permanent link">¶</a></h2>
 <p>If you have followed the tutorial, you should have a built crazyflie 2.1 which you can connect to your laptop via a crazyradio!</p>
 <p>Then you should either have a game controller or have downloaded the app to manually fly the crazyflie. </p>
 <p>At this point, you may have noticed that the drone doesn't have any external sensing capability. 
@@ -343,8 +224,8 @@ Drones however, need a method of external sensing on top of internal IMU and gyr
 <blockquote>
 <p>See that link for tips on mounting the decks if confused</p>
 </blockquote>
-<h2 id="first-time-flight"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> First time flight<a class="headerlink" href="#first-time-flight" title="Permanent link">¶</a></h2>
-<h3 id="before-you-fly"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.1</span> Before you fly<a class="headerlink" href="#before-you-fly" title="Permanent link">¶</a></h3>
+<h2 id="first-time-flight"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> First time flight<a class="headerlink" href="#first-time-flight" title="Permanent link">¶</a></h2>
+<h3 id="before-you-fly"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3.1</span> Before you fly<a class="headerlink" href="#before-you-fly" title="Permanent link">¶</a></h3>
 <p>At this point, the crazyflie will have no external sensors and will rely on its internal odometry to keep itself stable. </p>
 <p><strong>BEFORE YOU FLY PLEASE READ THE FOLLOWING</strong></p>
 <p><strong>WARNING</strong> </p>
@@ -358,7 +239,7 @@ Drones however, need a method of external sensing on top of internal IMU and gyr
 <p>To understand the coordinate system and roll pitch and yaw see the following link:
 - <a href="https://www.bitcraze.io/documentation/system/platform/cf2-coordinate-system/">https://www.bitcraze.io/documentation/system/platform/cf2-coordinate-system/</a></p>
 <p>When you are ready to fly, <strong>notify an instructor</strong> and place the crazyflie in the middle of your flying space. </p>
-<h3 id="flying"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.2</span> Flying<a class="headerlink" href="#flying" title="Permanent link">¶</a></h3>
+<h3 id="flying"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3.2</span> Flying<a class="headerlink" href="#flying" title="Permanent link">¶</a></h3>
 <p>The instructor will first check all is good with your drone and you have a good setup before you fly.</p>
 <blockquote>
 <p><strong>Note:</strong> A batery only has around 5 minutes of flying time - keep an eye on it and swap it out if necessary. </p>
@@ -403,7 +284,7 @@ Drones however, need a method of external sensing on top of internal IMU and gyr
 <blockquote>
 <p>If you want a challenge, remove the optical flow board / loco positioning board and try flying in manual mode <strong>WARNING</strong> you will have no automatic positioning or hovering - you will have to manually control this yourself. </p>
 </blockquote>
-<h2 id="autonomous-flight"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> Autonomous Flight<a class="headerlink" href="#autonomous-flight" title="Permanent link">¶</a></h2>
+<h2 id="autonomous-flight"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> Autonomous Flight<a class="headerlink" href="#autonomous-flight" title="Permanent link">¶</a></h2>
 <p>Having hopefully flown the drone manually, you should now be beginning to form some intuitions as to how a drone flies, its features, things to watch out for and so on. Now we move onto starting to consider a key part of this course - which is autonomy. </p>
 <p>Autonomy is a bit different for drones over other robots you may have used in the past. Unlike ground vehicles, we have to consider the effects of a 3rd dimension, and need some form of cascaded control to stay in the air. Also whilst the inverse kinematics calculations for arms are not necessary for drones - features such as smooth trajectory generation and following, and mission planning are neccesary. </p>
 <p>Thankfully, crazyflie offers a simple starting point with a python api for autonomous flight. This will get you back up to speed with programming and testing robots before we delve into more complex autonomous systems which you would see flavours of in the real world. Remember at the end of the day, all of these different frameworks are just tools - we hope that through learning to use these tools, you also absorb and learn more generalisable features of drone autonomy which you could apply to the many other open source and proprietary systems which exist out there!  </p>
@@ -422,7 +303,8 @@ Drones however, need a method of external sensing on top of internal IMU and gyr
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-right" href="../2_practical_gazebo_aruco/" title="Gazebo Aruco Challenge">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-left" href="../1a_practical_crazyflie/" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../1c_practical_crazyflie/" title="Flying Crazyflies">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
@@ -441,7 +323,8 @@ Drones however, need a method of external sensing on top of internal IMU and gyr
 <span>
 <a class="fa fa-github" href="https://github.com/UCL-MSC-RAI-COMP2040/.github" style="color: #fcfcfc"> GitHub</a>
 </span>
-<span><a href="../2_practical_gazebo_aruco/" style="color: #fcfcfc">Next »</a></span>
+<span><a href="../1a_practical_crazyflie/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../1c_practical_crazyflie/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script src="../js/jquery-3.6.0.min.js"></script>

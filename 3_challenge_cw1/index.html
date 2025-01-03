@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Structural Inspection Path Planning Challenge - UCL-MSC-RAI-COMP0240</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../kbd.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Structural Inspection Path Planning Challenge";
+        var mkdocs_page_input_path = "3_challenge_cw1.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> UCL-MSC-RAI-COMP0240
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Practical 1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1a_practical_crazyflie/">Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1b_practical_crazyflie/">Building Crazyflies</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_practical_crazyflie/">Flying Crazyflies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 2</span></p>
+<ul>
+<li class="toctree-l1"><a class="" href="..">Ubuntu &amp; ROS2 Installation</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2b_practical_gazebo_aruco/">Gazebo Aruco Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Challenge CW1</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Structural Inspection Path Planning Challenge</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#challenge">5.1 Challenge</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#structural-inspection-path-planning">5.1.1 Structural Inspection Path Planning</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#your-challenge">5.1.2 Your Challenge</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#interesting-things-to-look-up-to-get-you-started">5.1.3 Interesting things to look up to get you started</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#challenge-environment">5.2 Challenge Environment</a>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 3</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4_practical_pixhawk_PX4/">Introducing Pixhawk and PX4</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Challenge CW2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_challenge_multi_drone/">Group Drone Challenge</a>
+</li>
+<li class="toctree-l1"><a class="" href="..">Scenario 1: Multi-Drone Light Show</a>
+</li>
+<li class="toctree-l1"><a class="" href="..">Scenario 1: Fire Monitoring</a>
+</li>
+<li class="toctree-l1"><a class="" href="..">Scenario 2: Aerial Delivery</a>
+</li>
+<li class="toctree-l1"><a class="" href="..">Scenario 3: Formation Following</a>
+</li>
+<li class="toctree-l1"><a class="" href="..">Scenario 4: Wind Turbine Inspection</a>
+</li>
+<li class="toctree-l1"><a class="" href="..">Scenario 5: Control and Trajectory Tracking</a>
+</li>
+<li class="toctree-l1"><a class="" href="..">Scenario 6: In Air Docking &amp; Manipulation</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">UCL-MSC-RAI-COMP0240</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">Challenge CW1</li>
+<li class="breadcrumb-item active">Structural Inspection Path Planning Challenge</li>
+<li class="wy-breadcrumbs-aside">
+<a class="icon icon-github" href="https://github.com/UCL-MSC-RAI-COMP2040/.github/edit/master/docs/3_challenge_cw1.md"> Edit on GitHub</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="coursework-1-challenge-structural-inspection-path-planning"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.</span> Coursework 1 Challenge: Structural Inspection Path Planning<a class="headerlink" href="#coursework-1-challenge-structural-inspection-path-planning" title="Permanent link">¶</a></h1>
+<p><img alt="scenario1" src="../images/scenario1.png"/></p>
+<h2 id="challenge"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1</span> Challenge<a class="headerlink" href="#challenge" title="Permanent link">¶</a></h2>
+<p>You have the challenge of solving the problem of finding the most optimal way of visiting a series of locations and taking pictures of markers, while avoiding the obstacles in the environment. This mirrors real life autonomous inspection scenarios which are the majority of current day use cases with autonomous drones. </p>
+<h3 id="structural-inspection-path-planning"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.1</span> Structural Inspection Path Planning<a class="headerlink" href="#structural-inspection-path-planning" title="Permanent link">¶</a></h3>
+<p>The structural inspection path planning problem is often broken down into three different problems</p>
+<ol>
+<li>3D Viewpoint generation, in which a 2.5D or CAD model of the structure is used to determine the optimal set of camera positions which need to be visited in order to generate enough data for a reconstruction. </li>
+<li>[This Challenge] Coverage Path Planning / Tour Optimisation &amp; Trajectory Generation, then tries to find the optimal ordering of viewpoints to visit, potentially including the optimal trajectory itself. This often attempts to minimise time, travel distance, energy or other factors. </li>
+<li>Trajectory Following &amp; Control is then the lower level controller which attempts to follow the calculated optimal coverage path as close as possible in order to capture the images in a location as close as specified. </li>
+</ol>
+<blockquote>
+<p>For further information on structural inspection path planning, see <a href="https://www.autonomousrobotslab.com/structural-inspection-path-planning.html">this article</a></p>
+</blockquote>
+<h3 id="your-challenge"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.2</span> Your Challenge<a class="headerlink" href="#your-challenge" title="Permanent link">¶</a></h3>
+<p>In this challenge we focus on the second step of finding the optimal route around a set of viewpoints. </p>
+<p>You will be given a <em>scenario</em> which specifies:</p>
+<ol>
+<li>The drone starting location</li>
+<li>The position and orientation (pose) of each of the viewpoints which you are being requested to visit</li>
+<li>The location of cuboid shaped obstacles to avoid </li>
+</ol>
+<p>A set of scenarios have been given within the <code>scenarios</code> folder for you to use for development and testing. </p>
+<p>Your challenge will be in implementing and comparing a set of methods for controlling a drone to fly around the viewpoints, verifying that all of the specified aruco targets have been seen and visited, whilst avoiding the obstacles. You will need to consider the following:</p>
+<ul>
+<li>Optimal routing and finding a solution to the path planning problem </li>
+<li>Motion planning and how to route from one viewpoint to another to avoid collisions while preserving energy</li>
+<li>Logging to ensure that your solution has collected "data" and visited every target to proove completion to a potential client. </li>
+<li>Calculation of relevant metrics (time, distance, speed, etc) for comparison of various methods.</li>
+</ul>
+<h3 id="interesting-things-to-look-up-to-get-you-started"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.3</span> Interesting things to look up to get you started<a class="headerlink" href="#interesting-things-to-look-up-to-get-you-started" title="Permanent link">¶</a></h3>
+<ul>
+<li>Travelling Salesman Problem</li>
+<li>Combinatorial Optimisation </li>
+<li>Complete routing graph of all the connectivity of the viewpoints</li>
+<li>Consider the value of the weight on each edge on the routing graph</li>
+<li>Dubins Paths </li>
+<li>Visualise your paths, maps and routes</li>
+<li>Python Libraries:</li>
+<li>scipy</li>
+<li>numpy</li>
+<li>python_tsp</li>
+<li>networkx</li>
+<li>matplotlib</li>
+</ul>
+<h2 id="challenge-environment"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2</span> Challenge Environment<a class="headerlink" href="#challenge-environment" title="Permanent link">¶</a></h2>
+<p>// TODO</p>
+<p><img alt="gazebo_rviz" src="../images/gazebo_rviz.png"/></p>
+<p>The repository is here: <a href="https://github.com/UCL-MSC-RAI-COMP0240/challenge_mission_planning/tree/main">challenge_mission_planning</a></p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../2b_practical_gazebo_aruco/" title="Gazebo Aruco Challenge"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../4_practical_pixhawk_PX4/" title="Introducing Pixhawk and PX4">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>Copyright © 2024 University College London AML Lab</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a class="fa fa-github" href="https://github.com/UCL-MSC-RAI-COMP2040/.github" style="color: #fcfcfc"> GitHub</a>
+</span>
+<span><a href="../2b_practical_gazebo_aruco/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../4_practical_pixhawk_PX4/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

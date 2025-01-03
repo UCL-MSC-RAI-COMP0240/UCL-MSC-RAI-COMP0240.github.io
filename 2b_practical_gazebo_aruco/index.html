@@ -14,7 +14,7 @@
 <script>
         // Current page data
         var mkdocs_page_name = "Gazebo Aruco Challenge";
-        var mkdocs_page_input_path = "2_practical_gazebo_aruco.md";
+        var mkdocs_page_input_path = "2b_practical_gazebo_aruco.md";
         var mkdocs_page_url = null;
       </script>
 <!--[if lt IE 9]>
@@ -38,35 +38,39 @@
 <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
 <p class="caption"><span class="caption-text">Practical 1</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../1_practical_crazyflie/">Flying Crazyflies</a>
+<li class="toctree-l1"><a class="reference internal" href="../1a_practical_crazyflie/">Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1b_practical_crazyflie/">Building Crazyflies</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_practical_crazyflie/">Flying Crazyflies</a>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Practical 2</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="" href="..">ROS2 Install Checklist</a>
+<li class="toctree-l1"><a class="" href="..">Ubuntu &amp; ROS2 Installation</a>
 </li>
 <li class="toctree-l1 current"><a class="reference internal current" href="#">Gazebo Aruco Challenge</a>
 <ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#tasks">2.1 Tasks</a>
+<li class="toctree-l2"><a class="reference internal" href="#tasks">4.1 Tasks</a>
 </li>
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Practical Challenge 3</span></p>
+<p class="caption"><span class="caption-text">Challenge CW1</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../3_challenge_light_show/">Simulating a Light Show</a>
-</li>
-<li class="toctree-l1"><a class="" href="..">Crazyflie Light Show</a>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Practical 4</span></p>
+<p class="caption"><span class="caption-text">Practical 3</span></p>
 <ul>
-<li class="toctree-l1"><a class="" href="../4_practical_pixhawk_PX4.md">Introducing Pixhawk and PX4</a>
+<li class="toctree-l1"><a class="reference internal" href="../4_practical_pixhawk_PX4/">Introducing Pixhawk and PX4</a>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Practical Challenge 5</span></p>
+<p class="caption"><span class="caption-text">Challenge CW2</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../5_challenge_multi_drone/">Group Drone Challenge</a>
+</li>
+<li class="toctree-l1"><a class="" href="..">Scenario 1: Multi-Drone Light Show</a>
 </li>
 <li class="toctree-l1"><a class="" href="..">Scenario 1: Fire Monitoring</a>
 </li>
@@ -96,14 +100,14 @@
 <li class="breadcrumb-item">Practical 2</li>
 <li class="breadcrumb-item active">Gazebo Aruco Challenge</li>
 <li class="wy-breadcrumbs-aside">
-<a class="icon icon-github" href="https://github.com/UCL-MSC-RAI-COMP2040/.github/edit/master/docs/2_practical_gazebo_aruco.md"> Edit on GitHub</a>
+<a class="icon icon-github" href="https://github.com/UCL-MSC-RAI-COMP2040/.github/edit/master/docs/2b_practical_gazebo_aruco.md"> Edit on GitHub</a>
 </li>
 </ul>
 <hr/>
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="practical-2-ros2-with-aerostack2"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Practical 2 - ROS2 with Aerostack2<a class="headerlink" href="#practical-2-ros2-with-aerostack2" title="Permanent link">¶</a></h1>
+<h1 id="practical-2-ros2-with-aerostack2"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.</span> Practical 2 - ROS2 with Aerostack2<a class="headerlink" href="#practical-2-ros2-with-aerostack2" title="Permanent link">¶</a></h1>
 <p>In this second practical, we will quickly be jumping into the greater code ecosystem for drone work. We start by introducing Aerostack2 which is a ROS2 based framework for the control and coordination of one or more drones. </p>
 <p>This practical also includes an introduction to ubuntu and ROS2 if you havent already. It will also take you through a ROS2 installation suggestions for various platforms. </p>
 <p>This practical uses the gazebo aruco project. See the following links:</p>
@@ -111,12 +115,12 @@
 <li>Project Gazebo Aruco Docs:</li>
 <li>Project Gazebo Aruco Github:</li>
 </ul>
-<h2 id="tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Tasks<a class="headerlink" href="#tasks" title="Permanent link">¶</a></h2>
+<h2 id="tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.1</span> Tasks<a class="headerlink" href="#tasks" title="Permanent link">¶</a></h2>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../1_practical_crazyflie/" title="Flying Crazyflies"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../3_challenge_light_show/" title="Simulating a Light Show">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-left" href="../1c_practical_crazyflie/" title="Flying Crazyflies"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../3_challenge_cw1/" title="Structural Inspection Path Planning Challenge">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
@@ -135,8 +139,8 @@
 <span>
 <a class="fa fa-github" href="https://github.com/UCL-MSC-RAI-COMP2040/.github" style="color: #fcfcfc"> GitHub</a>
 </span>
-<span><a href="../1_practical_crazyflie/" style="color: #fcfcfc">« Previous</a></span>
-<span><a href="../3_challenge_light_show/" style="color: #fcfcfc">Next »</a></span>
+<span><a href="../1c_practical_crazyflie/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../3_challenge_cw1/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script src="../js/jquery-3.6.0.min.js"></script>

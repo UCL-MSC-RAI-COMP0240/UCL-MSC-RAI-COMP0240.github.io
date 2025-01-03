@@ -6,15 +6,15 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../img/favicon.ico" rel="shortcut icon"/>
-<title>Simulating a Light Show - UCL-MSC-RAI-COMP0240</title>
+<title>Introducing Pixhawk and PX4 - UCL-MSC-RAI-COMP0240</title>
 <link href="../css/theme.css" rel="stylesheet"/>
 <link href="../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <link href="../kbd.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Simulating a Light Show";
-        var mkdocs_page_input_path = "3_challenge_light_show.md";
+        var mkdocs_page_name = "Introducing Pixhawk and PX4";
+        var mkdocs_page_input_path = "4_practical_pixhawk_PX4.md";
         var mkdocs_page_url = null;
       </script>
 <!--[if lt IE 9]>
@@ -38,51 +38,37 @@
 <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
 <p class="caption"><span class="caption-text">Practical 1</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../1_practical_crazyflie/">Flying Crazyflies</a>
+<li class="toctree-l1"><a class="reference internal" href="../1a_practical_crazyflie/">Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1b_practical_crazyflie/">Building Crazyflies</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_practical_crazyflie/">Flying Crazyflies</a>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Practical 2</span></p>
 <ul>
-<li class="toctree-l1"><a class="" href="..">ROS2 Install Checklist</a>
+<li class="toctree-l1"><a class="" href="..">Ubuntu &amp; ROS2 Installation</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">Gazebo Aruco Challenge</a>
+<li class="toctree-l1"><a class="reference internal" href="../2b_practical_gazebo_aruco/">Gazebo Aruco Challenge</a>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Practical Challenge 3</span></p>
+<p class="caption"><span class="caption-text">Challenge CW1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 3</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal current" href="#">Simulating a Light Show</a>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Introducing Pixhawk and PX4</a>
 <ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#simulated-drone-show">3.1 Simulated Drone Show</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#set-up">3.1.1 Set Up</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#development">3.1.2 Development</a>
-</li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#real-drone-show">3.2 Real Drone Show</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#ros2-crazyflie-set-up">3.2.1 ROS2 Crazyflie Set Up</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#testing">3.2.2 Testing</a>
-</li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#challenge-statement">3.3 Challenge Statement</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="" href="..">Crazyflie Light Show</a>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Practical 4</span></p>
-<ul>
-<li class="toctree-l1"><a class="" href="../4_practical_pixhawk_PX4.md">Introducing Pixhawk and PX4</a>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Practical Challenge 5</span></p>
+<p class="caption"><span class="caption-text">Challenge CW2</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../5_challenge_multi_drone/">Group Drone Challenge</a>
+</li>
+<li class="toctree-l1"><a class="" href="..">Scenario 1: Multi-Drone Light Show</a>
 </li>
 <li class="toctree-l1"><a class="" href="..">Scenario 1: Fire Monitoring</a>
 </li>
@@ -109,30 +95,22 @@
 <div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
 <ul class="wy-breadcrumbs">
 <li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
-<li class="breadcrumb-item">Practical Challenge 3</li>
-<li class="breadcrumb-item active">Simulating a Light Show</li>
+<li class="breadcrumb-item">Practical 3</li>
+<li class="breadcrumb-item active">Introducing Pixhawk and PX4</li>
 <li class="wy-breadcrumbs-aside">
-<a class="icon icon-github" href="https://github.com/UCL-MSC-RAI-COMP2040/.github/edit/master/docs/3_challenge_light_show.md"> Edit on GitHub</a>
+<a class="icon icon-github" href="https://github.com/UCL-MSC-RAI-COMP2040/.github/edit/master/docs/4_practical_pixhawk_PX4.md"> Edit on GitHub</a>
 </li>
 </ul>
 <hr/>
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="challenge-1-putting-on-a-drone-show"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> Challenge 1: Putting on a Drone Show<a class="headerlink" href="#challenge-1-putting-on-a-drone-show" title="Permanent link">¶</a></h1>
-<h2 id="simulated-drone-show"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1</span> Simulated Drone Show<a class="headerlink" href="#simulated-drone-show" title="Permanent link">¶</a></h2>
-<h3 id="set-up"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1.1</span> Set Up<a class="headerlink" href="#set-up" title="Permanent link">¶</a></h3>
-<p>Download repo and work in there</p>
-<h3 id="development"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1.2</span> Development<a class="headerlink" href="#development" title="Permanent link">¶</a></h3>
-<h2 id="real-drone-show"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> Real Drone Show<a class="headerlink" href="#real-drone-show" title="Permanent link">¶</a></h2>
-<h3 id="ros2-crazyflie-set-up"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.1</span> ROS2 Crazyflie Set Up<a class="headerlink" href="#ros2-crazyflie-set-up" title="Permanent link">¶</a></h3>
-<p>Download project crazyflie repo/ or have the dynamic flag</p>
-<h3 id="testing"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.2</span> Testing<a class="headerlink" href="#testing" title="Permanent link">¶</a></h3>
-<h2 id="challenge-statement"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3</span> Challenge Statement<a class="headerlink" href="#challenge-statement" title="Permanent link">¶</a></h2>
+<h1 id="practical-4-pixhawk-and-px4-commercial-and-rd-autonomous-drone-systems"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.</span> Practical 4: Pixhawk and PX4, Commercial and R&amp;D Autonomous Drone Systems<a class="headerlink" href="#practical-4-pixhawk-and-px4-commercial-and-rd-autonomous-drone-systems" title="Permanent link">¶</a></h1>
+<p>// TODO</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../2_practical_gazebo_aruco/" title="Gazebo Aruco Challenge"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-left" href="../3_challenge_cw1/" title="Structural Inspection Path Planning Challenge"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../5_challenge_multi_drone/" title="Group Drone Challenge">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
@@ -152,7 +130,7 @@
 <span>
 <a class="fa fa-github" href="https://github.com/UCL-MSC-RAI-COMP2040/.github" style="color: #fcfcfc"> GitHub</a>
 </span>
-<span><a href="../2_practical_gazebo_aruco/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../3_challenge_cw1/" style="color: #fcfcfc">« Previous</a></span>
 <span><a href="../5_challenge_multi_drone/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>

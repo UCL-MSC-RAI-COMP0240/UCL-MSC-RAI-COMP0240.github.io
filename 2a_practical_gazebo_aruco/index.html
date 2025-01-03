@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Practical 4: Pixhawk and PX4, Commercial and R&D Autonomous Drone Systems - UCL-MSC-RAI-COMP0240</title>
+    <title>Practical 2 - ROS2 with Aerostack2 - UCL-MSC-RAI-COMP0240</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Practical 4: Pixhawk and PX4, Commercial and R\u0026D Autonomous Drone Systems";
-        var mkdocs_page_input_path = "4_ practical_pixhawk_PX4.md";
+        var mkdocs_page_name = "Practical 2 - ROS2 with Aerostack2";
+        var mkdocs_page_input_path = "2a_practical_gazebo_aruco.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -42,31 +42,35 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Practical 1</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../1_practical_crazyflie/">Flying Crazyflies</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../1a_practical_crazyflie/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1b_practical_crazyflie/">Building Crazyflies</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1c_practical_crazyflie/">Flying Crazyflies</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Practical 2</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="" href="..">ROS2 Install Checklist</a>
+                  <li class="toctree-l1"><a class="" href="..">Ubuntu & ROS2 Installation</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">Gazebo Aruco Challenge</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../2b_practical_gazebo_aruco/">Gazebo Aruco Challenge</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Practical Challenge 3</span></p>
+              <p class="caption"><span class="caption-text">Challenge CW1</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../3_challenge_light_show/">Simulating a Light Show</a>
-                  </li>
-                  <li class="toctree-l1"><a class="" href="..">Crazyflie Light Show</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Practical 4</span></p>
+              <p class="caption"><span class="caption-text">Practical 3</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="" href="../4_practical_pixhawk_PX4.md">Introducing Pixhawk and PX4</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_practical_pixhawk_PX4/">Introducing Pixhawk and PX4</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Practical Challenge 5</span></p>
+              <p class="caption"><span class="caption-text">Challenge CW2</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../5_challenge_multi_drone/">Group Drone Challenge</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="..">Scenario 1: Multi-Drone Light Show</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="..">Scenario 1: Fire Monitoring</a>
                   </li>
@@ -95,9 +99,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Practical 4: Pixhawk and PX4, Commercial and R&D Autonomous Drone Systems</li>
+      <li class="breadcrumb-item active">Practical 2 - ROS2 with Aerostack2</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/UCL-MSC-RAI-COMP2040/.github/edit/master/docs/4_ practical_pixhawk_PX4.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/UCL-MSC-RAI-COMP2040/.github/edit/master/docs/2a_practical_gazebo_aruco.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -105,7 +109,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="practical-4-pixhawk-and-px4-commercial-and-rd-autonomous-drone-systems">Practical 4: Pixhawk and PX4, Commercial and R&amp;D Autonomous Drone Systems<a class="headerlink" href="#practical-4-pixhawk-and-px4-commercial-and-rd-autonomous-drone-systems" title="Permanent link">&para;</a></h1>
+                <h1 id="practical-2-ros2-with-aerostack2">Practical 2 - ROS2 with Aerostack2<a class="headerlink" href="#practical-2-ros2-with-aerostack2" title="Permanent link">&para;</a></h1>
+<p>In this second practical, we will quickly be jumping into the greater code ecosystem for drone work. We start by introducing Aerostack2 which is a ROS2 based framework for the control and coordination of one or more drones. </p>
+<p>This practical also includes an introduction to ubuntu and ROS2 if you havent already. It will also take you through a ROS2 installation suggestions for various platforms. </p>
+<p>This practical uses the gazebo aruco project. See the following links:</p>
+<ul>
+<li>Project Gazebo Aruco Docs:</li>
+<li>Project Gazebo Aruco Github:</li>
+</ul>
+<h2 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h2>
               
             </div>
           </div><footer>
