@@ -20,17 +20,19 @@ plugins:
 
 nav:
   - Practical 1:
-    - "Flying Crazyflies": "1_practical_crazyflie.md"
+    - "Introduction": "1a_practical_crazyflie.md"
+    - "Building Crazyflies": "1b_practical_crazyflie.md"
+    - "Flying Crazyflies": "1c_practical_crazyflie.md"
   - Practical 2: 
-    - "ROS2 Install Checklist": ""
-    - "Gazebo Aruco Challenge": "2_practical_gazebo_aruco.md"
-  - Practical Challenge 3: 
-    - "Simulating a Light Show": "3_challenge_light_show.md"
-    - "Crazyflie Light Show": ""
-  - Practical 4: 
+    - "Ubuntu & ROS2 Installation": ""
+    - "Gazebo Aruco Challenge": "2b_practical_gazebo_aruco.md"
+  - Challenge CW1: 
+    - "Structural Inspection Path Planning Challenge": "3_challenge_cw1.md"
+  - Practical 3: 
     - "Introducing Pixhawk and PX4": "4_practical_pixhawk_PX4.md"
-  - Practical Challenge 5:
+  - Challenge CW2:
     - "Group Drone Challenge": "5_challenge_multi_drone.md"
+    - "Scenario 1: Multi-Drone Light Show": ""
     - "Scenario 1: Fire Monitoring": ""
     - "Scenario 2: Aerial Delivery": ""
     - "Scenario 3: Formation Following": ""

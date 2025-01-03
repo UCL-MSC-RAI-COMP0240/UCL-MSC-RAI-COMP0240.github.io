@@ -47,13 +47,13 @@ In practical 2, we start adding system complexity by re-introducing ROS2 and the
 - Applying ROS2 to drone applications 
 - Learning simulation to real development pipeline 
 
-### Drone Show Challenge
+### CW1: Structural Inspection Path Planning Challenge
 
 > Weeks 4, 5 and 6
 
-For the first challenge, you will be working in pairs to develop a multi-drone light show. You will need to develop the 1 minute performance for 5 drones within aerostack2 and simulation, while enabling the LED capability in your system. 
+For the first challenge, you will be working individually primarily in simulation to solve a key part of the structural inspection path planning problem. Your task will be in investigating and implementing solutions to finding the most optimal way of visiting a series of locations representing inspection locations, while avoiding the obstacles in the environment. 
 
-Subject to space availability and planning, the hope is that each group can put on their performance in the flying arena with 5 drones. 
+This mirrors real life autonomous inspection scenarios which are the majority of current day use cases with autonomous drones. 
 
 The challenge will be assessments criteria and method will be released closer to the time 
 
@@ -65,7 +65,7 @@ In practical 3, we now introduce some more widely used systems within the drone 
 
 In the session there will be a mix of software-in-the-loop (SITL) simulation of drones using PX4 on Ubuntu, as well as hands on dissection of a small PX4 based quadcopter to understand the hardware setup. Hopefully by the end of the session we will be able to hook up the STIL with ROS2 and Aerostack2
 
-### Grand Challenge
+### CW2: Grand Challenge - Exploring Real-Life Drone Use Cases
 
 > Weeks 8, 9 and 10
 
