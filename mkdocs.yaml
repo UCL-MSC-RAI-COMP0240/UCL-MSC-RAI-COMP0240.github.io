@@ -24,8 +24,11 @@ nav:
     - "Building Crazyflies": "1b_practical_crazyflie.md"
     - "Flying Crazyflies": "1c_practical_crazyflie.md"
   - Practical 2: 
-    - "Ubuntu & ROS2 Installation": ""
-    - "Gazebo Aruco Challenge": "2b_practical_gazebo_aruco.md"
+    - "Introduction": "2a_introduction.md"
+    - "Ubuntu Installation and Linux Re-Intro": "2b_intro_linux.md"
+    - "ROS2 Installation and ROS2 Re-Intro": "2c_intro_ros2.md"
+    - "Aerostack2 Introduction": "2d_aerostack2.md"
+    - "Gazebo Aruco Mini-Challenge": "2e_practical_gazebo_aruco.md"
   - Challenge CW1: 
     - "Structural Inspection Path Planning Challenge": "3_challenge_cw1.md"
   - Practical 3: 

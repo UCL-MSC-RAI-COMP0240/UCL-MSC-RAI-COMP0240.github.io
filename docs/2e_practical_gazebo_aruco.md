@@ -1,4 +1,4 @@
-# Practical 2 - ROS2 with Aerostack2
+# Practical 2: ROS2 with Aerostack2
 
 In this second practical, we will quickly be jumping into the greater code ecosystem for drone work. We start by introducing Aerostack2 which is a ROS2 based framework for the control and coordination of one or more drones. 
 
