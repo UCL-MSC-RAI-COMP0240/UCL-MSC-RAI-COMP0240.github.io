@@ -44,6 +44,48 @@ In order to enable as many of the students to work on native Ubuntu as possible,
     - Not as supported 
 6. Virtual Machine
 
+<!-- ## Installing Ubuntu 22.04
+
+There are three ways you can run this project depending on your situation or operating system. 
+
+- Linux: All 2 ways (Local and Docker) will work
+- Windows: Boot from an external SSD provided by us
+- Max OSX: TBC
+
+## For Linux users
+If you are a Linux user, you will have two options to set up your project, i.e. Local or Docker.
+
+### Local
+
+Install Ubuntu 22.04, ROS2 Humble, Ignition Gazebo Fortress as per their instructions.
+
+#### 1. 
+
+Your options are 
+
+1. Finding a spare machine that you can wipe and install Ubuntu on
+2. Finding a machine that you would be willing to dual boot
+3. Running a virtual machine
+4. Running a container (Not supported yet as I havent made a container - also this requires gazebo which requires a GUI which is not ideal for containers apart from singularity containers) -->
+
+For options 1 and 2, you will need to find a USB stick that is >4Gb and using a tool such as [Rufus](https://rufus.ie/en/) flash the [Ubuntu 22.04 ISO file](https://ubuntu.com/download/desktop) onto it. 
+
+Once you have a flashed USB drive, you can insert that into the spare machine. On startup make sure to mash some combination of F2, F8 or F12 to go to the BIOS boot screen and select boot from USB. 
+
+This will start up tp the Ubuntu installer on the USB drive where you can select what to do. Whether that is to wipe the machine, or in the advanced menu create a new partition for Ubuntu so you can dual boot (For Windows you will also need to shrink your primary partition). For more details [see a guide such as this one](https://www.onlogic.com/company/io-hub/how-to-dual-boot-windows-11-and-linux/). 
+
+We have also created a number of pre-installed NVME drives which you may be able to borrow pending numbers
+
+<!-- You can also download the ISO file and run it in a virtual machine program such as [VirtualBox](https://www.virtualbox.org/). 
+
+> I have created and exported a virtual machine with everything already installed for you to use. Speak to the instructors
+
+In virtualbox you can import an existing virtual machine. Once installed and you have the gui up, there is an option to import (orange arrow), in which you can select the existing exported virtual machine.
+Once you have a virtual machine setup, you can simply start it. 
+
+> Note: Since this project uses gazebo and is not the lightest workioad, you may want to give the VM more resources i.e. CPU, RAM and potetially video memory too. You can do this in the virtual machine settings.  -->
+
+
 
 ## A Brief Introduction to Linux
 

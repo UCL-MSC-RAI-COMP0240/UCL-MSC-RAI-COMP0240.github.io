@@ -2,9 +2,79 @@
 
 [TOC]
 
-## ROS2 Installation
+## Installation
 
-TODO
+### Installation ROS2 Humble
+
+For this project, we assume that you are in Ubuntu 22.04 and therefore installing ROS2 Humble and Gazebo Fortress
+
+For ROS2 Installation Please see the following instructions:
+- [https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
+
+You will need to install both the dekstop and build tools
+
+```bash
+sudo apt install ros-humble-desktop
+sudo apt install ros-dev-tools
+```
+
+In order to enable ROS2 tools, it is recommended that you add the startup script to your `~/.bashrc` script
+```bash
+nano ~/.bashrc
+# Scroll to bottom of bashrc and append
+source /opt/ros/humble/setup.bash
+```
+
+This will ensure that ROS2 is auto-enabled for all terminals which you setup. 
+
+In short:
+
+```
+locale  # check for UTF-8
+
+sudo apt update && sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+locale  # verify settings
+
+# Install
+sudo apt install software-properties-common
+sudo add-apt-repository universe
+sudo apt update && sudo apt install curl -y
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+# Update
+sudo apt update
+sudo apt upgrade
+
+# Install ROS2
+sudo apt install ros-humble-desktop
+sudo apt install ros-dev-tools
+
+# Auto Source in bashrc to have access to ros2 tools
+echo 'source ~/opt/ros/humble/setup.bash' >> $HOME/.bashrc
+```
+
+### Installing Ignition Gazebo Fortress
+
+Gazebo is the simulation environment that is most often used with ROS2. There are many different versions of gazebo - for us we are using the new version designed for Ubuntu 22.04 known as Gazebo Fortress.
+
+The recommended compatible gazebo version for Ubuntu 22.04 and Humble is Fortress where installation instructions are [here](https://gazebosim.org/docs/fortress/install_ubuntu). But in short:
+
+```
+sudo apt-get update
+sudo apt-get install lsb-release wget gnupg
+
+sudo wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+sudo apt-get update
+sudo apt-get install ignition-fortress
+```
+You can check succesful installation by using the `ign` cli command
+
 
 ## A Brief Introduction to ROS
 
@@ -123,3 +193,9 @@ Therefore, to future proof the system, and to ensure all users get a well rounde
 There are some interesting changes between ROS1 and ROS2, but the core elements described above remain identical. For those interested, ROS2 follows a much more decentralised paradigm, and does not require a central ROSnode as it uses the distributed DDS communication protocol for its internal communication. All nodes therefore broadcast their own topics allowing for easy decentralised discovery - perfect for multi-robot applications.
 
 > **Note:** Main thing to be aware of is if you are debugging and searching for ROS questions on the internet, be aware that there are many existing questions for ROS1 which will no longer apply for ROS2.
+
+### About Gazebo
+
+Gazebo Fortress is a powerful and widely used open-source robotics simulation tool that allows developers and researchers to test, design, and validate their robots in virtual environments before deploying them in the real world. It provides a highly realistic simulation environment, complete with accurate physics, sensor emulation, and 3D visualization. Gazebo Fortress is the latest release in the Gazebo simulation suite, offering enhanced features such as improved physics engines, better integration with ROS2, and support for multi-robot systems. Students can use Gazebo to simulate everything from autonomous drones navigating complex environments to robotic arms performing precision tasks, all without the risk of damaging physical hardware. One of its standout features is the ability to create custom worlds and robots, making it a versatile tool for exploring robotics concepts and conducting experiments. Gazebo’s tight integration with ROS2 also allows students to seamlessly test ROS2-based algorithms and systems within the simulator, bridging the gap between virtual testing and real-world implementation.
+
+Technically, Gazebo operates as a standalone simulation engine but shares key concepts with ROS2, including the use of the **publish-subscribe architecture**. In Gazebo, simulation components such as sensors, robots, and environmental factors communicate through topics, similar to ROS2 nodes. This allows for seamless integration between ROS2 and Gazebo, where ROS2 nodes can subscribe to Gazebo topics (e.g., sensor data) or publish commands (e.g., velocity or actuator inputs). The system we use in this course makes heavy use of Gazebo as the simulation platform for drone activities to enable development. It will not be likely that you will interact with Gazebo direcly, and instead through a ROS2 interface, however having some context is useful! 
