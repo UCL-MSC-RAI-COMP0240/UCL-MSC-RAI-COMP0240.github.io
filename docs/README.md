@@ -75,7 +75,7 @@ The scenarios available, team sizes and assessment criteria will be released clo
 
 ## Contact
 
-- Vijay Pawar: [v.pawar@ucl.ac.uk](v.pawar@ucl.ac.uk)
-- Mickey Li: [mickey.li@ucl.ac.uk](mickey.li@ucl.ac.uk)
+- Vijay Pawar: v.pawar AT ucl.ac.uk
+- Mickey Li: mickey.li AT ucl.ac.uk
 - Guohao Wang
 - Narimslu Kemsaram

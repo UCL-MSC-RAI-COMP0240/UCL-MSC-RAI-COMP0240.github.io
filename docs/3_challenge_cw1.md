@@ -53,8 +53,67 @@ Your challenge will be in implementing and comparing a set of methods for contro
 
 ## Challenge Environment
 
-// TODO
-
 ![gazebo_rviz](images/gazebo_rviz.png)
 
-The repository is here: [challenge_mission_planning](https://github.com/UCL-MSC-RAI-COMP0240/challenge_mission_planning/tree/main)
+Just as with the previous gazebo aruco mini-challenge, this will also be within aerostack2 and ros2 and will hopefully build upon the scripts and knowledge you have gained through doing that task. However, we have created a new repository specifically for this application.
+
+**The repository is here: [challenge_mission_planning](https://github.com/UCL-MSC-RAI-COMP0240/challenge_mission_planning/tree/main)**
+
+### Installation
+
+For this project, we assume that you are already familiar with the installation process from the gazebo aruco mini-challenge.
+
+Follow the [README.md](https://github.com/UCL-MSC-RAI-COMP0240/challenge_mission_planning/tree/main) in the challenge repository for installation instructions
+
+### Running the environment
+
+The README.md goes into full details of each command, but essentially you will need two terminals, both in the root of the repository:
+
+In terminal 1 run the following to launch the drone simulation of scenario1, and you will see gazebo popup.
+
+```bash
+./launch_as2.bash -s scenarios/scenario1.yaml
+```
+
+> In this tmux, I have enabled the mouse so you should be able to scroll and such (still havent figured out copy paste though...)
+
+And in a second terminal, you can run the ground station, which will spin up the visualisation software `rviz2` as well as provide a prompt for you to run your mission (Though you can run your python mission from everywhere, provided you `source /mission_planning_ws/install/setup.bash` first)
+
+```bash
+./launch_ground_station.bash
+# or if you want to play around with teleoperating the drone
+./launch_ground_station.bash -t 
+```
+
+> **Remember**: If you want to close the simulation down, just run the `stop.bash` script from the repository root in any terminal or tmux window. 
+
+### Building your solution
+
+We have provided a very basic sample solution in `mission_scenario.py` which simply reads the scenario file, iterates through the viewpoints and visits them one by one. 
+
+```bash
+# From the root of this repository
+python3 mission_scenario.py -s scenarios/scenario1.yaml
+```
+
+> The same camera control script from the previous mini-challenge is also available at `mission_cmaera.py` 
+
+Your challenge will be to build upon this script in any way you see fit to provide an efficient solution to the problem. You have free reign to build your own libraries, use existing python libraries and create solutions which can provably solve your problem. In order to validate and verify your solution, you will need to add logging and metrics to enable comparison and proof of the effiency of your proposed solution. Finally, imagine that you are selling this as a product to a customer, you will need to provide some sort of guarantee that the task - visiting and photographing all targets - has been completed. 
+
+We have provided 3 sample scenarios in the `scenarios` directory with which you can test your proposed solutions on:
+
+1. scenario1.yaml: A low number mix of targets and obstacles 
+2. scenario2.yaml: A large number of targets only
+3. scenario3.yaml: A small number of targets but many obstacles 
+
+> **Note:** The utils `generate_scenario.py` script can generate more scenarios for you if you wish.
+
+### Coursework Submission
+
+Rules, processes and markscheme for submission will be released closer to the date. 
+
+
+
+
+
+

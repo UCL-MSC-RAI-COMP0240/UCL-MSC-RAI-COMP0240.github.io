@@ -56,7 +56,13 @@ sudo apt install ros-dev-tools
 
 # Auto Source in bashrc to have access to ros2 tools
 echo 'source ~/opt/ros/humble/setup.bash' >> $HOME/.bashrc
+
+# Since we are running on a large network with multiple other ROS users
+# Force ROS to only stay on the local machine. 
+echo 'export ROS_LOCALHOST_ONLY=1 >> $HOME/.bashrc
 ```
+
+> **Note**: In our tutorials please set `ROS_LOCALHOST_ONLY=1` otherwise everybody's ROS traffic will interfere with everybody else in the class! Outside of class we would usually segregate ROS traffic only its own network to avoid interference.
 
 ### Installing Ignition Gazebo Fortress
 
