@@ -32,7 +32,7 @@ In order to enable as many of the students to work on native Ubuntu as possible,
 2. Borrowing and booting from an Ubuntu 22.04 installed USB-C NVME Drive 
     - Borrow or prepare a portable USB-C NVMe drive pre-installed with Ubuntu 22.04. This method allows you to run Ubuntu without altering your main system.
     - Go to bios setting to reorder your booting.
-    - Different brands of computers have different ways of getting into bios. For example, for dell computer, you could access the BIOS/UEFI settings by restarting your computer and pressing the F2 key repeatedly as soon as the Dell logo appears. [dell booting configuration](images/Image(2).jpeg)
+    - Different brands of computers have different ways of getting into bios. For example, for dell computer, you could access the BIOS/UEFI settings by restarting your computer and pressing the F2 key repeatedly as soon as the Dell logo appears. ![dell booting configuration](images/Image(2).jpeg)
     - Minimal changes to your primary system.
     - Requires a USB-C port with fast read/write capabilities.
     - Limited number of pre-setup Ubuntu 22.04 bootsticks
