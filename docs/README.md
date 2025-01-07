@@ -57,21 +57,21 @@ This mirrors real life autonomous inspection scenarios which are the majority of
 
 The challenge will be assessments criteria and method will be released closer to the time 
 
-### Practical 3
+### Practical 3 (will show you soon)
 
-> Week 7
+<!-- > Week 7
 
 In practical 3, we now introduce some more widely used systems within the drone ecosystem, namely the Pixhawk flight controller, PX4 flight control firmware stack and associated tools. The aim is to give some experience within systems which are more widely used in industry and research all over the world. 
 
-In the session there will be a mix of software-in-the-loop (SITL) simulation of drones using PX4 on Ubuntu, as well as hands on dissection of a small PX4 based quadcopter to understand the hardware setup. Hopefully by the end of the session we will be able to hook up the STIL with ROS2 and Aerostack2
+In the session there will be a mix of software-in-the-loop (SITL) simulation of drones using PX4 on Ubuntu, as well as hands on dissection of a small PX4 based quadcopter to understand the hardware setup. Hopefully by the end of the session we will be able to hook up the STIL with ROS2 and Aerostack2 -->
 
-### CW2: Grand Challenge - Exploring Real-Life Drone Use Cases
+### CW2: Grand Challenge - Exploring Real-Life Drone Use Cases (will show you soon)
 
-> Weeks 8, 9 and 10
+<!-- > Weeks 8, 9 and 10
 
 In the last few weeks, you will be working in teams to complete the grand challenge in which will choose a particular scenario and solve the problem using one or more drones with the tools we have shown you. Your team will emulate a start-up type setup as a primary deliverable will be a 4 minute pitch to deliver to a panel of investors demonstrating your solution. 
 
-The scenarios available, team sizes and assessment criteria will be released closer to the time.
+The scenarios available, team sizes and assessment criteria will be released closer to the time. -->
 
 ## Contact
 
