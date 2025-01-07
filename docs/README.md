@@ -29,23 +29,24 @@ During these practicals, we aim for students to learn and pick up on the followi
 - Experience with industrial drone systems
 - Solving real-world problems with drone systems 
 
-### Practical 1 
+
+### Practical 1
 
 > Weeks 1 and 2
 
-In practical 1, in pairs, you will be putting together and attempting to fly an educational micro-drone platfrom known as the crazyflie. 
-- You will need to assemble the micro-drone
-- Work out how to fly the drone
-- Autonomously fly the drone using the crazyflie API
-
-### Practical 2
-
-> Weeks 2 and 3
-
-In practical 2, we start adding system complexity by re-introducing ROS2 and the aerostack2 drone system management platform or interfacing with drone systems. 
+In practical 1, we start from introducing basical knowledge about linux system, ROS2 and the aerostack2 drone system management platform and then practice them through a simualted project. 
 - Installing ROS2 and Learning about aerostack2 and what capabilities it gives us
 - Applying ROS2 to drone applications 
 - Learning simulation to real development pipeline 
+
+### Practical 2 
+
+> Weeks 3 and 4
+
+In practical 2, in pairs, you will be putting together and attempting to fly an educational micro-drone platfrom known as the crazyflie. 
+- You will need to assemble the micro-drone
+- Work out how to fly the drone
+- Autonomously fly the drone using the crazyflie API
 
 ### CW1: Structural Inspection Path Planning Challenge
 
@@ -57,7 +58,7 @@ This mirrors real life autonomous inspection scenarios which are the majority of
 
 The challenge will be assessments criteria and method will be released closer to the time 
 
-### Practical 3 (will show you soon)
+### Practical 3 (Will show you soon)
 
 <!-- > Week 7
 
@@ -65,7 +66,7 @@ In practical 3, we now introduce some more widely used systems within the drone 
 
 In the session there will be a mix of software-in-the-loop (SITL) simulation of drones using PX4 on Ubuntu, as well as hands on dissection of a small PX4 based quadcopter to understand the hardware setup. Hopefully by the end of the session we will be able to hook up the STIL with ROS2 and Aerostack2 -->
 
-### CW2: Grand Challenge - Exploring Real-Life Drone Use Cases (will show you soon)
+### CW2: Grand Challenge - Exploring Real-Life Drone Use Cases (Will show you soon)
 
 <!-- > Weeks 8, 9 and 10
 

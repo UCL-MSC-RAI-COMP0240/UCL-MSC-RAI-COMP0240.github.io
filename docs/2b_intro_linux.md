@@ -1,4 +1,4 @@
-# Practical 2 Pre-Setup: Ubuntu Installation and Brief Intro to Linux 
+# Practical 1 Pre-Setup: Ubuntu Installation and Brief Intro to Linux 
 
 [TOC]
 

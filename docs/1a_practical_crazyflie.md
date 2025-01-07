@@ -1,8 +1,8 @@
-# Practical 1: Flying Crazyflies
+# Practical 2: Flying Crazyflies
 
-**Week 1 and 2**
+**Week 3 and 4**
 
-In this first practical we are jumping in and getting hands on with flying crazyflies - manually and hopeully if we're lucky autonomously doing simple things. 
+In this second practical we are jumping in and getting hands on with flying crazyflies - manually and hopeully if we're lucky autonomously doing simple things. 
 
 [TOC]
 

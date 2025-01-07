@@ -19,28 +19,30 @@ plugins:
   - mermaid2
 
 nav:
-  - Practical 1:
-    - "Introduction": "1a_practical_crazyflie.md"
-    - "Building Crazyflies": "1b_practical_crazyflie.md"
-    - "Flying Crazyflies": "1c_practical_crazyflie.md"
-  - Practical 2: 
+  - Practical 1: 
     - "Introduction": "2a_introduction.md"
     - "Ubuntu Installation and Linux Re-Intro": "2b_intro_linux.md"
     - "ROS2 Installation and ROS2 Re-Intro": "2c_intro_ros2.md"
     - "Aerostack2 Introduction": "2d_aerostack2.md"
     - "Gazebo Aruco Mini-Challenge": "2e_practical_gazebo_aruco.md"
+  - Practical 2:
+    - "Introduction": "1a_practical_crazyflie.md"
+    - "Building Crazyflies": "1b_practical_crazyflie.md"
+    - "Flying Crazyflies": "1c_practical_crazyflie.md"
   - Challenge CW1: 
     - "Structural Inspection Path Planning Challenge": "3_challenge_cw1.md"
-  - Practical 3: 
-    - "Introducing Pixhawk and PX4": "4_practical_pixhawk_PX4.md"
-  - Challenge CW2:
-    - "Group Drone Challenge": "5_challenge_multi_drone.md"
-    - "Scenario 1: Multi-Drone Light Show": ""
-    - "Scenario 1: Fire Monitoring": ""
-    - "Scenario 2: Aerial Delivery": ""
-    - "Scenario 3: Formation Following": ""
-    - "Scenario 4: Wind Turbine Inspection": ""
-    - "Scenario 5: Control and Trajectory Tracking": ""
-    - "Scenario 6: In Air Docking & Manipulation": ""
+  # - Practical 3: 
+  #   - "Update soon!"
+  # #   - "Introducing Pixhawk and PX4": "4_practical_pixhawk_PX4.md"
+  # - Challenge CW2:
+  #   - "Update soon!"
+  #   - "Group Drone Challenge": "5_challenge_multi_drone.md"
+  #   - "Scenario 1: Multi-Drone Light Show": ""
+  #   - "Scenario 1: Fire Monitoring": ""
+  #   - "Scenario 2: Aerial Delivery": ""
+  #   - "Scenario 3: Formation Following": ""
+  #   - "Scenario 4: Wind Turbine Inspection": ""
+  #   - "Scenario 5: Control and Trajectory Tracking": ""
+  #   - "Scenario 6: In Air Docking & Manipulation": ""
 
 extra_css: [ kbd.css ]

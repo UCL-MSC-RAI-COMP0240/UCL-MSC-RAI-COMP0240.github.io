@@ -1,4 +1,4 @@
-# Practical 1: First time flight
+# Practical 2: First time flight
 
 [TOC]
 

@@ -1,4 +1,4 @@
-# Practical 2 Pre-Setup: ROS2 Installation, Intro to ROS2
+# Practical 1 Pre-Setup: ROS2 Installation, Intro to ROS2
 
 [TOC]
 

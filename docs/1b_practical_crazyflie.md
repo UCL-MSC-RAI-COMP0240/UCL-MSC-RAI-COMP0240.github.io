@@ -1,4 +1,4 @@
-# Practical 1: Crazyflie Build and Installation
+# Practical 2: Crazyflie Build and Installation
 
 [TOC]
 

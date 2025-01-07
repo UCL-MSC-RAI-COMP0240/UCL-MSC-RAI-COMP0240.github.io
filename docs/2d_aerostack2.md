@@ -1,4 +1,4 @@
-# Practical 2: Aerostack2 Framework For Aerial Robotic Systems  
+# Practical 1: Aerostack2 Framework For Aerial Robotic Systems  
 
 [TOC]
 
