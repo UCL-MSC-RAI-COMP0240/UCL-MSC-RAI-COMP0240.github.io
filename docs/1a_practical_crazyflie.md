@@ -2,7 +2,7 @@
 
 **Week 3 and 4**
 
-In this second practical we are jumping in and getting hands on with flying crazyflies - manually and hopeully if we're lucky autonomously doing simple things. 
+In this second practical we are jumping in and getting hands on with flying crazyflies - manually and hopefully if we're lucky autonomously doing simple things. 
 
 [TOC]
 
@@ -32,7 +32,7 @@ Through using them, you will learn the basics of constructing a drone platform a
 
 The crazyflie comes with a nice cross-platform user interface for connecting to, configuring and monitoring a drone. This interface allows you to connect a game pad for manual flight of the crazyflie, but also there is an andriod and IOS app for manual flying of the drone over bluetooth. 
 
-Bitcraze and various research groups have released a lot of open source, freely availble code for programming the drone in python and c++, with many examples. This allows you to more easily implement and experiment with different methods of autonomy for the drone. 
+Bitcraze and various research groups have released a lot of open source, freely available code for programming the drone in python and c++, with many examples. This allows you to more easily implement and experiment with different methods of autonomy for the drone. 
 
 Finally due to the small size, there is very little chance of injury (**PROVIDING YOU ARE WEARING YOUR SAFETY GLASSES**) when flying, even if you do collide with something or someone. This makes it ideal for use during a tutorial with many people in a classroom setting. As you will see later, flying with anything larger will require flying within our dedicated flying arena. 
 

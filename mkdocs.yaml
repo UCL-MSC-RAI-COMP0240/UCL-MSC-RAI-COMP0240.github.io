@@ -27,8 +27,7 @@ nav:
     - "Gazebo Aruco Mini-Challenge": "2e_practical_gazebo_aruco.md"
   - Practical 2:
     - "Introduction": "1a_practical_crazyflie.md"
-    - "Building Crazyflies": "1b_practical_crazyflie.md"
-    - "Flying Crazyflies": "1c_practical_crazyflie.md"
+    - "Building and flying Crazyflies": "1b_practical_crazyflie.md"
   - Challenge CW1: 
     - "Structural Inspection Path Planning Challenge": "3_challenge_cw1.md"
   # - Practical 3: 
