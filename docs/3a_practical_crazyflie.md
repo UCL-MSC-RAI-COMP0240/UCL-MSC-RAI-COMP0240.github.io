@@ -1,8 +1,8 @@
-# Practical 2: Flying Crazyflies
+# Practical 3 & 4:  Building and flying Crazyflies
 
 **Week 3 and 4**
 
-In this second practical we are jumping in and getting hands on with flying crazyflies - manually and hopefully if we're lucky autonomously doing simple things. 
+In this third and fourth practical we are jumping in and getting hands on with flying crazyflies - manually and hopefully if we're lucky autonomously doing simple things. 
 
 [TOC]
 
