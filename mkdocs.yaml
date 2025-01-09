@@ -29,8 +29,8 @@ nav:
     - "Introduction": "3a_practical_crazyflie.md"
     - "Building Crazyflies": "3b_practical_crazyflie.md"
     - "Flying Crazyflies": "4_practical_crazyflie.md"
-  - Challenge CW1: 
-    - "Structural Inspection Path Planning Challenge": "3_challenge_cw1.md"
+  # - Challenge CW1: 
+  #   - "Structural Inspection Path Planning Challenge": "3_challenge_cw1.md"
   # - Practical 3: 
   #   - "Update soon!"
   # #   - "Introducing Pixhawk and PX4": "4_practical_pixhawk_PX4.md"
