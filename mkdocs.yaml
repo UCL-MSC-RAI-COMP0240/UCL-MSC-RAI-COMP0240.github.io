@@ -19,15 +19,16 @@ plugins:
   - mermaid2
 
 nav:
-  - Practical 1: 
-    - "Introduction": "2a_introduction.md"
-    - "Ubuntu Installation and Linux Re-Intro": "2b_intro_linux.md"
-    - "ROS2 Installation and ROS2 Re-Intro": "2c_intro_ros2.md"
-    - "Aerostack2 Introduction": "2d_aerostack2.md"
-    - "Gazebo Aruco Mini-Challenge": "2e_practical_gazebo_aruco.md"
-  - Practical 2:
-    - "Introduction": "1a_practical_crazyflie.md"
-    - "Building and flying Crazyflies": "1b_practical_crazyflie.md"
+  - Practical 1 & 2: 
+    - "Introduction": "1a_introduction.md"
+    - "Ubuntu Installation and Linux Re-Intro": "1b_intro_linux.md"
+    - "ROS2 Installation and ROS2 Re-Intro": "1c_intro_ros2.md"
+    - "Aerostack2 Introduction": "1d_aerostack2.md"
+    - "Gazebo Aruco Mini-Challenge": "2_practical_gazebo_aruco.md"
+  - Practical 3 & 4:
+    - "Introduction": "3a_practical_crazyflie.md"
+    - "Building Crazyflies": "3b_practical_crazyflie.md"
+    - "Flying Crazyflies": "4_practical_crazyflie.md"
   - Challenge CW1: 
     - "Structural Inspection Path Planning Challenge": "3_challenge_cw1.md"
   # - Practical 3: 
