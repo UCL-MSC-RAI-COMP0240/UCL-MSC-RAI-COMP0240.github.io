@@ -1,6 +1,6 @@
 site_name: UCL-MSC-RAI-COMP0240
 theme: readthedocs
-repo_url: https://github.com/UCL-MSC-RAI-COMP2040/.github
+repo_url: https://github.com/UCL-MSC-RAI-COMP0240/UCL-MSC-RAI-COMP0240.github.io
 site_description: 'Site for tutorials'
 docs_dir: 'docs'
 copyright: Copyright &copy; 2024 University College London AML Lab
