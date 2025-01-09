@@ -16,7 +16,7 @@ Each of the practicals has a document on the left hand side of this page. The in
 
 The practicals should one by one hopefully build up the skills, knowledge and intuition required to complete the challenges.
 
-The challenges serve as this courses assessed component. Due to the complexities of dealing with hardware, and to enable student exploration of the different challenges within robotics, these will be group challenges. The challenges revolve around the technical exploration in solving a particular problem and communicating your solution through a presentation. 
+The challenges serve as this courses assessed component. Due to the complexities of dealing with hardware, and to enable student exploration of the different challenges within robotics, these will be group challenges. The challenges revolve around the technical exploration in solving a particular problem and communicating your solution through a presentation.  
 
 ## What We Will Cover
 

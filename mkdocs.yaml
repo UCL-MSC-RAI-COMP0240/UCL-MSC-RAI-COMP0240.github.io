@@ -1,6 +1,6 @@
 site_name: UCL-MSC-RAI-COMP0240
 theme: readthedocs
-repo_url: https://github.com/UCL-MSC-RAI-COMP0240/UCL-MSC-RAI-COMP0240.github.io
+# repo_url: https://github.com/UCL-MSC-RAI-COMP0240/UCL-MSC-RAI-COMP0240.github.io
 site_description: 'Site for tutorials'
 docs_dir: 'docs'
 copyright: Copyright &copy; 2024 University College London AML Lab
@@ -29,8 +29,8 @@ nav:
     - "Introduction": "3a_practical_crazyflie.md"
     - "Building Crazyflies": "3b_practical_crazyflie.md"
     - "Flying Crazyflies": "4_practical_crazyflie.md"
-  # - Challenge CW1: 
-  #   - "Structural Inspection Path Planning Challenge": "3_challenge_cw1.md"
+  - Challenge CW1: 
+    - "Structural Inspection Path Planning Challenge": "3_challenge_cw1.md"
   # - Practical 3: 
   #   - "Update soon!"
   # #   - "Introducing Pixhawk and PX4": "4_practical_pixhawk_PX4.md"

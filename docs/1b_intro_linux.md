@@ -307,3 +307,13 @@ This will install Docker, accessible using `sudo` root privileges only. To use d
         docker run hello-world
 
 That is Docker on Linux installed. See [the original page](https://docs.docker.com/engine/install/ubuntu/) for any further details.
+
+## Tasks
+
+1. Install and Run Ubuntu 22.04 using a method described above
+2. Familiarise yourself with Linux and Ubuntu
+3. Install the programs and applications you might find useful 
+
+*Further Tasks:*
+
+1. Read the following to get the best introduction! [LinuxJourney](https://linuxjourney.com/)

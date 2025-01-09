@@ -1,5 +1,9 @@
 # Coursework 1 Challenge: Structural Inspection Path Planning
 
+[TOC]
+
+> **NOTE:** If you run into any issues, create an issue on the github repository: [challenge_mission_planning](https://github.com/UCL-MSC-RAI-COMP0240/challenge_mission_planning)
+
 ![scenario1](images/scenario1.png)
 
 ## Challenge 
@@ -44,11 +48,11 @@ Your challenge will be in implementing and comparing a set of methods for contro
 - Dubins Paths 
 - Visualise your paths, maps and routes
 - Python Libraries:
-  - scipy
-  - numpy
-  - python_tsp
-  - networkx
-  - matplotlib
+    - scipy
+    - numpy
+    - python_tsp
+    - networkx
+    - matplotlib
 
 
 ## Challenge Environment
@@ -112,7 +116,38 @@ We have provided 3 sample scenarios in the `scenarios` directory with which you 
 
 Rules, processes and markscheme for submission will be released closer to the date. 
 
+## Recommended Tasks
 
+1. Install this repository and run the example code
+    - What is this mission file doing? 
+    - Does it work for other scenarios? 
+
+2. Write down on a piece of paper, the various parts that you might need to implement
+    - What functionalities does you system need 
+    - What data structures do you need to enable those functionalities 
+
+3. Implement some sort of internal map representation to enable planning
+    - What sort of map should this be? 
+    - What functionalities does a map enable? 
+
+5. Find or implement a simple path planning e.g. A*
+    - What will the results of the path planning be used for? 
+    - Which routes do we need to apply the path planning for? 
+
+4. Find a library which will help solve the travelling salesman problem (TSP)
+    - Why do we need to solve the TSP? 
+    - What data representation does the TSP need? 
+    - What are the weights going to be for solving the TSP
+
+5. Using the aruco detection from the previous mini-challenge, implement a method of checking which points you have visited, and whether the task is complete?
+
+6. Implement timing and the calculation of metrics
+    - What metrics are best for comparing solutions to this problem? 
+
+7. What methods could you use to improve my solution? 
+    - How could you make it faster?
+    - What are the drawbacks of your solution?
+    - Are there any edge cases? 
 
 
 
