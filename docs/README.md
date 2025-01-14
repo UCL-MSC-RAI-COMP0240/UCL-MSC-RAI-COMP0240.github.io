@@ -35,6 +35,7 @@ During these practicals, we aim for students to learn and pick up on the followi
 > Weeks 1 and 2
 
 In practical 1, we start from introducing basical knowledge about linux system, ROS2 and the aerostack2 drone system management platform and then practice them through a simualted project. 
+
 - Installing ROS2 and Learning about aerostack2 and what capabilities it gives us
 - Applying ROS2 to drone applications 
 - Learning simulation to real development pipeline 
@@ -44,6 +45,7 @@ In practical 1, we start from introducing basical knowledge about linux system, 
 > Weeks 3 and 4
 
 In practical 2, in pairs, you will be putting together and attempting to fly an educational micro-drone platfrom known as the crazyflie. 
+
 - You will need to assemble the micro-drone
 - Work out how to fly the drone
 - Autonomously fly the drone using the crazyflie API

@@ -24,17 +24,20 @@ cd ~/project_gazebo_ws/src
 git clone https://github.com/UCL-MSC-RAI-COMP0240/aerostack2.git
 ```
 
-> Make sure you clone our fork of aerostack2
+> Make sure you clone *our* `UCL-MSC-RAI-COMP0240` fork of aerostack2 - a fork is a fancy name for a copy of the original repository but still remains connected - such that if the original developers ever update their version, we can decide to also pull in the new updates. But it remains separate such that we can also add our own updates for you. 
 
-This will create a ros2 workspace and place the aerostack2 repositories in it.
+This will create a ros2 workspace and place the aerostack2 repository in it.
+
+> You can see that aerostack2 itself is made up of many different ros nodes and packages. 
 
 You will need to install the dependencies by running the following:
 
+```bash
+sudo apt install git python3-rosdep python3-pip python3-colcon-common-extensions pysimplegui-4-foss tmux tmuxinator -y
 ```
-sudo apt install git python3-rosdep python3-pip python3-colcon-common-extensions tmux tmuxinator -y
-```
-And then going back into the root workspace
-```
+
+And then going back into the root workspace to install the remaining ROS2 dependencies automatically. 
+```bash
 cd ~/project_gazebo_ws
 sudo rosdep init
 rosdep update
@@ -43,26 +46,35 @@ rosdep install -y -r -q --from-paths src --ignore-src
 
 Then, enable the handy aerostack2 cli (only run this once)
 
-```
+```bash
 echo 'export AEROSTACK2_PATH=$HOME/project_gazebo_ws/src/aerostack2' >> $HOME/.bashrc
 echo 'source $AEROSTACK2_PATH/as2_cli/setup_env.bash' >> $HOME/.bashrc
-echo 'source $HOME/project_gazebo_ws/install/setup.bash' >> $HOME/.bashrc
 source ~/.bashrc
 ```
 
 This will enable you to build the project from any folder using
 
+> It will take a couple of minutes as it builds all of aerostack2!
+
 ```
 as2 build
 ```
 
-It will take couple minutes! Now as2 should be installed.
+Now as2 should be installed.
+
+Finally add the following to your bashrc
+
+```bash
+echo 'source $HOME/project_gazebo_ws/install/setup.bash' >> $HOME/.bashrc
+source ~/.bashrc
+```
+
 
 #### Setup this project
 
 Get this project locally
 
-```
+```bash
 mkdir -p ~/project_gazebo_ws/src
 cd ~/project_gazebo_ws/src
 git clone https://github.com/UCL-MSC-RAI-COMP0240/project_gazebo_aruco.git
@@ -70,7 +82,7 @@ git clone https://github.com/UCL-MSC-RAI-COMP0240/project_gazebo_aruco.git
 
 Run the example using 
 
-```
+```bash
 cd ~/project_gazebo_ws/src/project_gazebo_aruco
 ./launch_as2.bash -s -t
 ```
@@ -83,7 +95,7 @@ Ensure Docker or Docker Desktop is installed on your machine
 
 First your will need to clone this project somewhere (doesn't need to be in a ros2 workspace)
 
-```
+```bash
 git clone https://github.com/UCL-MSC-RAI-COMP0240/project_gazebo_aruco.git
 ```
 
@@ -91,7 +103,7 @@ To build and/or run the container run the script
 
 This container is based on Ubuntu 22.04, ROS2 Humble and Ignition Gazebo Fortress
 
-```
+```bash
 ./docker/docker_start.bash
 ```
 
@@ -101,7 +113,7 @@ The container will have live mounted this project into `/ros2/project_gazebo_aru
 
 Inside the container, navigate to that repository and run the example.
 
-```
+```bash
 cd /ros2/project_gazebo_aruco
 ./launch_as2.bash -s -t
 ```
@@ -121,7 +133,7 @@ cd ~/project_gazebo_ws/src/project_gazebo_aruco
 
 The `launch_as2.bash` file runs a bash script which controls what elements are also started up. 
 
-> The `-s` indicates that the system should be launched in simulation mode. The `-t` opens up the teleoperation remote control window to control the drone. The `-v` opens up a visualisation software called rviz2.
+> The `-s` indicates that the system should be launched in simulation mode. The `-t` opens up the teleoperation remote control window to control the drone. The `-v` opens up a visualisation software called rviz2. You can have a look at `-h` for all of the different options, some won't be relevant for this task. 
 
 ![Running simulation environment](images/2_simulation_running.png)
 
@@ -136,7 +148,19 @@ The aerostack simulator runs a number of different modules for ensuring successf
 
 You can see the status of these other modules if you select the terminal and press ++ctrl+b++ and then press ++0++ ... ++5++ to change windows. In a single window you can switch between panes by pressing ++ctrl+b++ and then a direction arrow. 
 
-> This terminal environment is called `tmux` and you can use these keyboard shortcuts to navigate. Look for tmux cheatsheet if you want to know more commands. 
+<!-- > This terminal environment is called `tmux` and you can use these keyboard shortcuts to navigate. Look for tmux cheatsheet if you want to know more commands.  -->
+
+### A quick aside on Tmux
+
+This fancy terminal environment you find yourself in is known as `tmux`.
+
+Tmux is a way for to allow terminal users to run and view multiple programs at the same time - in the case for us, multiple ROS2 nodes doing different things. Here they are organised in windows and panes. 
+
+I would recommend reading through a guide such as the following, and just trying it out! 
+
+- [https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/](https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/)
+
+The useful feature for us is that you can define configuration files for running a bunch of different programs - especially useful for complex systems with multiple components to spin up, but also observe (observation being one of the main issues with ros launch files). 
 
 ### Controlling with teleoperation
 
