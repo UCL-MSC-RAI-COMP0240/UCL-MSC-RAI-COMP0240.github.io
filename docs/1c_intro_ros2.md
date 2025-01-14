@@ -20,36 +20,45 @@ sudo apt install ros-dev-tools
 
 In order to enable ROS2 tools, it is recommended that you add the startup script to your `~/.bashrc` script
 ```bash
-nano ~/.bashrc
-# Scroll to bottom of bashrc and append
+nano ~/.bashrc 
+```
+
+The bashrc file should have been opened, then Scroll to bottom of bashrc and append the following to the end, save (`Ctrl+O`) and exit (`Ctrl+X`)
+```bash
 source /opt/ros/humble/setup.bash
 ```
 
 This will ensure that ROS2 is auto-enabled for all terminals which you setup. 
 
-In short:
+Ensure your system uses UTF-8, install the required packages, and add the official ROS 2 repository.
 
-```
-locale  # check for UTF-8
-
+```bash
+# Check and set the locale to UTF-8
+locale
 sudo apt update && sudo apt install locales
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
+locale  # Verify settings
 
-locale  # verify settings
-
-# Install
+# Install required packages
 sudo apt install software-properties-common
 sudo add-apt-repository universe
-sudo apt update && sudo apt install curl -y
+sudo apt update
+sudo apt install curl -y
+
+# Download and add the ROS 2 GPG key
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+# Add the ROS 2 repository to your sources list
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 
-# Update
+# Update and upgrade the system
 sudo apt update
 sudo apt upgrade
-
+```
+Install ROS 2 and Configure Environment
+```bash
 # Install ROS2
 sudo apt install ros-humble-desktop
 sudo apt install ros-dev-tools
@@ -60,6 +69,10 @@ echo 'source ~/opt/ros/humble/setup.bash' >> $HOME/.bashrc
 # Since we are running on a large network with multiple other ROS users
 # Force ROS to only stay on the local machine. 
 echo 'export ROS_LOCALHOST_ONLY=1 >> $HOME/.bashrc
+```
+Verify your installation by running the following command:
+```bash
+ros2 --version
 ```
 
 > **Note**: In our tutorials please set `ROS_LOCALHOST_ONLY=1` otherwise everybody's ROS traffic will interfere with everybody else in the class! Outside of class we would usually segregate ROS traffic only its own network to avoid interference.
