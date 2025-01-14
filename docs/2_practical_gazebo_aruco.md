@@ -12,14 +12,9 @@ In order to do this, you must be able to first have installed aerostack2 and the
 
 ## Aerostack2 Installation
 
-
-**Note for windows Users**
-
-If you are a windows user, you will be given a external hard drive which contains the confirgured environment. What remains to do for you is to figure out how to boot your computer from the provided hard drive. It normally requires you to go to bios mode to set the order of booting. Different brands of computers have different way of getting into bios. For example, for dell computer, you could access the BIOS/UEFI settings by restarting your computer and pressing the F2 key repeatedly as soon as the Dell logo appears. Search the instructions specific with your brands of computer.
-
+No matter how you run the linux system, you can try each of the following two options (Local or Docker).
 
 ### Local Installation 
-
 #### Setup and build Aerostack2 (we use version 1.1.2)
 In your home directory (could be anywhere else but all the paths below are for your home directory)
 
@@ -29,9 +24,9 @@ cd ~/project_gazebo_ws/src
 git clone https://github.com/UCL-MSC-RAI-COMP0240/aerostack2.git
 ```
 
-> Make sure you pull our fork of aerostack2 
+> Make sure you clone our fork of aerostack2
 
-This will create a ros2 workspace and place the two project repositories in it.
+This will create a ros2 workspace and place the aerostack2 repositories in it.
 
 You will need to install the dependencies by running the following:
 
@@ -61,7 +56,7 @@ This will enable you to build the project from any folder using
 as2 build
 ```
 
-Now as2 should be installed.
+It will take couple minutes! Now as2 should be installed.
 
 #### Setup this project
 
