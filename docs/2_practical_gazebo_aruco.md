@@ -33,7 +33,8 @@ This will create a ros2 workspace and place the aerostack2 repository in it.
 You will need to install the dependencies by running the following:
 
 ```bash
-sudo apt install git python3-rosdep python3-pip python3-colcon-common-extensions pysimplegui-4-foss tmux tmuxinator -y
+sudo apt install git python3-rosdep python3-pip python3-colcon-common-extensions tmux tmuxinator -y
+pip3 install pysimplegui-4-foss
 ```
 
 And then going back into the root workspace to install the remaining ROS2 dependencies automatically. 
