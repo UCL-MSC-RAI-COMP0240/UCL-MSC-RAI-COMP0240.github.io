@@ -11,6 +11,8 @@ To take you through the unboxing and first time setup, let us follow Bitcraze's 
 
 Come back when you have finished bench testing and are ready to fly
 
+![box](images/crazyflie_box.jpg)
+
 ### Crazyflie Build
 
 > Notes: Be gentle with the parts - the crazyflie is hardy but the connectors might not be! We have small tools you can borrow if needed.
@@ -49,6 +51,8 @@ To see pictures and instructions for the mounting see the following:
 > **Double check that your boards are on the correct way around (notice the arrows)**
 
 ## Next Steps
+
+![built crazyflie](images/Built_Crazyflie.jpg)
 
 Congratulations you have hopefully now built a working crazyflie which is ready to fly and hover in place. 
 
