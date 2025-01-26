@@ -58,6 +58,8 @@ Finally due to the small size, there is very little chance of injury (**PROVIDIN
 
 ## Practical Tasks
 
+The following are tasks for you to hopefully solve and achieve throughout this session. Consider these questions when you do the next few tutorials. 
+
 ### Preliminary Tasks
 
 1. **Get and put on your safety glasses**

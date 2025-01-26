@@ -1,6 +1,9 @@
 # Practical 4: Flying crazyflies
 
 [TOC]
+
+**PLEASE READ THIS ENTIRE TUTORIAL IN DETAIL BEFORE YOU START**
+
 ## Manual flight
 
 ### Before you fly
@@ -13,9 +16,9 @@ To mannually fly crazyflies through laptops, you need a game controller. Either 
 
 **WARNING** 
 
-- At this point, the crazyflie will have no external sensors and the drone will be in **manual** flight mode and will have no ability to help you fly or stabilise **it will drift**. 
+- At this point, you **must** ensure that the crazyflie has external sensing otherwise the drone will be in **manual** flight mode and will have no ability to help you fly or stabilise **it will drift**. 
 - The joysticks will be mapped directly to roll/pitch/yaw and thrust. 
-- The joystcks control might be quite sensitive so use **small movements** until you get the hang of it
+- The joysticks control might be quite sensitive so use **small movements** until you get the hang of it
 - You must be as smooth as you can with your joystick control - try not to twitch in the opposite direction when something happens - this results in a hard to recover drone! 
 - Familiarise yourself with the location of the **emergency stop** if you feel uncomfortable press it at any time (the crazyflies can handle heavy landings)
 
@@ -71,7 +74,7 @@ For commercial and custom drones there are a variety of sensors available, as wi
 
 For use with the crazyflies there are several sensor add-on boards available which we may have for the tutorial.
 
-1. [Loco Positioning System](https://www.bitcraze.io/products/loco-positioning-deck/)
+1. [Loco Positioning System](https://www.bitcraze.io/products/loco-positioning-deck/) (** we are not using this today)
     - Hopefully we will have access to the loco positioning system which uses ultra wide band signals from multiple anchors placed around the room. 
     - This enables a tagging board on the drone to work out the drones position to centimeter level accuracy
     - You will have been given a Loco Tag add-on board, this will need to be placed on top of the GPIO stack - it replaces the battery holder! 
@@ -97,7 +100,7 @@ For use with the crazyflies there are several sensor add-on boards available whi
     - This perception gives the drone the capability to react to its surroundings and perform simple obstacle avoidance, detection, wall following and other tasks. 
     - It also allows to start working on environment-aware problems like Simultaneous Localization And Mapping (SLAM) algorithms.
 
-4. [LED Ring Deck](https://www.bitcraze.io/products/led-ring-deck/)
+4. [LED Ring Deck](https://www.bitcraze.io/products/led-ring-deck/) (** we are not using these today)
     - While not a sensor, its an attachment that can go on the bottom of the deck! 
     - These will hopefully be used for the light-show challenge
     - Note that they go on the bottom and do not work at the same time as the flow deck. As a result, will need the loco positioning system to work properly. 
