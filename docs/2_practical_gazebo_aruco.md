@@ -375,6 +375,9 @@ Finally, remind yourself of the goal of this mini-challenge, and try to implemen
 
 > In this simulation mini-challenge, we have setup a small project in which there are a number of aruco codes in a line in front of the drone. There are only two types of aruco code arranged such that for n codes in a line, the first n-1 will be of type 1, and the nth will be type 2. Your task is to write an algorithm which can detect aruco markers from the drones camera, and fly forward until you reach the type 2 code, and land on it. 
 
+> Note: Pay attention to the grid sizes of the ArUco markers and the maximum ID number that the detection algorithm can handle. Check the ID numbers of the simulated markers (found in the model file in the src folder) and determine your ArUco dictionary setup strategy accordingly. Here is a quick tutorial on ArUco markers on OpenCV: https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html. 
+ 
+
 > Note: you likely do not need to restart the entire simulation every time you test your script (unless you crash out or put the drone/system into an unrecoverable state). Simply make your change and re-run the script! (Although you may want a script to send the drone back to the starting pose!)
 
 <!-- ## Transferring this controller
