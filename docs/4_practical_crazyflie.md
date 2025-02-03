@@ -13,6 +13,113 @@ We recommend using laptop-based method to fly first, as so far the stablization 
 
 To mannually fly crazyflies through laptops, you need a game controller. Either playstation or xBox could work.
 
+## Crazyradio 2.0 Preparation and Configuration Guide
+
+This guide explains how to prepare and flash the Crazyradio 2.0 firmware, install the necessary USB driver using Zadig (for Windows), set up cfclient in your Miniforge environment, connect and verify your Crazyflie, and change the radio frequency channel.
+
+---
+
+### 1. Prepare & Flash the Crazyradio 2.0 Firmware
+
+**Reference:** [Getting Started with Crazyradio 2.0](https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyradio-2-0/)
+
+1. **Assemble the hardware:**  
+   Screw the provided antenna onto the Crazyradio 2.0 dongle.
+
+2. **Enter bootloader mode:**  
+   Press and hold the onboard button while plugging the dongle into your USB port. You should see a pulsating red LED indicating bootloader mode.
+
+3. **Download and flash firmware:**  
+   - Visit the [Crazyradio2 Firmware Releases (v1.1)](https://github.com/bitcraze/crazyradio2-firmware/releases/tag/1.1) page.
+   - Get the latest compatible firmware file (a `.uf2` file, e.g. named like `crazyradio2-CRPA-emulation-[version].uf2`) from Bitcraze’s release page or documentation.
+   - Open your file explorer, locate the drive (usually named “Crazyradio2”), and drag & drop the `.uf2` file onto it.
+   - Once flashed (the drive disappears), unplug and reinsert the dongle. A brief white LED flash confirms the new firmware is running.
+
+---
+
+### 2. Install USB Driver Using Zadig for Windows
+
+*This step is not necessary for Linux or macOS, this step can be used alternatively to validate your drivers.*
+
+- **Download and run Zadig:**
+   - Get the [Zadig tool](https://zadig.akeo.ie/) from its official website.
+   - Open Zadig and enable **List All Devices** from the **Options** menu.
+
+- **Install the driver:**
+   - In the device dropdown, select your Crazyradio (often shown as “Crazyradio PA” or similar).
+   - Choose a libusb driver (e.g. `libusb-win32` or `libusbK`) and click **Install** (or **Replace Driver**).
+
+*This step is essential for Windows to allow proper USB communication with the Crazyradio 2.0.*
+
+---
+
+### 3. Set Up cfclient in Your Miniforge Environment
+
+**Reference:** [cfclient Installation Instructions](https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/installation/install/)
+
+- **Install cfclient (or the full crazyflie-clients-python package):**
+   
+For the stable release where you plan to develop or customize, clone the repository and install in editable mode:
+```bash
+git clone https://github.com/bitcraze/crazyflie-clients-python
+cd crazyflie-clients-python
+pip install -e .
+```
+- **Launch the GUI**
+Run the following command to to open the cfclient interface.
+
+```bash
+cfclient 
+```
+
+### 4. Connect and Verify
+
+   - Power on your Crazyflie: Make sure your Crazyflie is switched on.
+   - Scan in cfclient: Click the Scan button in the GUI. The Crazyradio (now emulating a Crazyradio PA) should detect your Crazyflie.
+
+   - Troubleshoot if needed: If the Crazyradio isn’t listed, recheck the Zadig driver installation and ensure the dongle is correctly flashed and reinserted.
+
+**Note:** Do not fly at this stage before changing the Crazyradio radio frequency channel.
+
+### 5. Changing the Radio Frequency Channel
+
+**Reference:** cfclient Userguide
+
+1. **Prepare Your Setup:**
+- Ensure that the Crazyradio 2.0 dongle is correctly flashed and that the proper Zadig driver is installed on your Windows 11 machine (as described above).
+- Launch cfclient from your Miniforge terminal.
+
+2. **Initial Connection:**
+- Connect to your Crazyflie using the default connection URI. For example:
+```bash
+radio://0/80/250k
+```
+3. **Open the Configuration Dialog:**
+- In cfclient, click on the **Connect** menu and select **Configure 2.x** (or **Configure 2.0** if that’s what your firmware uses). This opens the configuration dialog for radio-related parameters.
+
+4. **Set the New Channel:**
+- Locate the **Radio channel** parameter in the dialog.
+- Enter the desired channel value (the Crazyflie supports channels from 0 up to 82, where the channel number sets the frequency offset from 2400 MHz; for instance, channel 15 corresponds to 2415 MHz).
+
+5. **Write and Save the Settings:**
+- Click the **Write** button to save the new channel value permanently to the Crazyflie’s EEPROM.
+
+6. **Restart and Reconnect:**
+- Disconnect the Crazyflie, then power-cycle it so that it boots using the new radio channel setting.
+- Update the connection URI in cfclient to reflect the new channel. For example, if you set the channel to 50, use a URI like:
+```bash
+radio://0/50/2M
+```
+– Click Scan again and connect; the Crazyflie should now be visible on the new channel.
+
+**Channel Selection Note:**  
+The Crazyflie’s channel system works by adding the channel number to a base frequency of 2400 MHz. For example:  
+- **Channel 20** corresponds to 2400 MHz + 20 MHz = **2420 MHz**.  
+- **Channel 70** corresponds to 2400 MHz + 70 MHz = **2470 MHz**.  
+ 
+**Important:**  
+- When operating in the UK, the 2.4 GHz band is legally restricted to approximately 2400 MHz–2483.5 MHz. Therefore, channels should be chosen so that the resulting frequency does not exceed this range.  
+- Always maintain at least 2 MHz spacing between channels to minimize interference, and coordinate with your peers to ensure no two drones are set to the same channel.
 
 **WARNING** 
 
