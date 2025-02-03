@@ -39,8 +39,6 @@ This guide explains how to prepare and flash the Crazyradio 2.0 firmware, instal
 
 ### 2. Install USB Driver Using Zadig for Windows
 
-*This step is not necessary for Linux or macOS, this step can be used alternatively to validate your drivers.*
-
 - **Download and run Zadig:**
    - Get the [Zadig tool](https://zadig.akeo.ie/) from its official website.
    - Open Zadig and enable **List All Devices** from the **Options** menu.
@@ -50,6 +48,11 @@ This guide explains how to prepare and flash the Crazyradio 2.0 firmware, instal
    - Choose a libusb driver (e.g. `libusb-win32` or `libusbK`) and click **Install** (or **Replace Driver**).
 
 *This step is essential for Windows to allow proper USB communication with the Crazyradio 2.0.*
+
+*The Zadig usb driver installation step is not necessary for Linux or macOS, instead follow the link below.*
+https://www.bitcraze.io/documentation/repository/crazyflie-lib-python/master/installation/usb_permissions/
+
+These steps enable you to use the USB Radio and Crazyflie 2 over USB without requiring root access. You’ll be able to work with Crazyflie 2 and Crazyradio without needing administrative privileges, eliminating the need to run commands with sudo during development and testing.
 
 ---
 
