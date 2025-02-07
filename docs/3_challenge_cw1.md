@@ -1,6 +1,4 @@
-# Coursework 1 Challenge: Structural Inspection Path Planning
-
-[TOC]
+# Assignment 1 - Coursework Challenge 1: Structural Inspection Path Planning
 
 > **NOTE:** If you run into any issues, create an issue on the github repository: [challenge_mission_planning](https://github.com/UCL-MSC-RAI-COMP0240/challenge_mission_planning)
 
