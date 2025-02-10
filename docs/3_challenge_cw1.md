@@ -1,4 +1,4 @@
-# Assignment 1 - Coursework Challenge 1: Structural Inspection Path Planning
+# Coursework Challenge 1: Structural Inspection Path Planning
 
 > **NOTE:** If you run into any issues, create an issue on the github repository: [challenge_mission_planning](https://github.com/UCL-MSC-RAI-COMP0240/challenge_mission_planning)
 
@@ -124,7 +124,7 @@ We have provided 3 sample scenarios in the `scenarios` directory with which you 
     - What sort of map should this be? 
     - What functionalities does a map enable? 
 
-5. Find or implement one simple path planning system e.g. choose either A*, Dijkstra or RRT to implement.
+5. Find or implement one simple path planning system e.g. choose either A*, Dijkstra, Dubins or RRT to implement.
     - What will the results of the path planning be used for? 
     - Which routes do we need to apply the path planning for?
     - You only need to implement one path planning system of your choice. 
@@ -146,7 +146,7 @@ We have provided 3 sample scenarios in the `scenarios` directory with which you 
   
 ## Coursework Submission
 
-The deadline for this coursework is 17.00 on 28th Feb 2025.
+The deadline for this coursework is 17.00 on 7th March 2025.
 
 Submissions will uploaded into Moodle using the relevant Coursework 1 submission links. 
 
