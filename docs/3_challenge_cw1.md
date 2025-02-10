@@ -124,7 +124,7 @@ We have provided 3 sample scenarios in the `scenarios` directory with which you 
     - What sort of map should this be? 
     - What functionalities does a map enable? 
 
-5. Find or implement a simple path planning e.g. A*
+5. Find or implement a simple path planning e.g. A*, Dijkstra or RRT 
     - What will the results of the path planning be used for? 
     - Which routes do we need to apply the path planning for? 
 
@@ -144,6 +144,13 @@ We have provided 3 sample scenarios in the `scenarios` directory with which you 
     - Are there any edge cases?
   
 ## Coursework Submission
+
+The deadline for this coursework is 17.00 on 28th Feb 2025.
+
+Submission will be by Moodle using the Coursework 1 submission link. 
+
+
+
 
 
 
