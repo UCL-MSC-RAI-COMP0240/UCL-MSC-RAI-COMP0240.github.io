@@ -124,9 +124,10 @@ We have provided 3 sample scenarios in the `scenarios` directory with which you 
     - What sort of map should this be? 
     - What functionalities does a map enable? 
 
-5. Find or implement a simple path planning e.g. A*, Dijkstra or RRT 
+5. Find or implement one simple path planning system e.g. choose either A*, Dijkstra or RRT to implement.
     - What will the results of the path planning be used for? 
-    - Which routes do we need to apply the path planning for? 
+    - Which routes do we need to apply the path planning for?
+    - You only need to implement one path planning system of your choice. 
 
 4. Find a library which will help solve the travelling salesman problem (TSP)
     - Why do we need to solve the TSP? 
@@ -147,7 +148,49 @@ We have provided 3 sample scenarios in the `scenarios` directory with which you 
 
 The deadline for this coursework is 17.00 on 28th Feb 2025.
 
-Submission will be by Moodle using the Coursework 1 submission link. 
+Submissions will uploaded into Moodle using the relevant Coursework 1 submission links. 
+
+The objective of this coursework is to complete the technical elements of the challenge and then write up a report describing the performance of your approach to solving the TSP problem. 
+
+You will need to submit two items:
+1. Coursework 1 report (1250 words): This report should be structured to clearly explain the problem, methodology, implementation, results and conclusions.
+2. 4min - Video: Demonstration of optimal path-planning solution for autonomous drone-based inspection, showcasing waypoint opitmisation, collision free motion planning and performance analysis through a simulated Gazebo environment.
+3. Code submission
+
+## Assessment Breakdown and Structure:
+
+Below are set of expectations that you need to address when making your submission.
+
+1) Report (60% of total grade):
+Please use the following section headings to structure your report.
+
+- Problem Statement and Objectives (10%)
+Define, in your own words, the structural inspection path planning challenge, outlining the need for an efficient drone navigation strategy to visit all viewpoints while avoiding obstacles, and specifying the key objectives.
+
+- Methodology (20%)
+Detail the approach used to solve the path-planning problem, including the selection and implementation of algorithms for waypoint sequencing (TSP solver), motion planning (e.g., A*, Dijkstra, RRT and Dubins paths), and obstacle avoidance, while also explaining how these methods were integrated into the Gazebo simulation environment to execute the drone’s mission
+
+- Results and Discussion (15%)
+Present key performance metrics, such as total mission time, flight distance, and mission success rate, comparing different planning approaches where applicable, while also analysing the effectiveness, limitations, and potential improvements of the implemented solution. 
+
+- Conclusions (5%)
+Summarise the key findings of the project, highlighting the effectiveness of the implemented path-planning approach, its impact on optimizing drone-based structural inspections, and potential future enhancements to improve efficiency, adaptability, or real-world applicability.
+
+Please use an Arial typeface with font size 11. Use a standard document layout with 2cm margins all around.
+
+2) Video Demonstration (40% of total grade)
+- Description of work and clarity (10%)
+Provide a concise and well-structured narration, clearly describing the problem, the implemented approach, and how the solution addresses the path-planning challenge, ensuring that viewers can easily understand the methodology and its significance.
+
+- Successful runs (20%)
+Demonstrate the drone autonomously navigating the environment, visiting all required viewpoints, avoiding obstacles, and verifying mission completion by capturing ArUco marker images, providing clear visual proof of the solution’s effectiveness.
+
+- Basic Performance Analysis (10%)
+Briefly present key metrics such as total mission time, flight distance, and mission success rate, offering a quick evaluation of the system’s efficiency while avoiding deep technical justifications to maintain a clear presentation.
+
+   
+
+
 
 
 
