@@ -171,7 +171,7 @@ Define, in your own words, the structural inspection path planning challenge, ou
 Detail the approach used to solve the path-planning problem, including the selection and implementation of algorithms for waypoint sequencing (TSP solver), motion planning (e.g., A*, Dijkstra, RRT and Dubins paths), and obstacle avoidance, while also explaining how these methods were integrated into the Gazebo simulation environment to execute the drone’s mission
 
 - Results and Discussion (40%)
-Present key performance metrics, such as total mission time, flight distance, and mission success rate, comparing different planning approaches where applicable, while also analysing the effectiveness, limitations, and potential improvements of the implemented solution. 
+Present key performance metrics, such as total mission time, flight distance, and mission success rate, comparing different planning approaches where applicable, while also analysing the effectiveness, limitations, and potential improvements of the implemented solution. This should be done for each (or as many as your can achieve) of the 3 test scenarios (scenario1.yaml, scenario2.yaml and scenario3.yaml).
 
 - Conclusions (10%)
 Summarise the key findings of the project, highlighting the effectiveness of the implemented path-planning approach, its impact on optimizing drone-based structural inspections, and potential future enhancements to improve efficiency, adaptability, or real-world applicability.
