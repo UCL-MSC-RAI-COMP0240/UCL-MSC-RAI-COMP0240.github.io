@@ -18,10 +18,6 @@ The structural inspection path planning problem is often broken down into three 
 
 > For further information on structural inspection path planning, see [this article](https://www.autonomousrobotslab.com/structural-inspection-path-planning.html)
 
-### Submission
-
-This challenge is designed for individuals to perform. 
-
 ### Your Challenge
 
 In this challenge we focus on the second step of finding the optimal route around a set of viewpoints. 
@@ -102,7 +98,7 @@ We have provided a very basic sample solution in `mission_scenario.py` which sim
 python3 mission_scenario.py -s scenarios/scenario1.yaml
 ```
 
-> The same camera control script from the previous mini-challenge is also available at `mission_cmaera.py` 
+> The same camera control script from the previous mini-challenge is also available at `mission_camera.py` 
 
 Your challenge will be to build upon this script in any way you see fit to provide an efficient solution to the problem. You have free reign to build your own libraries, use existing python libraries and create solutions which can provably solve your problem. In order to validate and verify your solution, you will need to add logging and metrics to enable comparison and proof of the effiency of your proposed solution. Finally, imagine that you are selling this as a product to a customer, you will need to provide some sort of guarantee that the task - visiting and photographing all targets - has been completed. 
 
@@ -113,10 +109,6 @@ We have provided 3 sample scenarios in the `scenarios` directory with which you 
 3. scenario3.yaml: A small number of targets but many obstacles 
 
 > **Note:** The utils `generate_scenario.py` script can generate more scenarios for you if you wish.
-
-### Coursework Submission
-
-Rules, processes and markscheme for submission will be released closer to the date. 
 
 ## Recommended Tasks
 
@@ -149,7 +141,11 @@ Rules, processes and markscheme for submission will be released closer to the da
 7. What methods could you use to improve my solution? 
     - How could you make it faster?
     - What are the drawbacks of your solution?
-    - Are there any edge cases? 
+    - Are there any edge cases?
+  
+## Coursework Submission
+
+
 
 
 
