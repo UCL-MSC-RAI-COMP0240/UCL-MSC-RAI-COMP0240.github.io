@@ -18,6 +18,10 @@ The structural inspection path planning problem is often broken down into three 
 
 > For further information on structural inspection path planning, see [this article](https://www.autonomousrobotslab.com/structural-inspection-path-planning.html)
 
+### Submission
+
+This challenge is designed for individuals to perform. 
+
 ### Your Challenge
 
 In this challenge we focus on the second step of finding the optimal route around a set of viewpoints. 
