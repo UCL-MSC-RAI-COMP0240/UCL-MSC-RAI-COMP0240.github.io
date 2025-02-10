@@ -14,6 +14,8 @@ Please follow the instructions here before aerostack2 common interface.
 
 **NOTE: Use source installation and clone the package in the src folder under your aerostack2 workspace.** 
 
+**NOTE: The documentation may use the "git@.." and you may have issues with ssh. Go to the github repository and use the "https://..." version! 
+
 
 ## Clone project_crazyflie into your aerostack2 workspace
 
