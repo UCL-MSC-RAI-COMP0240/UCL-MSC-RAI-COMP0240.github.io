@@ -167,25 +167,25 @@ Please use the following section headings to structure your report.
 - Problem Statement and Objectives (10%)
 Define, in your own words, the structural inspection path planning challenge, outlining the need for an efficient drone navigation strategy to visit all viewpoints while avoiding obstacles, and specifying the key objectives.
 
-- Methodology (20%)
+- Methodology (40%)
 Detail the approach used to solve the path-planning problem, including the selection and implementation of algorithms for waypoint sequencing (TSP solver), motion planning (e.g., A*, Dijkstra, RRT and Dubins paths), and obstacle avoidance, while also explaining how these methods were integrated into the Gazebo simulation environment to execute the drone’s mission
 
-- Results and Discussion (15%)
+- Results and Discussion (40%)
 Present key performance metrics, such as total mission time, flight distance, and mission success rate, comparing different planning approaches where applicable, while also analysing the effectiveness, limitations, and potential improvements of the implemented solution. 
 
-- Conclusions (5%)
+- Conclusions (10%)
 Summarise the key findings of the project, highlighting the effectiveness of the implemented path-planning approach, its impact on optimizing drone-based structural inspections, and potential future enhancements to improve efficiency, adaptability, or real-world applicability.
 
-Please use an Arial typeface with font size 11. Use a standard document layout with 2cm margins all around.
+Please use an Arial typeface with font size 11. Use a standard document layout with 2cm margins all around. For reports that have a word count 10% over the 1250 word limit a penalty maybe applied. Items not included in the word count are: tables, figures, appendix, references and code.
 
 2) Video Demonstration (40% of total grade)
-- Description of work and clarity (10%)
+- Description of work and clarity (20%)
 Provide a concise and well-structured narration, clearly describing the problem, the implemented approach, and how the solution addresses the path-planning challenge, ensuring that viewers can easily understand the methodology and its significance.
 
-- Successful runs (20%)
+- Successful runs (60%)
 Demonstrate the drone autonomously navigating the environment, visiting all required viewpoints, avoiding obstacles, and verifying mission completion by capturing ArUco marker images, providing clear visual proof of the solution’s effectiveness.
 
-- Basic Performance Analysis (10%)
+- Basic Performance Analysis (20%)
 Briefly present key metrics such as total mission time, flight distance, and mission success rate, offering a quick evaluation of the system’s efficiency while avoiding deep technical justifications to maintain a clear presentation.
 
    
