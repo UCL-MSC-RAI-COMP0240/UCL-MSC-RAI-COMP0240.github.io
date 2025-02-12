@@ -152,7 +152,7 @@ Submissions will uploaded into Moodle using the relevant Coursework 1 submission
 
 The objective of this coursework is to complete the technical elements of the challenge and then write up a report describing the performance of your approach to solving the TSP problem. 
 
-You will need to submit two items:
+You will need to submit 3 items:
 1. Coursework 1 report (1250 words): This report should be structured to clearly explain the problem, methodology, implementation, results and conclusions.
 2. 4min - Video: Demonstration of optimal path-planning solution for autonomous drone-based inspection, showcasing waypoint opitmisation, collision free motion planning and performance analysis through a simulated Gazebo environment.
 3. Code submission
