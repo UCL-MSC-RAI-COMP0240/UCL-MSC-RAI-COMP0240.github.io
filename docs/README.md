@@ -60,7 +60,7 @@ This mirrors real life autonomous inspection scenarios which are the majority of
 
 The challenge will be assessments criteria and method will be released closer to the time 
 
-### Practical 3 (Will show you soon)
+### Practical 3 (After reading week)
 
 <!-- > Week 7
 
