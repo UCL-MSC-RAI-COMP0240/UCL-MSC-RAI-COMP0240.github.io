@@ -3,10 +3,10 @@ In this fifth practical, we will reimplement manual flight and scripted autonomo
 
 [TOC]
 
-## Clond and build aerostack2 package: as2_platform_crazyflie
+## Clone and build aerostack2 package: as2_platform_crazyflie
 
 
-The first step is to clone and build another aerostack2 package called as2_platform_crazyflie.
+First step is to clone and build another aerostack2 package called as2_platform_crazyflie.
 
 Please follow the instructions here before aerostack2 common interface.
 
@@ -27,11 +27,15 @@ Follow the instructions here.
 
 ## Change radio channel in config file
 
-To be able to connect to your crazyflie, you need to change the setting of radio channel in the package's config file.
+To be able to connect to your crazyflie, you need to change the setting of radio channel in the package's config file. 
+
+This can be done by accessing the config/config.yaml: configuration file for the Crazyflie drones.
+
+**NOTE: Make sure the radio channel set in the config file matches the channel you plan to use in the cfclient GUI, as done in the previous lab. Inconsistent channels will prevent the drone from connecting.** 
 
 Please read through instructions here. 
 
-- [https://aerostack2.github.io/_02_examples/crazyflie/project_crazyflie/index​](https://aerostack2.github.io/_02_examples/crazyflie/project_crazyflie/index​)
+- [https://aerostack2.github.io/_02_examples/crazyflie/project_crazyflie/](https://aerostack2.github.io/_02_examples/crazyflie/project_crazyflie/)
 
 ## Teleoperate and autonomously fly crazyflie via aerostack2
 
@@ -43,3 +47,6 @@ Follow instructions here.
 
 **NOTE: 1.Before launch any bash file, disconnect your crazyflie with your cfclient which may occupy the radio channel. 2. After each flight, you have to manually restart your crazyflie.** 
 
+**NOTE: 2. After each flight, you have to manually restart your crazyflie.If you find the Crazyflie remains unresponsive after a flight or changing configs, physically unplug the battery for a few seconds, then reconnect it.** 
+
+**NOTE: 3. Always test your Crazyflie in an open, safe area free of obstacles, and with safety googles on, especially when first trying autonomous flight. Keep emergency stop in mind if something goes wrong.**
