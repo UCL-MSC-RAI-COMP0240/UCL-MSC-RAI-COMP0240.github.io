@@ -83,3 +83,31 @@ Note however that even if DDS is enabled, autopilots will still send Mavlink mes
 
 
 
+## Setting Up Pixhawk with PX4 and QGroundControl
+
+### Setup
+1. Install **QGroundControl (QGC)** ([Download](https://qgroundcontrol.com/))
+2. Flash **PX4 firmware** onto Pixhawk via QGC
+3. Configure **sensors and RC calibration**
+4. Setup **offboard control** (for AI/robotics integration)
+
+## Using PX4 in HITL (Hardware-In-The-Loop) Simulation
+
+Instead of running Software-In-The-Loop (SITL), we will use **HITL** with Pixhawk 6C and QGroundControl. This avoids computer setup issues for software while allowing real-time testing on actual hardware.
+
+### Steps to Run PX4 HITL:
+1. Connect **Pixhawk 6C** to QGroundControl via USB.
+2. In **QGroundControl**, navigate to *Simulation > HITL Configuration*.
+3. Enable **HITL mode** and select your vehicle type.
+4. Use **MAVLink telemetry** for monitoring real-time flight behavior.
+5. Run tests and develop algorithms without needing a full drone setup.
+
+### Benefits of HITL:
+- Eliminates **computer setup issues** related to SITL.
+- Uses **real Pixhawk hardware** for more accurate testing.
+- Supports **custom AI and robotics applications**.
+
+
+## Summary
+
+For more details, refer to the [PX4 Developer Guide](https://docs.px4.io/).
