@@ -65,6 +65,7 @@ In our own work, it has generally been noted that Ardupilot seems to be more sui
 ## PX4 Software Stack
 
 PX4 consists of:
+
 1. **PX4 Firmware** - The core flight control software
 2. **QGroundControl (QGC)** - GUI for setup and mission planning
 3. **MAVSDK (or other communication method)** - API for developing drone applications
@@ -81,21 +82,103 @@ Note however that even if DDS is enabled, autopilots will still send Mavlink mes
 
 ### Ground Stations 
 
+A key element of any drone operation is a competent and reliable ground station setup. The purpose of the ground station is to provide a reliable communication link with the drone and receive telemetry to be able to keep an eye on, and monitor the status of the drone. Often this is done via a second *telemtry* radio operating on a different frequency - in our case an SIK radio on 433Mhz - with one end connected to the drone, and the other connected via USB to a laptop or computer (or handheld games console like the steam deck). 
 
+There are a number of choices for a piece of software which runs on the ground station. In industry, you may see Alterion or other softwares which provide an interface. In the open source world we either use *mission planner* with Ardupilot or *QGroundContrl* with PX4. In this tutorial we will trying to use **QGroundControl** (QGC). 
+
+![QGC](images/QGC.png)
+
+
+Tools like QGC are crucial for real-time **flight monitoring, control, and mission planning**. It allows users to:
+
+- **Monitor telemetry data** (battery levels, GPS status, IMU readings, etc.).
+- **Send flight commands** such as takeoff, landing, and mission execution.
+- **Configure drone parameters** including PID tuning, sensor calibrations, and failsafe settings.
+- **Visualize the drone's location** and trajectory on a map interface.
+- **Log and analyze flight data** to debug issues or optimize performance.
+
+Ground stations are useful as they enable:
+
+- **Safety**: Enables real-time monitoring, preventing potential failures.
+- **Ease of Use**: Provides a user-friendly interface to interact with the drone.
+- **Flexibility**: Supports different flight modes (manual, autonomous, guided, etc.).
+- **Data Logging**: Essential for post-flight analysis, AI training, and debugging.
+- **Remote Control**: Operate the drone without requiring direct physical interaction.
 
 ## Setting Up Pixhawk with PX4 and QGroundControl
 
-### Setup
+Now lets setup your pixhawk with PX4, connect to it and do some initial calibrations with QGC. 
+
+### Setup Overview
+
 1. Install **QGroundControl (QGC)** ([Download](https://qgroundcontrol.com/))
 2. Flash **PX4 firmware** onto Pixhawk via QGC
 3. Configure **sensors and RC calibration**
-4. Setup **offboard control** (for AI/robotics integration)
+4. Use *QGC* to setup some automated flights
+5. (Not today) Setup **offboard control** (for AI/robotics integration)
+
+
+### Install QGroundControl
+
+Follow the following instructions for all platforms:
+
+- [https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/quick_start.html](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/quick_start.html)
+
+### Power up and connect the Pixhawk
+
+Tidly unbox the pixhawk box in a way that you can put everything back later! For this tutorial, all you will need is:
+
+- Pixhawk
+- USB-C cable
+
+Plug the USB-C cable from the Pixhawk to a port in your laptop
+
+Now start QGroundControl
+
+In the top left it will hopefully automatically pick up the pixhawk and you can start browsing the settings and seeing the live view. 
+
+See [https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/quick_start.html](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/quick_start.html) for how to navigate and use QGC.
+
+### Flashing the Pixhawk
+
+The first step for us is to flash the latest PX4 version onto the pixhawk. This can be done easily from within QGC. 
+
+Follow the following instruction page:
+
+- [https://docs.qgroundcontrol.com/master/en/qgc-user-guide/setup_view/firmware.html](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/setup_view/firmware.html)
+
+
+### Sensor Calibration 
+
+The next step would be to perform sensor calibration in order to calibrate the onboard accelerometer and gyroscope. In the setup menu go to the sensors tab and follow the instructions. 
+
+> Of course in practice you would perform the calibration after having built the drone, but this will do for now!
+
+### Continue Setup
+
+Scroll through the other setup steps, there are a number that we are skipping in this session, but in practice you would have to usually complete:
+
+- **Radio Setup**: It's standard to have a radio connected with both a receiver connected to the pixhawk and a transmitter with the dedicated pilot. The radio is important in order to have a backup method of controlling the drone, as well enabling mode switching between various manual flight regimes and offboard mode. Important for safety too as having a emergency stop setup is highly recommended 
+- **Safety Setup**: All the different safety systems built int from *return to home* to parachutes if they're installed. 
+- **Parameters**: All of these setup screens essentially manipulate the value of various parameters under the hood. Have a scroll through the parameter list and you will quickly see that there are a lot of options for a variety of scenarios. Bare in mind that PX4 is highly multi-functional as it has been written to work on anything from fixed-wing aircraft to mini-submarines! 
+
+> You might want to try setting up the virtual joystick to enable easier testing! [Joystick](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/setup_view/joystick.html) Note the PX4 instruction
+
+### Next step
+
+So once the setup is complete, the last thing to have a look at is observing some of the mavlink thats coming through 
+
+Go have a look at the Analyse View: [analyse view](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/analyze_view/), and then the [mavlink inspector](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/analyze_view/mavlink_inspector.html)
+
+However you will note that because we have a "drone" (just the pixhawk sitting on your desk that wont fly) you wont really be able to do much with it. Traditionally we would use Software In The Loop testing to simulate a virtual Pixhawk for testing and development. However in this class we would like to try and use Hardware-In-The-Loop testing to "fly" your drone. 
+
 
 ## Using PX4 in HITL (Hardware-In-The-Loop) Simulation
 
 Instead of running Software-In-The-Loop (SITL), we will use **HITL** with Pixhawk 6C and QGroundControl. This avoids computer setup issues for software while allowing real-time testing on actual hardware.
 
 ### Steps to Run PX4 HITL:
+
 1. Connect **Pixhawk 6C** to QGroundControl via USB.
 2. In **QGroundControl**, navigate to *Simulation > HITL Configuration*.
 3. Enable **HITL mode** and select your vehicle type.
@@ -103,9 +186,12 @@ Instead of running Software-In-The-Loop (SITL), we will use **HITL** with Pixhaw
 5. Run tests and develop algorithms without needing a full drone setup.
 
 ### Benefits of HITL:
+
 - Eliminates **computer setup issues** related to SITL.
 - Uses **real Pixhawk hardware** for more accurate testing.
 - Supports **custom AI and robotics applications**.
+
+## Tasks
 
 
 ## Summary
