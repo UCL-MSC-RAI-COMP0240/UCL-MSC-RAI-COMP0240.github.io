@@ -106,7 +106,8 @@ We have provided 3 sample scenarios in the `scenarios` directory with which you 
 
 1. scenario1.yaml: A low number mix of targets and obstacles 
 2. scenario2.yaml: A large number of targets only
-3. scenario3.yaml: A small number of targets but many obstacles 
+3. scenario3.yaml: A small number of targets but many obstacles
+4. scenario4.yaml: A large number of targets and many obstacles!
 
 > **Note:** The utils `generate_scenario.py` script can generate more scenarios for you if you wish.
 
@@ -154,9 +155,7 @@ The objective of this coursework is to complete the technical elements of the ch
 
 You will need to submit 3 items:
 - Coursework 1 report (1250 words): This report should be structured to clearly explain the problem, methodology, implementation, results and conclusions.
-
 - 4min - Video: Demonstration of optimal path-planning solution for autonomous drone-based inspection, showcasing waypoint opitmisation, collision free motion planning and performance analysis through a simulated Gazebo environment.
-
 - Code submission
 
 ## Assessment Breakdown and Structure:
@@ -173,7 +172,7 @@ Define, in your own words, the structural inspection path planning challenge, ou
 Detail the approach used to solve the path-planning problem, including the selection and implementation of algorithms for waypoint sequencing (TSP solver), motion planning (e.g., A*, Dijkstra, RRT and Dubins paths), and obstacle avoidance, while also explaining how these methods were integrated into the Gazebo simulation environment to execute the drone’s mission
 
 - Results and Discussion (40%)
-Present key performance metrics, such as total mission time, flight distance, and mission success rate, comparing different planning approaches where applicable, while also analysing the effectiveness, limitations, and potential improvements of the implemented solution. This should be done for each (or as many as your can achieve) of the 3 test scenarios (scenario1.yaml, scenario2.yaml and scenario3.yaml).
+Present key performance metrics, such as total mission time, flight distance, and mission success rate, comparing different planning approaches where applicable, while also analysing the effectiveness, limitations, and potential improvements of the implemented solution. This should be done for each (or as many as your can achieve) of the 4 test scenarios (scenario1.yaml, scenario2.yaml, scenario3.yaml and scenario4.yaml).
 
 - Conclusions (10%)
 Summarise the key findings of the project, highlighting the effectiveness of the implemented path-planning approach, its impact on optimizing drone-based structural inspections, and potential future enhancements to improve efficiency, adaptability, or real-world applicability.
