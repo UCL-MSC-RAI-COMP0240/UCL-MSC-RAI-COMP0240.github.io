@@ -9,6 +9,7 @@ Pixhawk and PX4 are widely used in autonomous drone development, providing an op
 - **PX4**: The open-source flight control firmware
 - **How to set up and use PX4 with Pixhawk**
 - **PX4 Hardware In The Loop (HITL) Testing**
+- **Creating Missions with QGC**
 
 This will help you transition from Crazyflies and Aerostack2 to more advanced UAV platforms.
 
@@ -162,7 +163,7 @@ Scroll through the other setup steps, there are a number that we are skipping in
 - **Safety Setup**: All the different safety systems built int from *return to home* to parachutes if they're installed. 
 - **Parameters**: All of these setup screens essentially manipulate the value of various parameters under the hood. Have a scroll through the parameter list and you will quickly see that there are a lot of options for a variety of scenarios. Bare in mind that PX4 is highly multi-functional as it has been written to work on anything from fixed-wing aircraft to mini-submarines! 
 
-> You might want to try setting up the virtual joystick to enable easier testing! [Joystick](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/setup_view/joystick.html) Note the PX4 instruction
+> You might want to try setting up the virtual joystick to enable easier testing! [Joystick](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/setup_view/joystick.html)
 
 ### Next step
 
@@ -175,25 +176,177 @@ However you will note that because we have a "drone" (just the pixhawk sitting o
 
 ## Using PX4 in HITL (Hardware-In-The-Loop) Simulation
 
-Instead of running Software-In-The-Loop (SITL), we will use **HITL** with Pixhawk 6C and QGroundControl. This avoids computer setup issues for software while allowing real-time testing on actual hardware.
+For development and testing in industry, we often use Software-In-The-Loop (SITL) which allows us to test the functionality of one or more drones from our laptops without needing physical access to the real drones. To be specific the SITL literally runs the exact same firmware that would be running on the pixhawk, and not some simulated version. Often a SITL is paired with a simulator of some description (by default gazebo) to provide physics input to simulate sensors and other external devices. 
+
+However for the purpose of this workshop, we have decided to introduce **Hardware-In-The-Loop** (HITL) testing. This is often a later step of development testing when you have written new firmware, or simply want to make sure the physical PCBs and microcontrollers are functioning as expected. In HITL testing, a real pixhawk is plugged into a computer, where the computer again uses a simulator to simulate physics and sensors which is passed back into the pixhawk. Cruically this hopefully avoids avoids computer setup issues for software while allowing real-time testing on actual hardware.
+
+To make this a bit different, and to hopefully avoid compatibility issues with other work, we have decided to recommend the use of **JMavSim** simulator instead of Gazebo for this session. **JMavSim** is another simulator specifically designed for fixed wing and multi-rotor platforms, but does not include the general physics capabilities that Gazebo includes. Because of this it is much lighter weight, and there have been works which run jmavsim onboard in the loop for model-predictive-control predictions. 
+
+- Read about it here (along with keyboard controls): [https://github.com/PX4/jMAVSim](https://github.com/PX4/jMAVSim)
+
+### Installing Dependencies
+
+Ensure you have QGC installed with joystick enabled
+
+For non-ubuntu, please see the following instructions:
+
+- [https://docs.px4.io/main/en/dev_setup/dev_env.html](https://docs.px4.io/main/en/dev_setup/dev_env.html)
+
+**Although Be Aware That It May Mess With Your Current Installation of Gazebo** 
+
+Options are:
+- Docker (and forwarding the volume representing the pixhawk)
+- Following the cherrypicked ubuntu instructions below
+
+Would not recommend a virtual machine since we are connecting real hardware up. (Unless you just want to try out the SITL)
+
+#### Ubuntu
+
+Git clone and install PX4
+```
+git clone --recursive https://github.com/PX4/PX4-Autopilot.git -b v1.15.4
+cd PX4-Autopilot
+```
+
+> *NOTE*: You will need the `--recursive` to ensure all the dependencies are also pulled. If you forgot to and your builds are falining, in the root of the repository run `git submodule update --init --recursive`. 
+
+#### JMavSim Install (Ubuntu Tested)
+```bash
+# check ubuntu version
+# otherwise warn and point to docker?
+UBUNTU_RELEASE="`lsb_release -rs`"
+
+if [[ "${UBUNTU_RELEASE}" == "14.04" ]]; then
+	echo "Ubuntu 14.04 is no longer supported"
+	exit 1
+elif [[ "${UBUNTU_RELEASE}" == "16.04" ]]; then
+	echo "Ubuntu 16.04 is no longer supported"
+	exit 1
+elif [[ "${UBUNTU_RELEASE}" == "18.04" ]]; then
+	echo "Ubuntu 18.04"
+elif [[ "${UBUNTU_RELEASE}" == "20.04" ]]; then
+	echo "Ubuntu 20.04"
+elif [[ "${UBUNTU_RELEASE}" == "22.04" ]]; then
+	echo "Ubuntu 22.04"
+fi
+
+# General simulation dependencies
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends install \
+    bc \
+    ;
+
+if [[ "${UBUNTU_RELEASE}" == "18.04" ]]; then
+    java_version=11
+elif [[ "${UBUNTU_RELEASE}" == "20.04" ]]; then
+    java_version=13
+elif [[ "${UBUNTU_RELEASE}" == "22.04" ]]; then
+    java_version=11
+else
+    java_version=14
+fi
+# Java (jmavsim)
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends install \
+    ant \
+    openjdk-$java_version-jre \
+    openjdk-$java_version-jdk \
+    libvecmath-java \
+    ;
+
+# Set Java 11 as default
+sudo update-alternatives --set java $(update-alternatives --list java | grep "java-$java_version")
+```
 
 ### Steps to Run PX4 HITL:
 
-1. Connect **Pixhawk 6C** to QGroundControl via USB.
-2. In **QGroundControl**, navigate to *Simulation > HITL Configuration*.
-3. Enable **HITL mode** and select your vehicle type.
-4. Use **MAVLink telemetry** for monitoring real-time flight behavior.
-5. Run tests and develop algorithms without needing a full drone setup.
+These instructions here are based on the following document: [https://docs.px4.io/main/en/simulation/hitl.html](https://docs.px4.io/main/en/simulation/hitl.html)
 
-### Benefits of HITL:
+They have been updated and adjusted 
 
-- Eliminates **computer setup issues** related to SITL.
-- Uses **real Pixhawk hardware** for more accurate testing.
-- Supports **custom AI and robotics applications**.
+#### Starting Pixhawk
+
+Using the USB cable, plug the pixhawk into your computer. 
+
+Now start QGroundControl - if you are lucky after a few seconds, QGC should automatically detect your drone. 
+
+> If not, it could be anything from the cable you are using to your OS not assigning the serial port correctly. 
+
+#### Configuring your Pixhawk/PX4 installation for HITL
+
+Within QGC we need to setup PX4 into HITL mode - this follows the above linked guide
+
+1. Open Setup (click the Q in the top left) -> Vehicle Setup -> Safety
+2. Enable HITL mode by selecting Enabled from the *HITL Enabled* List
+
+![setup HITL](images/QGC_Setup_HITL.png)
+
+3. Restart the Pixhawk (Unplug and plug it back in again)
+4. Go to Vehicle Setup again and go to Airframe
+5. Click on the *Simulation* airframe and ensure that "HIL Quadcopter X" is selected
+
+![setup Airframe](images/QGC_Setup_Airframe.png)
+
+6. Note that we do not have an external radio so we will not be able to perform these steps (instead we use the QGC joysticks). There may be an error that comes up because of this - you are mostly okay to ignore these warning/error messages. 
+7. In order to use QGC Joystick, you will need to change some parameters. Go to Vehicle Setup -> Parameters. Search and change the following.
+8. COM_RC_IN_MODE to "RC and Joystick with fallback". This allows joystick input and disables RC input checks.
+9. NAV_RCL_ACT to "Disarm". This ensures that no RC failsafe actions interfere when not running HITL with a radio control.
+
+![setup Parameters](images/QGC_Setup_Parameters.png)
+
+#### Running JMAVSim
+
+Ensure QGC is closed first
+
+Open a terminal and navigate to the PX4_Autopilot repo you cloned earlier
+
+```bash
+# Set Lat Long of UCL East
+export PX4_HOME_LAT=51.537668693830824
+export PX4_HOME_LON=-0.012029639288719024
+export PX4_HOME_ALT=28.5
+# Run JMavSim
+./Tools/simulation/jmavsim/jmavsim_run.sh -q -s -d /dev/ttyACM0 -b 921600 -r 250
+```
+
+> If you get an error make sure you have recursively git cloned
+
+> **INFO** Replace the serial port name /dev/ttyACM0 as appropriate. On macOS this port would be /dev/tty.usbmodem1. On Windows (including Cygwin) it would be the COM1 or another port - check the connection in the Windows Device Manager.
+
+Once started, now separately (in a new terminal or otherwise) restart QGC. 
+
+![jmavsim_QGC](images/QGC_HITL_Jmavsim.png)
+
+Tada! After waiting about a minute for the system to initialise itself (It will complain at you a bunch), QGC should show that the system is ready to fly. 
 
 ## Tasks
 
+1. Takeoff the drone and manually fly it around the olympic park using the joysticks in the bottom of the screen
+    - See your trajectory in QGC
+    - Try some of the keyboard shortcuts of JMavSim to see your drone fly differently 
+
+> Note: If you crash your drone somehow, you may need to restart your flight controller and jmavsim
+
+2. When in midair, right click on a location and you will get some options to fly in a straight line to various locations. 
+
+3. Land or return to the start location
+
+4. Have a play with the planning tools
+    - Once you have made a mission you will need to upload it (this may appear to fail)
+    - If you cant automatically start it, you may need to manually change the mode to *mission*. 
+
+5. Imagine you were a drone inspection company, do you think this software is suitable for your role? 
+    - What's this software good at?
+    - What's it missing? 
 
 ## Summary
 
+In this tutorial, we introduced the following
+
+- **Pixhawk**: The hardware autopilot platform
+- **PX4**: The open-source flight control firmware
+- **How to set up and use PX4 with Pixhawk**
+- **PX4 Hardware In The Loop (HITL) Testing**
+- **Creating Missions with QGC**
+
 For more details, refer to the [PX4 Developer Guide](https://docs.px4.io/).
+
+This is all we'll cover on this in this course, as this content could fill a whole other module. In the optional session we will be trying to put some of this into pratice on a real drone in the flight arena. Specifically connecting some of this up to ROS2 and Aerostack2 and seeing how this performs! 
