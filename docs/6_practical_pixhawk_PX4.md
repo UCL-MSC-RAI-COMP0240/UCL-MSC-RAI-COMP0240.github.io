@@ -38,7 +38,7 @@ This is the pixhawk 6c you will be playing around with, see all of the ports for
 
 This following wiring diagram is from an older pixhawk model, but should show the key elements of connecting up and powering a pixhawk 
 
-![wiring](images/pixhawk_connect_essential_peripherals.jpg)
+![wiring](images/Pixhawk6CSampleWiringDiagram_2048x2048.webp)
 
 ## Flight Control Firmware
 
