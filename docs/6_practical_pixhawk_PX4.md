@@ -264,7 +264,7 @@ They have been updated and adjusted
 
 #### Starting Pixhawk
 
-Using the USB cable, plug the pixhawk into your computer. 
+Using the USB cable, plug the Pixhawk into your computer. 
 
 Now start QGroundControl - if you are lucky after a few seconds, QGC should automatically detect your drone. 
 
