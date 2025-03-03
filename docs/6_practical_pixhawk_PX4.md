@@ -31,22 +31,22 @@ Pixhawk is a family of open-source flight controllers developed for UAVs and rob
 
 ### How to use a Pixhawk
 
-This is the pixhawk 6c you will be playing around with, see all of the ports for various inputs
+This is the Pixhawk 6C you will be playing around with, see all of the ports for various inputs
 
 ![pixhawk6c](images/Pixhawk6C.png)
 
 
-This following wiring diagram is from an older pixhawk model, but should show the key elements of connecting up and powering a pixhawk 
+This following wiring diagram is from an older Pixhawk model, but should show the key elements of connecting up and powering a Pixhawk 
 
 ![wiring](images/Pixhawk6CSampleWiringDiagram_2048x2048.webp)
 
 ## Flight Control Firmware
 
-There is no universal controller design of converting from user inputs to motor thrust. In the same way, there are numerous other functionalities that an autopilot can cover. These can range from running control loops for gimbals, cameras and other actuation, to high level mission following and safety features. These functionalities are bundled into specific autopilot *firmwares* which each offer a slightly different set of features, as well as differing user interfaces each with their advantages and drawbacks.
+There is no universal controller design of converting from user inputs to motor thrust. In the same way, there are numerous other functionalities that an autopilot can cover. These can range from running control loops for gimbals, cameras and other actuation, to high level mission following and safety features. These functionalities are bundled into specific autopilot *firmware* which each offer a slightly different set of features, as well as differing user interfaces each with their advantages and drawbacks.
 
-The two current most common autopilot firmware's in use in research settings are [Ardupilot](https://ardupilot.org/copter/index.html) which offers the Arducopter firmware, and [PX4](https://px4.io/) which offers Multicopter firmware. Both these firmwares are very extensive and cover numerous use cases. However, for our purposes we will only cover enabling autonomous flight through observing the *mode* of the autpilot.
+The two current most common autopilot firmware's in use in research settings are [Ardupilot](https://ardupilot.org/copter/index.html) which offers the Arducopter firmware, and [PX4](https://px4.io/) which offers Multicopter firmware. Both these firmwares are very extensive and cover numerous use cases. However, for our purposes we will only cover enabling autonomous flight through observing the *mode* of the autopilot.
 
-Both Ardupilot and PX4 use the concept of flight modes, where each mode operates a supports different levels or types of flight stabilisation and/or autonomous functions. Traditionally this is for pilots to change between different controller layouts for different applications. It's necessary to change to the correct mode for safe and controllable flight. The following table shows the most often used flight modes within Starling.
+Both Ardupilot and PX4 use the concept of flight modes, where each mode operates and supports different levels or types of flight stabilisation and/or autonomous functions. Traditionally this is for pilots to change between different controller layouts for different applications. It's necessary to change to the correct mode for safe and controllable flight. The following table shows the most often used flight modes within Starling.
 
 | [Ardupilot Mode](https://ardupilot.org/copter/docs/flight-modes.html) 	| [PX4 Mode](https://docs.px4.io/v1.12/en/getting_started/flight_modes.html)  	| Functionality                                                                                 	|
 |----------------	|-----------	|-----------------------------------------------------------------------------------------------	|
@@ -57,11 +57,11 @@ Both Ardupilot and PX4 use the concept of flight modes, where each mode operates
 | Guided         	| offboard  	| Navigates to setpoints sent to it by ground control or companion computer                     	|
 
 
-As mentioned before, the base purpose of the firmware is to provide a given cascading PID controller for converting high level commands to motor thrusts. However both firmwares provide a plethora of other functionality from trajecotry following, basic mission following, telemetry and communications and many others too. 
+As mentioned before, the base purpose of the firmware is to provide a given cascading PID controller for converting high level commands to motor thrusts. However both firmwares provide a plethora of other functionality from trajectory following, basic mission following, telemetry and communications and many others too. 
 
-As a controller developer, it is also useful to understand the differences between the Ardupilot and PX4 controllers and what real world impacts that has. In most of drone targeted applications we only require either position or velocity control which works fairly consistently between the two firmwares. 
+As a controller developer, it is also useful to understand the differences between the Ardupilot and PX4 controllers and what real-world impacts they have. In most of drone targeted applications we only require either position or velocity control which works fairly consistently between the two firmwares. 
 
-In our own work, it has generally been noted that Ardupilot seems to be more suitable for outdoor flight, and PX4 for indoor flight. For this tutorial we will be developing a controller for indoor multi-vehicle flight and so we will assume the use of PX4. The biggest difference is actual in licensing where Ardupilot's license specifies that any developments must be contributed back, however PX4 is a bit more free allowing the forking and commercialisation without needing the announce or contribution (although this is not necessarily the best for the longevity of this open source project!). 
+In our own work, it has generally been noted that Ardupilot seems to be more suitable for outdoor flight, and PX4 for indoor flight. For this tutorial we will be developing a controller for indoor multi-vehicle flight and so we will assume the use of PX4. The biggest difference is actually in licensing where Ardupilot's license specifies that any developments must be contributed back, however PX4 is a bit more free allowing the forking and commercialisation without needing the announce or contribute (although this is not necessarily the best for the longevity of this open source project!). 
 
 ## PX4 Software Stack
 
@@ -75,17 +75,17 @@ PX4 consists of:
 
 ### Autopilot communication
 
-Once in guided or offboard mode, the autopilot by default expects communications using the [MAVLINK protocol](https://mavlink.io/en/messages/common.html). Traditionally this would have been used for a ground control station (GCS) to send commands to a UAV over a telemetry link. However, now it has also developed into a protocol for commanding the autopilot from an onboard companion computer over a USB or serial connection too. The MAVLink protocol is a set of preset commands which compatible firmwares understand and react to. In this tutorial we will primarily be observing the mavlink interface, but we will not get into writing your own software with mavlink yet.
+Once in guided or offboard mode, the autopilot by default expects communications using the [MAVLINK protocol](https://mavlink.io/en/messages/common.html). Traditionally this would have been used for a ground control station (GCS) to send commands to a UAV over a telemetry link. However, now it has also developed into a protocol for commanding the autopilot from an onboard companion computer over a USB or serial connection too. The MAVLink protocol is a set of preset commands which compatible firmwares understand and react to. In this tutorial we will primarily be observing the MAVlink interface, but we will not get into writing your own software with MAVlink yet.
 
-With the growing prevelance of ROS2, all of the major firmwares have attempted to provide direct communication using ROS2's underlying communication/middleware protocol of DDS (Data Distribution Service). Although we will not cover this in this module, this is what we currently use to communication between a companion computer and the pixhawk for drone work. 
+With the growing prevalence of ROS2, all of the major firmwares have attempted to provide direct communication using ROS2's underlying communication/middleware protocol of DDS (Data Distribution Service). Although we will not cover this in this module, this is what we currently use to communicate between a companion computer and the Pixhawk for drone work. 
 
-Note however that even if DDS is enabled, autopilots will still send Mavlink messages down a *Telemetry* stream - often a dedicated low bandwidth communication channel for the monitoring of the drones health and status. 
+Note however that even if DDS is enabled, autopilots will still send Mavlink messages down a *Telemetry* stream - often a dedicated low bandwidth communication channel for the monitoring of the drone's health and status. 
 
 ### Ground Stations 
 
-A key element of any drone operation is a competent and reliable ground station setup. The purpose of the ground station is to provide a reliable communication link with the drone and receive telemetry to be able to keep an eye on, and monitor the status of the drone. Often this is done via a second *telemtry* radio operating on a different frequency - in our case an SIK radio on 433Mhz - with one end connected to the drone, and the other connected via USB to a laptop or computer (or handheld games console like the steam deck). 
+A key element of any drone operation is a competent and reliable ground station setup. The purpose of the ground station is to provide a reliable communication link with the drone and receive telemetry to be able to keep an eye on, and monitor the status of the drone. Often this is done via a second *telemtry* radio operating on a different frequency - in our case an SIK radio on 433MHz - with one end connected to the drone, and the other connected via USB to a laptop or computer (or handheld games console like the steam deck). 
 
-There are a number of choices for a piece of software which runs on the ground station. In industry, you may see Alterion or other softwares which provide an interface. In the open source world we either use *mission planner* with Ardupilot or *QGroundContrl* with PX4. In this tutorial we will trying to use **QGroundControl** (QGC). 
+There are a number of choices for a piece of software which runs on the ground station. In industry, you may see Alterion or other softwares which provide an interface. In the open source world we either use *mission planner* with Ardupilot or *QGroundControl* with PX4. In this tutorial we will trying to use **QGroundControl** (QGC). 
 
 ![QGC](images/QGC.png)
 
@@ -108,14 +108,14 @@ Ground stations are useful as they enable:
 
 ## Setting Up Pixhawk with PX4 and QGroundControl
 
-Now lets setup your pixhawk with PX4, connect to it and do some initial calibrations with QGC. 
+Now let's set up your Pixhawk with PX4, connect to it and do some initial calibrations with QGC. 
 
 ### Setup Overview
 
 1. Install **QGroundControl (QGC)** ([Download](https://qgroundcontrol.com/))
 2. Flash **PX4 firmware** onto Pixhawk via QGC
 3. Configure **sensors and RC calibration**
-4. Use *QGC* to setup some automated flights
+4. Use *QGC* to set up some automated flights
 5. (Not today) Setup **offboard control** (for AI/robotics integration)
 
 
@@ -127,7 +127,7 @@ Follow the following instructions for all platforms:
 
 ### Power up and connect the Pixhawk
 
-Tidly unbox the pixhawk box in a way that you can put everything back later! For this tutorial, all you will need is:
+Tidily unbox the Pixhawk box in a way that you can put everything back later! For this tutorial, all you will need is:
 
 - Pixhawk
 - USB-C cable
@@ -136,7 +136,7 @@ Plug the USB-C cable from the Pixhawk to a port in your laptop
 
 Now start QGroundControl
 
-In the top left it will hopefully automatically pick up the pixhawk and you can start browsing the settings and seeing the live view. 
+In the top left it will hopefully automatically pick up the Pixhawk and you can start browsing the settings and seeing the live view. 
 
 See [https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/quick_start.html](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/quick_start.html) for how to navigate and use QGC.
 
@@ -160,27 +160,27 @@ The next step would be to perform sensor calibration in order to calibrate the o
 Scroll through the other setup steps, there are a number that we are skipping in this session, but in practice you would have to usually complete:
 
 - **Radio Setup**: It's standard to have a radio connected with both a receiver connected to the pixhawk and a transmitter with the dedicated pilot. The radio is important in order to have a backup method of controlling the drone, as well enabling mode switching between various manual flight regimes and offboard mode. Important for safety too as having a emergency stop setup is highly recommended 
-- **Safety Setup**: All the different safety systems built int from *return to home* to parachutes if they're installed. 
-- **Parameters**: All of these setup screens essentially manipulate the value of various parameters under the hood. Have a scroll through the parameter list and you will quickly see that there are a lot of options for a variety of scenarios. Bare in mind that PX4 is highly multi-functional as it has been written to work on anything from fixed-wing aircraft to mini-submarines! 
+- **Safety Setup**: All the different safety systems built in from *return to home* to parachutes if they're installed. 
+- **Parameters**: All of these setup screens essentially manipulate the value of various parameters under the hood. Have a scroll through the parameter list and you will quickly see that there are a lot of options for a variety of scenarios. Bear in mind that PX4 is highly multi-functional as it has been written to work on anything from fixed-wing aircraft to mini-submarines! 
 
 > You might want to try setting up the virtual joystick to enable easier testing! [Joystick](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/setup_view/joystick.html)
 
 ### Next step
 
-So once the setup is complete, the last thing to have a look at is observing some of the mavlink thats coming through 
+So once the setup is complete, the last thing to have a look at is observing some of the MAVLink that's coming through 
 
 Go have a look at the Analyse View: [analyse view](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/analyze_view/), and then the [mavlink inspector](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/analyze_view/mavlink_inspector.html)
 
-However you will note that because we have a "drone" (just the pixhawk sitting on your desk that wont fly) you wont really be able to do much with it. Traditionally we would use Software In The Loop testing to simulate a virtual Pixhawk for testing and development. However in this class we would like to try and use Hardware-In-The-Loop testing to "fly" your drone. 
+However you will note that because we have a "drone" (just the Pixhawk sitting on your desk that wont fly) you wont really be able to do much with it. Traditionally we would use Software In The Loop testing to simulate a virtual Pixhawk for testing and development. However in this class we would like to try and use Hardware-In-The-Loop testing to "fly" your drone. 
 
 
 ## Using PX4 in HITL (Hardware-In-The-Loop) Simulation
 
-For development and testing in industry, we often use Software-In-The-Loop (SITL) which allows us to test the functionality of one or more drones from our laptops without needing physical access to the real drones. To be specific the SITL literally runs the exact same firmware that would be running on the pixhawk, and not some simulated version. Often a SITL is paired with a simulator of some description (by default gazebo) to provide physics input to simulate sensors and other external devices. 
+For development and testing in industry, we often use Software-In-The-Loop (SITL) which allows us to test the functionality of one or more drones from our laptops without needing physical access to the real drones. To be specific the SITL literally runs the exact same firmware that would be running on the Pixhawk, and not some simulated version. Often a SITL is paired with a simulator of some description (by default gazebo) to provide physics input to simulate sensors and other external devices. 
 
-However for the purpose of this workshop, we have decided to introduce **Hardware-In-The-Loop** (HITL) testing. This is often a later step of development testing when you have written new firmware, or simply want to make sure the physical PCBs and microcontrollers are functioning as expected. In HITL testing, a real pixhawk is plugged into a computer, where the computer again uses a simulator to simulate physics and sensors which is passed back into the pixhawk. Cruically this hopefully avoids avoids computer setup issues for software while allowing real-time testing on actual hardware.
+However for the purpose of this workshop, we have decided to introduce **Hardware-In-The-Loop** (HITL) testing. This is often a later step of development testing when you have written new firmware, or simply want to make sure the physical PCBs and microcontrollers are functioning as expected. In HITL testing, a real Pixhawk is plugged into a computer, where the computer again uses a simulator to simulate physics and sensors which is passed back into the Pixhawk. Cruically this hopefully avoids computer setup issues for software while allowing real-time testing on actual hardware.
 
-To make this a bit different, and to hopefully avoid compatibility issues with other work, we have decided to recommend the use of **JMavSim** simulator instead of Gazebo for this session. **JMavSim** is another simulator specifically designed for fixed wing and multi-rotor platforms, but does not include the general physics capabilities that Gazebo includes. Because of this it is much lighter weight, and there have been works which run jmavsim onboard in the loop for model-predictive-control predictions. 
+To make this a bit different, and to hopefully avoid compatibility issues with other work, we have decided to recommend the use of **JMavSim** simulator instead of Gazebo for this session. **JMavSim** is another simulator specifically designed for fixed wing and multi-rotor platforms, but does not include the general physics capabilities that Gazebo includes. Because of this it is much lighter weight, and there have been works which run JMavSim onboard in the loop for model-predictive-control predictions. 
 
 - Read about it here (along with keyboard controls): [https://github.com/PX4/jMAVSim](https://github.com/PX4/jMAVSim)
 
@@ -188,15 +188,15 @@ To make this a bit different, and to hopefully avoid compatibility issues with o
 
 Ensure you have QGC installed with joystick enabled
 
-For non-ubuntu, please see the following instructions:
+For non-Ubuntu, please see the following instructions:
 
 - [https://docs.px4.io/main/en/dev_setup/dev_env.html](https://docs.px4.io/main/en/dev_setup/dev_env.html)
 
 **Although Be Aware That It May Mess With Your Current Installation of Gazebo** 
 
 Options are:
-- Docker (and forwarding the volume representing the pixhawk)
-- Following the cherrypicked ubuntu instructions below
+- Docker (and forwarding the volume representing the Pixhawk)
+- Following the cherry-picked Ubuntu instructions below
 
 Would not recommend a virtual machine since we are connecting real hardware up. (Unless you just want to try out the SITL)
 
@@ -208,7 +208,7 @@ git clone --recursive https://github.com/PX4/PX4-Autopilot.git -b v1.15.4
 cd PX4-Autopilot
 ```
 
-> *NOTE*: You will need the `--recursive` to ensure all the dependencies are also pulled. If you forgot to and your builds are falining, in the root of the repository run `git submodule update --init --recursive`. 
+> *NOTE*: You will need the `--recursive` to ensure all the dependencies are also pulled. If you forgot to and your builds are failing, in the root of the repository run `git submodule update --init --recursive`. 
 
 #### JMavSim Install (Ubuntu Tested)
 ```bash
@@ -331,7 +331,7 @@ Tada! After waiting about a minute for the system to initialise itself (It will 
 
 4. Have a play with the planning tools
     - Once you have made a mission you will need to upload it (this may appear to fail)
-    - If you cant automatically start it, you may need to manually change the mode to *mission*. 
+    - If you can't automatically start it, you may need to manually change the mode to *mission*. 
 
 5. Imagine you were a drone inspection company, do you think this software is suitable for your role? 
     - What's this software good at?
@@ -349,4 +349,4 @@ In this tutorial, we introduced the following
 
 For more details, refer to the [PX4 Developer Guide](https://docs.px4.io/).
 
-This is all we'll cover on this in this course, as this content could fill a whole other module. In the optional session we will be trying to put some of this into pratice on a real drone in the flight arena. Specifically connecting some of this up to ROS2 and Aerostack2 and seeing how this performs! 
+This is all we'll cover in this course, as this content could fill a whole other module. In the optional session we will be trying to put some of this into practice on a real drone in the flight arena. Specifically connecting some of this up to ROS2 and Aerostack2 and seeing how this performs! 
