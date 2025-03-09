@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Multi-Drone Swarming Formation Flight Challenge - UCL-MSC-RAI-COMP0240</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../kbd.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Multi-Drone Swarming Formation Flight Challenge";
+        var mkdocs_page_input_path = "7_challenge_multi_drone.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> UCL-MSC-RAI-COMP0240
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Practical 1 &amp; 2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1a_introduction/">Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1b_intro_linux/">Ubuntu Installation and Linux Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_intro_ros2/">ROS2 Installation and ROS2 Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1d_aerostack2/">Aerostack2 Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">Gazebo Aruco Mini-Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 3 &amp; 4</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3a_practical_crazyflie/">Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_practical_crazyflie/">Building Crazyflies</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4_practical_crazyflie/">Flying Crazyflies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Assignment - Challenge CW1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 5</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_practical_crazyflie_aerostack2/">Crazyflie with aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 6</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../6_practical_pixhawk_PX4/">Introducing Pixhawk and PX4</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Assignment - Challenge Cw2</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Multi-Drone Swarming Formation Flight Challenge</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#challenge">12.1 Challenge</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#swarming-and-formation-flight">12.1.1 Swarming and Formation Flight</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#your-challenge">12.1.2 Your Challenge</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#challenge-environemnt">12.2 Challenge Environemnt</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation">12.2.1 Installation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-environment">12.2.2 Running the environment</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bulding-your-solution">12.2.3 Bulding your solution</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#recommended-tasks">12.3 Recommended Tasks</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#coursework-submission">12.4 Coursework Submission</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#assessment-breakdown-and-structure">12.5 Assessment Breakdown and Structure</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">UCL-MSC-RAI-COMP0240</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">Assignment - Challenge Cw2</li>
+<li class="breadcrumb-item active">Multi-Drone Swarming Formation Flight Challenge</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="cw2-swarming-and-multi-drone-formation-flight-challenge"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.</span> CW2: Swarming and Multi-Drone Formation Flight Challenge<a class="headerlink" href="#cw2-swarming-and-multi-drone-formation-flight-challenge" title="Permanent link">¶</a></h1>
+<p><strong>Groups of 3 Project</strong></p>
+<p><img alt="scenario1" src="../images/7_scenario1.png"/></p>
+<h2 id="challenge"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.1</span> Challenge<a class="headerlink" href="#challenge" title="Permanent link">¶</a></h2>
+<p>This challenge revolves around swarming of drones and formation flight. We are asking you to investigate the difference in performance and application of decentralised swarm based approaches versus centralised approaches to performing formation flight with a group of 5 drones in a number of different scenarios. </p>
+<h3 id="swarming-and-formation-flight"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.1.1</span> Swarming and Formation Flight<a class="headerlink" href="#swarming-and-formation-flight" title="Permanent link">¶</a></h3>
+<p><strong>Swarming</strong> refers to the collective behavior of multiple agents (drones) operating together using local rules without a centralized controller. These behaviors emerge from interactions between individual drones and their environment.</p>
+<p>Swarm robotics takes inspiration from nature—such as birds, fish, and insects—to design scalable, flexible, and robust robotic systems. Swarm behaviors are often decentralized and self-organized, meaning that individual drones follow simple local rules that collectively result in a global pattern of behavior.</p>
+<p>Common decentralized swarm control strategies:</p>
+<ul>
+<li>Boids Model (Flocking Behavior) – Uses three simple rules: separation, alignment, and cohesion.</li>
+<li>Potential Fields – Assigns virtual attractive/repulsive forces to goals and obstacles to guide movement.</li>
+<li>Reinforcement Learning-Based Swarms – Uses machine learning to optimize local decision-making.</li>
+<li>Bio-Inspired Methods – Such as pheromone-based navigation or genetic algorithms.</li>
+</ul>
+<p><strong>Formation flight</strong> is a more structured approach to multi-agent coordination where drones maintain a specific geometric arrangement while moving. Unlike general swarming, formation flying often requires precise positioning and coordination.</p>
+<p>Common formation flight strategies:</p>
+<ul>
+<li>Centralized Approaches<ul>
+<li>Leader-Follower – One drone acts as the leader while others maintain a relative position.</li>
+<li>Multi-Agent Path Planning (MAPF) – Centralized planning optimizes collision-free paths.</li>
+<li>Virtual Structures – The entire formation is treated as a rigid body and controlled as one unit.</li>
+</ul>
+</li>
+<li>Decentralized Approaches<ul>
+<li>Boids with Formation Constraints – Similar to flocking but with additional formation control.</li>
+<li>Consensus-Based Control – Drones agree on formation changes based on local communication.</li>
+<li>Distributed Potential Fields – Drones use attraction/repulsion forces while maintaining formation.</li>
+</ul>
+</li>
+</ul>
+<p>Swarming and formation flight have numerous real-world applications across various industries. </p>
+<ul>
+<li>In aerial surveillance and search-and-rescue, swarming drones can quickly cover large areas, scan for missing persons, or assess disaster zones without relying on a single point of failure. </li>
+<li>In logistics and delivery, drone swarms can efficiently transport packages in coordinated formations, optimizing airspace usage and reducing delivery times. </li>
+<li>In environmental monitoring, swarms of drones can track wildlife migrations, detect deforestation, or monitor air and water quality over vast regions. </li>
+<li>In entertainment and art, synchronized drone light shows use precise formation flight to create complex aerial displays, offering an innovative alternative to fireworks. </li>
+</ul>
+<p>These examples highlight the versatility of swarm robotics in enhancing efficiency, scalability, and adaptability in real-world operations.</p>
+<h3 id="your-challenge"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.1.2</span> Your Challenge<a class="headerlink" href="#your-challenge" title="Permanent link">¶</a></h3>
+<p>We have created a competition style course with 4 different stages to complete one after another.  </p>
+<ol>
+<li>
+<p><strong>Stage 1: Changing Formations</strong>: </p>
+<ul>
+<li>Implementing the formation flight algorithms which have the ability to changing the formation periodically whilst maintaining a circular trajectory. </li>
+<li>Cmpare different formation shapes (Line, V-shape, Diamond, Circular Orbit, Grid, Staggered)</li>
+</ul>
+</li>
+<li>
+<p><strong>Stage 2: Window Traversal</strong>: </p>
+<ul>
+<li>Using your formation flying methods attempt to maneouever your swarm of drones through two narrow windows slits. </li>
+<li>Consider how to split, rejoin, or compress the formation to pass through gaps.</li>
+</ul>
+</li>
+<li>
+<p><strong>Stage 3: Forest Traversal</strong>: </p>
+<ul>
+<li>Using your formation flying methods attempt to maneouever your swarm of drones through a forest of trees.</li>
+<li>Your swarm should avoid collisions and maintain efficiency in movement.</li>
+</ul>
+</li>
+<li>
+<p><strong>Stage 4: Dynamic Obstacles</strong>: </p>
+<ul>
+<li>Using your formation flying methods attempt to maneouever your swarm of drones through a set of dynamically moving obstacles.  </li>
+<li>You may need adaptive formation control to respond to changes in real time.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="schematic" src="../images/7_schematic.png"/></p>
+<p>You will be investigating, developing and testing your algorithm primarily in simulation. Hopefully we will get a chance to run these on the real crazyflies. Points are awarded on the completion of each stage, and performance within. The winning group will be the group with the most points at the end of the competition.</p>
+<h2 id="challenge-environemnt"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.2</span> Challenge Environemnt<a class="headerlink" href="#challenge-environemnt" title="Permanent link">¶</a></h2>
+<p>Just as with the previous courseworks and gazebo aruco challenges, this will also be within aerostack2 and ros2. At this point you should feel more familiar with the systems and how they all work. To enable this challenge, we have created a new repository specifically for this challenge. </p>
+<p><strong>The repository is here: <a href="https://github.com/UCL-MSC-RAI-COMP0240/challenge_multi_drone?tab=readme-ov-file">challenge_multi_drone</a></strong></p>
+<ul>
+<li><a href="https://github.com/UCL-MSC-RAI-COMP0240/challenge_multi_drone?tab=readme-ov-file">https://github.com/UCL-MSC-RAI-COMP0240/challenge_multi_drone</a></li>
+</ul>
+<h3 id="installation"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.2.1</span> Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h3>
+<p>As before, follow the [README.md] in the challenge repository for installation instructions. </p>
+<blockquote>
+<p><em>NOTE</em> that we have made a patch for aerostack2 and the crazyflie interface and you will therefore have to pull our versions of these two libraries and build them from source yourself. </p>
+</blockquote>
+<h3 id="running-the-environment"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.2.2</span> Running the environment<a class="headerlink" href="#running-the-environment" title="Permanent link">¶</a></h3>
+<p>The README.md goes into full details of each command. </p>
+<p>Many things are the same as your previous courseworks. However a key difference is that we are now running multiple drones. As you can imagine this is much more taxing on your machines, and some approaches to running this coursework may no longer be appropriate. </p>
+<p>Like previous you will need two terminals, both in the root of the repository:</p>
+<p>In terminal 1 run the following to launch the drone simulation of scenario1, and you will see gazebo popup.</p>
+<pre><code class="language-bash">./launch_as2.bash -s scenarios/scenario1.yaml
+</code></pre>
+<p>And in a second terminal, you can run the ground station, which will spin up the visualisation software <code>rviz2</code> as well as provide a prompt for you to run your mission (Though you can run your python mission from everywhere, provided you <code>source /&lt;your workspace&gt;/install/setup.bash</code> first)</p>
+<pre><code class="language-bash">./launch_ground_station.bash
+# or if you want to play around with teleoperating the drone
+./launch_ground_station.bash -t 
+</code></pre>
+<blockquote>
+<p><strong>Remember</strong>: If you want to close the simulation down, just run the <code>stop.bash</code> script from the repository root in any terminal or tmux window. </p>
+</blockquote>
+<h3 id="bulding-your-solution"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.2.3</span> Bulding your solution<a class="headerlink" href="#bulding-your-solution" title="Permanent link">¶</a></h3>
+<!-- 
+We have provided a very basic sample solution in `mission_scenario.py` which simply reads the scenario file, iterates through the viewpoints and visits them one by one. 
+
+```bash
+# From the root of this repository
+python3 mission_scenario.py -s scenarios/scenario1.yaml
+``` -->
+<p>We have released a <code>scenario1.yaml</code> which describes a sample environment which contains the 4 stages mentioned within this challenge. </p>
+<p>Have a read of the scenarios file to see some of the parameters you will need to manage. </p>
+<blockquote>
+<p><strong>TODO</strong>: More scenarios will be released shortly for testing. </p>
+</blockquote>
+<h2 id="recommended-tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.3</span> Recommended Tasks<a class="headerlink" href="#recommended-tasks" title="Permanent link">¶</a></h2>
+<p>To be released</p>
+<h2 id="coursework-submission"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.4</span> Coursework Submission<a class="headerlink" href="#coursework-submission" title="Permanent link">¶</a></h2>
+<p>To be released</p>
+<h2 id="assessment-breakdown-and-structure"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.5</span> Assessment Breakdown and Structure<a class="headerlink" href="#assessment-breakdown-and-structure" title="Permanent link">¶</a></h2>
+<p>To be released</p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../6_practical_pixhawk_PX4/" title="Introducing Pixhawk and PX4"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>Copyright © 2024 University College London AML Lab</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../6_practical_pixhawk_PX4/" style="color: #fcfcfc">« Previous</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

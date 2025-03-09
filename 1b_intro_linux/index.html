@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Ubuntu Installation and Linux Re-Intro - UCL-MSC-RAI-COMP0240</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../kbd.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Ubuntu Installation and Linux Re-Intro";
+        var mkdocs_page_input_path = "1b_intro_linux.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> UCL-MSC-RAI-COMP0240
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Practical 1 &amp; 2</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1a_introduction/">Introduction</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Ubuntu Installation and Linux Re-Intro</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#linux-installation">2.1 Linux Installation</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-brief-introduction-to-linux">2.2 A Brief Introduction to Linux</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-linux">2.2.1 What is Linux</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#the-terminal">2.2.2 The Terminal</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#navigating-the-file-system">2.2.3 Navigating the file system</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#working-with-files">2.2.4 Working with files</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-dependencies-and-useful-programs">2.2.5 Installing Dependencies and Useful Programs</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#installing-git-and-vscode">Installing Git and VSCode</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#sudo">sudo</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-docker">Installing Docker</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tasks">2.3 Tasks</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_intro_ros2/">ROS2 Installation and ROS2 Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1d_aerostack2/">Aerostack2 Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">Gazebo Aruco Mini-Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 3 &amp; 4</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3a_practical_crazyflie/">Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_practical_crazyflie/">Building Crazyflies</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4_practical_crazyflie/">Flying Crazyflies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Assignment - Challenge CW1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 5</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_practical_crazyflie_aerostack2/">Crazyflie with aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 6</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../6_practical_pixhawk_PX4/">Introducing Pixhawk and PX4</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Assignment - Challenge Cw2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7_challenge_multi_drone/">Multi-Drone Swarming Formation Flight Challenge</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">UCL-MSC-RAI-COMP0240</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">Practical 1 &amp; 2</li>
+<li class="breadcrumb-item active">Ubuntu Installation and Linux Re-Intro</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="practical-1-pre-setup-ubuntu-installation-and-brief-intro-to-linux"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Practical 1 Pre-Setup: Ubuntu Installation and Brief Intro to Linux<a class="headerlink" href="#practical-1-pre-setup-ubuntu-installation-and-brief-intro-to-linux" title="Permanent link">¶</a></h1>
+<div class="toc">
+<ul>
+<li><a href="#practical-1-pre-setup-ubuntu-installation-and-brief-intro-to-linux">2. Practical 1 Pre-Setup: Ubuntu Installation and Brief Intro to Linux</a><ul>
+<li><a href="#linux-installation">2.1 Linux Installation</a></li>
+<li><a href="#a-brief-introduction-to-linux">2.2 A Brief Introduction to Linux</a><ul>
+<li><a href="#what-is-linux">2.2.1 What is Linux</a></li>
+<li><a href="#the-terminal">2.2.2 The Terminal</a></li>
+<li><a href="#navigating-the-file-system">2.2.3 Navigating the file system</a></li>
+<li><a href="#working-with-files">2.2.4 Working with files</a></li>
+<li><a href="#installing-dependencies-and-useful-programs">2.2.5 Installing Dependencies and Useful Programs</a><ul>
+<li><a href="#installing-git-and-vscode">Installing Git and VSCode</a></li>
+<li><a href="#sudo">sudo</a></li>
+<li><a href="#installing-docker">Installing Docker</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tasks">2.3 Tasks</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="linux-installation"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Linux Installation<a class="headerlink" href="#linux-installation" title="Permanent link">¶</a></h2>
+<p>From this point on, this course will be primarily using the Ubuntu 22.04 Operating System. This is primarily because the majority of robotics and aerial robotics development activities in research and industry are developed for use on Linux-based systems (of which Ubuntu is one). In particular we will be primarily using ROS2 and ROS2 derived tools, which currently works best within Ubuntu 22.04. </p>
+<p>We’ve explored alternatives like Windows and MacOS (including both Intel and Apple Silicon/M1/2 versions) in previous course iterations. Unfortunately, these platforms introduced significant challenges, including:</p>
+<ul>
+<li>Compatibility issues with ROS2 and its dependencies.</li>
+<li>Variability in performance and tool availability.</li>
+<li>Increased troubleshooting effort for both students and instructors.</li>
+</ul>
+<p>Ultimately reducing the quality of the course. Therefore this course would like to focus on providing the greatest course quality by focussing on Ubuntu. </p>
+<p>While containers (e.g., Docker) and virtual machines (VMs) can offer flexibility, they have limitations in this context:</p>
+<ul>
+<li><em>Docker</em>: Known for portability, but graphical user interfaces (GUIs) for simulation tools like Gazebo and RViz can be challenging to configure, especially on Windows.</li>
+<li><em>Virtual Machines</em>: Simulations in Gazebo are graphics-intensive, and VMs often lack the hardware acceleration needed for smooth operation. Additionally, VMs can have limited access to host machine IO interfaces (e.g., USB), making hardware integration difficult.</li>
+</ul>
+<p>That said, students are welcome to experiment with Docker or VMs, but these methods will receive minimal support from the course instructors.</p>
+<p>In order to enable as many of the students to work on native Ubuntu as possible, we suggest the following options:</p>
+<ol>
+<li>Dual Booting your Windows Install with Ubuntu 22.04<ul>
+<li>Install Ubuntu 22.04 alongside your existing Windows installation. This allows you to choose between operating systems at boot.</li>
+<li>Native ubuntu performance</li>
+<li>Fully supported by course instructors </li>
+<li>Will require at least 100Gb of unused disk space</li>
+<li>Windows only</li>
+</ul>
+</li>
+<li>Borrowing and booting from an Ubuntu 22.04 installed USB-C NVME Drive <ul>
+<li>Borrow or prepare a portable USB-C NVMe drive pre-installed with Ubuntu 22.04. This method allows you to run Ubuntu without altering your main system.</li>
+<li>Go to bios setting to reorder your booting sequence. Different brands of computers have different ways of getting into bios. For example, for dell computer, you could access the BIOS/UEFI settings by restarting your computer and pressing the F2 key repeatedly as soon as the Dell logo appears. Lift the borrowed drive up to the first, then save changes. Now your computer will boot from this automatically as long as it is plugged into your computer.  <img alt="dell booting configuration" src="../images/Image.jpeg"/></li>
+<li>Minimal changes to your primary system.</li>
+<li>Requires a USB-C port with fast read/write capabilities.</li>
+<li>Limited number of pre-setup Ubuntu 22.04 bootsticks</li>
+<li>Windows Primarily, but known to potentially work with Mac OSX too (pending testing). </li>
+</ul>
+</li>
+<li>Repurpose an old laptop </li>
+<li>Spin up a virtual machine on a cloud provider<ul>
+<li>Use a cloud provider like AWS, Google Cloud, or Azure to spin up a virtual machine running Ubuntu 22.04</li>
+</ul>
+</li>
+<li>Docker<ul>
+<li>Docker may be possible for some of the situations</li>
+<li>Known issues with GUIs and Windows (which can be solved) </li>
+<li>Not as supported </li>
+</ul>
+</li>
+<li>Virtual Machine</li>
+</ol>
+<!-- ## Installing Ubuntu 22.04
+
+There are three ways you can run this project depending on your situation or operating system. 
+
+- Linux: All 2 ways (Local and Docker) will work
+- Windows: Boot from an external SSD provided by us
+- Max OSX: TBC
+
+## For Linux users
+If you are a Linux user, you will have two options to set up your project, i.e. Local or Docker.
+
+### Local
+
+Install Ubuntu 22.04, ROS2 Humble, Ignition Gazebo Fortress as per their instructions.
+
+#### 1. 
+
+Your options are 
+
+1. Finding a spare machine that you can wipe and install Ubuntu on
+2. Finding a machine that you would be willing to dual boot
+3. Running a virtual machine
+4. Running a container (Not supported yet as I havent made a container - also this requires gazebo which requires a GUI which is not ideal for containers apart from singularity containers) -->
+<p>For options 1 and 2, you will need to find a USB stick that is &gt;4Gb and using a tool such as <a href="https://rufus.ie/en/">Rufus</a> flash the <a href="https://ubuntu.com/download/desktop">Ubuntu 22.04 ISO file</a> onto it. </p>
+<p>Once you have a flashed USB drive, you can insert that into the spare machine. On startup make sure to mash some combination of F2, F8 or F12 to go to the BIOS boot screen and select boot from USB. </p>
+<p>This will start up tp the Ubuntu installer on the USB drive where you can select what to do. Whether that is to wipe the machine, or in the advanced menu create a new partition for Ubuntu so you can dual boot (For Windows you will also need to shrink your primary partition). For more details <a href="https://www.onlogic.com/company/io-hub/how-to-dual-boot-windows-11-and-linux/">see a guide such as this one</a>. </p>
+<p>We have also created a number of pre-installed NVME drives which you may be able to borrow pending numbers</p>
+<!-- You can also download the ISO file and run it in a virtual machine program such as [VirtualBox](https://www.virtualbox.org/). 
+
+> I have created and exported a virtual machine with everything already installed for you to use. Speak to the instructors
+
+In virtualbox you can import an existing virtual machine. Once installed and you have the gui up, there is an option to import (orange arrow), in which you can select the existing exported virtual machine.
+Once you have a virtual machine setup, you can simply start it. 
+
+> Note: Since this project uses gazebo and is not the lightest workioad, you may want to give the VM more resources i.e. CPU, RAM and potetially video memory too. You can do this in the virtual machine settings.  -->
+<h2 id="a-brief-introduction-to-linux"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> A Brief Introduction to Linux<a class="headerlink" href="#a-brief-introduction-to-linux" title="Permanent link">¶</a></h2>
+<p>Adapted from this <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics">digital ocean tutorial</a></p>
+<h3 id="what-is-linux"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2.1</span> What is Linux<a class="headerlink" href="#what-is-linux" title="Permanent link">¶</a></h3>
+<p>Linux is a family of free and open-source operating systems based on the Linux kernel (core operating system). Operating systems based on Linux are known as Linux distributions or distros. Examples include Debian, Ubuntu, Fedora, CentOS, Gentoo, Arch Linux, and many others.</p>
+<p>The Linux kernel has been under active development since 1991, and has proven to be extremely versatile and adaptable. You can find computers that run Linux in a wide variety of contexts all over the world, from web servers to cell phones. Today, 90% of all cloud infrastructure and 74% of the world’s smartphones are powered by Linux.</p>
+<p>However, newcomers to Linux may find it somewhat difficult to approach, as Linux filesystems have a different structure than those found on Windows or MacOS. Additionally, Linux-based operating systems depend heavily on working with the command line interface, while most personal computers rely on graphical interfaces.</p>
+<h3 id="the-terminal"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2.2</span> The Terminal<a class="headerlink" href="#the-terminal" title="Permanent link">¶</a></h3>
+<p>The terms “terminal,” “shell,” and “command line interface” are often used interchangeably, but there are subtle differences between them:</p>
+<ul>
+<li>A <strong>terminal</strong> is an input and output environment that presents a text-only window running a shell.</li>
+<li>A <strong>shell</strong> is a program that exposes the computer’s operating system to a user or program. In Linux systems, the shell presented in a terminal is a command line interpreter. The default shell in Ubuntu Linux is known as <code>bash</code>.</li>
+<li>A <strong>command line interface</strong> is a user interface (managed by a command line interpreter program) which processes commands to a computer program and outputs the results.</li>
+</ul>
+<p>When someone refers to one of these three terms in the context of Linux, they generally mean a terminal environment where you can run commands and see the results printed out to the terminal, such as this:</p>
+<p><img alt="linux terminal" src="../images/2_linux-terminal-on-ubuntu.png"/></p>
+<p>There are two ways to open a terminal:</p>
+<ol>
+<li>Pressing the <kbd class="keys"><kbd class="key-windows">Win</kbd></kbd> or <kbd class="keys"><kbd class="key-command">Cmd</kbd></kbd> key to open the program menu and typing <code>terminal</code>, then pressing <kbd class="keys"><kbd class="key-enter">Enter</kbd></kbd></li>
+<li>Pressing <kbd class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-t">T</kbd></kbd></li>
+</ol>
+<p>This default terminal is known as the 'gnome-terminal'. Other terminals exist such as <a href="https://terminator-gtk3.readthedocs.io/en/latest/">'terminator'</a></p>
+<p>Becoming a Linux user requires you to be comfortable with using a terminal. Any administrative task, including file manipulation, package installation, and user management, can be accomplished through the terminal. The terminal is interactive: you specify commands to run (after the $ sign) and the terminal outputs the results of those commands. To execute any command, you type it into the prompt and press <kbd class="keys"><kbd class="key-enter">Enter</kbd></kbd>.</p>
+<p>When using Linux and interacting with ROS2 you'll most often be doing so through a terminal shell. Although personal computers that run Linux often come with the kind of graphical desktop environment familiar to most computer users, it is often more efficient or practical to perform certain tasks through commands entered into the terminal. As of writing, a GUI (Graphical User Interface) has not been developed for Starling, and so almost all tasks have to be achieved through the terminal shell.</p>
+<p>A basic command to try out is <code>echo</code>, which will print things to the terminal. For example <code>echo hello-world</code> will print <code>hello-world</code> into the terminal. You can also use it to observe the value of <strong>Environment Variables</strong> which record and keep useful variables to the operation of the Operating System. For example, when you run a command in <code>bash</code>, <code>bash</code> will look for the command executable in the locations provided by the environment variable <code>PATH</code>. You can print the contents of this env-var using <code>echo $PATH</code>. The <code>$</code> before the name of the variable tells <code>bash</code> that the following word represents an environment variable, and that it should be looked up.</p>
+<p>Note that for the default shell option of <code>bash</code>, there is often a way of specifying an environment (i.e. a set of variables, defaults etc) that your particular terminal shell interface is running. For bash, these defaults are defined inside of the <code>.bashrc</code> file found in your home directory. If we want defaults to be set, we add them in here - this becomes useful in many applications including ROS2. </p>
+<h3 id="navigating-the-file-system"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2.3</span> Navigating the file system<a class="headerlink" href="#navigating-the-file-system" title="Permanent link">¶</a></h3>
+<p>Like Windows and Mac, the Linux filesystems are based on a directory tree. This means that you can create directories (which are functionally identical to folders found in other operating systems) inside other directories, and files can exist in any directory.</p>
+<p>The forward slash (<code>/</code>) is used to indicate the root directory in the filesystem hierarchy.</p>
+<p>When a user logs in to the shell, they are brought to their own user directory, stored within <code>/home/&lt;username&gt;</code>. This is referred to as the user’s home directory. Often you may see the <em>tilde</em> (<code>~</code>) character when specifying a file location (e.g. <code>~/Documents/hello.txt</code> = <code>/home/&lt;username&gt;/Documents/hello.txt</code>). This is shorthand for the user's home directory and gets substituted in when used.</p>
+<p>To see what directory you are currently active in you can run the <code>pwd</code> command, which stands for “print working directory”</p>
+<pre><code class="language-console">myuser@my-machine:~$ pwd
+/home/myuser
+</code></pre>
+<p>To see a list of files and directories that exist in your current working directory, run the <code>ls</code> command:</p>
+<pre><code class="language-console">myuser@my-machine:~$ ls
+ Desktop                    Documents
+ Downloads                  Pictures
+ Public                     Wallpapers
+</code></pre>
+<p>You can get more details if you run <code>ls -al</code> command:</p>
+<pre><code class="language-console">myuser@my-machine:~$ ls -al
+drwxr-xr-x  2 myuser myuser   4096 Apr 30  2021  Desktop
+drwxrwxr-x  8 myuser myuser   4096 Oct 29 09:27  Documents
+drwxrwxr-x  8 myuser myuser   4096 Dec 10 14:41  Downloads
+drwxrwxr-x  8 myuser myuser   4096 May 23 10:43  Pictures
+drwxrwxr-x  8 myuser myuser   4096 Jan 19  2017  Public
+drwxrwxr-x  8 myuser myuser   4096 Oct 15 09:43  Wallpapers
+</code></pre>
+<p>You can create one or more new directories within your current working directory with the <code>mkdir</code> command, which stands for “make directory”. For example, to create two new directories named testdir1 and testdir2, you might run the first command. You can create nested directories by using the <code>-p</code> option:</p>
+<pre><code class="language-console">myuser@my-machine:~$ mkdir testdir1 testdir2
+myuser@my-machine:~$ mkdir -p testdir3/testsubdir
+</code></pre>
+<p>To navigate into one of these new directories, run the cd command (which stands for “change directory”) and specify the directory’s name:</p>
+<pre><code class="language-console">myuser@my-machine:~$ cd testdir1
+myuser@my-machine:~/testdir1$
+</code></pre>
+<p>Note that you can navigate from anywhere to anywhere. <code>cd</code> only requires a valid filepath. Note also that <code>.</code> represents the current folder and <code>..</code> represents the parent folder. Note also how is shows the current working directory in the shell as well.</p>
+<pre><code class="language-bash">cd # This will bring you back to home directory
+cd testdir3/testsubdir # Brings you into testsubdir
+cd ../ # Brings you back out one level into testdir3
+cd ../testdir1 # Brings you back out one level and back into testdir1
+cd /home/&lt;username&gt;/testdir2 # Absolute reference to testdir2
+cd ~/testdir2 # Absolute reference using tilde to testdir2
+</code></pre>
+<h3 id="working-with-files"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2.4</span> Working with files<a class="headerlink" href="#working-with-files" title="Permanent link">¶</a></h3>
+<p>You cannot use cd to interact with files; cd stands for “change directory”, and only allows you to navigate directories. You can, however, create, edit, and view the contents of files.</p>
+<p>One way to create a file is with the touch command. This creates an empty file in your current working directory. To create a new file called file.txt:</p>
+<pre><code class="language-bash">touch file.txt
+</code></pre>
+<p>If you decide to rename file.txt later on, you can do so with the mv command. mv stands for “move” and it can move a file or directory from one place to another. By specifying the original file, file.txt, you can “move” it to a new location in the current working directory, thereby renaming it.</p>
+<pre><code class="language-bash">mv file.txt newfile.txt
+</code></pre>
+<p>It is also possible to copy a file to a new location with the cp command. If we want to copy newfile.txt, you can make a copy of newfile.txt named newfile_copy.txt like this:</p>
+<pre><code class="language-bash">cp newfile.txt newfile_copy.txt
+</code></pre>
+<p>However, files are not of much use if they don’t contain anything. To edit files, a file editor is necessary.
+There are many options for file editors, all created by professionals for daily use. Such editors include vim, emacs, nano, and pico.
+<code>nano</code> is a suitable option for beginners: it is relatively user-friendly and doesn’t overload you with cryptic options or commands.</p>
+<pre><code class="language-bash">nano file.txt
+</code></pre>
+<p>This will open a space where you can start typing to edit the file. In <code>nano</code> specifically you can save your written text by pressing <kbd class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></kbd>, <kbd class="keys"><kbd class="key-y">Y</kbd></kbd>, and then <kbd class="keys"><kbd class="key-enter">Enter</kbd></kbd>. This returns you to the shell with a newly saved <code>file.txt</code>.</p>
+<p>Now that file.txt has some text within it, you can view it using <code>cat</code> or <code>less</code>.</p>
+<p>The <code>cat</code> command prints the contents of a specified file to your system’s output. Try running <code>cat</code> and pass the <code>file.txt</code> file you just edited as an argument:</p>
+<pre><code class="language-bash">cat file.txt
+</code></pre>
+<p>Using <code>cat</code> to view file contents can be unwieldy and difficult to read if the file is particularly long. As an alternative, you can use the <code>less</code> command which will allow you to paginate the output. Use <code>less</code> to view the contents of the file.txt file, like this:</p>
+<pre><code class="language-bash">less file.txt
+</code></pre>
+<p>This will also print the contents of file.txt, but one terminal page at a time beginning at the start of the file. You can use the spacebar to advance a page, or the arrow keys to go up and down one line at a time. Press <kbd class="keys"><kbd class="key-q">Q</kbd></kbd> to quit out of <code>less</code>.</p>
+<p>Finally, to delete the file.txt file, pass the name of the file as an argument to <code>rm</code>:</p>
+<pre><code class="language-bash">rm file.txt
+rm -d directory
+rmidr directory
+rm -r directory # If the directory you are deleting is not empty
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong>: If your question has to do with a specific Linux command, the manual pages offer detailed and insightful documentation for nearly every command. To see the <code>man</code> page for any command, pass the command’s name as an argument to the <code>man</code> command - <code>man command</code>.
+For instance, <code>man rm</code> displays the purpose of <code>rm</code>, how to use it, what options are available, examples of use, and more useful information.</p>
+<p><strong>NOTE</strong>: If a command fails or is hanging or you just want to stop it, most of the time you can stop the running process by pressing <kbd class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></kbd>. This will send a Keyboard Interrupt message to the program and hopefully stop it.</p>
+</blockquote>
+<h3 id="installing-dependencies-and-useful-programs"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2.5</span> Installing Dependencies and Useful Programs<a class="headerlink" href="#installing-dependencies-and-useful-programs" title="Permanent link">¶</a></h3>
+<p>Like windows and mac, individual programs can be manually downloaded (usually as a <code>tar.gz</code> file instead of <code>exe</code>) and manually installed into your operating system (using <code>dpkg</code>). However, the linux project offers a much more straight forward method through the <code>apt</code> (Advanced Packaging Tool) utility. <code>apt</code> is a free-software user interface that works with core libraries to handle the installation and removal of software on Debian operating systems like Ubuntu. (For other distributions you may come across equivalents like <code>yum</code>). This is the primary method for installing software onto your system.</p>
+<p>To use <code>apt</code>, and more specifically <code>apt-get</code> which 'gets' programs for you, you must first run the <code>update</code> command to get the current list of all available software. Note that because <code>sudo</code> is used, you will most likely need to input your password. <code>sudo</code> will be explained below.</p>
+<pre><code class="language-bash">sudo apt-get update
+</code></pre>
+<blockquote>
+<p><strong>Note</strong> that it will hang (stop responding) or fail if you are not connected to the internet.</p>
+</blockquote>
+<h4 id="installing-git-and-vscode"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2.5.1</span> Installing Git and VSCode<a class="headerlink" href="#installing-git-and-vscode" title="Permanent link">¶</a></h4>
+<p>You can then install your programs using <code>apt-get install</code>. For Starling, you will need to use the <code>git</code> version control software to both download Starling and eventually build your own controllers. To install <code>git</code>, run the following:</p>
+<pre><code class="language-bash">sudo apt-get install git
+</code></pre>
+<p>We also recommend the use of <a href="https://code.visualstudio.com/">Visual Studio Code</a> as your development environment or text editor, but you are free to use whatever you want (atom, notepad++ etc etc). We heavily make use of it during development and recommend a number of extensions. VScode can be installed using the <code>snap</code> utility. <code>snap</code> is a slightly more modern successor to <code>apt</code> for more general programs. <code>snap</code> comes ready installed on your linux distrubtion.</p>
+<pre><code class="language-bash">sudo snap install code --classic
+</code></pre>
+<h4 id="sudo"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2.5.2</span> <code>sudo</code><a class="headerlink" href="#sudo" title="Permanent link">¶</a></h4>
+<p>Now in these commands, we have prefixed all of them with <code>sudo</code>. <code>sudo</code> these days usually stands for <code>superuser do</code> and allows a command to be run with the privileges of the superuser (aka the <em>root</em> user), if the user has been given permissions to do so. Any command which installs or modifies directories outside of the users home directory will often need superuser privileges to avoid non-superusers from changing things they shouldn't. As the above commands all seek to install programs to the system, they need superuser permissions to do so. Running without <code>sudo</code> will give you a permission error. Running a command with <code>sudo</code> will ask you for your <em>own accounts</em> password.</p>
+<h4 id="installing-docker"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2.5.3</span> Installing Docker<a class="headerlink" href="#installing-docker" title="Permanent link">¶</a></h4>
+<p>For Linux systems, see the following <a href="https://docs.docker.com/engine/install/ubuntu/">install page</a>. There are multiple ways of installation docker, but we recommend installing using the repository method:</p>
+<ol>
+<li>
+<p>Update the <code>apt</code> repository and install requirements</p>
+<pre><code>sudo apt-get update
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+</code></pre>
+</li>
+<li>
+<p>Add Docker's official GPG key:</p>
+<pre><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+</code></pre>
+</li>
+<li>
+<p>Add Docker's repository:</p>
+<pre><code>echo \
+"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</code></pre>
+</li>
+<li>
+<p>Install Docker (and docker-compose!):</p>
+<pre><code>sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli docker-compose containerd.io
+</code></pre>
+</li>
+<li>
+<p>Test Docker installation:</p>
+<pre><code>sudo docker run hello-world
+</code></pre>
+</li>
+</ol>
+<p>This will install Docker, accessible using <code>sudo</code> root privileges only. To use docker without sudo, run the following (there are <a href="https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user">security issues</a> with this, but it doesn't matter for running Starling locally)</p>
+<ol>
+<li>
+<p>Run the following</p>
+<pre><code>sudo groupadd docker
+sudo usermod -aG docker $USER
+</code></pre>
+</li>
+<li>
+<p>Log out and log in again to enforce changes</p>
+</li>
+<li>Verify that it was successful (we will come back to this command):<pre><code>docker run hello-world
+</code></pre>
+</li>
+</ol>
+<p>That is Docker on Linux installed. See <a href="https://docs.docker.com/engine/install/ubuntu/">the original page</a> for any further details.</p>
+<h2 id="tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> Tasks<a class="headerlink" href="#tasks" title="Permanent link">¶</a></h2>
+<ol>
+<li>Install and Run Ubuntu 22.04 using a method described above</li>
+<li>Familiarise yourself with Linux and Ubuntu</li>
+<li>Install the programs and applications you might find useful </li>
+</ol>
+<p><em>Further Tasks:</em></p>
+<ol>
+<li>Read the following to get the best introduction! <a href="https://linuxjourney.com/">LinuxJourney</a></li>
+</ol>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../1a_introduction/" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../1c_intro_ros2/" title="ROS2 Installation and ROS2 Re-Intro">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>Copyright © 2024 University College London AML Lab</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../1a_introduction/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../1c_intro_ros2/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>
