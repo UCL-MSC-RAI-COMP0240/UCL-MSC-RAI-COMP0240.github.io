@@ -35,16 +35,7 @@ nav:
     - "Crazyflie with aerostack2": "5_practical_crazyflie_aerostack2.md"
   - Practical 6: 
     - "Introducing Pixhawk and PX4": "6_practical_pixhawk_PX4.md"
-  # - Challenge CW2:
-  #   - "Update soon!"
-  #   - "Group Drone Challenge": "5_challenge_multi_drone.md"
-  #   - "Scenario 1: Multi-Drone Light Show": ""
-  #   - "Scenario 1: Fire Monitoring": ""
-  #   - "Scenario 2: Aerial Delivery": ""
-  #   - "Scenario 3: Formation Following": ""
-  #   - "Scenario 4: Wind Turbine Inspection": ""
-  #   - "Scenario 5: Control and Trajectory Tracking": ""
-  #   - "Scenario 6: In Air Docking & Manipulation": ""
-
+  - Assignment - Challenge Cw2:
+    - "Multi-Drone Swarming Formation Flight Challenge": "7_challenge_multi_drone.md"
 
 extra_css: [ kbd.css ]
