@@ -44,7 +44,7 @@ These examples highlight the versatility of swarm robotics in enhancing efficien
 
 ### Your Challenge
 
-We have created a competition style course with 4 different stages to complete one after another.  
+We have created a competition style course with 4 different stages to complete one after another. For each of these stages, you need to consider the coordination of 5 drones. 
 
 1. **Stage 1: Changing Formations**: 
     - Implementing the formation flight algorithms which have the ability to changing the formation periodically whilst maintaining a circular trajectory. 
@@ -124,7 +124,59 @@ Have a read of the scenarios file to see some of the parameters you will need to
 
 ## Recommended Tasks
 
-To be released
+1. **Understand the Problem and Setup**:
+- Familiarise yourself with the coursework brief
+    - Carefully read the challenge description, objectives, and assessment criteria.
+    - Understand the differences between centralised formation flight and decentralised swarm control.
+
+- Set up the simulation environment
+    - Clone the challenge_multi_drone repository from GitHub.
+    - Follow the README instructions to install dependencies and patches for Aerostack2 and Crazyflie interfaces.
+    - Run a basic test to ensure Gazebo and RViz2 are launching correctly.
+
+- Analyse the provided scenario1.yaml file
+    - Understand the environment parameters (waypoints, obstacles, formation constraints).
+    - Identify key parameters you may need to tune for different stages.
+
+2. **Implementing Baseline Formation Flight Strategies**:
+- Stage 1: Implement basic formation flight
+    - Choose and implement a baseline centrailised approach e.g. leader-Follower model, global multi-agent planning or virtual structure
+    - Choose and implement a baseline decentralised apporach e.g. boids-based, consensus-based control, potential fields
+    - Compare different formation shapes (Line, V-shape, Diamond, Circular Orbit, Grid, Staggered).
+      
+- Test formation transitions
+    - Implement periodic formation shape changes while maintaining a circular trajectory.
+    - Ensure smooth transitions between formations.
+
+3. **Developing Advanced Adaptive Formation Control**
+- Stage 2: Implement Window Traversal strategies
+    - Design methods to split, rejoin, or compress the formation to pass through narrow gaps.
+    - Compare centralised and decentralised methods for managing formation changes.
+
+- Stage 3: Implement Forest Traversal strategies
+    - Introduce collision avoidance mechanisms while maintaining formation integrity.
+    - Test how different formation control methods handle navigation through obstacles.
+
+- Stage 4: Implement Dynamic Obstacle Avoidance
+    - Introduce adaptive reconfiguration to respond to moving obstacles in real-time.
+    - Optimise decision-making for obstacle avoidance without breaking formation integrity.
+
+4. **Performance Evaluation and Optimisation**
+- Compare performance of centralised vs decentralised approaches
+    - Evaluate formation stability, reconfigurability, and efficiency in each scenario.
+    - Measure performance metrics such as completion time, success rate, and communication overhead.
+
+- Optimise computational efficiency
+    - Reduce latency and improve real-time response.
+    - Tune formation parameters and control gains for smoother transitions.
+
+- Document findings for coursework submission
+    - Provide an analysis comparing both approaches, their strengths, and limitations.
+    - Include performance graphs, data plots, and insights from the simulation trials.
+    - Discuss real-world applications and trade-offs in different industry scenarios.
+
+## Suggested Group Task Assignments
+To ensure a fair workload distribution, each group member should be responsible for complementary tasks while collaborating on integration, testing, and final documentation. Below are 3 suggested task division strategies, allowing flexibility based on skillsets and interests.
 
 ## Coursework Submission
 
