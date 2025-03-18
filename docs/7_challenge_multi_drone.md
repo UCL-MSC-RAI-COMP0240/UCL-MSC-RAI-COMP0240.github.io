@@ -176,12 +176,98 @@ Have a read of the scenarios file to see some of the parameters you will need to
     - Discuss real-world applications and trade-offs in different industry scenarios.
 
 ## Suggested Group Task Assignments
-To ensure a fair workload distribution, each group member should be responsible for complementary tasks while collaborating on integration, testing, and final documentation. Below are 3 suggested task division strategies, allowing flexibility based on skillsets and interests.
+To ensure a fair workload distribution, each group member should be responsible for complementary tasks while collaborating on integration, testing, and final documentation. Our suggested task division strategy is to split by the development of centralised and decentralised algorithms, allowing flexibility based on skillsets and interests. E.g.:
 
+- Student 1 (Centralised Control)
+    - Implement Leader-Follower model, Global Multi-agent Planning or Virtual Structure
+    - Test formation transitions using predefined trajectory control.
+    - Evaluate control performance for formation maintenance and obstacle avoidance.
+
+Student 2 (Decentralised Swarm Methods)
+    - Implement Boids Model, Potential Fields, and Consensus-Based Control.
+    - Develop an adaptive swarm behaviour that responds to environmental constraints.
+    - Fine-tune local interaction rules to optimise coordination and robustness.
+
+Regardless of the distribution of tasks, groups meet jointly come together to:
+- Compare centralised versus decentralised performance across the different scenarios
+- Ensure solutions work in each scenario
+- Prepare a report with performance metrics, trade-off analysis and conclusions.
+  
 ## Coursework Submission
 
 To be released
 
-## Assessment Breakdown and Structure
+## Assessment Breakdown and Structure (Deadline 23rd April 16.00)
 
-To be released
+1. **Report Structure (total page count 10 - ~6000 words limit)**
+- *Introduction (10%)*
+    - Brief Overview: Explain the purpose of the coursework and significance of drone swarming.
+    - Problem Statement: What are the challenges in multi-UAV formation flight?
+    - Objectives: Define the goal of the report (e.g., evaluating centralised vs. decentralised approaches).
+ 
+- *Methodology (30%)*
+    - Formation Flight Strategies:
+        - Centralised Approach: Implement one method (e.g., Leader-Follower, Virtual Structures, or Multi-Agent Path Planning).
+        - Decentralised Approach: Implement one method (e.g., Boids Model, Potential Fields, or Consensus-Based Control).
+
+    - Swarm Coordination Mechanisms:
+        - How do the UAVs maintain formation and avoid collisions?
+        - How does formation reconfiguration (splitting/rejoining) work?
+
+    - Implementation Process:
+        - Algorithm Design: Explain key design choices.
+        - Simulation Environment: Describe ROS2, Aerostack2, and scenario1.yaml configuration.
+        - Tuning of Parameters: Explain how you adjusted parameters to optimise performance.
+
+- *Experimental Results & Performance Evaluation (25%) (~3-4 Pages)*
+    - Comparative Analysis:
+        - Stage 1 - Formation Changes:
+            - Success rate of formation transitions.
+            - Time taken for different formation types (e.g., Line, V-shape, Diamond).
+            - Time taken for completion.
+        - Stage 2 - Window Traversal:
+            - Success rate (%) of drones passing through gaps, number of collisions.
+            - Time taken to rejoin formations.
+            - Time taken for completion.
+        - Stage 3 - Forest Traversal:
+            - Success rate, number of collisions.    
+            - Efficiency of obstacle avoidance while maintaining formation.
+            - Time taken for completion.
+        - Stage 4 - Dynamic Obstacles:
+            - Adaptive formation behaviour against moving obstacles.
+            - Success rate, number of collisions.
+            - Time taken for completion.
+     
+Other metric to consider is computational time and real-time response.
+     
+- *Discussion (20%)*
+    - Key Insights:
+        - Strengths and weaknesses of centralised vs. decentralised approaches.
+        - How formation stability, obstacle handling, and adaptability differ between methods.
+        - Computational efficiency and real-time response.
+      
+    - Challenges & Mitigations:
+        - Issues encountered in implementation, debugging, or parameter tuning.
+        - Solutions applied to overcome performance bottlenecks.
+
+    - Future Improvements:
+        - Ideas for improving UAV swarm coordination.
+        - Possible hybrid approaches that combine centralised and decentralised control.
+
+- *Conclusion (10%)*
+    - Summary of Findings: Key takeaways from experiments.
+    - Final Performance Insights: Which method worked best? Under what conditions?
+    - Real-World Applications: Discuss how these methods can be used in disaster response, logistics, or surveillance.
+
+2. **Video Submission**
+- Length: 5mins
+- Format: MP4, max 500mb
+- Required Elements:
+    - Formation Flight Demonstration – Show formation transitions in the simulator.
+    - Obstacle Traversal – Showcase Window and Forest Traversal.
+    - Side-by-Side Comparison – Compare Centralised vs. Decentralised approaches.
+    - Performance Metrics Overlay – Display success rates and efficiency stats.
+    - Brief Narration/Annotations – Explain the observed UAV behaviours.
+
+3. **Code Submission**
+- Zip your packages to upload
