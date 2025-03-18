@@ -238,8 +238,6 @@ To be released
             - Success rate, number of collisions.
             - Time taken for completion.
      
-Other metric to consider is computational time and real-time response.
-     
 - *Discussion (20%)*
     - Key Insights:
         - Strengths and weaknesses of centralised vs. decentralised approaches.
