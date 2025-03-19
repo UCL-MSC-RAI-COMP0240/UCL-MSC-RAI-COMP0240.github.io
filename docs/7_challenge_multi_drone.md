@@ -4,7 +4,7 @@
 
 ## Challenge
 
-This challenge revolves around swarming of drones and formation flight. We are asking you to investigate the difference in performance and application of decentralised swarm based approaches versus centralised approaches to performing formation flight with a group of 5 drones (minimum 3 if experiencing technical issues) in 4 different scenarios. 
+This challenge revolves around swarming of drones and formation flight. We are asking you to investigate the difference in performance and application of decentralised swarm based approaches versus centralised approaches to performing formation flight with a group of 5 drones (minimum 3 if experiencing technical issues) in 4 different scenario stages. 
 
 ### Swarming and Formation Flight
 
