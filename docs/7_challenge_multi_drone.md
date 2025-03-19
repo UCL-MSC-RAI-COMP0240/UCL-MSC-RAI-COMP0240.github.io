@@ -4,7 +4,7 @@
 
 ## Challenge
 
-This challenge revolves around swarming of drones and formation flight. We are asking you to investigate the difference in performance and application of decentralised swarm based approaches versus centralised approaches to performing formation flight with a group of 5 drones in 4 different scenarios. 
+This challenge revolves around swarming of drones and formation flight. We are asking you to investigate the difference in performance and application of decentralised swarm based approaches versus centralised approaches to performing formation flight with a group of 5 drones (minimum 3 if experiencing technical issues) in 4 different scenarios. 
 
 ### Swarming and Formation Flight
 
@@ -44,7 +44,11 @@ These examples highlight the versatility of swarm robotics in enhancing efficien
 
 ### Your Challenge
 
-We have created a competition style course with 4 different stages to complete one after another. For each of these stages, you need to consider the coordination of 5 drones. 
+We have created a competition style course with 4 different stages to complete one after another. 
+
+For each of these stages, you need to consider the coordination of 5 drones using either a centrialised and decentrialised method of your choosing.
+
+In groups of 2, you will be investigating, developing and testing your algorithms primarily in simulation.
 
 1. **Stage 1: Changing Formations**: 
     - Implementing the formation flight algorithms which have the ability to changing the formation periodically whilst maintaining a circular trajectory. 
@@ -64,9 +68,11 @@ We have created a competition style course with 4 different stages to complete o
 
 ![schematic](images/7_schematic.png)
 
-In groups of 2, you will be investigating, developing and testing your algorithm primarily in simulation. You will be given the opportunity to run a viable solution on real crazyflies on the 26th March and 2nd April at UCL HereEast. Points will be awarded on the completion of each stage, and performance within. 
+## Challenge Event at HereEast 26th March
 
-As an incentive to run your solution on hardware at UCL HereEast, groups have the chance to compete and complete Stage 2. A small, low value prize will be provided to the winning solution based on success rate, time take, efficiency and re-configurablity. 
+In your groups, you will be given the opportunity to run a viable solution on real crazyflies on the 26th March at UCL HereEast - this is an optional non-assessed task, but I encourage as many groups as possible to join the event. We will be maintaining a leader board and points will be awarded based on success rate, reconfigurablity and time taken. See Challenge Event at HereEast.  
+
+As an incentive to run your solution on hardware at UCL HereEast, groups have the chance to complete Stage 2 and or 3 depending on time. A small, low value prize will be provided to the winning solution. A sign up sheet will be provided. The event will be recorded. Regardless of whether you are competing or not, I encourage students to attend the session to support your fellow colleagues. 
 
 ## Challenge Environemnt
 
