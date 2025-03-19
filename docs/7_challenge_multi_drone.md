@@ -213,7 +213,7 @@ To be released
 
 Marking will be based on your submitted report, video and code only.
 
-1. **Report Structure (total page count 10 - ~6000 words limit)**
+1. **Report Structure (total page count 10 - ~6000 words limit, 60% of total grade)**
 - *Introduction (10%)*
     - Brief Overview: Explain the purpose of the coursework and significance of drone swarming.
     - Problem Statement: What are the challenges in multi-UAV formation flight?
@@ -274,7 +274,7 @@ Marking will be based on your submitted report, video and code only.
 - *Contribution Statement*
     - Summary of your individual contributions to the report and video submission. 
 
-2. **Video Submission**
+2. **Video Submission (40% of total grade) **
 - Length: 5mins
 - Format: MP4, max 500mb
 - Required Elements:
