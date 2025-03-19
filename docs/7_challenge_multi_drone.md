@@ -70,11 +70,11 @@ In groups of 2, you will be investigating, developing and testing your algorithm
 
 ## Challenge Event at HereEast 26th March
 
-In your groups, you will be given the opportunity to run a viable solution on real crazyflies on the 26th March at UCL HereEast - this is an optional non-assessed task, but I encourage as many groups as possible to join the event. We will be maintaining a leader board and points will be awarded based on success rate, reconfigurablity and time taken. See Challenge Event at HereEast.  
+In your groups, you will be given the opportunity to run a viable solution on real crazyflies on the 26th March and / or 2nd April at UCL HereEast - this is an optional non-assessed task, but I encourage as many groups as possible to join the event. We will be maintaining a leaderboard and points will be awarded based on success rate, reconfigurablity and time taken. A sign up sheet will be provided.
 
-As an incentive to run your solution on hardware at UCL HereEast, groups have the chance to complete Stage 2 and or 3 depending on time. A small, low value prize will be provided to the winning solution. A sign up sheet will be provided. The event will be recorded. Regardless of whether you are competing or not, I encourage students to attend the session to support your fellow colleagues. 
+As an incentive to run your solution on hardware at UCL HereEast, groups have the chance to complete Stage 2 and or 3 depending on logistics and the number of crashes. A small, low value prize will be provided to the winning solution. The event will be recorded. Regardless of whether you are competing or not, I encourage students to attend the session to support your fellow colleagues. 
 
-## Challenge Environemnt
+## Challenge Environment
 
 Just as with the previous courseworks and gazebo aruco challenges, this will also be within aerostack2 and ros2. At this point you should feel more familiar with the systems and how they all work. To enable this challenge, we have created a new repository specifically for this challenge. 
 
@@ -143,11 +143,12 @@ Have a read of the scenarios file to see some of the parameters you will need to
     - Analyse the provided scenario1.yaml file
         - Understand the environment parameters (waypoints, obstacles, formation constraints).
         - Identify key parameters you may need to tune for different stages.
+        - Try not to hard core your solutions, read the initial parameters from the yaml file. 
 
 - **Implementing Baseline Formation Flight Strategies**:
     - Stage 1: Implement basic formation flight
-        - Choose and implement a baseline centrailised approach e.g. leader-Follower model, global multi-agent planning or virtual structure
-        - Choose and implement a baseline decentralised apporach e.g. boids-based, consensus-based control, potential fields
+        - Choose and implement 1 centrailised approach e.g. leader-Follower model, global multi-agent planning or virtual structure
+        - Choose and implement 1 decentralised approach e.g. boids-based, consensus-based control, potential fields
         - Compare different formation shapes (Line, V-shape, Diamond, Circular Orbit, Grid, Staggered).
       
     - Test formation transitions
@@ -168,7 +169,7 @@ Have a read of the scenarios file to see some of the parameters you will need to
         - Optimise decision-making for obstacle avoidance without breaking formation integrity.
 
 - **Performance Evaluation and Optimisation**
-    - Compare performance of centralised vs decentralised approaches
+    - Compare performance of centralised vs decentralised approaches for each of the stages 1-4.
         - Evaluate formation stability, reconfigurability, and efficiency in each scenario.
         - Measure performance metrics such as completion time, success rate, and communication overhead.
 
@@ -185,16 +186,16 @@ Have a read of the scenarios file to see some of the parameters you will need to
 To ensure a fair workload distribution, each group member should be responsible for complementary tasks while collaborating on integration, testing, and final documentation. Our suggested task division strategy is to split by the development of centralised and decentralised algorithms, allowing flexibility based on skillsets and interests. E.g.:
 
 - Student 1 (Centralised Control)
-    - Implement Leader-Follower model, Global Multi-agent Planning or Virtual Structure
+    - Implement 1 algorithm to solve the stages e.g. Leader-Follower model, Global Multi-agent Planning or Virtual Structure
     - Test formation transitions using predefined trajectory control.
     - Evaluate control performance for formation maintenance and obstacle avoidance.
 
 - Student 2 (Decentralised Swarm Methods)
-    - Implement Boids Model, Potential Fields, and Consensus-Based Control.
+    - Implement 1 algorithm to solve the stages e.g. Boids Model, Potential Fields, and Consensus-Based Control.
     - Develop an adaptive swarm behaviour that responds to environmental constraints.
     - Fine-tune local interaction rules to optimise coordination and robustness.
 
-Regardless of the distribution of tasks, groups meet jointly come together to:
+Regardless of the distribution of tasks, groups then need to jointly come together and share their algorithms:
 - Compare centralised versus decentralised performance across the different scenarios
 - Ensure solutions work in each scenario
 - Prepare a report with performance metrics, trade-off analysis and conclusions.
@@ -262,6 +263,9 @@ To be released
     - Summary of Findings: Key takeaways from experiments.
     - Final Performance Insights: Which method worked best? Under what conditions?
     - Real-World Applications: Discuss how these methods can be used in disaster response, logistics, or surveillance.
+ 
+- *Contribution Statement*
+    - Summary of your individual contributions to the report and video submission. 
 
 2. **Video Submission**
 - Length: 5mins
