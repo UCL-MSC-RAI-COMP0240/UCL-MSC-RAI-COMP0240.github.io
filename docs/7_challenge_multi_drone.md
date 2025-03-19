@@ -44,11 +44,11 @@ These examples highlight the versatility of swarm robotics in enhancing efficien
 
 ### Your Challenge
 
-We have created a competition style course with 4 different stages to complete one after another. 
+We have created a competition style course with 4 different scenario stages to complete one after another. 
 
-For each of these stages, you need to consider the coordination of 5 drones using either a centrialised and decentrialised method of your choosing.
+For each of these stages 1 to 4, you need to consider the coordination of 5 drones using either a centrialised and decentrialised method of your choosing. The aim is to route 5 drones through each scenario stage. If you have technical challenges, an acceptable minimum number of drones is 3.
 
-In groups of 2, you will be investigating, developing and testing your algorithms primarily in simulation.
+In groups of 2, you will be investigating, developing and testing your algorithms in simulation.
 
 1. **Stage 1: Changing Formations**: 
     - Implementing the formation flight algorithms which have the ability to changing the formation periodically whilst maintaining a circular trajectory. 
@@ -68,11 +68,15 @@ In groups of 2, you will be investigating, developing and testing your algorithm
 
 ![schematic](images/7_schematic.png)
 
-## Challenge Event at HereEast 26th March
+## Hardware Challenge Event at HereEast 26th March
 
-In your groups, you will be given the opportunity to run a viable solution on real crazyflies on the 26th March and / or 2nd April at UCL HereEast - this is an optional non-assessed task, but I encourage as many groups as possible to join the event. We will be maintaining a leaderboard and points will be awarded based on success rate, reconfigurablity and time taken. A sign up sheet will be provided.
+In your groups, you will be given the opportunity to run a viable solution on real crazyflies on the 26th March and / or 2nd April at UCL HereEast - this is an optional non-assessed task.
 
-As an incentive to run your solution on hardware at UCL HereEast, groups have the chance to complete Stage 2 and or 3 depending on logistics and the number of crashes. A small, low value prize will be provided to the winning solution. The event will be recorded. Regardless of whether you are competing or not, I encourage students to attend the session to support your fellow colleagues. 
+I encourage as many groups as possible to join the event. We will be maintaining a leaderboard and points will be awarded based on success rate, reconfigurablity and time taken. A sign up sheet will be provided.
+
+As an incentive to run your solution on hardware at UCL HereEast, groups have the chance to complete scenario stages 2 and or 3 depending on logistics and the number of crashes we have on the day. A small, low value prize will be provided to the winning solution. The event will be recorded. 
+
+Regardless of whether you are competing or not, I encourage students to attend the sessions to support your fellow colleagues. 
 
 ## Challenge Environment
 
@@ -139,6 +143,7 @@ Have a read of the scenarios file to see some of the parameters you will need to
         - Clone the challenge_multi_drone repository from GitHub.
         - Follow the README instructions to install dependencies and patches for Aerostack2 and Crazyflie interfaces.
         - Run a basic test to ensure Gazebo and RViz2 are launching correctly.
+        - The aim is to route 5 drones through each scenario stage. If you have technical challenges, an acceptable minimum number of drones is 3.
 
     - Analyse the provided scenario1.yaml file
         - Understand the environment parameters (waypoints, obstacles, formation constraints).
@@ -205,6 +210,8 @@ Regardless of the distribution of tasks, groups then need to jointly come togeth
 To be released
 
 ## Assessment Breakdown and Structure (Deadline 23rd April 16.00)
+
+Marking will be based on your submitted report, video and code only.
 
 1. **Report Structure (total page count 10 - ~6000 words limit)**
 - *Introduction (10%)*
