@@ -207,7 +207,15 @@ Regardless of the distribution of tasks, groups then need to jointly come togeth
   
 ## Coursework Submission
 
-To be released
+The deadline for this coursework is 23rd April 2025, 16.00.
+
+Submissions will uploaded into Moodle using the relevant **Coursework 2** submission links.
+
+You will need to submit 3 links on moodle items:
+
+1. Coursework 2 report: This report should be structured to clearly explain the problem, methodology, implementation, results and conclusions.
+2. 4min - Video Presentation: Narrative, demonstration and summary of results
+3. Code submission
 
 ## Assessment Breakdown and Structure (Deadline 23rd April 16.00)
 
@@ -283,6 +291,7 @@ Marking will be based on your submitted report, video and code only.
     - Side-by-Side Comparison – Compare Centralised vs. Decentralised approaches.
     - Performance Metrics Overlay – Display success rates and efficiency stats.
     - Brief Narration/Annotations – Explain the observed UAV behaviours.
+    - Conclusion/Summary of key results.
 
 3. **Code Submission**
 - Zip your packages to upload
