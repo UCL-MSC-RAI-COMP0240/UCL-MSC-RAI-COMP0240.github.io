@@ -279,7 +279,7 @@ Marking will be based on your submitted report, video and code only.
     - Final Performance Insights: Which method worked best? Under what conditions?
     - Real-World Applications: Discuss how these methods can be used in disaster response, logistics, or surveillance.
  
-- *Contribution Statement*
+- *Contribution Statement (5%)*
     - Summary of your individual contributions to the report and video submission. 
 
 2. **Video Submission (40% of total grade) **
