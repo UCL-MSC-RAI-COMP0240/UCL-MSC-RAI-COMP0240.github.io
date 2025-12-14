@@ -9,7 +9,7 @@ This is an optional session in which you will be able to fly a real drone manual
 - **Step3**: Test your mission file through autonomous flight
 
 ## Step1: Setup the simuatlion environment
-In order to conduct autonomously flight with real drone at the end of this session, we need to simulate it beforehand out of reasons such as safety test and debugging. What we need for simualtion environmen here is the exact software stack we will use in the real drone. It combines flight control firmware (PX4), ROS2, Aerostack2. In addition, We will use Gazebo as simulator for this time.
+In order to conduct autonomously flight with real drone at the end of this session, we need to simulate it beforehand out of reasons such as safety test and debugging. What we need for simualtion environmen here is the exact software stack we will use in the real drone. It combines flight control firmware (PX4), ROS2, Aerostack2. In addition, we will use Gazebo as simulator for this time.
 
 ### Install ROS2 humble and Gazebo
 
@@ -41,14 +41,14 @@ Launch the aerostack2:
 cd ~/project_gazebo_ws/src/project_mavlink
 ./launch_as2_gazebo.bash -n qav1
 ```
-Start the PX4 SITL:
+Start the PX4 SITL, it will launch the gazebo automatically:
 
 ```bash
 cd PX4-Autopilot
 make px4_sitl gz_x500
 ```
 
-Run the mission file: navigate to the mission monitoring panel by using ctrl+B and ↑ ↓ ← →, and then 
+Run the mission file: navigate to the mission monitoring panel by using ctrl+b and arrow keys ↑ ↓ ← →, and then 
 
 ```bash
 python3 mission.py
