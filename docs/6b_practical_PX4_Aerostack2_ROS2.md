@@ -8,7 +8,7 @@ This is an optional session in which you will be able to fly a real drone manual
 - **Step3**: Setup the real drone (qav250)
 - **Step3**: Test your mission file through autonomous flight
 
-## Setup the simuatlion environment
+## Step1: Setup the simuatlion environment
 In order to conduct autonomously flight with real drone at the end of this session, we need to simulate it beforehand out of reasons such as safety test and debugging. What we need for simualtion environmen here is the exact software stack we will use in the real drone. It combines flight control firmware (PX4), ROS2, Aerostack2. In addition, We will use Gazebo as simulator for this time.
 
 ### Install ROS2 humble and Gazebo
@@ -24,5 +24,39 @@ Please refer to PX4 installation guide in [PRACTICAL6](https://ucl-msc-rai-comp0
 Please refer to Aerostack2 installation guide in [PRACTICAL2-5.2Aerostack2 Installation](https://ucl-msc-rai-comp0240.github.io/2_practical_gazebo_aruco/).
 
 ### Setup the project
+In this session, we will use anonther aerostack2 project called project_mavlink which allows PX4 communicating with ROS2 through MAVROS bridge. We made some modification to the original project, so please use our github repo instead of the original one.
 
+Get the project locally:
 
+```bash
+mkdir -p ~/project_gazebo_ws/src
+cd ~/project_gazebo_ws/src
+git clone https://github.com/UCL-MSC-RAI-COMP0240/project_mavlink.git
+```
+## Step2: Test your mission script in the simulation environment
+
+Launch the aerostack2:
+
+```bash
+cd ~/project_gazebo_ws/src/project_mavlink
+./launch_as2_gazebo.bash -n qav1
+```
+Start the PX4 SITL:
+
+```bash
+cd PX4-Autopilot
+make px4_sitl gz_x500
+```
+
+Run the mission file: navigate to the mission monitoring panel by using ctrl+B and ↑ ↓ ← →, and then 
+
+```bash
+python3 mission.py
+```
+
+Stop the aerostack:
+
+```bash
+cd ~/project_gazebo_ws/src/project_mavlink
+./stop_tmuxinator_as2_gazebo.bash
+```
