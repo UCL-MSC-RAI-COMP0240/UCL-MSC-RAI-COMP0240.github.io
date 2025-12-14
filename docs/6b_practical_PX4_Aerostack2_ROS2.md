@@ -6,7 +6,7 @@ This is an optional session in which you will be able to fly a real drone manual
 - **Step1**: Setup the simulation environment
 - **Step2**: Test your mission script in the simulation environment
 - **Step3**: Setup the real drone (qav250)
-- **Step3**: Test your mission file through autonomous flight
+- **Step4**: Test your mission file through autonomous flight
 
 ## Step1: Setup the simuatlion environment
 In order to conduct autonomously flight with real drone at the end of this session, we need to simulate it beforehand out of reasons such as safety test and debugging. What we need for simualtion environmen here is the exact software stack we will use in the real drone. It combines flight control firmware (PX4), ROS2, Aerostack2. In addition, we will use Gazebo as simulator for this time.
