@@ -1,6 +1,6 @@
 # Practical 6b: Pixhawk and PX4, Aerostack2, ROS2
 
-##Overview
+## Overview
 This is an optional session in which you will be able to fly a real drone manualy and autonomously with the holistic software stack you have learned in this module (PX4,Aerostack2, and ROS2) in HereEast fly area. This session contains the following steps:
 
 - **Step1**: Setup the simulation environment
@@ -24,4 +24,5 @@ Please refer to PX4 installation guide in [PRACTICAL6](https://ucl-msc-rai-comp0
 Please refer to Aerostack2 installation guide in [PRACTICAL2-5.2Aerostack2 Installation](https://ucl-msc-rai-comp0240.github.io/2_practical_gazebo_aruco/).
 
 ### Setup the project
+
 
