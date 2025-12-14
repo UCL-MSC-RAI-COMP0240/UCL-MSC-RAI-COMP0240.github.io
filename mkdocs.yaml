@@ -34,7 +34,7 @@ nav:
   - Practical 5: 
     - "Crazyflie with aerostack2": "5_practical_crazyflie_aerostack2.md"
   - Practical 6: 
-    - "Introducing Pixhawk and PX4": "6_practical_pixhawk_PX4.md"
+    - "Introducing Pixhawk and PX4": "6a_practical_pixhawk_PX4.md"
     - "Autonomous flight with PX4,ROS2 and aerostack2": "6b_practical_PX4_Aerostack2_ROS2.md"
   - Assignment - Challenge Cw2:
     - "Multi-Drone Swarming Formation Flight Challenge": "7_challenge_multi_drone.md"

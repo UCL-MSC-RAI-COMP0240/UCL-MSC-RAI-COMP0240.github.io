@@ -1,4 +1,4 @@
-# Practical 6b: Pixhawk and PX4, Aerostack2, ROS2
+# Practical 6b: Autonomous flight with Pixhawk, Aerostack2, ROS2
 
 ## Overview
 This is an optional session in which you will be able to fly a real drone manualy and autonomously with the holistic software stack you have learned in this module (PX4,Aerostack2, and ROS2) in HereEast fly area. This session contains the following steps:
