@@ -20,11 +20,11 @@ plugins:
 
 nav:
   - Practical 1 & 2: 
-    - "Introduction": "1a_introduction.md"
-    - "Ubuntu Installation and Linux Re-Intro": "1b_intro_linux.md"
-    - "ROS2 Installation and ROS2 Re-Intro": "1c_intro_ros2.md"
-    - "Aerostack2 Introduction": "1d_aerostack2.md"
-    - "Gazebo Aruco Mini-Challenge": "2_practical_gazebo_aruco.md"
+    - "1. Introduction": "1a_introduction.md"
+    - "2. Ubuntu Installation and Linux Re-Intro": "1b_intro_linux.md"
+    - "3. ROS2 Installation and ROS2 Re-Intro": "1c_intro_ros2.md"
+    - "4. Aerostack2 Introduction": "1d_aerostack2.md"
+    - "5. Gazebo Aruco Mini-Challenge": "2_practical_gazebo_aruco.md"
   - Practical 3 & 4:
     - "Introduction": "3a_practical_crazyflie.md"
     - "Building Crazyflies": "3b_practical_crazyflie.md"
