@@ -62,16 +62,21 @@ cd ~/project_gazebo_ws/src/project_mavlink
 ```
 
 ## Step3: Setup and bench test the real drone (qav250) in Here east flight arena
-Now we are ready to deploy our software stack onto a real drone and conduct a real flight. You will need to book a slot to UCL Here east flight area for the drone flight. Please use the following link to book.
+Now we are ready to deploy our software stack onto a real drone and conduct a real flight. You will need to book a slot to UCL Here east flight area for the drone flight. Please use the following link to book. (Will add in soon)
 
 1.Get safety induction
-2.Familiarize infrastructure in UCL Here east Flight arena
-3.Familiarize the drone
+
+2.Familiarize yourself with infrastructure of UCL Here east Flight arena
+
+3.Familiarize yourself with the drone
+
 4.Bench testing
 
-## Step4: Conduct your mission on the real drone 
+## Step4: Conduct your mission on qav250 
 Before running your mission file, we need to ensure the drone's safety through manual flight and simple autonomously flight.
 
 1.Manual fly in position mode
+
 2.Autonomous fly with simple mission (just take off and land)
+
 3.Autonomous fly with your mission file
