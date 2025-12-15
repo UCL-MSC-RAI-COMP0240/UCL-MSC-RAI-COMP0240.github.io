@@ -35,7 +35,7 @@ By completing the practicals and challenges, you will develop skills in:
 
 
 ### Practical 1 - Foundations: ROS 2 and Aerostack2
-> Weeks 1 and 2
+> Duration: Weeks 1 and 2
 
 Practical 1 introduces the core software tools used throughout the course. You will gain foundational experience with Linux, ROS 2, and Aerostack2, applied through a simulated drone project.
 
@@ -46,7 +46,7 @@ Topics include:
 - Developing a simulation-to-reality workflow
 
 ### Practical 2 - Introduction to the crazyflie platform and setup
-> Weeks 3 and 4
+> Duration: Weeks 3 and 4
 
 In pairs, you will assemble and fly an educational micro-drone platform known as the Crazyflie.
 
@@ -58,7 +58,7 @@ You will:
 This practical bridges simulation and real-world deployment at a small, safe scale.
 
 ### CW1: Structural Inspection Path Planning Challenge
-> Weeks 4, 5 and 6
+> Duration: Weeks 4, 5 and 6
 
 For the first challenge, you will be working individually primarily in simulation to solve a key part of the structural inspection path planning problem. Your task will be in investigating and implementing solutions to finding the most optimal way of visiting a series of locations representing inspection locations, while avoiding the obstacles in the environment. 
 
