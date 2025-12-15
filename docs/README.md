@@ -11,6 +11,7 @@ The aim of these practicals is to provide hands-on experience with aerial roboti
 You will work with modern drone software stacks and hardware platforms to understand how autonomy is developed, tested, and deployed in practice.
 
 The practical component is structured as:
+
 - 3 Themed practicals (formative)
 - 2 Challenges (assessed)
 
