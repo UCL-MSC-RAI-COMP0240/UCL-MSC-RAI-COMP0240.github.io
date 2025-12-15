@@ -26,4 +26,5 @@ You are expected to complete the tasks individually and work through the associa
     - You will implement a simple solution within Aerostack2 to solve a perception-driven task in Gazebo.
     - This serves as a first end-to-end example of an aerial robotics workflow.
     - The aim is to complete this challenge by the end of week 2.
+      
 ![teleop](images/2_teleoperation.png)
