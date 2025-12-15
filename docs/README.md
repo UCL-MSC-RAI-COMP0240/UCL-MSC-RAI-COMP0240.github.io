@@ -1,63 +1,70 @@
 # COMP0240 Aerial Robotics Practical
 
-Welcome to the tutorials and practicals for the UCL Computer Science MSC Robotics and AI module **COMP0240 Aerial Robotics** 2025 Edition. 
+Welcome to the tutorials and practicals for the UCL Computer Science MSC Robotics and AI module **COMP0240 Aerial Robotics** 2025-2026 Edition. 
 
-This tutorial website follows along with the 10 week, 2nd term course intended for practical tutorials of around 2-3hrs a week. 
+This website accompanies the 10-week, Term 2 practical component of the course. You will typically spend 2–3 hours per week engaging with guided tutorials, simulation exercises, and (where feasible) hands-on drone experiments.
 
 ## About
 
-The purpose of these practicals is to give you hands on experience in working with drones, drone system and drone autonomy in simulation and reality to the extent possible in the classroom.  
-The practicals are split into 
-- 3 Practicals
-- 2 Challenges
+The aim of these practicals is to provide hands-on experience with aerial robotic systems, covering both simulation-based development and real-world micro-drone experimentation within a classroom and laboratory setting.
 
-Each of the practicals has a document on the left hand side of this page. The intention is that you follow the instructions to get the basics working, and then you explore the topic through doing the tasks. 
+You will work with modern drone software stacks and hardware platforms to understand how autonomy is developed, tested, and deployed in practice.
 
-The practicals should one by one hopefully build up the skills, knowledge and intuition required to complete the challenges.
+The practical component is structured as:
+- 3 Themed practicals (formative)
+- 2 Challenges (assessed)
+
+Each practical has a dedicated guide accessible from the navigation panel on the left. Working in groups of 2, you are expected to follow the instructions to establish baseline functionality, and then extend the system through exploratory tasks.
+
+The practicals are designed to progressively build your technical skills, system understanding, and intuition, preparing you to complete the assessed challenges.
+
+## Challenge Assessments
 
 The challenges serve as this courses assessed component. Due to the complexities of dealing with hardware, and to enable student exploration of the different challenges within robotics, these will be group challenges. The challenges revolve around the technical exploration in solving a particular problem and communicating your solution through a presentation.  
 
-## What We Will Cover
+## What You Will Learn
 
-During these practicals, we aim for students to learn and pick up on the following skills:
+By completing the practicals and challenges, you will develop skills in:
 
 - Familiarising yourself with basic drone hardware and components 
 - Experience with using experimental micro-drone systems 
 - Programming single and multiple micro-drone systems 
-- Simulation to reality development pipelines
-- Experience with industrial drone systems
-- Solving real-world problems with drone systems 
+- Developing autonomy in simulation and transferring it to real systems
+- Using industry-relevant drone software stacks
+- Framing and solving real-world aerial robotics problems
 
 
-### Practical 1 - ROS2 setup and introduction to AeroStack2
-
+### Practical 1 - Foundations: ROS 2 and Aerostack2
 > Weeks 1 and 2
 
-In practical 1, we start from introducing basical knowledge about linux system, ROS2 and the aerostack2 drone system management platform and then practice them through a simualted project. 
+Practical 1 introduces the core software tools used throughout the course. You will gain foundational experience with Linux, ROS 2, and Aerostack2, applied through a simulated drone project.
 
-- Installing ROS2 and Learning about aerostack2 and what capabilities it gives us
-- Applying ROS2 to drone applications 
-- Learning simulation to real development pipeline 
+Topics include:
+- Installing and configuring ROS 2
+- Understanding Aerostack2 and its system-level capabilities
+- Applying ROS 2 concepts to aerial robotics
+- Developing a simulation-to-reality workflow
 
 ### Practical 2 - Introduction to the crazyflie platform and setup
-
 > Weeks 3 and 4
 
-In practical 2, in pairs, you will be putting together and attempting to fly an educational micro-drone platfrom known as the crazyflie. 
+In pairs, you will assemble and fly an educational micro-drone platform known as the Crazyflie.
 
-- You will need to assemble the micro-drone
-- Work out how to fly the drone
-- Autonomously fly the drone using the crazyflie API
+You will:
+- Assemble the micro-drone hardware
+- Learn safe and stable manual flight
+- Implement autonomous behaviours using the Crazyflie API
+
+This practical bridges simulation and real-world deployment at a small, safe scale.
 
 ### CW1: Structural Inspection Path Planning Challenge
-
 > Weeks 4, 5 and 6
 
 For the first challenge, you will be working individually primarily in simulation to solve a key part of the structural inspection path planning problem. Your task will be in investigating and implementing solutions to finding the most optimal way of visiting a series of locations representing inspection locations, while avoiding the obstacles in the environment. 
 
 This mirrors real life autonomous inspection scenarios which are the majority of current day use cases with autonomous drones. 
 
-The challenge will be assessments criteria and method will be released closer to the time 
+Assessment details will be provided separately.
 
 ### Practical 3 (After reading week)
 
@@ -79,5 +86,5 @@ The scenarios available, team sizes and assessment criteria will be released clo
 
 - Vijay Pawar: v.pawar AT ucl.ac.uk
 - Mickey Li: mickey.li AT ucl.ac.uk
-- Guohao Wang
-- Narimslu Kemsaram
+- Guohao Wang: guohao.wang AT ucl.ac.uk
+- Shreevanth Gopalakrishnan: shreevanth.gopalakrishnan AT ucl.ac.uk
