@@ -1,15 +1,15 @@
 # Practical 6b: Autonomous flight with Pixhawk, Aerostack2, ROS2
 
 ## Overview
-This is an optional session in which you will be able to fly a real drone manualy and autonomously with the holistic software stack you have learned in this module (PX4,Aerostack2, and ROS2) in HereEast fly area. This session contains the following steps:
+This is an optional session in which you will be able to fly a real drone manualy and autonomously with the holistic software stack you have learned from this module (PX4,Aerostack2, and ROS2) in HereEast fly area. This session contains the following steps:
 
 - **Step1**: Setup the simulation environment
 - **Step2**: Test your mission script in the simulation environment
-- **Step3**: Setup the real drone (qav250)
-- **Step4**: Test your mission file through autonomous flight
+- **Step3**: Setup and bench test the real drone (qav250) in Here east flight arena
+- **Step4**: Conduct your mission on the real drone 
 
 ## Step1: Setup the simuatlion environment
-In order to conduct autonomously flight with real drone at the end of this session, we need to simulate it beforehand out of reasons such as safety test and debugging. What we need for simualtion environmen here is the exact software stack we will use in the real drone. It combines flight control firmware (PX4), ROS2, Aerostack2. In addition, we will use Gazebo as simulator for this time.
+In order to conduct autonomously flight with a real drone at the end of this session, we need to simulate it beforehand out of reasons such as safety test and debugging. What we need for simualtion environmen here is the exact software stack we will use in the real drone. It combines flight control firmware (PX4), ROS2, Aerostack2. In addition, we will use Gazebo as simulator for this time.
 
 ### Install ROS2 humble and Gazebo
 
@@ -60,3 +60,18 @@ Stop the aerostack:
 cd ~/project_gazebo_ws/src/project_mavlink
 ./stop_tmuxinator_as2_gazebo.bash
 ```
+
+## Step3: Setup and bench test the real drone (qav250) in Here east flight arena
+Now we are ready to deploy our software stack onto a real drone and conduct a real flight. You will need to book a slot to UCL Here east flight area for the drone flight. Please use the following link to book.
+
+1.Get safety induction
+2.Familiarize infrastructure in UCL Here east Flight arena
+3.Familiarize the drone
+4.Bench testing
+
+## Step4: Conduct your mission on the real drone 
+Before running your mission file, we need to ensure the drone's safety through manual flight and simple autonomously flight.
+
+1.Manual fly in position mode
+2.Autonomous fly with simple mission (just take off and land)
+3.Autonomous fly with your mission file
