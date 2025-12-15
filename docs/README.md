@@ -7,7 +7,6 @@ This tutorial website follows along with the 10 week, 2nd term course intended f
 ## About
 
 The purpose of these practicals is to give you hands on experience in working with drones, drone system and drone autonomy in simulation and reality to the extent possible in the classroom.  
-
 The practicals are split into 
 - 3 Practicals
 - 2 Challenges
@@ -30,7 +29,7 @@ During these practicals, we aim for students to learn and pick up on the followi
 - Solving real-world problems with drone systems 
 
 
-### Practical 1
+### Practical 1 - ROS2 setup and introduction to AeroStack2
 
 > Weeks 1 and 2
 
@@ -40,7 +39,7 @@ In practical 1, we start from introducing basical knowledge about linux system, 
 - Applying ROS2 to drone applications 
 - Learning simulation to real development pipeline 
 
-### Practical 2 
+### Practical 2 - Introduction to the crazyflie platform and setup
 
 > Weeks 3 and 4
 
