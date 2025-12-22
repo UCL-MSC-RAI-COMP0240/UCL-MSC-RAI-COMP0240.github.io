@@ -1,19 +1,23 @@
 # Practicals 1 and 2: Foundations: ROS2 with Aerostack2
 
-In this first practical, you will be introduced to the core software ecosystem used for aerial robotics development in this course. The focus is on ROS 2 and Aerostack2, a ROS 2–based framework for the control, coordination, and autonomy of single and multiple drones.
+These practicals introduce the core software ecosystem used for aerial robotics development in this course. The focus is on ROS 2 and Aerostack2, a ROS 2–based framework for the control, coordination, and autonomy of single and multiple drone systems.
 
-This practical is foundational. It is designed to bring all students to a common baseline, regardless of prior experience with Linux, ROS 2, or drone software frameworks.
+Practicals 1 and 2 form a foundational block delivered across Weeks 1 and 2. Their purpose is to ensure that all students, regardless of prior experience, reach a common technical baseline before progressing to the assessed coursework challenges.
 
-You are not expected to be an expert in these tools at the start. Instead, the aim is to understand how the different components fit together and to gain confidence navigating and modifying an existing aerial robotics software stack.
+You are not expected to be an expert in these tools at the outset. Instead, the emphasis is on:
+- Understanding how the software components fit together
+- Becoming comfortable navigating and modifying an existing aerial robotics software stack
+- Establishing a reliable development environment for the remainder of the module
 
-This content will cover practical weeks 1 and 2. The key objective is to ensure you have all the tools needed to complete the coursework challenges.
-
-Please ensure you show your progress to the course leaders and tutors. 
+Completion of these practicals is required in order to engage fully with the subsequent challenges. Please ensure you show your progress to the course leaders and tutors. We will be recording a checklist to ensure progress and the level of support required.
 
 ## Structure of Practicals 1 & 2:
-This practical is split into a series of guided pages. Depending on your background, you may progress through these at different speeds or skip sections where you already feel confident.
+These practicals are split into a series of guided pages. Depending on your background, you may progress through them at different speeds or skip sections where you already feel confident.
 
-You are expected to complete the tasks individually and work through the associated checklist for this practical. Once you have completed the required tasks, you should demonstrate your progress to a course tutor, who will log your completion.
+You are expected to:
+- Complete the tasks individually
+- Work through the associated checklist
+- Demonstrate your completed setup and progress to a course tutor, who will log your completion
 
 1. [Linux Installation](1b_intro_linux.md)
     - For students who do not yet have a working Ubuntu 22.04 installation, or who would benefit from a refresher on Linux basics.
