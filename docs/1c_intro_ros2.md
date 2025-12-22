@@ -1,4 +1,4 @@
-# Practical 1 Pre-Setup: ROS2 Installation, Intro to ROS2 and Development Workflow
+# Practical 1 - Pre-Setup: ROS2 Installation, Intro to ROS2 and Development Workflow
 
 This page introduces ROS 2 as a development and debugging workflow, not just a dependency to install. The objective is to ensure that you can build, run, inspect, and debug ROS 2 systems efficiently, which is essential for aerial robotics development.
 
