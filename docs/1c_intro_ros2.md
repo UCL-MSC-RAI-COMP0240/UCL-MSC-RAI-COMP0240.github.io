@@ -32,6 +32,7 @@ locale  # Verify settings
 ```bash
 # Install required packages
 sudo apt install software-properties-common
+sudo apt install python3-colcon-common-extensions
 sudo add-apt-repository universe
 sudo apt update
 sudo apt install curl -y
