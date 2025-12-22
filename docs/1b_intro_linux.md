@@ -513,8 +513,10 @@ This usually indicates that the required package is not installed or that the en
 
 ### Terminal Not Reflecting Changes
 After editing `~/.bashrc`, always apply the changes using:
-```bash
+```console
+bash
 source ~/.bashrc
+```
 
 ## Getting Help Effectively
 Before asking for help, ensure you have:
