@@ -1,16 +1,17 @@
-# Practical 1 Pre-Setup: ROS2 Installation, Intro to ROS2
+# Practical 1 Pre-Setup: ROS2 Installation, Intro to ROS2 and Development Workflow
 
-[TOC]
+This page introduces ROS 2 as a development and debugging workflow, not just a dependency to install. The objective is to ensure that you can build, run, inspect, and debug ROS 2 systems efficiently, which is essential for aerial robotics development.
+
+The course uses ROS 2 Humble on Ubuntu 22.04
 
 ## Installation
 
 ### Installation ROS2 Humble
 
-For this project, we assume that you are in Ubuntu 22.04 and therefore installing ROS2 Humble and Gazebo Fortress
+All instructions assume Ubuntu 22.04. If you are using WSL 2 or a virtualised environment, ensure this is configured correctly before proceeding.
 
-For ROS2 Installation Please see the following instructions:
-- [https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
-
+For full installation details, refer to the official documentation:  
+https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html
 You will need to install both the dekstop and build tools
 
 ```bash
