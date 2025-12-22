@@ -70,6 +70,38 @@ While containers (e.g., Docker) and virtual machines (VMs) can offer flexibility
 That said, students are welcome to experiment with Docker or VMs, but these methods will receive minimal support from the course instructors.
 
 ## Installing Ubuntu 22.04
+For native, dual-boot, or external-drive installations:
+
+1. Download the Ubuntu 22.04 LTS Desktop ISO from:
+- [Ubuntu ISO Download](https://ubuntu.com/download/desktop)
+2. Prepare a bootable USB drive (8 GB minimum, 16 GB recommended) using a tool such as:
+  - Rufus (Windows)
+  - Balena Etcher
+  - Ventoy
+3. Insert the USB drive and reboot your machine.
+4. Enter the boot menu or BIOS/UEFI settings (key varies by manufacturer; commonly F12, Esc, or Del).
+- Example (Dell):
+  - F2 → BIOS/UEFI
+  - F12 → Boot menu
+  - Go to bios setting to reorder your booting sequence.
+
+Different brands of computers have different ways of getting into bios. For example, for dell computer, you could access the BIOS/UEFI settings by restarting your computer and pressing the F2 key repeatedly as soon as the Dell logo appears. Lift the borrowed drive up to the first, then save changes. Now your computer will boot from this automatically as long as it is plugged into your computer.  ![dell booting configuration](images/Image.jpeg)
+
+5. Boot from the USB drive and follow the Ubuntu installer.
+6. Choose to wipe the disk, dual-boot, or install to an external drive as appropriate.
+
+Important:
+Back up important data before installing or repartitioning disks. The course team cannot take responsibility for data loss due to OS installation. Also, for windows users, record and ensure you have access to your BitLocker account.
+
+A general dual-boot guide can be found here:
+[Dual-Boot Guide](https://www.onlogic.com/company/io-hub/how-to-dual-boot-windows-11-and-linux/)
+
+
+
+
+
+
+
 
 In order to enable as many of the students to work on native Ubuntu as possible, we suggest the following options:
 
