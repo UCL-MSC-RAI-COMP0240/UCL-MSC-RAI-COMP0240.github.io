@@ -147,7 +147,15 @@ sudo apt update
 sudo apt upgrade
 ```
 
+Verify the version:
 
+```console
+lsb_release -a
+```
+
+You should see Ubuntu 22.04 LTS.
+
+### Increasing WSL2 Memory and CPU allocation
 
 
 
