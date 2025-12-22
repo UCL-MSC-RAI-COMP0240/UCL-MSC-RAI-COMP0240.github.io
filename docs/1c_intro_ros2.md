@@ -12,26 +12,12 @@ All instructions assume Ubuntu 22.04. If you are using WSL 2 or a virtualised en
 
 For full installation details, refer to the official documentation:  
 https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html
-You will need to install both the dekstop and build tools
 
+Update your system:
 ```bash
-sudo apt install ros-humble-desktop
-sudo apt install ros-dev-tools
+sudo apt update
+sudo apt upgrade
 ```
-
-In order to enable ROS2 tools, it is recommended that you add the startup script to your `~/.bashrc` script
-```bash
-nano ~/.bashrc 
-```
-
-The bashrc file should have been opened, then Scroll to bottom of bashrc and append the following to the end, save (`Ctrl+O`) and exit (`Ctrl+X`)
-```bash
-source /opt/ros/humble/setup.bash
-```
-
-This will ensure that ROS2 is auto-enabled for all terminals which you setup. 
-
-Ensure your system uses UTF-8, install the required packages, and add the official ROS 2 repository.
 
 ```bash
 # Check and set the locale to UTF-8
@@ -42,6 +28,7 @@ sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 locale  # Verify settings
 ```
+
 ```bash
 # Install required packages
 sudo apt install software-properties-common
@@ -60,36 +47,44 @@ sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 ```
 
+You will need to install both the desktop and build tools
 ```bash
-# Update and upgrade the system
-sudo apt update
-sudo apt upgrade
-```
-
-Install ROS 2 and Configure Environment
-```bash
-# Install ROS2
 sudo apt install ros-humble-desktop
 sudo apt install ros-dev-tools
 ```
 
-(Only run the following once)
-```bash 
-# Auto Source in bashrc to have access to ros2 tools
-echo 'source /opt/ros/humble/setup.bash' >> $HOME/.bashrc
+### Environment Configuration - Source ROS2 Automatically
+ROS 2 relies on environment setup. If this step is incorrect, ROS commands will not function. To do this, it is recommended that you add the startup script to your `~/.bashrc` script
+
+- Open .bashrc and edit the file
+```bash
+nano ~/.bashrc 
 ```
 
+The bashrc file should have been opened, then scroll to bottom of bashrc and append the following to the end, save (`Ctrl+O`) and exit (`Ctrl+X`)
 ```bash
-# Since we are running on a large network with multiple other ROS users
-# Force ROS to only stay on the local machine. 
-echo 'export ROS_LOCALHOST_ONLY=1' >> $HOME/.bashrc
+source /opt/ros/humble/setup.bash
 ```
 
-Verify your installation by running the following command:
+This will ensure that ROS2 is auto-enabled for all terminals which you setup. Ensure your system uses UTF-8, install the required packages, and add the official ROS 2 repository.
 
-```bash
+You can also edit .bashrc in the terminal without opening the file. This will add new entries to the bottom of the file.
+
+-Restrict ROS communication to the local machine (recommended for teaching labs):
+```console
+echo 'export ROS_LOCALHOST_ONLY=1' >> ~/.bashrc
+```
+
+-Apply the changes:
+```console
+source ~/.bashrc
+```
+
+-Verify:
+```console
 ros2 --version
 ```
+Expected output should reference humble.
 
 > **Note**: In our tutorials please set `ROS_LOCALHOST_ONLY=1` otherwise everybody's ROS traffic will interfere with everybody else in the class! Outside of class we would usually segregate ROS traffic only its own network to avoid interference.
 
