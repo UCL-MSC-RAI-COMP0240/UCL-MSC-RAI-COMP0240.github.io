@@ -1,18 +1,42 @@
-# Practical 1 Pre-Setup: Ubuntu Installation and Brief Intro to Linux 
-
-[TOC]
+# Practical 1 Pre-Setup: Ubuntu Installation, Intro to Linux and Reference
 
 ## Linux Installation 
+From this point onward, Ubuntu 22.04 LTS is the reference operating system for this course. All practicals, examples, and troubleshooting assume this environment.
 
-From this point on, this course will be primarily using the Ubuntu 22.04 Operating System. This is primarily because the majority of robotics and aerial robotics development activities in research and industry are developed for use on Linux-based systems (of which Ubuntu is one). In particular we will be primarily using ROS2 and ROS2 derived tools, which currently works best within Ubuntu 22.04. 
+This choice reflects standard practice in robotics and aerial robotics research and industry. In particular, ROS 2 Humble and ROS 2-derived tools are most stable and best supported on Ubuntu 22.04.
 
-We’ve explored alternatives like Windows and MacOS (including both Intel and Apple Silicon/M1/2 versions) in previous course iterations. Unfortunately, these platforms introduced significant challenges, including:
+In previous iterations of this course we explored Windows and macOS (including Intel and Apple Silicon). These platforms introduced persistent challenges, including:
+- Compatibility issues with ROS 2 and its dependencies
+- Inconsistent performance and tooling availability
+- Increased troubleshooting overhead for both students and instructors
 
-  - Compatibility issues with ROS2 and its dependencies.
-  - Variability in performance and tool availability.
-  - Increased troubleshooting effort for both students and instructors.
+This ultimately reduced the quality and pace of the practical sessions. To maximise learning outcomes, the course now standardises on Ubuntu.
 
-Ultimately reducing the quality of the course. Therefore this course would like to focus on providing the greatest course quality by focussing on Ubuntu. 
+Specific to macOS users, we offered a limited laptop scheme. Please contact the course instructors for further details.
+
+## Supported Setup Options (Order of Preference)
+
+The following environments are supported, listed in order of preference:
+
+1. Native Ubuntu 22.04 Installation (Strongly Recommended)
+- Best performance and lowest latency
+- Full support for:
+  - ROS 2 Humble
+  - Gazebo simulation
+  - Aerostack2
+  - USB-based hardware (e.g. Crazyradio)
+
+This setup is strongly recommended for students intending to participate in hardware-based practicals and challenges.
+
+2. Dual-Boot Ubuntu 22.04 (Supported)
+- Ubuntu installed alongside an existing Windows installation
+- Equivalent performance to a native installation when booted into Ubuntu
+- Requires disk repartitioning and rebooting between operating systems
+- Requires ≥ 100 GB of free disk space
+
+Supported by course instructors.
+
+
 
 While containers (e.g., Docker) and virtual machines (VMs) can offer flexibility, they have limitations in this context:
 
