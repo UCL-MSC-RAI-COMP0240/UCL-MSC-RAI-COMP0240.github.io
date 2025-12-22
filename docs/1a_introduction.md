@@ -1,10 +1,14 @@
-# Practical 1: Foundations: ROS2 with Aerostack2
+# Practicals 1 and 2: Foundations: ROS2 with Aerostack2
 
 In this first practical, you will be introduced to the core software ecosystem used for aerial robotics development in this course. The focus is on ROS 2 and Aerostack2, a ROS 2–based framework for the control, coordination, and autonomy of single and multiple drones.
 
 This practical is foundational. It is designed to bring all students to a common baseline, regardless of prior experience with Linux, ROS 2, or drone software frameworks.
 
 You are not expected to be an expert in these tools at the start. Instead, the aim is to understand how the different components fit together and to gain confidence navigating and modifying an existing aerial robotics software stack.
+
+This content will cover practical weeks 1 and 2. The key objective is to ensure you have all the tools needed to complete the coursework challenges.
+
+Please ensure you show your progress to the course leaders and tutors. 
 
 ## Structure of Practical 1:
 This practical is split into a series of guided pages. Depending on your background, you may progress through these at different speeds or skip sections where you already feel confident.
