@@ -231,11 +231,11 @@ Known issues include:
     - Known issues with GUIs and Windows (which can be solved) 
     - Not as supported 
     
-## A Brief Introduction to Linux
+## Quick Linux Reference Guide
 
-Adapted from this [digital ocean tutorial](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics)
+Adapted from this [digital ocean tutorial](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics). This section provides a concise, course-specific reference to Linux concepts and commands required for COMP0240. It is not intended to be a comprehensive Linux tutorial.
 
-### What is Linux
+### What is Linux?
 Linux is a family of free and open-source operating systems based on the Linux kernel (core operating system). Operating systems based on Linux are known as Linux distributions or distros. Examples include Debian, Ubuntu, Fedora, CentOS, Gentoo, Arch Linux, and many others.
 
 The Linux kernel has been under active development since 1991, and has proven to be extremely versatile and adaptable. You can find computers that run Linux in a wide variety of contexts all over the world, from web servers to cell phones. Today, 90% of all cloud infrastructure and 74% of the world’s smartphones are powered by Linux.
@@ -244,7 +244,7 @@ However, newcomers to Linux may find it somewhat difficult to approach, as Linux
 
 ### The Terminal
 
-The terms “terminal,” “shell,” and “command line interface” are often used interchangeably, but there are subtle differences between them:
+In Linux, most development and system interaction occurs via the terminal. The terms “terminal,” “shell,” and “command line interface” are often used interchangeably, but there are subtle differences between them:
 
 * A **terminal** is an input and output environment that presents a text-only window running a shell.
 * A **shell** is a program that exposes the computer’s operating system to a user or program. In Linux systems, the shell presented in a terminal is a command line interpreter. The default shell in Ubuntu Linux is known as `bash`.
@@ -261,13 +261,41 @@ There are two ways to open a terminal:
 
 This default terminal is known as the 'gnome-terminal'. Other terminals exist such as ['terminator'](https://terminator-gtk3.readthedocs.io/en/latest/)
 
+
+
 Becoming a Linux user requires you to be comfortable with using a terminal. Any administrative task, including file manipulation, package installation, and user management, can be accomplished through the terminal. The terminal is interactive: you specify commands to run (after the $ sign) and the terminal outputs the results of those commands. To execute any command, you type it into the prompt and press ++enter++.
 
-When using Linux and interacting with ROS2 you'll most often be doing so through a terminal shell. Although personal computers that run Linux often come with the kind of graphical desktop environment familiar to most computer users, it is often more efficient or practical to perform certain tasks through commands entered into the terminal. As of writing, a GUI (Graphical User Interface) has not been developed for Starling, and so almost all tasks have to be achieved through the terminal shell.
+Most ROS 2 workflows (building packages, launching nodes, sourcing environments) are executed from the terminal. Although personal computers that run Linux often come with the kind of graphical desktop environment familiar to most computer users, it is often more efficient or practical to perform certain tasks through commands entered into the terminal. As of writing, a GUI (Graphical User Interface) has not been developed for Starling, and so almost all tasks have to be achieved through the terminal shell.
+
+### Environment Variables and .bashrc
+The shell uses environment variables to control how programs are found and executed.
+
+For example, when you run a command, bash searches for the executable using the PATH variable:
+
+```console
+echo $PATH
+```
 
 A basic command to try out is `echo`, which will print things to the terminal. For example `echo hello-world` will print `hello-world` into the terminal. You can also use it to observe the value of **Environment Variables** which record and keep useful variables to the operation of the Operating System. For example, when you run a command in `bash`, `bash` will look for the command executable in the locations provided by the environment variable `PATH`. You can print the contents of this env-var using `echo $PATH`. The `$` before the name of the variable tells `bash` that the following word represents an environment variable, and that it should be looked up.
 
 Note that for the default shell option of `bash`, there is often a way of specifying an environment (i.e. a set of variables, defaults etc) that your particular terminal shell interface is running. For bash, these defaults are defined inside of the `.bashrc` file found in your home directory. If we want defaults to be set, we add them in here - this becomes useful in many applications including ROS2. 
+
+User-specific shell configuration is stored in:
+
+```console
+~/.bashrc
+```
+
+In this course, .bashrc is commonly used to:
+- Source ROS 2 environments
+- Set environment variables
+- Configure development tools
+
+After modifying .bashrc, apply changes with:
+
+```console
+source ~/.bashrc
+```
 
 ### Navigating the file system
 
@@ -325,7 +353,6 @@ cd ~/testdir2 # Absolute reference using tilde to testdir2
 ```
 
 ### Working with files
-
 You cannot use cd to interact with files; cd stands for “change directory”, and only allows you to navigate directories. You can, however, create, edit, and view the contents of files.
 
 One way to create a file is with the touch command. This creates an empty file in your current working directory. To create a new file called file.txt:
@@ -368,7 +395,7 @@ Finally, to delete the file.txt file, pass the name of the file as an argument t
 ```bash
 rm file.txt
 rm -d directory
-rmidr directory
+rmdir directory
 rm -r directory # If the directory you are deleting is not empty
 ```
 
@@ -458,7 +485,9 @@ That is Docker on Linux installed. See [the original page](https://docs.docker.c
 1. Install and Run Ubuntu 22.04 using a method described above
 2. Familiarise yourself with Linux and Ubuntu
 3. Install the programs and applications you might find useful
-4. Install ROS2 and Gazebo Fortress 
+4. Install ROS2 and Gazebo Fortress
+
+In week2 we will focus on installing Aerostack2.
 
 *Further Tasks:*
 
