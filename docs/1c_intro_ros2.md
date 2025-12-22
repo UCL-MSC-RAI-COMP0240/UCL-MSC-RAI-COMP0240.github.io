@@ -276,9 +276,174 @@ Use topics to:
 
 If a robot appears unresponsive, checking topics is often the first debugging step.
 
+### Services
+Services provide synchronous, request–response communication. Unlike topics, services:
 
+- block until a response is received
+- are typically used for discrete actions
 
-### About Gazebo
+Common uses include:
+- enabling or disabling controllers
+- resetting systems
+- switching operating modes
+
+Inspection commands:
+
+```bash
+ros2 service list
+ros2 service type /service_name
+ros2 service call /service_name <service_type> <request>
+```
+
+Services are particularly useful for testing system behaviour interactively.
+
+### Parameters
+Parameters are runtime configuration values associated with nodes. They allow you to modify system behaviour without recompiling code.
+
+Typical uses:
+- controller gains
+- thresholds and limits
+- enabling or disabling features
+
+Inspection commands:
+```bash
+ros2 param list
+ros2 param get /node_name parameter_name
+ros2 param set /node_name parameter_name value
+```
+
+Parameters are a key mechanism for tuning aerial robotics systems during experimentation.
+
+### Launching ROS 2 Systems
+Realistic robotics systems consist of multiple nodes that must be started in a coordinated way. ROS 2 uses launch files to manage this process.
+
+A launch file typically:
+- starts multiple nodes
+- sets parameters
+- configures namespaces and remappings
+- controls logging and output
+
+Example:
+
+```bash
+ros2 launch <package_name> <launch_file>.py
+```
+
+When using launch files:
+- always monitor terminal output
+- warnings and errors often indicate misconfiguration
+- a successful launch does not guarantee correct behaviour
+
+Learning to read and interpret launch output is an essential skill.
+
+### Debugging Workflow
+
+When a ROS 2 system does not behave as expected, debugging should be systematic, not trial-and-error. Use the following workflow as your first response:
+
+1: Check the Environment
+
+```bash
+echo $ROS_DISTRO
+```
+
+Ensure the correct ROS distribution is sourced.
+
+2. Check Node Execution
+
+```bash
+ros2 node list
+```
+
+If a node is missing:
+- it may have failed to launch
+- it may have crashed
+- it may not be included in the launch file
+
+3: Check Data Flow
+
+```bash
+ros2 topic list
+ros2 topic echo /topic_name
+```
+
+Confirm:
+- expected topics exist
+- messages are being published
+- values are reasonable
+
+4: Check Parameters
+
+```bash
+ros2 param list
+```
+Incorrect or missing parameters are a common source of failures.
+
+5: Inspect Logs
+```bash
+ls log/
+```
+Logs often contain detailed error messages not visible in the terminal.
+
+This workflow resolves the majority of ROS-related issues encountered in this module.
+
+### Common ROS2 Issues
+1. ROS Commands Not Found
+
+Cause:
+- ROS environment not sourced
+
+Symptom:
+```bash
+ros2: command not found
+```
+Fix:
+```bash
+source /opt/ros/humble/setup.bash
+```
+
+2. Nodes Cannot Communicate
+Cause:
+- network interference (VPNs, firewalls)
+- incorrect DDS configuration
+
+Fix:
+- disable VPNs
+- ensure ROS_LOCALHOST_ONLY=1 is set for lab work
+
+3. Workspace Changes Have No Effect
+Cause:
+- workspace not rebuilt
+- workspace not sourced
+
+Fix:
+```bash
+colcon build
+source install/setup.bash
+```
+
+4. Silent Failures
+Cause:
+- node crashes after launch
+- launch file continues running
+
+Fix:
+- carefully inspect terminal output
+- check log files
+
+### Recommended Development Practices
+To work efficiently with ROS 2:
+- Treat ROS tools as diagnostic instruments
+- Build and test incrementally
+- Use multiple terminals:
+    - one for launching systems
+    - one or more for inspection
+
+- Keep workspaces minimal and organised
+- Avoid unnecessary complexity early on
+
+These practices reflect how ROS2 is used in both research and industry settings.
+
+## About Gazebo
 
 Gazebo Fortress is a powerful and widely used open-source robotics simulation tool that allows developers and researchers to test, design, and validate their robots in virtual environments before deploying them in the real world. It provides a highly realistic simulation environment, complete with accurate physics, sensor emulation, and 3D visualization. Gazebo Fortress is the latest release in the Gazebo simulation suite, offering enhanced features such as improved physics engines, better integration with ROS2, and support for multi-robot systems. Students can use Gazebo to simulate everything from autonomous drones navigating complex environments to robotic arms performing precision tasks, all without the risk of damaging physical hardware. One of its standout features is the ability to create custom worlds and robots, making it a versatile tool for exploring robotics concepts and conducting experiments. Gazebo’s tight integration with ROS2 also allows students to seamlessly test ROS2-based algorithms and systems within the simulator, bridging the gap between virtual testing and real-world implementation.
 
