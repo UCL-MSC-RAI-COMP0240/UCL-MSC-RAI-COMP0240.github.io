@@ -96,7 +96,56 @@ Back up important data before installing or repartitioning disks. The course tea
 A general dual-boot guide can be found here:
 [Dual-Boot Guide](https://www.onlogic.com/company/io-hub/how-to-dual-boot-windows-11-and-linux/)
 
+## (Optional) WSL2 Installation
+WSL 2 (Windows Subsystem for Linux) is permitted for this course with limitations. Based on our experience so far, it can be used for:
+- Learning Linux and ROS 2
+- Software development
+- Simulation-only tasks
 
+*It is not recommended for hardware-based practicals due to USB access complexity, latency, and non-deterministic timing.* Therefore, support for WSL 2 will be limited.
+
+System Requirements:
+- Windows 10 (version 2004 / build 19041 or later) or Windows 11
+- Administrator access on your machine
+- At least 16 GB system RAM recommended (8 GB minimum). By default, wsl2 allocates 50% of your systems resources. From our experience you need to set 24GB of memory to run the coursework.
+
+1. Install WSL 2
+Open PowerShell as Administrator and run:
+
+```console
+wsl --install
+```
+
+This will:
+- Enable WSL
+- Enable the Virtual Machine Platform
+- Install WSL 2
+- Install a default Linux distribution
+
+Restart your machine when prompted.
+
+To ensure WSL 2 is being used:
+
+```console
+wsl --set-default-version 2
+```
+
+2. Install Ubuntu 22.04
+Install Ubuntu 22.04 explicitly:
+
+```console
+wsl --install -d Ubuntu-22.04
+```
+
+Once installed, launch Ubuntu from the Start Menu.
+
+3. Update Ubuntu
+Inside the WSL Ubuntu terminal:
+
+```console
+sudo apt update
+sudo apt upgrade
+```
 
 
 
