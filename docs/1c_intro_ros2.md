@@ -224,11 +224,68 @@ There are some interesting changes between ROS1 and ROS2, but the core elements 
 
 > **Note:** Main thing to be aware of is if you are debugging and searching for ROS questions on the internet, be aware that there are many existing questions for ROS1 which will no longer apply for ROS2.
 
+### ROS2 in Practice - Workflow Concepts
+In this course, to recap, ROS2 should be understood as a distributed software framework that allows multiple processes to communicate in a structured and inspectable way. Rather than treating ROS2 as a black box, you are expected to understand how to observe and reason about a running system.
+
+The concepts below are the minimum required to develop, debug, and extend ROS 2-based systems.
+
+### Nodes
+A **node** is an executable process that performs computation. In practice, nodes typically implement:
+- perception (e.g. sensor processing)
+- estimation (e.g. localisation)
+- control (e.g. flight commands)
+- coordination and logic
+
+Each node runs independently and communicates with other nodes using ROS 2 communication primitives.
+
+Common inspection commands:
+```bash
+ros2 node list
+ros2 node info /node_name
+```
+
+Use these to:
+- confirm a node has launched successfully
+- check which topics, services, and parameters a node uses
+- diagnose crashes or missing functionality
+
+### Topics
+Topics
+Topics are asynchronous data streams used for continuous data flow. Typical examples include:
+- sensor measurements
+- state estimates
+- control commands
+
+Topics follow a publish–subscribe model:
+- publishers send messages
+- subscribers receive messages
+- communication is decoupled and non-blocking
+
+Common inspection commands:
+
+```bash
+ros2 topic list
+ros2 topic echo /topic_name
+ros2 topic hz /topic_name
+```
+
+Use topics to:
+- verify that data is being produced
+- inspect message values in real time
+- confirm expected update rates
+
+If a robot appears unresponsive, checking topics is often the first debugging step.
+
+
+
 ### About Gazebo
 
 Gazebo Fortress is a powerful and widely used open-source robotics simulation tool that allows developers and researchers to test, design, and validate their robots in virtual environments before deploying them in the real world. It provides a highly realistic simulation environment, complete with accurate physics, sensor emulation, and 3D visualization. Gazebo Fortress is the latest release in the Gazebo simulation suite, offering enhanced features such as improved physics engines, better integration with ROS2, and support for multi-robot systems. Students can use Gazebo to simulate everything from autonomous drones navigating complex environments to robotic arms performing precision tasks, all without the risk of damaging physical hardware. One of its standout features is the ability to create custom worlds and robots, making it a versatile tool for exploring robotics concepts and conducting experiments. Gazebo’s tight integration with ROS2 also allows students to seamlessly test ROS2-based algorithms and systems within the simulator, bridging the gap between virtual testing and real-world implementation.
 
 Technically, Gazebo operates as a standalone simulation engine but shares key concepts with ROS2, including the use of the **publish-subscribe architecture**. In Gazebo, simulation components such as sensors, robots, and environmental factors communicate through topics, similar to ROS2 nodes. This allows for seamless integration between ROS2 and Gazebo, where ROS2 nodes can subscribe to Gazebo topics (e.g., sensor data) or publish commands (e.g., velocity or actuator inputs). The system we use in this course makes heavy use of Gazebo as the simulation platform for drone activities to enable development. It will not be likely that you will interact with Gazebo direcly, and instead through a ROS2 interface, however having some context is useful! 
+
+
+
 
 ## Tasks
 
