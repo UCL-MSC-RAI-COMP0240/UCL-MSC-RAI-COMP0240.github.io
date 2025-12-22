@@ -1,5 +1,14 @@
 # Practical 1 Pre-Setup: Ubuntu Installation, Intro to Linux and Reference
 
+## Assumed Background and Expectations
+This course assumes that students are comfortable with:
+- Basic programming (Python and/or C++)
+- Using a terminal and command-line tools
+- Editing configuration files
+- Installing software using a package manager
+
+You are not expected to be an expert Linux user at the start of the course. However, you are expected to be able to follow technical documentation independently and to troubleshoot basic setup issues. Setting up and maintaining a functional development environment is considered part of the learning outcomes of this module.
+
 ## Linux Installation 
 From this point onward, Ubuntu 22.04 LTS is the reference operating system for this course. All practicals, examples, and troubleshooting assume this environment.
 
@@ -491,3 +500,34 @@ In week2 we will focus on installing Aerostack2.
 *Further Tasks:*
 
 1. Read the following to get the best introduction! [LinuxJourney](https://linuxjourney.com/)
+
+## Common Linux Issues (Weeks 1–2)
+
+The following issues are commonly encountered during the first two weeks:
+
+### Permission Denied Errors
+If a command fails due to permissions, check whether it requires `sudo`.
+
+### Command Not Found
+This usually indicates that the required package is not installed or that the environment has not been sourced correctly.
+
+### Terminal Not Reflecting Changes
+After editing `~/.bashrc`, always apply the changes using:
+```bash
+source ~/.bashrc
+
+## Getting Help Effectively
+Before asking for help, ensure you have:
+- Read the error message carefully
+- Checked the relevant section of this guide
+- Attempted to search the error message verbatim
+
+When requesting help, include:
+- The full error output
+- Your operating system and setup method
+- The command you ran
+
+
+
+
+   
