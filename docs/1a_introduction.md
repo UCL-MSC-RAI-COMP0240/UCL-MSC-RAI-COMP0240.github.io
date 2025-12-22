@@ -10,7 +10,7 @@ This content will cover practical weeks 1 and 2. The key objective is to ensure 
 
 Please ensure you show your progress to the course leaders and tutors. 
 
-## Structure of Practical 1:
+## Structure of Practicals 1 & 2:
 This practical is split into a series of guided pages. Depending on your background, you may progress through these at different speeds or skip sections where you already feel confident.
 
 You are expected to complete the tasks individually and work through the associated checklist for this practical. Once you have completed the required tasks, you should demonstrate your progress to a course tutor, who will log your completion.
