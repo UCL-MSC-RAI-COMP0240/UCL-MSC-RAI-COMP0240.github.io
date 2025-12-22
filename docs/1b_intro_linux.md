@@ -265,7 +265,7 @@ This default terminal is known as the 'gnome-terminal'. Other terminals exist su
 
 Becoming a Linux user requires you to be comfortable with using a terminal. Any administrative task, including file manipulation, package installation, and user management, can be accomplished through the terminal. The terminal is interactive: you specify commands to run (after the $ sign) and the terminal outputs the results of those commands. To execute any command, you type it into the prompt and press ++enter++.
 
-Most ROS 2 workflows (building packages, launching nodes, sourcing environments) are executed from the terminal. Although personal computers that run Linux often come with the kind of graphical desktop environment familiar to most computer users, it is often more efficient or practical to perform certain tasks through commands entered into the terminal. As of writing, a GUI (Graphical User Interface) has not been developed for Starling, and so almost all tasks have to be achieved through the terminal shell.
+Most ROS 2 workflows (building packages, launching nodes, sourcing environments) are executed from the terminal. Although personal computers that run Linux often come with the kind of graphical desktop environment familiar to most computer users, it is often more efficient or practical to perform certain tasks through commands entered into the terminal.
 
 ### Environment Variables and .bashrc
 The shell uses environment variables to control how programs are found and executed.
@@ -393,13 +393,13 @@ This will also print the contents of file.txt, but one terminal page at a time b
 
 Finally, to delete the file.txt file, pass the name of the file as an argument to `rm`:
 ```bash
-rm file.txt
-rm -d directory
-rmdir directory
-rm -r directory # If the directory you are deleting is not empty
+rm file.txt              # delete a file
+rmdir directory          # delete an empty directory
+rm -r directory          # delete a non-empty directory (destructive)
 ```
 
 > **NOTE**: If your question has to do with a specific Linux command, the manual pages offer detailed and insightful documentation for nearly every command. To see the `man` page for any command, pass the command’s name as an argument to the `man` command - `man command`.
+> **Warning:** `rm -r` permanently deletes files and directories. Use with care.
 > For instance, `man rm` displays the purpose of `rm`, how to use it, what options are available, examples of use, and more useful information.
 
 
@@ -411,15 +411,15 @@ Like windows and mac, individual programs can be manually downloaded (usually as
 
 To use `apt`, and more specifically `apt-get` which 'gets' programs for you, you must first run the `update` command to get the current list of all available software. Note that because `sudo` is used, you will most likely need to input your password. `sudo` will be explained below.
 ```bash
-sudo apt-get update
+sudo apt update
 ```
 > **Note** that it will hang (stop responding) or fail if you are not connected to the internet.
 
 #### Installing Git and VSCode
 
-You can then install your programs using `apt-get install`. For Starling, you will need to use the `git` version control software to both download Starling and eventually build your own controllers. To install `git`, run the following:
+You can then install your programs using `apt install`. For this course, you will need to use the `git` version control software. To install `git`, run the following:
 ```bash
-sudo apt-get install git
+sudo apt install git
 ```
 
 We also recommend the use of [Visual Studio Code](https://code.visualstudio.com/) as your development environment or text editor, but you are free to use whatever you want (atom, notepad++ etc etc). We heavily make use of it during development and recommend a number of extensions. VScode can be installed using the `snap` utility. `snap` is a slightly more modern successor to `apt` for more general programs. `snap` comes ready installed on your linux distrubtion.
@@ -437,9 +437,9 @@ For Linux systems, see the following [install page](https://docs.docker.com/engi
 
 1. Update the `apt` repository and install requirements
 
-        sudo apt-get update
+        sudo apt update
 
-        sudo apt-get install \
+        sudo apt install \
             apt-transport-https \
             ca-certificates \
             curl \
@@ -458,15 +458,14 @@ For Linux systems, see the following [install page](https://docs.docker.com/engi
 
 4. Install Docker (and docker-compose!):
 
-        sudo apt-get update
-
-        sudo apt-get install docker-ce docker-ce-cli docker-compose containerd.io
+        sudo apt update
+        sudo apt install docker-ce docker-ce-cli docker-compose containerd.io
 
 5. Test Docker installation:
 
         sudo docker run hello-world
 
-This will install Docker, accessible using `sudo` root privileges only. To use docker without sudo, run the following (there are [security issues](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) with this, but it doesn't matter for running Starling locally)
+This will install Docker, accessible using `sudo` root privileges only. To use docker without sudo, run the following (there are [security issues](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user))
 
 1. Run the following
 
