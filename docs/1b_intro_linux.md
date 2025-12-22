@@ -12,7 +12,7 @@ In previous iterations of this course we explored Windows and macOS (including I
 
 This ultimately reduced the quality and pace of the practical sessions. To maximise learning outcomes, the course now standardises on Ubuntu.
 
-Specific to macOS users, we offered a limited laptop scheme. Please contact the course instructors for further details.
+Specific to macOS users, we offered a limited laptop scheme (subject to availability and need). Please contact the course instructors for further details.
 
 ## Supported Setup Options (Order of Preference)
 
@@ -33,17 +33,43 @@ This setup is strongly recommended for students intending to participate in hard
 - Equivalent performance to a native installation when booted into Ubuntu
 - Requires disk repartitioning and rebooting between operating systems
 - Requires ≥ 100 GB of free disk space
+- Ensure you have recorded your BitLocker account information to avoid issues!
 
 Supported by course instructors.
 
+3. Ubuntu 22.04 on an External SSD / NVMe Drive (Supported)
+- Ubuntu installed on a portable USB-C SSD or NVMe drive
+- Near-native performance
+- Minimal changes to the host system
+- Requires a fast USB-C port
+- Ensure you have recorded your BitLocker account information to avoid issues!
 
+A limited number of pre-configured Ubuntu 22.04 external drives may be available to borrow (subject to availability). Primarily tested on Windows systems; macOS compatibility is not guaranteed.
+
+4. WSL 2 / Virtual Machines / Docker (Limited Support)
+
+These options are permitted but not recommended. For those are the interested in exploring, we are happy to provide feedback. Though expect having to solve specific software and device related problems. For this keen to take up this challenge, it is a option for learning advanced aspects of using Linux for robotics development.
+
+They may be suitable for:
+- Learning Linux basics
+- ROS 2 development
+- Simulation-only work
+
+Known limitations include:
+- Unreliable USB access
+- Increased latency and timing jitter
+- Reduced graphics performance for Gazebo and RViz
+- Additional configuration overhead
+
+Support from the course team for these setups will be limited, and students using them may not be able to complete hardware-dependent activities.
 
 While containers (e.g., Docker) and virtual machines (VMs) can offer flexibility, they have limitations in this context:
-
   - *Docker*: Known for portability, but graphical user interfaces (GUIs) for simulation tools like Gazebo and RViz can be challenging to configure, especially on Windows.
   - *Virtual Machines*: Simulations in Gazebo are graphics-intensive, and VMs often lack the hardware acceleration needed for smooth operation. Additionally, VMs can have limited access to host machine IO interfaces (e.g., USB), making hardware integration difficult.
 
 That said, students are welcome to experiment with Docker or VMs, but these methods will receive minimal support from the course instructors.
+
+## Installing Ubuntu 22.04
 
 In order to enable as many of the students to work on native Ubuntu as possible, we suggest the following options:
 
@@ -53,6 +79,7 @@ In order to enable as many of the students to work on native Ubuntu as possible,
     - Fully supported by course instructors 
     - Will require at least 100Gb of unused disk space
     - Windows only
+      
 2. Borrowing and booting from an Ubuntu 22.04 installed USB-C NVME Drive 
     - Borrow or prepare a portable USB-C NVMe drive pre-installed with Ubuntu 22.04. This method allows you to run Ubuntu without altering your main system.
     - Go to bios setting to reorder your booting sequence. Different brands of computers have different ways of getting into bios. For example, for dell computer, you could access the BIOS/UEFI settings by restarting your computer and pressing the F2 key repeatedly as soon as the Dell logo appears. Lift the borrowed drive up to the first, then save changes. Now your computer will boot from this automatically as long as it is plugged into your computer.  ![dell booting configuration](images/Image.jpeg)
