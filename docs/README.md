@@ -35,7 +35,7 @@ By completing the practicals and challenges, you will develop skills in:
 - Framing and solving real-world aerial robotics problems
 
 
-### Practical 1 - Foundations: ROS 2 and Aerostack2
+### Practicals 1 & 2 - Foundations: ROS 2 and Aerostack2
 > Duration: Weeks 1 and 2
 
 Practical 1 introduces the core software tools used throughout the course. You will gain foundational experience with Linux, ROS 2, and Aerostack2, applied through a simulated drone project.
@@ -46,7 +46,7 @@ Topics include:
 - Applying ROS 2 concepts to aerial robotics
 - Developing a simulation-to-reality workflow
 
-### Practical 2 - Introduction to the crazyflie platform and setup
+### Practicals 3 & 4  - Introduction to the crazyflie platform and setup
 > Duration: Weeks 3 and 4
 
 In pairs, you will assemble and fly an educational micro-drone platform known as the Crazyflie.
@@ -58,7 +58,7 @@ You will:
 
 This practical bridges simulation and real-world deployment at a small, safe scale.
 
-### CW1: Structural Inspection Path Planning Challenge
+### Practical 5 - CW1: Challenge 1 - Structural Inspection Path Planning Challenge (individual coursework)
 > Duration: Weeks 4, 5 and 6
 
 For the first challenge, you will be working individually primarily in simulation to solve a key part of the structural inspection path planning problem. Your task will be in investigating and implementing solutions to finding the most optimal way of visiting a series of locations representing inspection locations, while avoiding the obstacles in the environment. 
@@ -67,15 +67,18 @@ This mirrors real life autonomous inspection scenarios which are the majority of
 
 Assessment details will be provided separately.
 
-### Practical 3 (After reading week)
-
+### Practical 6 (After reading week)
+> Duration: Week 6 
 <!-- > Week 7
 
 In practical 3, we now introduce some more widely used systems within the drone ecosystem, namely the Pixhawk flight controller, PX4 flight control firmware stack and associated tools. The aim is to give some experience within systems which are more widely used in industry and research all over the world. 
 
 In the session there will be a mix of software-in-the-loop (SITL) simulation of drones using PX4 on Ubuntu, as well as hands on dissection of a small PX4 based quadcopter to understand the hardware setup. Hopefully by the end of the session we will be able to hook up the STIL with ROS2 and Aerostack2 -->
 
-### CW2: Grand Challenge - Exploring Real-Life Drone Use Cases (Will show you soon)
+### Practical 7
+> Duration: Week 7
+ 
+### Practicals 8, 9 and 10 - CW2: Grand Challenge - Exploring Real-Life Drone Use Cases (Will show you soon)
 
 <!-- > Weeks 8, 9 and 10
 
@@ -83,9 +86,13 @@ In the last few weeks, you will be working in teams to complete the grand challe
 
 The scenarios available, team sizes and assessment criteria will be released closer to the time. -->
 
+
 ## Contact
+If you have any questions, please contact:
 
 - Vijay Pawar: v.pawar AT ucl.ac.uk
 - Mickey Li: mickey.li AT ucl.ac.uk
 - Guohao Wang: guohao.wang AT ucl.ac.uk
 - Shreevanth Gopalakrishnan: shreevanth.gopalakrishnan AT ucl.ac.uk
+
+For technical issues with the associated repositories, please raise a GitHub issue. This helps us collectively track, resolve and share solutions. As everyone's setup will be slightly different, it is encouraged that we all help each other and share your insights.
