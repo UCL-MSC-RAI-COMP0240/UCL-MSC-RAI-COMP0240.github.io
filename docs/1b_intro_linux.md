@@ -108,6 +108,14 @@ System Requirements:
 - Windows 10 (version 2004 / build 19041 or later) or Windows 11
 - Administrator access on your machine
 - At least 16 GB system RAM recommended (8 GB minimum). By default, wsl2 allocates 50% of your systems resources. From our experience you need to set 24GB of memory to run the coursework.
+- 
+When using WSL2 expect:
+- Increased latency compared to native Ubuntu
+- Reduced stability at high ROS 2 update rates
+- Gazebo performance may depend on compatible Windows vGPU drivers (you can force to run on CPU)
+- No native USB access
+
+USB devices (e.g. Crazyradio) require manual forwarding and may be unreliable.
 
 1. Install WSL 2
 Open PowerShell as Administrator and run:
@@ -156,78 +164,73 @@ lsb_release -a
 You should see Ubuntu 22.04 LTS.
 
 ### Increasing WSL2 Memory and CPU allocation
+By default, WSL 2 dynamically allocates system resources. For ROS 2 and Gazebo, this often results in insufficient memory and poor performance. To overcome, you must manually configure resource limits.
 
+1. Create or Edit .wslconfig
 
+- Open File Explorer
+- Navigate to your Windows user directory:
 
+```console
+C:\Users\<your-username>\
+```
 
-In order to enable as many of the students to work on native Ubuntu as possible, we suggest the following options:
+Create a new text file named:
+```console
+.wslconfig
+```
+- Ensure the file has no file extension
+- Windows may try to name it .wslconfig.txt (this is incorrect)
 
-1. Dual Booting your Windows Install with Ubuntu 22.04
-    - Install Ubuntu 22.04 alongside your existing Windows installation. This allows you to choose between operating systems at boot.
-    - Native ubuntu performance
-    - Fully supported by course instructors 
-    - Will require at least 100Gb of unused disk space
-    - Windows only
-      
-2. Borrowing and booting from an Ubuntu 22.04 installed USB-C NVME Drive 
-    - Borrow or prepare a portable USB-C NVMe drive pre-installed with Ubuntu 22.04. This method allows you to run Ubuntu without altering your main system.
-    - Go to bios setting to reorder your booting sequence. Different brands of computers have different ways of getting into bios. For example, for dell computer, you could access the BIOS/UEFI settings by restarting your computer and pressing the F2 key repeatedly as soon as the Dell logo appears. Lift the borrowed drive up to the first, then save changes. Now your computer will boot from this automatically as long as it is plugged into your computer.  ![dell booting configuration](images/Image.jpeg)
-    - Minimal changes to your primary system.
-    - Requires a USB-C port with fast read/write capabilities.
-    - Limited number of pre-setup Ubuntu 22.04 bootsticks
-    - Windows Primarily, but known to potentially work with Mac OSX too (pending testing). 
-3. Repurpose an old laptop 
-4. Spin up a virtual machine on a cloud provider
-    - Use a cloud provider like AWS, Google Cloud, or Azure to spin up a virtual machine running Ubuntu 22.04
-5. Docker
+2. Configure Resource Limits
+Open .wslconfig using Notepad or VS Code and paste the following:
+
+```console
+[wsl2]
+memory=24GB
+processors=20
+swap=8GB
+localhostForwarding=true
+```
+Above values are based on our experience, please adjust values based on your hardware. 
+
+3. Restart WSL
+```console
+wsl --shutdown
+```
+
+4. Verify Resource Allocation
+-In Ubuntu, check memory allocation:
+```console
+free -h
+```
+
+- Check processors:
+```console
+nproc
+```
+
+## Other Methods if you want to explore - Docker / Virtual Machine (Advanced and Limited Course Support)
+The following options are not recommended as primary setups, but may be explored by students who are experienced with Linux systems and understand the associated limitations. Support from the course team for these methods will be limited.
+
+1. Repurpose an old laptop
+If you have access to an older laptop, you may choose to:
+- Wipe the machine and install Ubuntu 22.04 directly
+- Use it as a dedicated Linux development machine for the course
+
+This approach can work well provided the hardware supports:
+- Reasonable CPU performance
+- At least 16 GB RAM
+- Basic GPU acceleration for Gazebo
+
+2. Docker
+Docker may be useful in specific, controlled situations, but it is not a primary supported workflow for this module.
+
+Known issues include:
     - Docker may be possible for some of the situations
     - Known issues with GUIs and Windows (which can be solved) 
     - Not as supported 
-6. Virtual Machine
-
-<!-- ## Installing Ubuntu 22.04
-
-There are three ways you can run this project depending on your situation or operating system. 
-
-- Linux: All 2 ways (Local and Docker) will work
-- Windows: Boot from an external SSD provided by us
-- Max OSX: TBC
-
-## For Linux users
-If you are a Linux user, you will have two options to set up your project, i.e. Local or Docker.
-
-### Local
-
-Install Ubuntu 22.04, ROS2 Humble, Ignition Gazebo Fortress as per their instructions.
-
-#### 1. 
-
-Your options are 
-
-1. Finding a spare machine that you can wipe and install Ubuntu on
-2. Finding a machine that you would be willing to dual boot
-3. Running a virtual machine
-4. Running a container (Not supported yet as I havent made a container - also this requires gazebo which requires a GUI which is not ideal for containers apart from singularity containers) -->
-
-For options 1 and 2, you will need to find a USB stick that is >4Gb and using a tool such as [Rufus](https://rufus.ie/en/) flash the [Ubuntu 22.04 ISO file](https://ubuntu.com/download/desktop) onto it. 
-
-Once you have a flashed USB drive, you can insert that into the spare machine. On startup make sure to mash some combination of F2, F8 or F12 to go to the BIOS boot screen and select boot from USB. 
-
-This will start up tp the Ubuntu installer on the USB drive where you can select what to do. Whether that is to wipe the machine, or in the advanced menu create a new partition for Ubuntu so you can dual boot (For Windows you will also need to shrink your primary partition). For more details [see a guide such as this one](https://www.onlogic.com/company/io-hub/how-to-dual-boot-windows-11-and-linux/). 
-
-We have also created a number of pre-installed NVME drives which you may be able to borrow pending numbers
-
-<!-- You can also download the ISO file and run it in a virtual machine program such as [VirtualBox](https://www.virtualbox.org/). 
-
-> I have created and exported a virtual machine with everything already installed for you to use. Speak to the instructors
-
-In virtualbox you can import an existing virtual machine. Once installed and you have the gui up, there is an option to import (orange arrow), in which you can select the existing exported virtual machine.
-Once you have a virtual machine setup, you can simply start it. 
-
-> Note: Since this project uses gazebo and is not the lightest workioad, you may want to give the VM more resources i.e. CPU, RAM and potetially video memory too. You can do this in the virtual machine settings.  -->
-
-
-
+    
 ## A Brief Introduction to Linux
 
 Adapted from this [digital ocean tutorial](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics)
@@ -454,7 +457,8 @@ That is Docker on Linux installed. See [the original page](https://docs.docker.c
 
 1. Install and Run Ubuntu 22.04 using a method described above
 2. Familiarise yourself with Linux and Ubuntu
-3. Install the programs and applications you might find useful 
+3. Install the programs and applications you might find useful
+4. Install ROS2 and Gazebo Fortress 
 
 *Further Tasks:*
 
