@@ -1,8 +1,8 @@
 # Practical 1: Pre-Setup - ROS2 Installation, Intro to ROS2 and Development Workflow
 
-This page introduces ROS2 as a development and debugging workflow, not just a dependency to install. The objective is to ensure that you can build, run, inspect, and debug ROS 2 systems efficiently, which is essential for aerial robotics development.
+This page introduces ROS2 as a development and debugging workflow, not just a dependency to install. The objective is to ensure that you can build, run, inspect, and debug ROS2 systems efficiently, which is essential for aerial robotics development.
 
-The course uses ROS 2 Humble on Ubuntu 22.04.
+The course uses ROS2 Humble on Ubuntu 22.04.
 
 
 ## Tasks
@@ -12,56 +12,56 @@ This practical introduces the core ROS2 development workflow that will be used t
 
 Complete all tasks in order. Do not skip tasks, as later steps depend on earlier setup.
 
-### Task 1 – Verify Your ROS 2 Environment
+### Task 1 – Verify Your ROS2 Environment
 **Purpose**  
-Before working with ROS 2, you must confirm that your system is correctly configured. Many ROS 2 issues arise from environment problems rather than code errors.
+Before working with ROS2, you must confirm that your system is correctly configured. Many ROS2 issues arise from environment problems rather than code errors.
 
 **What to do**
-    - Open a new terminal
-    - Confirm your Ubuntu version
-    - Check that ROS 2 is installed and accessible
-    - Identify the active ROS 2 distribution
-    - Run a basic ROS 2 command
+- Open a new terminal
+- Confirm your Ubuntu version
+- Check that ROS2 is installed and accessible
+- Identify the active ROS2 distribution
+  Run a basic ROS2 command
 
 ---
 
-### Task 2 – Create and Build a ROS 2 Workspace
+### Task 2 – Create and Build a ROS2 Workspace
 **Purpose**  
-All ROS 2 development takes place inside a workspace. Understanding workspace structure and build behaviour is essential for all future practicals.
+All ROS2 development takes place inside a workspace. Understanding workspace structure and build behaviour is essential for all future practicals.
 
 **What to do**
-    - Create a new ROS 2 workspace with a `src` directory
-    - Build the workspace using `colcon`
-    - Source the workspace
+- Create a new ROS2 workspace with a `src` directory
+- Build the workspace using `colcon`
+- Source the workspace
     - Verify that the workspace overlay is active
 
 ---
-### Task 3 – Create a ROS 2 Package 
+### Task 3 – Create a ROS2 Package 
 **Purpose**  
-In ROS 2, packages are the fundamental unit of software organisation. Every node, launch file, and library lives inside a package.
+In ROS2, packages are the fundamental unit of software organisation. Every node, launch file, and library lives inside a package.
 
 **What to do**
-    - Create a new ROS 2 package inside the `src` directory
+    - Create a new ROS2 package inside the `src` directory
     - Rebuild the workspace
     - Source the workspace again
-    - Confirm that ROS 2 can discover your package
+    - Confirm that ROS2 can discover your package
 
 ---
-### Task 4 – Run and Inspect ROS 2 Nodes
+### Task 4 – Run and Inspect ROS2 Nodes
 **Purpose**  
-ROS 2 systems consist of multiple nodes communicating via topics. You must be able to inspect a running system to understand and debug behaviour.
+ROS2 systems consist of multiple nodes communicating via topics. You must be able to inspect a running system to understand and debug behaviour.
 
 **What to do**
-    - Run a ROS 2 demo node
+    - Run a ROS2 demo node
     - Open a second terminal to inspect the system
     - List all running nodes
     - List active topics
     - Inspect one topic to identify its message type
 
 ---
-### Task 5 – Debug a Common ROS 2 Workflow Error (10 minutes)
+### Task 5 – Debug a Common ROS2 Workflow Error (10 minutes)
 **Purpose**  
-This task demonstrates a very common ROS 2 error caused by missing environment setup.
+This task demonstrates a very common ROS2 error caused by missing environment setup.
 
 **What to do**
     - Stop the running node
@@ -118,12 +118,12 @@ sudo apt install curl -y
 ```
 
 ```bash
-# Download and add the ROS 2 GPG key
+# Download and add the ROS2 GPG key
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 ```
 
 ```bash
-# Add the ROS 2 repository to your sources list
+# Add the ROS2 repository to your sources list
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 ```
 
@@ -134,7 +134,7 @@ sudo apt install ros-dev-tools
 ```
 
 ### Environment Configuration - Source ROS2 Automatically
-ROS 2 relies on environment setup. If this step is incorrect, ROS commands will not function. To do this, it is recommended that you add the startup script to your `~/.bashrc` script
+ROS2 relies on environment setup. If this step is incorrect, ROS commands will not function. To do this, it is recommended that you add the startup script to your `~/.bashrc` script
 
 - Open .bashrc and edit the file
 ```bash
@@ -146,7 +146,7 @@ The bashrc file should have been opened, then scroll to bottom of bashrc and app
 source /opt/ros/humble/setup.bash
 ```
 
-This will ensure that ROS2 is auto-enabled for all terminals which you setup. Ensure your system uses UTF-8, install the required packages, and add the official ROS 2 repository.
+This will ensure that ROS2 is auto-enabled for all terminals which you setup. Ensure your system uses UTF-8, install the required packages, and add the official ROS2 repository.
 
 You can also edit .bashrc in the terminal without opening the file. This will add new entries to the bottom of the file.
 
@@ -307,7 +307,7 @@ There are some interesting changes between ROS1 and ROS2, but the core elements 
 ### ROS2 in Practice - Workflow Concepts
 In this course, to recap, ROS2 should be understood as a distributed software framework that allows multiple processes to communicate in a structured and inspectable way. Rather than treating ROS2 as a black box, you are expected to understand how to observe and reason about a running system.
 
-The concepts below are the minimum required to develop, debug, and extend ROS 2-based systems.
+The concepts below are the minimum required to develop, debug, and extend ROS2-based systems.
 
 ### Nodes
 A **node** is an executable process that performs computation. In practice, nodes typically implement:
@@ -316,7 +316,7 @@ A **node** is an executable process that performs computation. In practice, node
 - control (e.g. flight commands)
 - coordination and logic
 
-Each node runs independently and communicates with other nodes using ROS 2 communication primitives.
+Each node runs independently and communicates with other nodes using ROS2 communication primitives.
 
 Common inspection commands:
 ```bash
@@ -394,8 +394,8 @@ ros2 param set /node_name parameter_name value
 
 Parameters are a key mechanism for tuning aerial robotics systems during experimentation.
 
-### Launching ROS 2 Systems
-Realistic robotics systems consist of multiple nodes that must be started in a coordinated way. ROS 2 uses launch files to manage this process.
+### Launching ROS2 Systems
+Realistic robotics systems consist of multiple nodes that must be started in a coordinated way. ROS2 uses launch files to manage this process.
 
 A launch file typically:
 - starts multiple nodes
@@ -418,7 +418,7 @@ Learning to read and interpret launch output is an essential skill.
 
 ### Debugging Workflow
 
-When a ROS 2 system does not behave as expected, debugging should be systematic, not trial-and-error. Use the following workflow as your first response:
+When a ROS2 system does not behave as expected, debugging should be systematic, not trial-and-error. Use the following workflow as your first response:
 
 1: Check the Environment
 
@@ -511,7 +511,7 @@ Fix:
 - check log files
 
 ### Recommended Development Practices
-To work efficiently with ROS 2:
+To work efficiently with ROS2:
 - Treat ROS tools as diagnostic instruments
 - Build and test incrementally
 - Use multiple terminals:
