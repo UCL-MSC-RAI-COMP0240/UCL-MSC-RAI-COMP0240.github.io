@@ -32,7 +32,7 @@ nav:
       - "8. Building Crazyflies": "3b_practical_crazyflie.md"
       - "9. Flying Crazyflies": "4_practical_crazyflie.md"
 
-  - "Practical 5: Assignment - Challenge CW1":
+  - "Practical 5: Assignment - CW1":
       - "Structural Inspection Path Planning Challenge": "3_challenge_cw1.md"
 
   - Practical 6:
@@ -44,7 +44,7 @@ nav:
       - "Introducing Pixhawk and PX4": "6a_practical_pixhawk_PX4.md"
       - "Autonomous flight with PX4, ROS2 and aerostack2": "6b_practical_PX4_Aerostack2_ROS2.md"
 
-  - "Practical 9 & 10: Assignment - Challenge Cw2":
+  - "Practical 9 & 10: Assignment - CW2":
       - "Multi-Drone Swarming Formation Flight Challenge": "7_challenge_multi_drone.md"
 
 extra_css:
