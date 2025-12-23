@@ -30,28 +30,28 @@ The following environments are supported, listed in order of preference:
 1. Native Ubuntu 22.04 Installation (Strongly Recommended)
     - Best performance and lowest latency
     - Full support for:
-    - ROS 2 Humble
-    - Gazebo simulation
-    - Aerostack2
-    - USB-based hardware (e.g. Crazyradio)
+        - ROS 2 Humble
+        - Gazebo simulation
+        - Aerostack2
+        - USB-based hardware (e.g. Crazyradio)
 
 This setup is strongly recommended for students intending to participate in hardware-based practicals and challenges.
 
 2. Dual-Boot Ubuntu 22.04 (Supported)
-  - Ubuntu installed alongside an existing Windows installation
-  - Equivalent performance to a native installation when booted into Ubuntu
-  - Requires disk repartitioning and rebooting between operating systems
-  - Requires ≥ 100 GB of free disk space
-  - **Ensure you have recorded your BitLocker account information to avoid issues!**
+    - Ubuntu installed alongside an existing Windows installation
+    - Equivalent performance to a native installation when booted into Ubuntu
+    - Requires disk repartitioning and rebooting between operating systems
+    - Requires ≥ 100 GB of free disk space
+    - **Ensure you have recorded your BitLocker account information to avoid issues!**
 
 Supported by course instructors.
 
 3. Ubuntu 22.04 on an External SSD / NVMe Drive (Supported)
-  - Ubuntu installed on a portable USB-C SSD or NVMe drive
-  - Near-native performance
-  - Minimal changes to the host system
-  - Requires a fast USB-C port
-  - Ensure you have recorded your BitLocker account information to avoid issues!
+    - Ubuntu installed on a portable USB-C SSD or NVMe drive
+    - Near-native performance
+    - Minimal changes to the host system
+    - Requires a fast USB-C port
+    - Ensure you have recorded your BitLocker account information to avoid issues!
 
 A limited number of pre-configured Ubuntu 22.04 external drives may be available to borrow (subject to availability). Primarily tested on Windows systems; macOS compatibility is not guaranteed.
 
@@ -60,21 +60,21 @@ A limited number of pre-configured Ubuntu 22.04 external drives may be available
 These options are permitted but not recommended. For those are the interested in exploring, we are happy to provide feedback. Though expect having to solve specific software and device related problems. For this keen to take up this challenge, it is a option for learning advanced aspects of using Linux for robotics development.
 
 They may be suitable for:
-- Learning Linux basics
-- ROS 2 development
-- Simulation-only work
+    - Learning Linux basics
+    - ROS 2 development
+    - Simulation-only work
 
 Known limitations include:
-- Unreliable USB access
-- Increased latency and timing jitter
-- Reduced graphics performance for Gazebo and RViz
-- Additional configuration overhead
+    - Unreliable USB access
+    - Increased latency and timing jitter
+    - Reduced graphics performance for Gazebo and RViz
+    - Additional configuration overhead
 
 Support from the course team for these setups will be limited, and students using them may not be able to complete hardware-dependent activities.
 
 While containers (e.g., Docker) and virtual machines (VMs) can offer flexibility, they have limitations in this context:
-- *Docker*: Known for portability, but graphical user interfaces (GUIs) for simulation tools like Gazebo and RViz can be challenging to configure, especially on Windows.
-- *Virtual Machines*: Simulations in Gazebo are graphics-intensive, and VMs often lack the hardware acceleration needed for smooth operation. Additionally, VMs can have limited access to host machine IO interfaces (e.g., USB), making hardware integration difficult.
+    - *Docker*: Known for portability, but graphical user interfaces (GUIs) for simulation tools like Gazebo and RViz can be challenging to configure, especially on Windows.
+    - *Virtual Machines*: Simulations in Gazebo are graphics-intensive, and VMs often lack the hardware acceleration needed for smooth operation. Additionally, VMs can have limited access to host machine IO interfaces (e.g., USB), making hardware integration difficult.
 
 That said, students are welcome to experiment with Docker or VMs, but these methods will receive minimal support from the course instructors.
 
@@ -82,14 +82,14 @@ That said, students are welcome to experiment with Docker or VMs, but these meth
 For native, dual-boot, or external-drive installations:
 
 1. Download the Ubuntu 22.04 LTS Desktop ISO from:
-  - [Ubuntu ISO Download](https://ubuntu.com/download/desktop)
+    - [Ubuntu ISO Download](https://ubuntu.com/download/desktop)
 2. Prepare a bootable USB drive (8 GB minimum, 16 GB recommended) using a tool such as:
-  - Rufus (Windows)
-  - Balena Etcher
-  - Ventoy
+    - Rufus (Windows)
+    - Balena Etcher
+    - Ventoy
 3. Insert the USB drive and reboot your machine.
 4. Enter the boot menu or BIOS/UEFI settings (key varies by manufacturer; commonly F12, Esc, or Del).
-  - Example (Dell):
+    - Example (Dell):
     - F2 → BIOS/UEFI
     - F12 → Boot menu
     - Go to bios setting to reorder your booting sequence.
