@@ -17,64 +17,70 @@ Complete all tasks in order. Do not skip tasks, as later steps depend on earlier
 Before working with ROS 2, you must confirm that your system is correctly configured. Many ROS 2 issues arise from environment problems rather than code errors.
 
 **What to do**
-- Open a new terminal
-- Confirm your Ubuntu version
-- Check that ROS 2 is installed and accessible
-- Identify the active ROS 2 distribution
-- Run a basic ROS 2 command
+    - Open a new terminal
+    - Confirm your Ubuntu version
+    - Check that ROS 2 is installed and accessible
+    - Identify the active ROS 2 distribution
+    - Run a basic ROS 2 command
+
+---
 
 ### Task 2 – Create and Build a ROS 2 Workspace
 **Purpose**  
 All ROS 2 development takes place inside a workspace. Understanding workspace structure and build behaviour is essential for all future practicals.
 
 **What to do**
-- Create a new ROS 2 workspace with a `src` directory
-- Build the workspace using `colcon`
-- Source the workspace
-- Verify that the workspace overlay is active
+    - Create a new ROS 2 workspace with a `src` directory
+    - Build the workspace using `colcon`
+    - Source the workspace
+    - Verify that the workspace overlay is active
 
+---
 ### Task 3 – Create a ROS 2 Package 
 **Purpose**  
 In ROS 2, packages are the fundamental unit of software organisation. Every node, launch file, and library lives inside a package.
 
 **What to do**
-[] Create a new ROS 2 package inside the `src` directory
-[] Rebuild the workspace
-[] Source the workspace again
-[] Confirm that ROS 2 can discover your package
+    - Create a new ROS 2 package inside the `src` directory
+    - Rebuild the workspace
+    - Source the workspace again
+    - Confirm that ROS 2 can discover your package
 
+---
 ### Task 4 – Run and Inspect ROS 2 Nodes
 **Purpose**  
 ROS 2 systems consist of multiple nodes communicating via topics. You must be able to inspect a running system to understand and debug behaviour.
 
 **What to do**
-[] Run a ROS 2 demo node
-[] Open a second terminal to inspect the system
-[] List all running nodes
-[] List active topics
-[] Inspect one topic to identify its message type
+    - Run a ROS 2 demo node
+    - Open a second terminal to inspect the system
+    - List all running nodes
+    - List active topics
+    - Inspect one topic to identify its message type
 
+---
 ### Task 5 – Debug a Common ROS 2 Workflow Error (10 minutes)
 **Purpose**  
 This task demonstrates a very common ROS 2 error caused by missing environment setup.
 
 **What to do**
-[] Stop the running node
-[] Open a new terminal without sourcing any setup files
-[] Attempt to run the same node
-[] Observe the error message
-[] Fix the issue by sourcing the correct setup file
-[] Rerun the node successfully
+    - Stop the running node
+    - Open a new terminal without sourcing any setup files
+    - Attempt to run the same node
+    - Observe the error message
+    - Fix the issue by sourcing the correct setup file
+    - Rerun the node successfully
 
+---
 ### Task 6 – Verify Gazebo Installation (5–10 minutes)
 **Purpose**  
 Gazebo will be used in later practicals for simulation. You must confirm that it is correctly installed and can launch on your system.
 
 **What to do**
-[] Check that Gazebo is installed
-[] Launch Gazebo from the terminal
-[] Confirm that it opens successfully
-[] Close Gazebo cleanly
+    - Check that Gazebo is installed
+    - Launch Gazebo from the terminal
+    - Confirm that it opens successfully
+    - Close Gazebo cleanly
 
 If Gazebo does not launch correctly, note the error message and inform the teaching team. Do not attempt advanced graphics fixes during the session.
 
