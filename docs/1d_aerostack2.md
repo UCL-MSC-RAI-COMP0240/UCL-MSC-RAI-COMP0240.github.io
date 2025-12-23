@@ -34,8 +34,6 @@ This layer is responsible for:
 - Sensors
 - Actuators
 
----
-
 ### 2. ROS 2 Middleware Layer
 ROS 2 provides the communication backbone:
 - Nodes
@@ -45,8 +43,6 @@ ROS 2 provides the communication backbone:
 
 All Aerostack2 components are ultimately ROS 2 nodes communicating through standard ROS 2 interfaces.
 
----
-
 ### 3. Aerostack2 Core Libraries
 This layer provides reusable aerial robotics functionality:
 - State estimation
@@ -55,8 +51,6 @@ This layer provides reusable aerial robotics functionality:
 - Safety and emergency handling
 
 These are **generic**, reusable components that are independent of any specific application.
-
----
 
 ### 4. Aerostack2 Project Repository (Application Layer)
 This is where a specific application is defined.
@@ -70,8 +64,6 @@ Examples include:
 - Gazebo simulation projects
 - Indoor flight projects
 - Outdoor autonomous missions
-
----
 
 ### 5. User Mission Logic 
 At the top level are:
@@ -145,29 +137,10 @@ Choose **one** of the following challenges:
 
 Do **not** modify configuration files or launch scripts.
 
----
-
-
-
-
-//## Tasks
-//
-//1. Install Aerostack2 as instructed above
-//2. Read the Aerostack2 documentation to understand the architecture and different components. 
-//    - What is the purpose of aerostack?
-//    - What are the key components that it implements?
-//    - Why are we using it here? 
-//3. Follow the instructions and install project gazebo
-//    - What are the purposes of each of the files and folders
-//4. Run Project Gazebo with the teleoperation panel
-//    - Takeoff the Simulated drone and fly in around in some shapes
-//    - Try switching to velocity mode - whats the difference? 
-//5. Run Project Gazebo with the example mission script
-//    - What does the script do
-//6. Run Project Gazebo with your own modified mission script
 
 ---
-## Robotic Frameworks For Aerial Control
+
+## Background to Robotic Frameworks For Aerial Control
 
 As robotic and autonomous systems proliferate into the wider world, there is a need to address the difficulties of system development and deployment at scale. There is evidence that industry is directly facing these challenges through the use of cloud computing, continuous integration and similar systems inspired from very successful and agile software development processes. This is made clear through offerings such as Amazon's [AWS Robomaker](https://aws.amazon.com/robomaker/), Google's cloud robotics [platforms](\url{https://googlecloudrobotics.github.io/core/) and so on.
 
