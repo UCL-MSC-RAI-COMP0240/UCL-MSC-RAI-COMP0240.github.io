@@ -120,6 +120,7 @@ you will run it, observe it, and interact with it — but not modify its interna
 **Goal:** Connect Aerostack2 back to core ROS2 concepts.
 
 While the system is running:
+
 - List active ROS2 nodes
 - List active topics
 - Identify which topics are likely related to:
@@ -138,11 +139,13 @@ You are not expected to understand everything — focus on recognising structure
 Choose **one** of the following challenges:
 
 **Option A – Mission Execution**
+
 - Run an existing example mission script
 - Observe the sequence of actions (e.g. takeoff → move → land)
 - Identify where in the code the mission logic lives
 
 **Option B – Mission Modification**
+
 - Duplicate an existing mission script
 - Change **one simple parameter** (e.g. altitude, duration, waypoint)
 - Rerun the mission and observe the difference
