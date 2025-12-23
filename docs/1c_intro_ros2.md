@@ -10,7 +10,9 @@ This practical introduces the core ROS2 development workflow that will be used t
 
 **create → build → source → run → inspect → debug**
 
-Complete all tasks in order. Do not skip tasks, as later steps depend on earlier setup.
+Complete all tasks in order. Do not skip tasks, as later steps depend on earlier setup. 
+
+For reference: ROS2 tutorials [ROS2 Tutorials](https://docs.ros.org/en/humble/Tutorials.html) 
 
 ---
 ### Task 1 – Verify Your ROS2 Environment
@@ -533,8 +535,3 @@ Technically, Gazebo operates as a standalone simulation engine but shares key co
 
 
 
-## Tasks
-
-1. Install ROS2 as instructed above
-2. Familiarise yourself with ROS2 (note the differences if you have previously used ROS1)
-3. Do some of the ROS2 tutorials [here](https://docs.ros.org/en/humble/Tutorials.html) 
