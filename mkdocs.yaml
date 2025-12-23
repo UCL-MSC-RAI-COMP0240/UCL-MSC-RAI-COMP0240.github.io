@@ -39,7 +39,7 @@ nav:
       - "10. Crazyflie with Aerostack2": "5_practical_crazyflie_aerostack2.md"
 
   - Practical 7: 
-    -"Flight Practice, Regulation and Laws (tbc at UCL HereEast)": "tbc.md"
+    - "Flight Practice, Regulation and Laws (tbc at UCL HereEast)": "tbc.md"
 
   - Practical 8:
       - "Introducing Pixhawk and PX4": "6a_practical_pixhawk_PX4.md"
