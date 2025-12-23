@@ -28,30 +28,30 @@ Specific to macOS users, we offered a limited laptop scheme (subject to availabi
 The following environments are supported, listed in order of preference:
 
 1. Native Ubuntu 22.04 Installation (Strongly Recommended)
-- Best performance and lowest latency
-- Full support for:
-  - ROS 2 Humble
-  - Gazebo simulation
-  - Aerostack2
-  - USB-based hardware (e.g. Crazyradio)
+  - Best performance and lowest latency
+  - Full support for:
+    - ROS 2 Humble
+    - Gazebo simulation
+    - Aerostack2
+    - USB-based hardware (e.g. Crazyradio)
 
 This setup is strongly recommended for students intending to participate in hardware-based practicals and challenges.
 
 2. Dual-Boot Ubuntu 22.04 (Supported)
-- Ubuntu installed alongside an existing Windows installation
-- Equivalent performance to a native installation when booted into Ubuntu
-- Requires disk repartitioning and rebooting between operating systems
-- Requires ≥ 100 GB of free disk space
-- Ensure you have recorded your BitLocker account information to avoid issues!
+  - Ubuntu installed alongside an existing Windows installation
+  - Equivalent performance to a native installation when booted into Ubuntu
+  - Requires disk repartitioning and rebooting between operating systems
+  - Requires ≥ 100 GB of free disk space
+  - **Ensure you have recorded your BitLocker account information to avoid issues!**
 
 Supported by course instructors.
 
 3. Ubuntu 22.04 on an External SSD / NVMe Drive (Supported)
-- Ubuntu installed on a portable USB-C SSD or NVMe drive
-- Near-native performance
-- Minimal changes to the host system
-- Requires a fast USB-C port
-- Ensure you have recorded your BitLocker account information to avoid issues!
+  - Ubuntu installed on a portable USB-C SSD or NVMe drive
+  - Near-native performance
+  - Minimal changes to the host system
+  - Requires a fast USB-C port
+  - Ensure you have recorded your BitLocker account information to avoid issues!
 
 A limited number of pre-configured Ubuntu 22.04 external drives may be available to borrow (subject to availability). Primarily tested on Windows systems; macOS compatibility is not guaranteed.
 
@@ -73,8 +73,8 @@ Known limitations include:
 Support from the course team for these setups will be limited, and students using them may not be able to complete hardware-dependent activities.
 
 While containers (e.g., Docker) and virtual machines (VMs) can offer flexibility, they have limitations in this context:
-  - *Docker*: Known for portability, but graphical user interfaces (GUIs) for simulation tools like Gazebo and RViz can be challenging to configure, especially on Windows.
-  - *Virtual Machines*: Simulations in Gazebo are graphics-intensive, and VMs often lack the hardware acceleration needed for smooth operation. Additionally, VMs can have limited access to host machine IO interfaces (e.g., USB), making hardware integration difficult.
+- *Docker*: Known for portability, but graphical user interfaces (GUIs) for simulation tools like Gazebo and RViz can be challenging to configure, especially on Windows.
+- *Virtual Machines*: Simulations in Gazebo are graphics-intensive, and VMs often lack the hardware acceleration needed for smooth operation. Additionally, VMs can have limited access to host machine IO interfaces (e.g., USB), making hardware integration difficult.
 
 That said, students are welcome to experiment with Docker or VMs, but these methods will receive minimal support from the course instructors.
 
@@ -82,17 +82,17 @@ That said, students are welcome to experiment with Docker or VMs, but these meth
 For native, dual-boot, or external-drive installations:
 
 1. Download the Ubuntu 22.04 LTS Desktop ISO from:
-- [Ubuntu ISO Download](https://ubuntu.com/download/desktop)
+  - [Ubuntu ISO Download](https://ubuntu.com/download/desktop)
 2. Prepare a bootable USB drive (8 GB minimum, 16 GB recommended) using a tool such as:
   - Rufus (Windows)
   - Balena Etcher
   - Ventoy
 3. Insert the USB drive and reboot your machine.
 4. Enter the boot menu or BIOS/UEFI settings (key varies by manufacturer; commonly F12, Esc, or Del).
-- Example (Dell):
-  - F2 → BIOS/UEFI
-  - F12 → Boot menu
-  - Go to bios setting to reorder your booting sequence.
+  - Example (Dell):
+    - F2 → BIOS/UEFI
+    - F12 → Boot menu
+    - Go to bios setting to reorder your booting sequence.
 
 Different brands of computers have different ways of getting into bios. For example, for dell computer, you could access the BIOS/UEFI settings by restarting your computer and pressing the F2 key repeatedly as soon as the Dell logo appears. Lift the borrowed drive up to the first, then save changes. Now your computer will boot from this automatically as long as it is plugged into your computer.  ![dell booting configuration](images/Image.jpeg)
 
@@ -176,9 +176,8 @@ You should see Ubuntu 22.04 LTS.
 By default, WSL 2 dynamically allocates system resources. For ROS 2 and Gazebo, this often results in insufficient memory and poor performance. To overcome, you must manually configure resource limits.
 
 1. Create or Edit .wslconfig
-
-- Open File Explorer
-- Navigate to your Windows user directory:
+  - Open File Explorer
+  - Navigate to your Windows user directory:
 
 ```console
 C:\Users\<your-username>\
@@ -188,11 +187,11 @@ Create a new text file named:
 ```console
 .wslconfig
 ```
-- Ensure the file has no file extension
-- Windows may try to name it .wslconfig.txt (this is incorrect)
+  - Ensure the file has no file extension
+  - Windows may try to name it .wslconfig.txt (this is incorrect)
 
 2. Configure Resource Limits
-Open .wslconfig using Notepad or VS Code and paste the following:
+  - Open .wslconfig using Notepad or VS Code and paste the following:
 
 ```console
 [wsl2]
@@ -209,7 +208,8 @@ wsl --shutdown
 ```
 
 4. Verify Resource Allocation
--In Ubuntu, check memory allocation:
+  -In Ubuntu, check memory allocation:
+
 ```console
 free -h
 ```
@@ -236,12 +236,11 @@ This approach can work well provided the hardware supports:
 Docker may be useful in specific, controlled situations, but it is not a primary supported workflow for this module.
 
 Known issues include:
-    - Docker may be possible for some of the situations
-    - Known issues with GUIs and Windows (which can be solved) 
-    - Not as supported 
+- Docker may be possible for some of the situations
+- Known issues with GUIs and Windows (which can be solved) 
+- Not as supported 
     
 ## Quick Linux Reference Guide
-
 Adapted from this [digital ocean tutorial](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics). This section provides a concise, course-specific reference to Linux concepts and commands required for COMP0240. It is not intended to be a comprehensive Linux tutorial.
 
 ### What is Linux?
