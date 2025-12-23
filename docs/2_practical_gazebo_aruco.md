@@ -1,4 +1,16 @@
-# Practical 2: Mini Challange - ROS2 with Aerostack2
+# Practical 3: Mini Challange - ROS2 with Aerostack2
+
+This practical builds upon the previous introduction to **Aerostack2** as the main aerial robotics framework used in this module and provides hands-on experience running it in simulation using Gazebo and ROS2.
+
+By this point in the course, you should already be comfortable with:
+- ROS2 workspaces, nodes, and topics
+- Building and sourcing ROS2 projects
+- Launching and inspecting Gazebo simulations
+
+The goal of this practical is to gain confidence using Aerostack2. You are **not expected** to:
+- Understand all Aerostack2 internals
+- Modify low-level controllers or behaviours
+- Debug complex configuration or launch issues
 
 [TOC]
 
@@ -6,9 +18,11 @@
 
 ## Mini-Challenge 
 
-In this simulation mini-challenge, we have setup a small project in which there are a number of aruco codes in a line in front of the drone. There are only two types of aruco code arranged such that for n codes in a line, the first n-1 will be of type 1, and the nth will be type 2. Your task is to write an algorithm which can detect aruco markers from the drones camera, and fly forward until you reach the type 2 code, and land on it. 
+In this simulation mini-challenge, we have setup a small project in which there are a number of aruco codes in a line in front of the drone. There are only two types of aruco code arranged such that for n codes in a line, the first n-1 will be of type 1, and the nth will be type 2. 
 
-In order to do this, you must be able to first have installed aerostack2 and the project code. You will then need to have understood how the mission script works and how to subscribe and process the drone stream. Finally you will need to work out how to control the drone from the drone stream. 
+Your task is to write an algorithm which can detect aruco markers from the drones camera, and fly forward until you reach the type 2 code, and land on it. 
+
+In order to do this, you must be able to first have installed Aerostack2 and the project code. You will then need to have understood how the mission script works and how to subscribe and process the drone stream. Finally you will need to work out how to control the drone from the drone stream. 
 
 ## Aerostack2 Installation
 
