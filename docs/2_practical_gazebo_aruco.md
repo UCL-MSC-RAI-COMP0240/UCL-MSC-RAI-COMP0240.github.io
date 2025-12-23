@@ -1,4 +1,4 @@
-# Practical 2: ROS2 with Aerostack2
+# Practical 2: Mini Challange - ROS2 with Aerostack2
 
 [TOC]
 
