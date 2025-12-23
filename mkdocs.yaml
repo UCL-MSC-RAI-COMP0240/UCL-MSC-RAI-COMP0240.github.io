@@ -34,7 +34,53 @@ nav:
      - "Structural Inspection Path Planning Challenge": "3_challenge_cw1.md"
   - Practical 6: 
     - "Crazyflie with aerostack2": "5_practical_crazyflie_aerostack2.md"
-  - Practical 7: Flight Practice, Regulation and Laws (tbc at UCL HereEast)  
+  - Practical 7:
+    - site_name: UCL-MSC-RAI-COMP0240
+theme: readthedocs
+# repo_url: https://github.com/UCL-MSC-RAI-COMP0240/UCL-MSC-RAI-COMP0240.github.io
+site_description: 'Site for tutorials'
+docs_dir: 'docs'
+copyright: Copyright &copy; 2024 University College London AML Lab
+
+markdown_extensions:
+  - toc:
+      permalink: True
+  - pymdownx.keys:
+      strict: True
+
+plugins:
+  - search
+  - macros
+  - enumerate-headings:
+      toc_depth: 3
+  - mermaid2
+
+nav:
+  - Practical 1 & 2: 
+    - "1. Introduction": "1a_introduction.md"
+    - "2. Ubuntu Installation and Linux Re-Intro": "1b_intro_linux.md"
+    - "3. ROS2 Installation and ROS2 Re-Intro": "1c_intro_ros2.md"
+    - "4. Aerostack2 Introduction": "1d_aerostack2.md"
+    - "5. Gazebo Aruco Mini-Challenge": "2_practical_gazebo_aruco.md"
+  - Practical 3 & 4:
+    - "6. Gazebo Aruco Mini-Challenge": "2_practical_gazebo_aruco.md"
+    - "7. Introduction": "3a_practical_crazyflie.md"
+    - "8. Building Crazyflies": "3b_practical_crazyflie.md"
+    - "9. Flying Crazyflies": "4_practical_crazyflie.md"
+  - Practical 5: Assignment - Challenge CW1: 
+     - "Structural Inspection Path Planning Challenge": "3_challenge_cw1.md"
+  - Practical 6: 
+    - "Crazyflie with aerostack2": "5_practical_crazyflie_aerostack2.md"
+  - Practical 7: 
+    - "Flight Practice, Regulation and Laws (tbc at UCL HereEast)"  
+  - Practical 8: 
+    - "Introducing Pixhawk and PX4": "6a_practical_pixhawk_PX4.md"
+    - "Autonomous flight with PX4,ROS2 and aerostack2": "6b_practical_PX4_Aerostack2_ROS2.md"
+  - Practical 9 & 10: Assignment - Challenge Cw2:
+    - "Multi-Drone Swarming Formation Flight Challenge": "7_challenge_multi_drone.md"
+
+extra_css: [ kbd.css ]
+
   - Practical 8: 
     - "Introducing Pixhawk and PX4": "6a_practical_pixhawk_PX4.md"
     - "Autonomous flight with PX4,ROS2 and aerostack2": "6b_practical_PX4_Aerostack2_ROS2.md"
