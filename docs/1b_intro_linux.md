@@ -1,6 +1,6 @@
 # Practical 1 Pre-Setup: Ubuntu Installation, Intro to Linux and Reference
 
-## Assumed Background and Expectations
+## Assumed Background
 This course assumes that students are comfortable with:
 - Basic programming (Python and/or C++)
 - Using a terminal and command-line tools
