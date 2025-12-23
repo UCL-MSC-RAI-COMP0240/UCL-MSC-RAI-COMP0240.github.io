@@ -34,29 +34,22 @@ The following environments are supported, listed in order of preference:
         - Gazebo simulation
         - Aerostack2
         - USB-based hardware (e.g. Crazyradio)
-
 This setup is strongly recommended for students intending to participate in hardware-based practicals and challenges.
-
 2. Dual-Boot Ubuntu 22.04 (Supported)
     - Ubuntu installed alongside an existing Windows installation
     - Equivalent performance to a native installation when booted into Ubuntu
     - Requires disk repartitioning and rebooting between operating systems
     - Requires ≥ 100 GB of free disk space
     - **Ensure you have recorded your BitLocker account information to avoid issues!**
-
 Supported by course instructors.
-
 3. Ubuntu 22.04 on an External SSD / NVMe Drive (Supported)
     - Ubuntu installed on a portable USB-C SSD or NVMe drive
     - Near-native performance
     - Minimal changes to the host system
     - Requires a fast USB-C port
     - Ensure you have recorded your BitLocker account information to avoid issues!
-
 A limited number of pre-configured Ubuntu 22.04 external drives may be available to borrow (subject to availability). Primarily tested on Windows systems; macOS compatibility is not guaranteed.
-
 4. WSL 2 / Virtual Machines / Docker (Limited Support)
-
 These options are permitted but not recommended. For those are the interested in exploring, we are happy to provide feedback. Though expect having to solve specific software and device related problems. For this keen to take up this challenge, it is a option for learning advanced aspects of using Linux for robotics development.
 
 They may be suitable for:
