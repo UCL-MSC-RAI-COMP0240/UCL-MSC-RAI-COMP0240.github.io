@@ -24,6 +24,28 @@ Your task is to write an algorithm which can detect aruco markers from the drone
 
 In order to do this, you must be able to first have installed Aerostack2 and the project code. You will then need to have understood how the mission script works and how to subscribe and process the drone stream. Finally you will need to work out how to control the drone from the drone stream. 
 
+## Tasks
+
+1. Install project gazebo aruco as instructed
+    - Whats the differences between this project and project gazebo?
+
+2. Run Project Gazebo with the teleoperation panel and rviz2 for the camera feed
+    - Where is the camera feed coming from? 
+    - What is the purpose of rviz2 and what does it show you? 
+
+3. Run Project Gazebo with the example mission camera script
+    - How does the script get the camera data? 
+
+4. Implement and test and aruco detection method using OpenCV 
+    - What version of aruco marker are we using? 
+
+5. With the aruco detection, implement a controller which can solve the mini-challenge
+
+*Further Tasks:*
+
+1. The generated world is defined in `sim_config/world.json`, with models defined in the `models` directory. Have a play around with the world 
+    - What other tasks could you do with your aruco detection module? 
+
 ## Aerostack2 Installation
 
 No matter how you run the linux system, you can try each of the following two options (Local or Docker).
@@ -400,24 +422,4 @@ Finally, remind yourself of the goal of this mini-challenge, and try to implemen
 
 To transfer this controller to real drone, all that is needed is to copy this python mission file to the running machine.  -->
 
-## Tasks
 
-1. Install project gazebo aruco as instructed
-    - Whats the differences between this project and project gazebo?
-
-2. Run Project Gazebo with the teleoperation panel and rviz2 for the camera feed
-    - Where is the camera feed coming from? 
-    - What is the purpose of rviz2 and what does it show you? 
-
-3. Run Project Gazebo with the example mission camera script
-    - How does the script get the camera data? 
-
-4. Implement and test and aruco detection method using OpenCV 
-    - What version of aruco marker are we using? 
-
-5. With the aruco detection, implement a controller which can solve the mini-challenge
-
-*Further Tasks:*
-
-1. The generated world is defined in `sim_config/world.json`, with models defined in the `models` directory. Have a play around with the world 
-    - What other tasks could you do with your aruco detection module? 
