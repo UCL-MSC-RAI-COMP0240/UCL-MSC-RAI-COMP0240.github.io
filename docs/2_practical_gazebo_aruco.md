@@ -1,4 +1,4 @@
-# Practical 3: Mini Challange - ROS2 with Aerostack2
+# Practical 3: Mini Challenge - ROS2 with Aerostack2
 
 This practical builds upon the previous introduction to **Aerostack2** as the main aerial robotics framework used in this module and provides hands-on experience running it in simulation using Gazebo and ROS2.
 
@@ -27,7 +27,7 @@ In order to do this, you must be able to first have installed Aerostack2 and the
 ## Tasks
 
 1. Install project gazebo aruco as instructed
-    - Whats the differences between this project and project gazebo?
+    - What are the differences between this project and project gazebo?
 
 2. Run Project Gazebo with the teleoperation panel and rviz2 for the camera feed
     - Where is the camera feed coming from? 
@@ -213,7 +213,7 @@ Notice how the drone flies around in the simulation and in rviz. Also see how th
 
 The image is from a bottom mounted camera on the simulated drone, mirroring the setup you will be building with the real drone. 
 
-Play around a fly the drone around! 
+Play around and fly the drone around! 
 
 ![teleoperation](images/2_teleoperation.png)
 
@@ -241,7 +241,7 @@ In order to stop the simulator cleanly, in any terminal run the `./stop.bash` sc
 
 This will stop all containers and relevant programs to the simulator in a clean manner. 
 
-Sometimes the simulated drone will go into an unrecoverable state - you may need to resart the simulator. 
+Sometimes the simulated drone will go into an unrecoverable state - you may need to restart the simulator. 
 
 
 ## Dissecting the controller
@@ -411,7 +411,7 @@ This would be a good time to try an automate any computer vision or detection al
 
 Finally, remind yourself of the goal of this mini-challenge, and try to implement a solution! 
 
-> In this simulation mini-challenge, we have setup a small project in which there are a number of aruco codes in a line in front of the drone. There are only two types of aruco code arranged such that for n codes in a line, the first n-1 will be of type 1, and the nth will be type 2. Your task is to write an algorithm which can detect aruco markers from the drones camera, and fly forward until you reach the type 2 code, and land on it. 
+> In this simulation mini-challenge, we have setup a small project in which there are a number of aruco codes in a line in front of the drone. There are only two types of aruco code arranged such that for n codes in a line, the first n-1 will be of type 1, and the nth will be type 2. Your task is to write an algorithm which can detect aruco markers from the drone's camera, and fly forward until you reach the type 2 code, and land on it. 
 
 > Note: Pay attention to the grid sizes of the ArUco markers and the maximum ID number that the detection algorithm can handle. Check the ID numbers of the simulated markers (found in the model file in the src folder) and determine your ArUco dictionary setup strategy accordingly. Here is a quick tutorial on ArUco markers on OpenCV: https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html. 
  
