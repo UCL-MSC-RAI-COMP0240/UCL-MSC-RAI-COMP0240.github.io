@@ -36,6 +36,7 @@ The following environments are supported, listed in order of preference:
         - USB-based hardware (e.g. Crazyradio)
 
 This setup is strongly recommended for students intending to participate in hardware-based practicals and challenges.
+
 2. Dual-Boot Ubuntu 22.04 (Supported)
     - Ubuntu installed alongside an existing Windows installation
     - Equivalent performance to a native installation when booted into Ubuntu
