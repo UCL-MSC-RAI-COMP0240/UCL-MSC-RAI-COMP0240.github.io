@@ -9,6 +9,16 @@ This course assumes that students are comfortable with:
 
 You are not expected to be an expert Linux user at the start of the course. However, you are expected to be able to follow technical documentation independently and to troubleshoot basic setup issues. Setting up and maintaining a functional development environment is considered part of the learning outcomes of this module.
 
+## Tasks
+1. Install and Run Ubuntu 22.04 using your preferred method
+2. Familiarise yourself with Linux and Ubuntu
+3. Install the programs and applications you might find useful
+4. Install ROS2 and Gazebo Fortress
+
+In week2 we will focus on installing Aerostack2.
+
+*Further Tasks:* Read the following to get the best introduction! [LinuxJourney](https://linuxjourney.com/)
+
 ## Linux Installation 
 From this point onward, Ubuntu 22.04 LTS is the reference operating system for this course. All practicals, examples, and troubleshooting assume this environment.
 
@@ -479,19 +489,6 @@ This will install Docker, accessible using `sudo` root privileges only. To use d
         docker run hello-world
 
 That is Docker on Linux installed. See [the original page](https://docs.docker.com/engine/install/ubuntu/) for any further details.
-
-## Tasks
-
-1. Install and Run Ubuntu 22.04 using a method described above
-2. Familiarise yourself with Linux and Ubuntu
-3. Install the programs and applications you might find useful
-4. Install ROS2 and Gazebo Fortress
-
-In week2 we will focus on installing Aerostack2.
-
-*Further Tasks:*
-
-1. Read the following to get the best introduction! [LinuxJourney](https://linuxjourney.com/)
 
 ## Common Linux Issues (Weeks 1–2)
 
