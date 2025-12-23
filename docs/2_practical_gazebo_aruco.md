@@ -102,6 +102,7 @@ cd ~/project_gazebo_ws/src/project_gazebo_aruco
 ./launch_as2.bash -s -t
 ```
 
+<!--
 ### Docker
 
 *If you have locally installed this project already, you can elect not to do this section. Otherwise you could give it a go if you usually run a different version of ubuntu.*
@@ -135,6 +136,7 @@ cd /ros2/project_gazebo_aruco
 
 > Note that you can utilise a GPU if you install the `nvidia-container-toolkit`. Pass the `-nvidia` argument to `docker_start.bash`
 
+-->
 
 ## Running the simulator
 
