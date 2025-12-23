@@ -1,4 +1,4 @@
-# Practical 2: Intoduction to Aerostack2 Framework For Aerial Robotic Systems  
+# Practical 2: Introduction to Aerostack2 Framework For Aerial Robotic Systems  
 
 [TOC]
 
@@ -146,7 +146,7 @@ As robotic and autonomous systems proliferate into the wider world, there is a n
 
 However, there is a great lack of such systems in most academic settings. The result's oriented attitude of many labs often leads to each researcher building a bespoke solution in order to evaluate, validate or prove their goals. These bespoke solutions are often inflexible, not extensible, difficult to understand and, importantly, reuse, with any level of confidence. This becomes especially difficult when coupled with hardware, such as UAVs, where many operational details have been implicitly assumed or ignored for favour of getting the experiment running as quick as possible. In addition these solutions are often poorly structured and maintained  with little to no documentation meaning that it is difficult for researchers to build upon these systems. This is an exceptionally large hurdle to researchers who do not have strong software backgrounds, but wish to perform real world experiments which could improve the quality of research outputs.
 
-This is not to say that it is impossible for a research system to be developed into a reusable platform. There are many examples of research systems being ubiquitous within a group or being released outside the lab. For instance, the [Robotarium at Georgia Tech](https://www.robotarium.gatech.edu/), the Multi-Robot Systems Group at the Czech Technical University with their [experimental system](https://github.com/ctu-mrs/mrs_uav_system), and the PX4 autopilot which began it's life as a collaboration between a number of labs at ETH Zurich. But what we see is that it takes a concerted effort and many years of coincidental work which provide incremental improvements to the system each time. Previously I had attempted to develop a system which solved this problem called [starling](https://github.com/StarlingUAS/ProjectStarling) which had a number of flaws. 
+This is not to say that it is impossible for a research system to be developed into a reusable platform. There are many examples of research systems being ubiquitous within a group or being released outside the lab. For instance, the [Robotarium at Georgia Tech](https://www.robotarium.gatech.edu/), the Multi-Robot Systems Group at the Czech Technical University with their [experimental system](https://github.com/ctu-mrs/mrs_uav_system), and the PX4 autopilot which began its life as a collaboration between a number of labs at ETH Zurich. But what we see is that it takes a concerted effort and many years of coincidental work which provide incremental improvements to the system each time. Previously I had attempted to develop a system which solved this problem called [starling](https://github.com/StarlingUAS/ProjectStarling) which had a number of flaws. 
 
 Therefore as an example system for you to learn, we have chosen the **aerostack2** as our aerial robotic systems development platform. This will enable the following:
 
@@ -165,7 +165,7 @@ We hope that through using aerostack2, you develop an overview of the components
 
 ### Overview 
 
-Aerostack2 (AS2) is an open source software framework that helps developers design and build the control architecture of aerial robotic systems, integrating multiple heterogeneous computational solutions (e.g., computer vision algorithms, motion controllers, self-localization and mapping methods, motion planning algorithms, etc.), built for ROS 2 Humble and ROS 2 Galactic.
+Aerostack2 (AS2) is an open source software framework that helps developers design and build the control architecture of aerial robotic systems, integrating multiple heterogeneous computational solutions (e.g., computer vision algorithms, motion controllers, self-localization and mapping methods, motion planning algorithms, etc.), built for ROS 2 Humble.
 
 Aerostack2 is useful for building autonomous aerial systems in complex and dynamic environments and it is also a useful research tool for aerial robotics to test new algorithms and architectures.
 
@@ -174,7 +174,7 @@ It was created to be available for communities of researchers and developers and
 Aerostack2 is versatile for building different system configurations with various degrees of autonomy. It’s most important features are:
 
   - From teleoperation to autonomous flight. Aerostack2 can be used for teleoperation flights (with manual control) but it can also be used for building autonomous robot systems to perform aerial missions without operator assistance.  
-  - Single robots or multi-robot systems. Aerostack2 can be used to fly a swarm of heterogeneous drones to perform multi-aerial-robot missions. It has been validated to operate with severals drones simultaneously, both in indoor and outdoor environments.  
+  - Single robots or multi-robot systems. Aerostack2 can be used to fly a swarm of heterogeneous drones to perform multi-aerial-robot missions. It has been validated to operate with several drones simultaneously, both in indoor and outdoor environments.  
   - Flexible for different applications. Aerostack2 can be used by system designers to develop their own systems in a wide range of applications. Aerostack2 provides languages and graphical tools to configure specific aerial missions.  
   - Hardware independent. Aerostack2 runs on conventional laptops and it has also run on onboard computers like Nvidia Jetson NX. Aerostack2 has been used in different aerial platforms, including, but not limited to: DJI platforms (Matrice 210RTKv2, Matrice 300, Ryze Tello), Pixhawk autopilots and Crazyflie drones. The framework can operate in simulation and in a real environment in a similar way, what simplifies the Sim2Real development. 
   - Complete modularity, allowing elements to be changed or interchanged without affecting the rest of the system. Plugin-based architecture allows to use different implementations for every tasks.  
@@ -187,7 +187,7 @@ Aerostack2 is versatile for building different system configurations with variou
 In practice, a Aerostack ROS2 working project comprises of two parts:
 
 1. The Core Aerostack Libraries
-    - This provides the core ros2 nodes, funcionalities and interfaces and will be described in more detail below. It is simply another ROS2 library like any other. 
+    - This provides the core ROS2 nodes, functionalities and interfaces and will be described in more detail below. It is simply another ROS2 library like any other. 
 2. An Aerostack2 Project Repository (Application)
     - This is a project folder which interacts and manages a specific application you want to develop with aerostack2. This contains a number of scripts, as well as the python api interface scripts for easy implementation of applications. 
 
@@ -203,7 +203,7 @@ Aerostack2 provides existing implementations of, and methods of extending key pa
     - Motion Control (PID, Differential Flatness)
     - Emergency Handling 
 3. **Behaviours** - Individual built-in components that implement specific high level robotic functionalities such as the following. This allows a mission plan to be expressed as a sequence of activated behaviours in series or in parallel. A key aspect of behaviours is that each individually has state defining whether a behaviour can be activated, if it is still performing that behaviour, deactivating the behaviour and so on. 
-    - Motion Control (e.g. Takeing Off, Landing, Go_to )
+    - Motion Control (e.g. Taking Off, Landing, Go_to )
     - Perception (e.g. Detect Marker, Record Video, Control Gimbal)
     - Planning (e.g. Trajectory Generation)
 4. **Mission Control** - Highest level user facing components for designing and implementing missions of behaviours. 
@@ -213,7 +213,7 @@ Aerostack2 provides existing implementations of, and methods of extending key pa
 
 See [this page for more details](https://aerostack2.github.io/_01_aerostack2_concepts/architecture/index.html)
 
-The core libraries can be installed for `apt-get` if no changes are necessary. However in this course, we will be building from scratch as it allows us to make quick fixes versions within our repository ([UCL AS2 REPO](https://github.com/UCL-MSC-RAI-COMP0240/aerostack2)). To install aerostack, you create a new ros2 workspace and clone our aerostack into the src folder, download depenedencies, and build as usual 
+The core libraries can be installed for `apt-get` if no changes are necessary. However in this course, we will be building from scratch as it allows us to make quick fixes versions within our repository ([UCL AS2 REPO](https://github.com/UCL-MSC-RAI-COMP0240/aerostack2)). To install aerostack, you create a new ROS2 workspace and clone our aerostack into the src folder, download dependencies, and build as usual 
 
 See [these instructions](https://aerostack2.github.io/_00_getting_started/source_install.html)
 
@@ -244,7 +244,7 @@ All projects in aerostack2 are structured in the same way. The project is divide
 - **config_ground_station**: Contains the configuration files for the launchers of the nodes in the ground station.
 - **launch_as2.bash**: Script to launch nodes defined in *tmuxinator/aerostack2.yaml*.
 - **launch_ground_station.bash**: Script to launch nodes defined in *tmuxinator/ground_station.yaml*.
-- **mission_\*.py**: Differents python mission files that can be executed.
+- **mission_\*.py**: Different python mission files that can be executed.
 - **stop.bash**: Script to stop all nodes launched by *launch_as2.bash* and *launch_ground_station.bash*.
 - **rosbag/record_rosbag.bash**: Script to record a rosbag. Can be modified to record only the topics that are needed.
 - **trees\***: Contains the behavior trees that can be executed. They can be selected in the *aerostack2.yaml* file.
