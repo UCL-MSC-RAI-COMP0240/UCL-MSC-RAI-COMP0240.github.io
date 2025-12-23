@@ -2,6 +2,24 @@
 
 [TOC]
 
+---
+## Tasks
+
+1. Install Aerostack2 as instructed above
+2. Read the Aerostack2 documentation to understand the architecture and different components. 
+    - What is the purpose of aerostack?
+    - What are the key components that it implements?
+    - Why are we using it here? 
+3. Follow the instructions and install project gazebo
+    - What are the purposes of each of the files and folders
+4. Run Project Gazebo with the teleoperation panel
+    - Takeoff the Simulated drone and fly in around in some shapes
+    - Try switching to velocity mode - whats the difference? 
+5. Run Project Gazebo with the example mission script
+    - What does the script do
+6. Run Project Gazebo with your own modified mission script
+
+---
 ## Robotic Frameworks For Aerial Control
 
 As robotic and autonomous systems proliferate into the wider world, there is a need to address the difficulties of system development and deployment at scale. There is evidence that industry is directly facing these challenges through the use of cloud computing, continuous integration and similar systems inspired from very successful and agile software development processes. This is made clear through offerings such as Amazon's [AWS Robomaker](https://aws.amazon.com/robomaker/), Google's cloud robotics [platforms](\url{https://googlecloudrobotics.github.io/core/) and so on.
@@ -118,18 +136,3 @@ Both python and bash scripts have a help message that can be displayed by runnin
 
 We will go into more details of usage instructions in the next article, but here is the link to how to run this example: [Link](https://aerostack2.github.io/_02_examples/gazebo/project_gazebo/index.html)
 
-## Tasks
-
-1. Install Aerostack2 as instructed above
-2. Read the Aerostack2 documentation to understand the architecture and different components. 
-    - What is the purpose of aerostack?
-    - What are the key components that it implements?
-    - Why are we using it here? 
-3. Follow the instructions and install project gazebo
-    - What are the purposes of each of the files and folders
-4. Run Project Gazebo with the teleoperation panel
-    - Takeoff the Simulated drone and fly in around in some shapes
-    - Try switching to velocity mode - whats the difference? 
-5. Run Project Gazebo with the example mission script
-    - What does the script do
-6. Run Project Gazebo with your own modified mission script
