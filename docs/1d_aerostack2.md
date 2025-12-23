@@ -7,11 +7,13 @@ Aerostack2 is the **primary aerial robotics platform** used throughout this modu
 At this stage of the course, the goal is early exposure and installation.
 
 You are **not expected** to:
+
 - Understand every component of Aerostack2
 - Modify low-level controllers or behaviours
 - Debug complex multi-node launch issues
 
 Instead, the objectives of this session are to:
+
 - Understand *why* a framework like Aerostack2 is needed
 - See how a full aerial robotics stack is structured
 - Successfully **run an existing Aerostack2 project**
@@ -29,16 +31,19 @@ The key layers are:
 
 ### 1. Hardware / Simulation Layer
 This is the physical or simulated platform:
+
 - Real drones (e.g. Crazyflie, PX4-based platforms)
 - Gazebo for simulation
 
 This layer is responsible for:
+
 - Physics
 - Sensors
 - Actuators
 
 ### 2. ROS2 Middleware Layer
 ROS2 provides the communication backbone:
+
 - Nodes
 - Topics
 - Services
@@ -48,6 +53,7 @@ All Aerostack2 components are ultimately ROS2 nodes communicating through standa
 
 ### 3. Aerostack2 Core Libraries
 This layer provides reusable aerial robotics functionality:
+
 - State estimation
 - Motion control
 - Behaviours (e.g. takeoff, land, go-to)
@@ -59,17 +65,20 @@ These are **generic**, reusable components that are independent of any specific 
 This is where a specific application is defined.
 
 A project repository:
+
 - Selects which Aerostack2 components are used
 - Configures how they are launched
 - Defines missions using Python scripts
 
 Examples include:
+
 - Gazebo simulation projects
 - Indoor flight projects
 - Outdoor autonomous missions
 
 ### 5. User Mission Logic 
 At the top level are:
+
 - Python mission scripts
 - High-level commands (takeoff, move, land)
 - Mission sequencing
