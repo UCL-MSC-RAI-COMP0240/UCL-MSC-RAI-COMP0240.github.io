@@ -1,10 +1,11 @@
 # Practical 1: Pre-Setup - ROS2 Installation, Intro to ROS2 and Development Workflow
 
+[TOC]
+
 This page introduces ROS2 as a development and debugging workflow, not just a dependency to install. The objective is to ensure that you can build, run, inspect, and debug ROS2 systems efficiently, which is essential for aerial robotics development.
 
 The course uses ROS2 Humble on Ubuntu 22.04.
 
-[TOC]
 
 ## Tasks
 This practical introduces the core ROS2 development workflow that will be used throughout the module:
