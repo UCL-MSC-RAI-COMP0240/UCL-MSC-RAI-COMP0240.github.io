@@ -2,22 +2,169 @@
 
 [TOC]
 
----
-## Tasks
+Aerostack2 is the **primary aerial robotics platform** used throughout this module. It provides a complete, research-grade framework for developing, simulating, and deploying aerial robotic systems using ROS 2.
 
-1. Install Aerostack2 as instructed above
-2. Read the Aerostack2 documentation to understand the architecture and different components. 
-    - What is the purpose of aerostack?
-    - What are the key components that it implements?
-    - Why are we using it here? 
-3. Follow the instructions and install project gazebo
-    - What are the purposes of each of the files and folders
-4. Run Project Gazebo with the teleoperation panel
-    - Takeoff the Simulated drone and fly in around in some shapes
-    - Try switching to velocity mode - whats the difference? 
-5. Run Project Gazebo with the example mission script
-    - What does the script do
-6. Run Project Gazebo with your own modified mission script
+At this stage of the course, the goal is early exposure and installation.
+
+You are **not expected** to:
+- Understand every component of Aerostack2
+- Modify low-level controllers or behaviours
+- Debug complex multi-node launch issues
+
+Instead, the objectives of this session are to:
+- Understand *why* a framework like Aerostack2 is needed
+- See how a full aerial robotics stack is structured
+- Successfully **run an existing Aerostack2 project**
+- Gain confidence interacting with the platform at a high level
+
+Aerostack2 will be revisited later in the module, where you will progressively take more responsibility for mission design, autonomy, and system configuration.
+
+## Aerostack2 Practical Basics 
+Aerostack2 should be understood as a **layered system**, built on top of ROS 2, rather than as a monolithic or “black-magic” framework.
+
+The key layers are:
+
+### 1. Hardware / Simulation Layer
+This is the physical or simulated platform:
+- Real drones (e.g. Crazyflie, PX4-based platforms)
+- Gazebo for simulation
+
+This layer is responsible for:
+- Physics
+- Sensors
+- Actuators
+
+---
+
+### 2. ROS 2 Middleware Layer
+ROS 2 provides the communication backbone:
+- Nodes
+- Topics
+- Services
+- Actions
+
+All Aerostack2 components are ultimately ROS 2 nodes communicating through standard ROS 2 interfaces.
+
+---
+
+### 3. Aerostack2 Core Libraries
+This layer provides reusable aerial robotics functionality:
+- State estimation
+- Motion control
+- Behaviours (e.g. takeoff, land, go-to)
+- Safety and emergency handling
+
+These are **generic**, reusable components that are independent of any specific application.
+
+---
+
+### 4. Aerostack2 Project Repository (Application Layer)
+This is where a specific application is defined.
+
+A project repository:
+- Selects which Aerostack2 components are used
+- Configures how they are launched
+- Defines missions using Python scripts
+
+Examples include:
+- Gazebo simulation projects
+- Indoor flight projects
+- Outdoor autonomous missions
+
+---
+
+### 5. User Mission Logic 
+At the top level are:
+- Python mission scripts
+- High-level commands (takeoff, move, land)
+- Mission sequencing
+
+**In this practical, you will only interact with this top layer.**
+
+Understanding this separation is critical:  
+you can design and test aerial missions **without modifying the underlying flight stack**.
+
+---
+
+## Tasks: Running Aerostack2 in Black-Box Mode
+
+In this practical, you will treat Aerostack2 as a **black-box system**:
+you will run it, observe it, and interact with it — but not modify its internals.
+
+### Task 1 – Clone the Aerostack2 Source Repository
+
+**Goal:** Ensure you have the Aerostack2 source code locally.
+
+- Create or use an existing ROS 2 workspace
+- Clone the Aerostack2 repository into the `src` directory
+- Install dependencies and build the workspace following the provided instructions
+
+---
+
+### Task 2 – Run an Existing Aerostack2 Example
+
+**Goal:** Verify that you can launch a complete aerial robotics system.
+
+- Navigate to the example project (e.g. Project Gazebo)
+- Launch the simulation using the provided scripts
+- Start the ground station and the simulated drone
+
+---
+
+### Task 3 – Observe the Running System Using ROS 2 Tools
+
+**Goal:** Connect Aerostack2 back to core ROS 2 concepts.
+
+While the system is running:
+- List active ROS 2 nodes
+- List active topics
+- Identify which topics are likely related to:
+  - State estimation
+  - Control commands
+  - Mission execution
+
+You are not expected to understand everything — focus on recognising structure.
+
+---
+
+### Task 4 – Mini Challenge: Execute a Simple Mission
+
+**Goal:** Interact with Aerostack2 at the mission level.
+
+Choose **one** of the following challenges:
+
+**Option A – Mission Execution**
+- Run an existing example mission script
+- Observe the sequence of actions (e.g. takeoff → move → land)
+- Identify where in the code the mission logic lives
+
+**Option B – Mission Modification**
+- Duplicate an existing mission script
+- Change **one simple parameter** (e.g. altitude, duration, waypoint)
+- Rerun the mission and observe the difference
+
+Do **not** modify configuration files or launch scripts.
+
+---
+
+
+
+
+//## Tasks
+//
+//1. Install Aerostack2 as instructed above
+//2. Read the Aerostack2 documentation to understand the architecture and different components. 
+//    - What is the purpose of aerostack?
+//    - What are the key components that it implements?
+//    - Why are we using it here? 
+//3. Follow the instructions and install project gazebo
+//    - What are the purposes of each of the files and folders
+//4. Run Project Gazebo with the teleoperation panel
+//    - Takeoff the Simulated drone and fly in around in some shapes
+//    - Try switching to velocity mode - whats the difference? 
+//5. Run Project Gazebo with the example mission script
+//    - What does the script do
+//6. Run Project Gazebo with your own modified mission script
 
 ---
 ## Robotic Frameworks For Aerial Control
