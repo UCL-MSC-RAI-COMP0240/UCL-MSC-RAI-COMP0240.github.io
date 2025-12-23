@@ -1,4 +1,4 @@
-# Practical 1 Pre-Setup: Ubuntu Installation, Intro to Linux and Reference
+# Practical 1: Pre-Setup - Ubuntu Installation, Intro to Linux and Reference
 
 ## Assumed Background
 This course assumes that students are comfortable with:
