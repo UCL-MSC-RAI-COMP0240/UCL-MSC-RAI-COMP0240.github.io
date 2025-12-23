@@ -30,10 +30,10 @@ The following environments are supported, listed in order of preference:
 1. Native Ubuntu 22.04 Installation (Strongly Recommended)
     - Best performance and lowest latency
     - Full support for:
-        - ROS 2 Humble
-        - Gazebo simulation
-        - Aerostack2
-        - USB-based hardware (e.g. Crazyradio)
+    - ROS 2 Humble
+    - Gazebo simulation
+    - Aerostack2
+    - USB-based hardware (e.g. Crazyradio)
 
 This setup is strongly recommended for students intending to participate in hardware-based practicals and challenges.
 
