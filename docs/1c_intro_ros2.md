@@ -67,7 +67,7 @@ ROS2 systems consist of multiple nodes communicating via topics. You must be abl
     - Inspect one topic to identify its message type
 
 ---
-### Task 5 – Debug a Common ROS2 Workflow Error (10 minutes)
+### Task 5 – Debug a Common ROS2 Workflow Error 
 
 **Purpose**  
 This task demonstrates a very common ROS2 error caused by missing environment setup.
@@ -82,7 +82,7 @@ This task demonstrates a very common ROS2 error caused by missing environment se
     - Rerun the node successfully
 
 ---
-### Task 6 – Verify Gazebo Installation (5–10 minutes)
+### Task 6 – Verify Gazebo Installation 
 
 **Purpose**  
 Gazebo will be used in later practicals for simulation. You must confirm that it is correctly installed and can launch on your system.
