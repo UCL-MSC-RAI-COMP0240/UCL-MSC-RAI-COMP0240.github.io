@@ -19,6 +19,9 @@ Instead, the objectives of this session are to:
 
 Aerostack2 will be revisited later in the module, where you will progressively take more responsibility for mission design, autonomy, and system configuration.
 
+**Please note we will be installing Aerostack2 via source**. 
+See [these instructions](https://aerostack2.github.io/_00_getting_started/source_install.html)
+
 ## Aerostack2 Practical Basics 
 Aerostack2 should be understood as a **layered system**, built on top of ROS2, rather than as a monolithic or “black-magic” framework.
 
@@ -213,7 +216,9 @@ Aerostack2 provides existing implementations of, and methods of extending key pa
 
 See [this page for more details](https://aerostack2.github.io/_01_aerostack2_concepts/architecture/index.html)
 
-The core libraries can be installed for `apt-get` if no changes are necessary. However in this course, we will be building from scratch as it allows us to make quick fixes versions within our repository ([UCL AS2 REPO](https://github.com/UCL-MSC-RAI-COMP0240/aerostack2)). To install aerostack, you create a new ROS2 workspace and clone our aerostack into the src folder, download dependencies, and build as usual 
+The core libraries can be installed for `apt-get` if no changes are necessary. 
+
+However in this course, we will be building from scratch as it allows us to make quick fixes versions within our repository ([UCL AS2 REPO](https://github.com/UCL-MSC-RAI-COMP0240/aerostack2)). To install aerostack, you create a new ROS2 workspace and clone our aerostack into the src folder, download dependencies, and build as usual 
 
 See [these instructions](https://aerostack2.github.io/_00_getting_started/source_install.html)
 
