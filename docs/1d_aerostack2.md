@@ -122,9 +122,9 @@ You are not expected to understand everything — focus on recognising structure
 
 ---
 
-### Task 4 – Mini Challenge: Execute a Simple Mission
+### Task 4 – Execute a Simple Mission
 
-**Goal:** Interact with Aerostack2 at the mission level.
+**Goal:** Interact with Aerostack2 at the mission level using an existing Aerostack2 example project.
 
 Choose **one** of the following challenges:
 
