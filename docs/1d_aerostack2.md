@@ -2,7 +2,7 @@
 
 [TOC]
 
-Aerostack2 is the **primary aerial robotics platform** used throughout this module. It provides a complete, research-grade framework for developing, simulating, and deploying aerial robotic systems using ROS 2.
+Aerostack2 is the **primary aerial robotics platform** used throughout this module. It provides a complete, research-grade framework for developing, simulating, and deploying aerial robotic systems using ROS2.
 
 At this stage of the course, the goal is early exposure and installation.
 
@@ -20,7 +20,7 @@ Instead, the objectives of this session are to:
 Aerostack2 will be revisited later in the module, where you will progressively take more responsibility for mission design, autonomy, and system configuration.
 
 ## Aerostack2 Practical Basics 
-Aerostack2 should be understood as a **layered system**, built on top of ROS 2, rather than as a monolithic or “black-magic” framework.
+Aerostack2 should be understood as a **layered system**, built on top of ROS2, rather than as a monolithic or “black-magic” framework.
 
 The key layers are:
 
@@ -34,14 +34,14 @@ This layer is responsible for:
 - Sensors
 - Actuators
 
-### 2. ROS 2 Middleware Layer
-ROS 2 provides the communication backbone:
+### 2. ROS2 Middleware Layer
+ROS2 provides the communication backbone:
 - Nodes
 - Topics
 - Services
 - Actions
 
-All Aerostack2 components are ultimately ROS 2 nodes communicating through standard ROS 2 interfaces.
+All Aerostack2 components are ultimately ROS2 nodes communicating through standard ROS2 interfaces.
 
 ### 3. Aerostack2 Core Libraries
 This layer provides reusable aerial robotics functionality:
@@ -87,7 +87,7 @@ you will run it, observe it, and interact with it — but not modify its interna
 
 **Goal:** Ensure you have the Aerostack2 source code locally.
 
-- Create or use an existing ROS 2 workspace
+- Create or use an existing ROS2 workspace
 - Clone the Aerostack2 repository into the `src` directory
 - Install dependencies and build the workspace following the provided instructions
 
@@ -103,12 +103,12 @@ you will run it, observe it, and interact with it — but not modify its interna
 
 ---
 
-### Task 3 – Observe the Running System Using ROS 2 Tools
+### Task 3 – Observe the Running System Using ROS2 Tools
 
-**Goal:** Connect Aerostack2 back to core ROS 2 concepts.
+**Goal:** Connect Aerostack2 back to core ROS2 concepts.
 
 While the system is running:
-- List active ROS 2 nodes
+- List active ROS2 nodes
 - List active topics
 - Identify which topics are likely related to:
   - State estimation
@@ -165,7 +165,7 @@ We hope that through using aerostack2, you develop an overview of the components
 
 ### Overview 
 
-Aerostack2 (AS2) is an open source software framework that helps developers design and build the control architecture of aerial robotic systems, integrating multiple heterogeneous computational solutions (e.g., computer vision algorithms, motion controllers, self-localization and mapping methods, motion planning algorithms, etc.), built for ROS 2 Humble.
+Aerostack2 (AS2) is an open source software framework that helps developers design and build the control architecture of aerial robotic systems, integrating multiple heterogeneous computational solutions (e.g., computer vision algorithms, motion controllers, self-localization and mapping methods, motion planning algorithms, etc.), built for ROS2 Humble.
 
 Aerostack2 is useful for building autonomous aerial systems in complex and dynamic environments and it is also a useful research tool for aerial robotics to test new algorithms and architectures.
 
