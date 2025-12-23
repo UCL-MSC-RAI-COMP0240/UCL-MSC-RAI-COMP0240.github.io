@@ -20,6 +20,7 @@ For reference: ROS2 tutorials [ROS2 Tutorials](https://docs.ros.org/en/humble/Tu
 Before working with ROS2, you must confirm that your system is correctly configured. Many ROS2 issues arise from environment problems rather than code errors.
 
 **What to do**
+
   - Open a new terminal
   - Confirm your Ubuntu version
   - Check that ROS2 is installed and accessible
@@ -31,7 +32,8 @@ Before working with ROS2, you must confirm that your system is correctly configu
 **Purpose**  
 All ROS2 development takes place inside a workspace. Understanding workspace structure and build behaviour is essential for all future practicals.
 
-**What to do**
+**What to do** 
+
   - Create a new ROS2 workspace with a `src` directory
   - Build the workspace using `colcon`
   - Source the workspace
@@ -39,10 +41,12 @@ All ROS2 development takes place inside a workspace. Understanding workspace str
 
 ---
 ### Task 3 – Create a ROS2 Package 
+
 **Purpose**  
 In ROS2, packages are the fundamental unit of software organisation. Every node, launch file, and library lives inside a package.
 
 **What to do**
+
     - Create a new ROS2 package inside the `src` directory
     - Rebuild the workspace
     - Source the workspace again
@@ -50,10 +54,12 @@ In ROS2, packages are the fundamental unit of software organisation. Every node,
 
 ---
 ### Task 4 – Run and Inspect ROS2 Nodes
+
 **Purpose**  
 ROS2 systems consist of multiple nodes communicating via topics. You must be able to inspect a running system to understand and debug behaviour.
 
 **What to do**
+
     - Run a ROS2 demo node
     - Open a second terminal to inspect the system
     - List all running nodes
@@ -62,10 +68,12 @@ ROS2 systems consist of multiple nodes communicating via topics. You must be abl
 
 ---
 ### Task 5 – Debug a Common ROS2 Workflow Error (10 minutes)
+
 **Purpose**  
 This task demonstrates a very common ROS2 error caused by missing environment setup.
 
 **What to do**
+
     - Stop the running node
     - Open a new terminal without sourcing any setup files
     - Attempt to run the same node
@@ -75,10 +83,12 @@ This task demonstrates a very common ROS2 error caused by missing environment se
 
 ---
 ### Task 6 – Verify Gazebo Installation (5–10 minutes)
+
 **Purpose**  
 Gazebo will be used in later practicals for simulation. You must confirm that it is correctly installed and can launch on your system.
 
 **What to do**
+
     - Check that Gazebo is installed
     - Launch Gazebo from the terminal
     - Confirm that it opens successfully
