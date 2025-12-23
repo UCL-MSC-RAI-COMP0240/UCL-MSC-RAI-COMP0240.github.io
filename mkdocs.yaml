@@ -39,11 +39,11 @@ nav:
       - "10. Crazyflie with Aerostack2": "5_practical_crazyflie_aerostack2.md"
 
   - Practical 7: 
-    - "Flight Practice, Regulation and Laws (tbc at UCL HereEast)": "tbc.md"
+    - "11. Flight Practice, Regulation and Laws (tbc at UCL HereEast)": "tbc.md"
 
   - Practical 8:
-      - "Introducing Pixhawk and PX4": "6a_practical_pixhawk_PX4.md"
-      - "Autonomous flight with PX4, ROS2 and aerostack2": "6b_practical_PX4_Aerostack2_ROS2.md"
+      - "12. Introducing Pixhawk and PX4": "6a_practical_pixhawk_PX4.md"
+      - "13. Autonomous flight with PX4, ROS2 and aerostack2": "6b_practical_PX4_Aerostack2_ROS2.md"
 
   - "Practical 9 & 10: Assignment - CW2":
       - "Multi-Drone Swarming Formation Flight Challenge": "7_challenge_multi_drone.md"
