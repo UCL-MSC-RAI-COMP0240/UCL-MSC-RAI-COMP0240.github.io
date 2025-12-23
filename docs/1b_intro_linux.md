@@ -2,10 +2,10 @@
 
 ## Assumed Background
 This course assumes that students are comfortable with:
-- Basic programming (Python and/or C++)
-- Using a terminal and command-line tools
-- Editing configuration files
-- Installing software using a package manager
+    - Basic programming (Python and/or C++)
+    - Using a terminal and command-line tools
+    - Editing configuration files
+    - Installing software using a package manager
 
 You are not expected to be an expert Linux user at the start of the course. However, you are expected to be able to follow technical documentation independently and to troubleshoot basic setup issues. Setting up and maintaining a functional development environment is considered part of the learning outcomes of this module.
 
@@ -15,9 +15,9 @@ From this point onward, Ubuntu 22.04 LTS is the reference operating system for t
 This choice reflects standard practice in robotics and aerial robotics research and industry. In particular, ROS 2 Humble and ROS 2-derived tools are most stable and best supported on Ubuntu 22.04.
 
 In previous iterations of this course we explored Windows and macOS (including Intel and Apple Silicon). These platforms introduced persistent challenges, including:
-- Compatibility issues with ROS 2 and its dependencies
-- Inconsistent performance and tooling availability
-- Increased troubleshooting overhead for both students and instructors
+    - Compatibility issues with ROS 2 and its dependencies
+    - Inconsistent performance and tooling availability
+    - Increased troubleshooting overhead for both students and instructors
 
 This ultimately reduced the quality and pace of the practical sessions. To maximise learning outcomes, the course now standardises on Ubuntu.
 
