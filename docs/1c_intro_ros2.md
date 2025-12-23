@@ -12,27 +12,27 @@ This practical introduces the core ROS2 development workflow that will be used t
 
 Complete all tasks in order. Do not skip tasks, as later steps depend on earlier setup.
 
+---
 ### Task 1 – Verify Your ROS2 Environment
 **Purpose**  
 Before working with ROS2, you must confirm that your system is correctly configured. Many ROS2 issues arise from environment problems rather than code errors.
 
 **What to do**
-- Open a new terminal
-- Confirm your Ubuntu version
-- Check that ROS2 is installed and accessible
-- Identify the active ROS2 distribution
-  Run a basic ROS2 command
+  - Open a new terminal
+  - Confirm your Ubuntu version
+  - Check that ROS2 is installed and accessible
+  - Identify the active ROS2 distribution
+  - Run a basic ROS2 command
 
 ---
-
 ### Task 2 – Create and Build a ROS2 Workspace
 **Purpose**  
 All ROS2 development takes place inside a workspace. Understanding workspace structure and build behaviour is essential for all future practicals.
 
 **What to do**
-- Create a new ROS2 workspace with a `src` directory
-- Build the workspace using `colcon`
-- Source the workspace
+  - Create a new ROS2 workspace with a `src` directory
+  - Build the workspace using `colcon`
+  - Source the workspace
     - Verify that the workspace overlay is active
 
 ---
@@ -84,6 +84,7 @@ Gazebo will be used in later practicals for simulation. You must confirm that it
 
 If Gazebo does not launch correctly, note the error message and inform the teaching team. Do not attempt advanced graphics fixes during the session.
 
+---
 ## Installation
 ### Installation ROS2 Humble
 
