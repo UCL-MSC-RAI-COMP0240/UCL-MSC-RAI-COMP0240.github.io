@@ -2,23 +2,26 @@
 [TOC]
 
 ## Assumed Background
+
 This course assumes that students are comfortable with:
-    - Basic programming (Python and/or C++)
-    - Using a terminal and command-line tools
-    - Editing configuration files
-    - Installing software using a package manager
+
+- Basic programming (Python and/or C++)
+- Using a terminal and command-line tools
+- Editing configuration files
+- Installing software using a package manager
 
 You are not expected to be an expert Linux user at the start of the course. However, you are expected to be able to follow technical documentation independently and to troubleshoot basic setup issues. Setting up and maintaining a functional development environment is considered part of the learning outcomes of this module.
 
 ## Tasks
+
 1. Install and Run Ubuntu 22.04 using your preferred method
 2. Familiarise yourself with Linux and Ubuntu
 3. Install the programs and applications you might find useful
 4. Install ROS2 and Gazebo Fortress
 
-In week2 we will focus on installing Aerostack2.
+In week 2 we will focus on installing Aerostack2.
 
-*Further Tasks:* Read the following to get the best introduction! [LinuxJourney](https://linuxjourney.com/)
+> *Further Tasks:* Read the following to get the best introduction! [LinuxJourney](https://linuxjourney.com/)
 
 ## Linux Installation 
 From this point onward, Ubuntu 22.04 LTS is the reference operating system for this course. All practicals, examples, and troubleshooting assume this environment.
@@ -26,9 +29,10 @@ From this point onward, Ubuntu 22.04 LTS is the reference operating system for t
 This choice reflects standard practice in robotics and aerial robotics research and industry. In particular, ROS 2 Humble and ROS 2-derived tools are most stable and best supported on Ubuntu 22.04.
 
 In previous iterations of this course we explored Windows and macOS (including Intel and Apple Silicon). These platforms introduced persistent challenges, including:
-    - Compatibility issues with ROS 2 and its dependencies
-    - Inconsistent performance and tooling availability
-    - Increased troubleshooting overhead for both students and instructors
+
+- Compatibility issues with ROS 2 and its dependencies
+- Inconsistent performance and tooling availability
+- Increased troubleshooting overhead for both students and instructors
 
 This ultimately reduced the quality and pace of the practical sessions. To maximise learning outcomes, the course now standardises on Ubuntu.
 
@@ -38,7 +42,7 @@ Specific to macOS users, we offered a limited laptop scheme (subject to availabi
 
 The following environments are supported, listed in order of preference:
 
-1. Native Ubuntu 22.04 Installation (Strongly Recommended)
+1. **Native Ubuntu 22.04 Installation (Strongly Recommended)**
     - Best performance and lowest latency
     - Full support for:
         - ROS 2 Humble
@@ -46,41 +50,48 @@ The following environments are supported, listed in order of preference:
         - Aerostack2
         - USB-based hardware (e.g. Crazyradio)
 This setup is strongly recommended for students intending to participate in hardware-based practicals and challenges.
-2. Dual-Boot Ubuntu 22.04 (Supported)
+2. **Dual-Boot Ubuntu 22.04 (Supported)**
     - Ubuntu installed alongside an existing Windows installation
     - Equivalent performance to a native installation when booted into Ubuntu
     - Requires disk repartitioning and rebooting between operating systems
     - Requires ≥ 100 GB of free disk space
     - **Ensure you have recorded your BitLocker account information to avoid issues!**
 Supported by course instructors.
-3. Ubuntu 22.04 on an External SSD / NVMe Drive (Supported)
+
+3. **Ubuntu 22.04 on an External SSD / NVMe Drive (Supported)**
     - Ubuntu installed on a portable USB-C SSD or NVMe drive
     - Near-native performance
     - Minimal changes to the host system
     - Requires a fast USB-C port
     - Ensure you have recorded your BitLocker account information to avoid issues!
 A limited number of pre-configured Ubuntu 22.04 external drives may be available to borrow (subject to availability). Primarily tested on Windows systems; macOS compatibility is not guaranteed.
-4. WSL 2 / Virtual Machines / Docker (Limited Support)
-These options are permitted but not recommended. For those are the interested in exploring, we are happy to provide feedback. Though expect having to solve specific software and device related problems. For this keen to take up this challenge, it is a option for learning advanced aspects of using Linux for robotics development.
 
-They may be suitable for:
-    - Learning Linux basics
-    - ROS 2 development
-    - Simulation-only work
+4. **WSL 2 / Virtual Machines / Docker (Limited Support)**
 
-Known limitations include:
-    - Unreliable USB access
-    - Increased latency and timing jitter
-    - Reduced graphics performance for Gazebo and RViz
-    - Additional configuration overhead
+    - These options are permitted but not recommended. For those are the interested in exploring, we are happy to provide feedback. Though expect having to solve specific software and device related problems. For this keen to take up this challenge, it is a option for learning advanced aspects of using Linux for robotics development.
 
-Support from the course team for these setups will be limited, and students using them may not be able to complete hardware-dependent activities.
+    - They may be suitable for:
 
-While containers (e.g., Docker) and virtual machines (VMs) can offer flexibility, they have limitations in this context:
-    - *Docker*: Known for portability, but graphical user interfaces (GUIs) for simulation tools like Gazebo and RViz can be challenging to configure, especially on Windows.
-    - *Virtual Machines*: Simulations in Gazebo are graphics-intensive, and VMs often lack the hardware acceleration needed for smooth operation. Additionally, VMs can have limited access to host machine IO interfaces (e.g., USB), making hardware integration difficult.
+        - Learning Linux basics
+        - ROS 2 development
+        - Simulation-only work
 
-That said, students are welcome to experiment with Docker or VMs, but these methods will receive minimal support from the course instructors.
+    - Known limitations include:
+        - Unreliable USB access
+        - Increased latency and timing jitter
+        - Reduced graphics performance for Gazebo and RViz
+        - Additional configuration overhead
+
+    > **NOTE**: 
+    > 
+    > Support from the course team for these setups will be limited, and students using them may not be able to complete hardware-dependent activities.
+    > 
+    > While containers (e.g., Docker) and virtual machines (VMs) can offer flexibility, they have limitations in this context:
+    > 
+    > - **Docker**: Known for portability, but graphical user interfaces (GUIs) for simulation tools like Gazebo and RViz can be challenging to configure, especially on Windows.
+    > - **Virtual Machines**: Simulations in Gazebo are graphics-intensive, and VMs often lack the hardware acceleration needed for smooth operation. Additionally, VMs can have limited access to host machine IO interfaces (e.g., USB), making hardware integration difficult.
+    > 
+    > That said, students are welcome to experiment with Docker or VMs, but these methods will receive minimal support from the course instructors.
 
 ## Installing Ubuntu 22.04
 For native, dual-boot, or external-drive installations:
