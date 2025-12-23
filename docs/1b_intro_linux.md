@@ -1,4 +1,5 @@
 # Practical 1: Pre-Setup - Ubuntu Installation, Intro to Linux and Reference
+[TOC]
 
 ## Assumed Background
 This course assumes that students are comfortable with:
