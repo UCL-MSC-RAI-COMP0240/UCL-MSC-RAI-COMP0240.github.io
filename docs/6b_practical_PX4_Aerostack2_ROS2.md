@@ -9,11 +9,24 @@ This is an optional session in which you will be able to fly a real drone manual
 - **Step4**: Conduct your mission on the real drone 
 
 ## Step1: Setup the simuatlion environment
-In order to conduct autonomously flight with a real drone at the end of this session, we need to simulate it beforehand out of reasons such as safety test and debugging. What we need for simualtion environmen here is the exact software stack we will use in the real drone. It combines flight control firmware (PX4), ROS2, Aerostack2. In addition, we will use Gazebo as simulator for this time.
+In order to conduct autonomously flight with a real drone at the end of this session, we need to simulate it beforehand out of reasons such as safety test and debugging. What we need for simualtion environment here is the exact software stack we will use in the real drone. It combines flight control firmware (PX4), ROS2, Aerostack2. In addition, we will use Gazebo as simulator for this time.
 
-### Install ROS2 humble and Gazebo
+### Install ROS2 humble 
 
-Please refer to ROS2/Gazebo Fortress installation guide in [PRACTICAL1](https://ucl-msc-rai-comp0240.github.io/1c_intro_ros2/#).
+Please refer to ROS2 installation guide in [PRACTICAL1](https://ucl-msc-rai-comp0240.github.io/1c_intro_ros2/#).
+
+### Install Gazebo Harmonic
+
+Due to compability issue, we are going to use Gazebo Harmonic rather than Gazebo fortress which we used before for gazebo aruco challenge. To install Gazebo Harmonic:
+
+```bash
+sudo apt-get update
+sudo apt-get install curl lsb-release gnupg
+sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] https://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+sudo apt-get update
+sudo apt-get install gz-harmonic
+```
 
 ### Install PX4
 
@@ -24,7 +37,7 @@ Please refer to PX4 installation guide in [PRACTICAL6](https://ucl-msc-rai-comp0
 Please refer to Aerostack2 installation guide in [PRACTICAL2-5.2Aerostack2 Installation](https://ucl-msc-rai-comp0240.github.io/2_practical_gazebo_aruco/).
 
 ### Setup the project
-In this session, we will use anonther aerostack2 project called project_mavlink which allows PX4 communicating with ROS2 through MAVROS bridge. We made some modification to the original project, so please use our github repo instead of the original one.
+In this session, we will use anonther aerostack2 project called project_mavlink which allows PX4 communicating with ROS2 using the mavlink protocol through MAVROS bridge. We made some modification to the original project, so please use our github repo instead of the original one.
 
 Get the project locally:
 
@@ -70,7 +83,7 @@ Now we are ready to deploy our software stack onto a real drone and conduct a re
 
 3.Familiarize yourself with the drone
 
-4.Bench testing
+4.Bench testing 
 
 ## Step4: Conduct your mission on qav250 
 Before running your mission file, we need to ensure the drone's safety through manual flight and simple autonomously flight.
