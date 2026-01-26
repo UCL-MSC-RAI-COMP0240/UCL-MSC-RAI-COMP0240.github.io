@@ -19,7 +19,7 @@ This guide explains how to prepare and flash the Crazyradio 2.0 firmware, instal
 
 ---
 
-### 1. Prepare & Flash the Crazyradio 2.0 Firmware
+### 1. Prepare & Flash the Crazyradio 2.0 Firmware [This is for information only. The radios have already been updated]
 
 **Reference:** [Getting Started with Crazyradio 2.0](https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyradio-2-0/)
 
@@ -84,7 +84,7 @@ cfclient
 
 **Note:** Do not fly at this stage before changing the Crazyradio radio frequency channel.
 
-### 5. Changing the Radio Frequency Channel
+### 5. Changing the Radio Frequency Channel [Check your Crazyflie box for your specific radio challenge. This has already been set to your specific radio]
 
 **Reference:** cfclient Userguide
 
