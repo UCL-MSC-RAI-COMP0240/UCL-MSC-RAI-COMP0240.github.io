@@ -128,7 +128,7 @@ We have provided 3 sample scenarios in the `scenarios` directory with which you 
 5. Find or implement one simple path planning system e.g. choose either A*, Dijkstra, Dubins or RRT to implement.
     - What will the results of the path planning be used for? 
     - Which routes do we need to apply the path planning for?
-    - You only need to implement one path planning system of your choice. 
+    - You only need to implement one path planning system of your choice. Please justify the approach taken.
 
 4. Find a library which will help solve the travelling salesman problem (TSP)
     - Why do we need to solve the TSP? 
@@ -166,16 +166,16 @@ Below are set of expectations that you need to address when making your submissi
 Please use the following section headings to structure your report.
 
 - Problem Statement and Objectives (10%)
-Define, in your own words, the structural inspection path planning challenge, outlining the need for an efficient drone navigation strategy to visit all viewpoints while avoiding obstacles, and specifying the key objectives.
+    - Define, in your own words, the structural inspection path planning challenge, outlining the need for an efficient drone navigation strategy to visit all viewpoints while avoiding obstacles, and specifying the key objectives.
 
 - Methodology (40%)
-Detail the approach used to solve the path-planning problem, including the selection and implementation of algorithms for waypoint sequencing (TSP solver), motion planning (e.g., A*, Dijkstra, RRT and Dubins paths), and obstacle avoidance, while also explaining how these methods were integrated into the Gazebo simulation environment to execute the drone’s mission
+    - Detail the approach used to solve the path-planning problem, including the selection and implementation of algorithms for waypoint sequencing (TSP solver), motion planning (e.g., A*, Dijkstra, RRT and Dubins paths), and obstacle avoidance, while also explaining how these methods were integrated into the Gazebo simulation environment to execute the drone’s mission. Please justify the choices taken. 
 
 - Results and Discussion (40%)
-Present key performance metrics, such as total mission time, flight distance, and mission success rate, comparing different planning approaches where applicable, while also analysing the effectiveness, limitations, and potential improvements of the implemented solution. This should be done for each (or as many as your can achieve) of the 4 test scenarios (scenario1.yaml, scenario2.yaml, scenario3.yaml and scenario4.yaml).
+    - Present key performance metrics, such as total mission time, flight distance, and mission success rate, comparing different planning approaches where applicable, while also analysing the effectiveness, limitations, and potential improvements of the implemented solution. This should be done for each (or as many as your can achieve) of the 4 test scenarios (scenario1.yaml, scenario2.yaml, scenario3.yaml and scenario4.yaml).
 
 - Conclusions (10%)
-Summarise the key findings of the project, highlighting the effectiveness of the implemented path-planning approach, its impact on optimizing drone-based structural inspections, and potential future enhancements to improve efficiency, adaptability, or real-world applicability.
+    - Summarise the key findings of the project, highlighting the effectiveness of the implemented path-planning approach, its impact on optimizing drone-based structural inspections, and potential future enhancements to improve efficiency, adaptability, or real-world applicability.
 
 Please use an Arial typeface with font size 11. Use a standard document layout with 2cm margins all around. For reports that have a word count 10% over the 1250 word limit a penalty maybe applied. Items not included in the word count are: tables, figures, appendix, references and code.
 
