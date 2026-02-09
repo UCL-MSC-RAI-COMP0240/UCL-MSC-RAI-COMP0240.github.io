@@ -147,7 +147,7 @@ We have provided 3 sample scenarios in the `scenarios` directory with which you 
   
 ## Coursework Submission
 
-The deadline for this coursework is 17.00 on 7th March 2025.
+The deadline for this coursework is 16.00 on 4th March 2026. See Moodle Submission box.
 
 Submissions will uploaded into Moodle using the relevant Coursework 1 submission links. 
 
