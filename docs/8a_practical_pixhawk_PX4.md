@@ -1,4 +1,4 @@
-# Practical 6a: Pixhawk and PX4, Commercial and R&D Autonomous Drone Systems
+# Practical 8a: Pixhawk and PX4, Commercial and R&D Autonomous Drone Systems
 
 [TOC]
 
