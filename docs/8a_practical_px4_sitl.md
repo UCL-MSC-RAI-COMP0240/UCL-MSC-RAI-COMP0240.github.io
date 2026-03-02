@@ -69,7 +69,7 @@ PX4 consists of:
 1. **PX4 Firmware** - The core flight control software
 2. **QGroundControl (QGC)** - GUI for setup and mission planning
 3. **MAVSDK (or other communication method)** - API for developing drone applications
-4. **Software-In-The-Loop (HITL)** - The flight stack runs on computer.
+4. **Software-In-The-Loop (SITL)** - The flight stack runs on computer.
 
 
 ### Autopilot communication
@@ -129,7 +129,7 @@ cd PX4
 
 Git clone and install PX4
 ```
-git clone --recursive https://github.com/PX4/PX4-Autopilot.git -b v1.15.4 --recursive
+git clone --recursive https://github.com/PX4/PX4-Autopilot.git -b v1.15.4
 cd PX4-Autopilot
 ```
 
@@ -173,7 +173,6 @@ Tada! After waiting about a minute for the system to initialise itself (It will 
 
 1. Takeoff the drone and manually fly it around the olympic park using the joysticks in the bottom of the screen
     - See your trajectory in QGC
-    - Try some of the keyboard shortcuts of JMavSim to see your drone fly differently 
 
 > Note: If you crash your drone somehow, you may need to restart your flight controller and gazebo
 
