@@ -113,7 +113,7 @@ Now let's set up your PX4.
 
 1. Install **PX4**
 2. Install **QGroundControl (QGC)** ([Download](https://qgroundcontrol.com/)) 
-3. Run PX4 SITL with Gazebo
+3. Run PX4 SITL with jmavsim
 4. Use *QGC* to set up some automated flights
 5. (Not today) Setup **offboard control** (for AI/robotics integration)
 
@@ -135,13 +135,13 @@ cd PX4-Autopilot
 
 > *NOTE*: You will need the `--recursive` to ensure all the dependencies are also pulled. If you forgot to and your builds are failing, in the root of the repository run `git submodule update --init --recursive`. 
 
-Install PX4 dependencies including two types of compatible simulators i.e. Gazebo Garden and JMavsim.
+Install PX4 dependencies including a new lightweight simulator called JMavsim.
 ```
 cd Tools/setup/
 ./ubuntu.sh
 cd ../../
 ```
-> *NOTE*: After the installation, you may have two version of gazebo simulators installed i.e gazebo garden and gazebo fortress. Your previous aerostack project will not be affected.
+> *NOTE*: After the installation, you may have two version of gazebo simulators installed i.e gazebo garden and gazebo fortress. Don't worry. Your previous aerostack project will not be affected.
 
 ### Install QGroundControl
 
@@ -155,14 +155,14 @@ See [https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/qu
 
 ### Run PX4 STIL
 
-Open a terminal and navigate to the PX4_Autopilot repo you cloned earlier, see instructions here [https://docs.px4.io/main/en/sim_gazebo_gz/](https://docs.px4.io/main/en/sim_gazebo_gz/)
+Open a terminal and navigate to the PX4_Autopilot repo you cloned earlier, see instructions here [https://docs.px4.io/main/en/sim_jmavsim/](https://docs.px4.io/main/en/sim_jmavsim/)
 
 ```bash
 # Set Lat Long of UCL East
 export PX4_HOME_LAT=51.537668693830824
 export PX4_HOME_LON=-0.012029639288719024
 export PX4_HOME_ALT=28.5
-make px4_sitl gz_x500
+make px4_sitl_default jmavsim
 ```
 
 > If you get an error make sure you have recursively git cloned
@@ -174,8 +174,7 @@ Tada! After waiting about a minute for the system to initialise itself (It will 
 1. Takeoff the drone and manually fly it around the olympic park using the joysticks in the bottom of the screen
     - See your trajectory in QGC
 
-> Note: If you crash your drone somehow, you may need to restart your flight controller and gazebo
-
+> Note: If you crash your drone somehow, you may need to restart your flight controller and jamvsim
 2. When in midair, right click on a location and you will get some options to fly in a straight line to various locations. 
 
 3. Land or return to the start location
