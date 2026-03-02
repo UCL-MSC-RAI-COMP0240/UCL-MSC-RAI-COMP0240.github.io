@@ -141,7 +141,7 @@ cd Tools/setup/
 ./ubuntu.sh
 cd ../../
 ```
-> *NOTE*: After the installation, you may have two version of gazebo simulators installed i.e gazebo garden and gazebo fortress. Don't worry. Your previous aerostack project will not be affected.
+> *NOTE*: In default, it will automatically install another version of gazebo i.e. gazebo garden. It is an old version of gazebo fortress which you are using for our previous aerostack2 project. It has been tested that it will affect your settings. So you could just run default ubuntu.sh file or you could comment off codes for gazebo garden installation as we are using another simulator called JMAVSIM for this session.
 
 ### Install QGroundControl
 
