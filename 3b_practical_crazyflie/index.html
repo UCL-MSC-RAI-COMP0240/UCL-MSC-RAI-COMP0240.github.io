@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>8. Building Crazyflies - UCL-MSC-RAI-COMP0240</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../kbd.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "8. Building Crazyflies";
+        var mkdocs_page_input_path = "3b_practical_crazyflie.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> UCL-MSC-RAI-COMP0240
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Practical 1 &amp; 2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1a_introduction/">1. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1b_intro_linux/">2. Ubuntu Installation and Linux Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_intro_ros2/">3. ROS2 Installation and ROS2 Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1d_aerostack2/">4. Aerostack2 Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 3 &amp; 4</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3a_practical_crazyflie/">7. Introduction</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">8. Building Crazyflies</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#build">7.1 Build</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#crazyflie-build">7.1.1 Crazyflie Build</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#connect-external-sensors">7.1.2 Connect External Sensors</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">7.2 Next Steps</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4_practical_crazyflie/">9. Flying Crazyflies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 5</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_practical_crazyflie_aerostack2/">10. Crazyflie with Aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 6: Assignment - CW1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 7</span></p>
+<ul>
+<li class="toctree-l1"><a class="" href="../tbc.md">11. Flight Practice, Regulation and Laws (tbc at UCL HereEast)</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 8</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8a_practical_px4_sitl/">12. Introducing Pixhawk and PX4</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../8b_practical_PX4_Aerostack2_ROS2/">13. Autonomous flight with PX4, ROS2 and aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 9 &amp; 10: Assignment - CW2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7_challenge_multi_drone/">Multi-Drone Swarming Formation Flight Challenge</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">UCL-MSC-RAI-COMP0240</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">Practical 3 &amp; 4</li>
+<li class="breadcrumb-item active">8. Building Crazyflies</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="practical-3-crazyflie-build-and-installation"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.</span> Practical 3: Crazyflie Build and Installation<a class="headerlink" href="#practical-3-crazyflie-build-and-installation" title="Permanent link">¶</a></h1>
+<div class="toc">
+<ul>
+<li><a href="#practical-3-crazyflie-build-and-installation">7. Practical 3: Crazyflie Build and Installation</a><ul>
+<li><a href="#build">7.1 Build</a><ul>
+<li><a href="#crazyflie-build">7.1.1 Crazyflie Build</a></li>
+<li><a href="#connect-external-sensors">7.1.2 Connect External Sensors</a></li>
+</ul>
+</li>
+<li><a href="#next-steps">7.2 Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="build"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1</span> Build<a class="headerlink" href="#build" title="Permanent link">¶</a></h2>
+<p>The first step is to unbox your crazyflie kit and build your crazyflie! </p>
+<p>To take you through the unboxing and first time setup, let us follow Bitcraze's own introductory tutorial which will hopefully get you to the state of flying!</p>
+<p>Come back when you have finished bench testing and are ready to fly</p>
+<p><img alt="box" src="../images/crazyflie_box.jpg"/></p>
+<h3 id="crazyflie-build"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.1</span> Crazyflie Build<a class="headerlink" href="#crazyflie-build" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Notes: Be gentle with the parts - the crazyflie is hardy but the connectors might not be! We have small tools you can borrow if needed.</p>
+<p><strong>Do not fly yet!</strong></p>
+</blockquote>
+<ul>
+<li><a href="https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyflie-2-x/">https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyflie-2-x/</a></li>
+</ul>
+<p>To understand more about the GUI and to connect up a controller see:</p>
+<ul>
+<li><a href="https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/">https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/</a></li>
+</ul>
+<h3 id="connect-external-sensors"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.2</span> Connect External Sensors<a class="headerlink" href="#connect-external-sensors" title="Permanent link">¶</a></h3>
+<p>Not included in the tutorials above are the rangefinder and flow v2 sensor decks.</p>
+<p>The crazyflie has a very limited ability to stably fly without external sensing of some descring. As it is right now, the drone will likely drift away very quickly and will be difficult to control. </p>
+<p>To solve this, we will be using the rangefinder and Flow v2 sensor decks from crazyflie for external sensing. The flow v2 sensor deck uses a camera on the bottom to perform optical flow to enable the drone to sense horizontal motion. It also has a downwards facing rangefinder for vertical stabilisation. The rangfinder deck then contains a number of ranging units for the other 5 directions. If the crazyflie detects the prescence of these decks, it will automatically use them to stabilse. </p>
+<p>More information on their operation is in the next tutorial. </p>
+<p>Rangefinder:</p>
+<p><img alt="rangefinder" src="../images/crazyflie_rangefinder.jpg"/></p>
+<p>Flow V2 Sensor:</p>
+<p><img alt="flowv2" src="../images/crazyflieflowv2jpg.jpg"/></p>
+<p>To see pictures and instructions for the mounting see the following:</p>
+<ul>
+<li><a href="https://www.bitcraze.io/documentation/tutorials/getting-started-with-stem-ranging-bundle/">https://www.bitcraze.io/documentation/tutorials/getting-started-with-stem-ranging-bundle/</a></li>
+</ul>
+<blockquote>
+<p><strong>Double check that your boards are on the correct way around (notice the arrows)</strong></p>
+</blockquote>
+<h2 id="next-steps"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.2</span> Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">¶</a></h2>
+<p><img alt="built crazyflie" src="../images/Built_Crazyflie.jpg"/></p>
+<p>Congratulations you have hopefully now built a working crazyflie which is ready to fly and hover in place. </p>
+<p><strong>NOTE: you must notify an instructor to check your crazyflie before you should fly</strong> </p>
+<p>Go onto the next tutorial for instructions for manual and autonomous flying. </p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../3a_practical_crazyflie/" title="7. Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../4_practical_crazyflie/" title="9. Flying Crazyflies">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>Copyright © 2024 University College London AML Lab</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../3a_practical_crazyflie/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../4_practical_crazyflie/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>12. Introducing Pixhawk and PX4 - UCL-MSC-RAI-COMP0240</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../kbd.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "12. Introducing Pixhawk and PX4";
+        var mkdocs_page_input_path = "8a_practical_px4_sitl.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> UCL-MSC-RAI-COMP0240
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Practical 1 &amp; 2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1a_introduction/">1. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1b_intro_linux/">2. Ubuntu Installation and Linux Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_intro_ros2/">3. ROS2 Installation and ROS2 Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1d_aerostack2/">4. Aerostack2 Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 3 &amp; 4</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3a_practical_crazyflie/">7. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_practical_crazyflie/">8. Building Crazyflies</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4_practical_crazyflie/">9. Flying Crazyflies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 5</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_practical_crazyflie_aerostack2/">10. Crazyflie with Aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 6: Assignment - CW1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 7</span></p>
+<ul>
+<li class="toctree-l1"><a class="" href="../tbc.md">11. Flight Practice, Regulation and Laws (tbc at UCL HereEast)</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 8</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">12. Introducing Pixhawk and PX4</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#overview">11.1 Overview</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-pixhawk">11.2 What is Pixhawk?</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#common-pixhawk-versions">11.2.1 Common Pixhawk Versions:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-use-a-pixhawk">11.2.2 How to use a Pixhawk</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#flight-control-firmware">11.3 Flight Control Firmware</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#px4-software-stack">11.4 PX4 Software Stack</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#autopilot-communication">11.4.1 Autopilot communication</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ground-stations">11.4.2 Ground Stations</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-px4-and-qgroundcontrol">11.5 Setting Up PX4 and QGroundControl</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup-overview">11.5.1 Setup Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#install-px4">11.5.2 Install PX4</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#ubuntu">Ubuntu</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#install-qgroundcontrol">11.5.3 Install QGroundControl</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#run-px4-stil">11.5.4 Run PX4 STIL</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tasks">11.6 Tasks</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../8b_practical_PX4_Aerostack2_ROS2/">13. Autonomous flight with PX4, ROS2 and aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 9 &amp; 10: Assignment - CW2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7_challenge_multi_drone/">Multi-Drone Swarming Formation Flight Challenge</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">UCL-MSC-RAI-COMP0240</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">Practical 8</li>
+<li class="breadcrumb-item active">12. Introducing Pixhawk and PX4</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="practical-8a-pixhawk-and-px4-commercial-and-rd-autonomous-drone-systems"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.</span> Practical 8a: Pixhawk and PX4, Commercial and R&amp;D Autonomous Drone Systems<a class="headerlink" href="#practical-8a-pixhawk-and-px4-commercial-and-rd-autonomous-drone-systems" title="Permanent link">¶</a></h1>
+<div class="toc">
+<ul>
+<li><a href="#practical-8a-pixhawk-and-px4-commercial-and-rd-autonomous-drone-systems">11. Practical 8a: Pixhawk and PX4, Commercial and R&amp;D Autonomous Drone Systems</a><ul>
+<li><a href="#overview">11.1 Overview</a></li>
+<li><a href="#what-is-pixhawk">11.2 What is Pixhawk?</a><ul>
+<li><a href="#common-pixhawk-versions">11.2.1 Common Pixhawk Versions:</a></li>
+<li><a href="#how-to-use-a-pixhawk">11.2.2 How to use a Pixhawk</a></li>
+</ul>
+</li>
+<li><a href="#flight-control-firmware">11.3 Flight Control Firmware</a></li>
+<li><a href="#px4-software-stack">11.4 PX4 Software Stack</a><ul>
+<li><a href="#autopilot-communication">11.4.1 Autopilot communication</a></li>
+<li><a href="#ground-stations">11.4.2 Ground Stations</a></li>
+</ul>
+</li>
+<li><a href="#setting-up-px4-and-qgroundcontrol">11.5 Setting Up PX4 and QGroundControl</a><ul>
+<li><a href="#setup-overview">11.5.1 Setup Overview</a></li>
+<li><a href="#install-px4">11.5.2 Install PX4</a><ul>
+<li><a href="#ubuntu">Ubuntu</a></li>
+</ul>
+</li>
+<li><a href="#install-qgroundcontrol">11.5.3 Install QGroundControl</a></li>
+<li><a href="#run-px4-stil">11.5.4 Run PX4 STIL</a></li>
+</ul>
+</li>
+<li><a href="#tasks">11.6 Tasks</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1</span> Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>Pixhawk and PX4 are widely used in autonomous drone development, providing an open-source hardware and software ecosystem for UAV control. In this tutorial, we will introduce:</p>
+<ul>
+<li><strong>Pixhawk</strong>: The hardware autopilot platform</li>
+<li><strong>PX4</strong>: The open-source flight control firmware</li>
+<li><strong>PX4 Software In The Loop (SITL) Testing</strong></li>
+<li><strong>Creating Missions with QGC</strong></li>
+</ul>
+<p>This will help you transition from Crazyflies and Aerostack2 to more advanced UAV platforms.</p>
+<h2 id="what-is-pixhawk"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.2</span> What is Pixhawk?<a class="headerlink" href="#what-is-pixhawk" title="Permanent link">¶</a></h2>
+<p>Pixhawk is a family of open-source flight controllers developed for UAVs and robotics applications. It provides:</p>
+<ul>
+<li>High-performance <strong>autopilot capabilities</strong></li>
+<li><strong>Multiple sensor support</strong> (GPS, IMUs, barometers, etc.)</li>
+<li><strong>Compatibility</strong> with PX4 and ArduPilot firmware</li>
+<li>Connectivity options like <strong>UART, I2C, CAN, MAVLink and DDS</strong></li>
+</ul>
+<h3 id="common-pixhawk-versions"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.2.1</span> Common Pixhawk Versions:<a class="headerlink" href="#common-pixhawk-versions" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Pixhawk 4</strong>: Standard for academic and research use</li>
+<li><strong>Pixhawk 6X</strong>: More advanced processing capabilities</li>
+<li><strong>Pixhawk 6C</strong>: Compact version with strong processing power</li>
+<li><strong>Pixhawk Mini</strong>: Compact version for small UAVs</li>
+</ul>
+<h3 id="how-to-use-a-pixhawk"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.2.2</span> How to use a Pixhawk<a class="headerlink" href="#how-to-use-a-pixhawk" title="Permanent link">¶</a></h3>
+<p>This is the Pixhawk 6C you will be playing around with, see all of the ports for various inputs</p>
+<p><img alt="pixhawk6c" src="../images/Pixhawk6C.png"/></p>
+<p>This following wiring diagram is from an older Pixhawk model, but should show the key elements of connecting up and powering a Pixhawk </p>
+<p><img alt="wiring" src="../images/Pixhawk6CSampleWiringDiagram_2048x2048.webp"/></p>
+<h2 id="flight-control-firmware"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3</span> Flight Control Firmware<a class="headerlink" href="#flight-control-firmware" title="Permanent link">¶</a></h2>
+<p>There is no universal controller design of converting from user inputs to motor thrust. In the same way, there are numerous other functionalities that an autopilot can cover. These can range from running control loops for gimbals, cameras and other actuation, to high level mission following and safety features. These functionalities are bundled into specific autopilot <em>firmware</em> which each offer a slightly different set of features, as well as differing user interfaces each with their advantages and drawbacks.</p>
+<p>The two current most common autopilot firmware's in use in research settings are <a href="https://ardupilot.org/copter/index.html">Ardupilot</a> which offers the Arducopter firmware, and <a href="https://px4.io/">PX4</a> which offers Multicopter firmware. Both these firmwares are very extensive and cover numerous use cases. However, for our purposes we will only cover enabling autonomous flight through observing the <em>mode</em> of the autopilot.</p>
+<p>Both Ardupilot and PX4 use the concept of flight modes, where each mode operates and supports different levels or types of flight stabilisation and/or autonomous functions. Traditionally this is for pilots to change between different controller layouts for different applications. It's necessary to change to the correct mode for safe and controllable flight. The following table shows the most often used flight modes within Starling.</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://ardupilot.org/copter/docs/flight-modes.html">Ardupilot Mode</a></th>
+<th><a href="https://docs.px4.io/v1.12/en/getting_started/flight_modes.html">PX4 Mode</a></th>
+<th>Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stabilized</td>
+<td>manual</td>
+<td>Full manual control with RC sticks being sent directly to control roll, pitch, yaw and height</td>
+</tr>
+<tr>
+<td>PosHold</td>
+<td>position</td>
+<td>UAV uses onboard sensing to stay in place, RC sticks used to translate position</td>
+</tr>
+<tr>
+<td>loiter</td>
+<td>auto.hold</td>
+<td>Automatic mode where UAV stays in the same location until further instructions given.</td>
+</tr>
+<tr>
+<td>land</td>
+<td>auto.land</td>
+<td>Automatic mode which attempts to land the UAV</td>
+</tr>
+<tr>
+<td>Guided</td>
+<td>offboard</td>
+<td>Navigates to setpoints sent to it by ground control or companion computer</td>
+</tr>
+</tbody>
+</table>
+<p>As mentioned before, the base purpose of the firmware is to provide a given cascading PID controller for converting high level commands to motor thrusts. However both firmwares provide a plethora of other functionality from trajectory following, basic mission following, telemetry and communications and many others too. </p>
+<p>As a controller developer, it is also useful to understand the differences between the Ardupilot and PX4 controllers and what real-world impacts they have. In most of drone targeted applications we only require either position or velocity control which works fairly consistently between the two firmwares. </p>
+<p>In our own work, it has generally been noted that Ardupilot seems to be more suitable for outdoor flight, and PX4 for indoor flight. For this tutorial we will be developing a controller for indoor multi-vehicle flight and so we will assume the use of PX4. The biggest difference is actually in licensing where Ardupilot's license specifies that any developments must be contributed back, however PX4 is a bit more free allowing the forking and commercialisation without needing the announce or contribute (although this is not necessarily the best for the longevity of this open source project!). </p>
+<h2 id="px4-software-stack"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.4</span> PX4 Software Stack<a class="headerlink" href="#px4-software-stack" title="Permanent link">¶</a></h2>
+<p>PX4 consists of:</p>
+<ol>
+<li><strong>PX4 Firmware</strong> - The core flight control software</li>
+<li><strong>QGroundControl (QGC)</strong> - GUI for setup and mission planning</li>
+<li><strong>MAVSDK (or other communication method)</strong> - API for developing drone applications</li>
+<li><strong>Software-In-The-Loop (SITL)</strong> - The flight stack runs on computer.</li>
+</ol>
+<h3 id="autopilot-communication"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.4.1</span> Autopilot communication<a class="headerlink" href="#autopilot-communication" title="Permanent link">¶</a></h3>
+<p>Once in guided or offboard mode, the autopilot by default expects communications using the <a href="https://mavlink.io/en/messages/common.html">MAVLINK protocol</a>. Traditionally this would have been used for a ground control station (GCS) to send commands to a UAV over a telemetry link. However, now it has also developed into a protocol for commanding the autopilot from an onboard companion computer over a USB or serial connection too. The MAVLink protocol is a set of preset commands which compatible firmwares understand and react to. In this tutorial we will primarily be observing the MAVlink interface, but we will not get into writing your own software with MAVlink yet.</p>
+<p>With the growing prevalence of ROS2, all of the major firmwares have attempted to provide direct communication using ROS2's underlying communication/middleware protocol of DDS (Data Distribution Service). Although we will not cover this in this module, this is what we currently use to communicate between a companion computer and the Pixhawk for drone work. </p>
+<p>Note however that even if DDS is enabled, autopilots will still send Mavlink messages down a <em>Telemetry</em> stream - often a dedicated low bandwidth communication channel for the monitoring of the drone's health and status. </p>
+<h3 id="ground-stations"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.4.2</span> Ground Stations<a class="headerlink" href="#ground-stations" title="Permanent link">¶</a></h3>
+<p>A key element of any drone operation is a competent and reliable ground station setup. The purpose of the ground station is to provide a reliable communication link with the drone and receive telemetry to be able to keep an eye on, and monitor the status of the drone. Often this is done via a second <em>telemtry</em> radio operating on a different frequency - in our case an SIK radio on 433MHz - with one end connected to the drone, and the other connected via USB to a laptop or computer (or handheld games console like the steam deck). </p>
+<p>There are a number of choices for a piece of software which runs on the ground station. In industry, you may see Alterion or other softwares which provide an interface. In the open source world we either use <em>mission planner</em> with Ardupilot or <em>QGroundControl</em> with PX4. In this tutorial we will trying to use <strong>QGroundControl</strong> (QGC). </p>
+<p><img alt="QGC" src="../images/QGC.png"/></p>
+<p>Tools like QGC are crucial for real-time <strong>flight monitoring, control, and mission planning</strong>. It allows users to:</p>
+<ul>
+<li><strong>Monitor telemetry data</strong> (battery levels, GPS status, IMU readings, etc.).</li>
+<li><strong>Send flight commands</strong> such as takeoff, landing, and mission execution.</li>
+<li><strong>Configure drone parameters</strong> including PID tuning, sensor calibrations, and failsafe settings.</li>
+<li><strong>Visualize the drone's location</strong> and trajectory on a map interface.</li>
+<li><strong>Log and analyze flight data</strong> to debug issues or optimize performance.</li>
+</ul>
+<p>Ground stations are useful as they enable:</p>
+<ul>
+<li><strong>Safety</strong>: Enables real-time monitoring, preventing potential failures.</li>
+<li><strong>Ease of Use</strong>: Provides a user-friendly interface to interact with the drone.</li>
+<li><strong>Flexibility</strong>: Supports different flight modes (manual, autonomous, guided, etc.).</li>
+<li><strong>Data Logging</strong>: Essential for post-flight analysis, AI training, and debugging.</li>
+<li><strong>Remote Control</strong>: Operate the drone without requiring direct physical interaction.</li>
+</ul>
+<h2 id="setting-up-px4-and-qgroundcontrol"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.5</span> Setting Up PX4 and QGroundControl<a class="headerlink" href="#setting-up-px4-and-qgroundcontrol" title="Permanent link">¶</a></h2>
+<p>Now let's set up your PX4. </p>
+<h3 id="setup-overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.5.1</span> Setup Overview<a class="headerlink" href="#setup-overview" title="Permanent link">¶</a></h3>
+<ol>
+<li>Install <strong>PX4</strong></li>
+<li>Install <strong>QGroundControl (QGC)</strong> (<a href="https://qgroundcontrol.com/">Download</a>) </li>
+<li>Run PX4 SITL with jmavsim</li>
+<li>Use <em>QGC</em> to set up some automated flights</li>
+<li>(Not today) Setup <strong>offboard control</strong> (for AI/robotics integration)</li>
+</ol>
+<h3 id="install-px4"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.5.2</span> Install PX4<a class="headerlink" href="#install-px4" title="Permanent link">¶</a></h3>
+<h4 id="ubuntu"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.5.2.1</span> Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">¶</a></h4>
+<p>Create a new directory to contain PX4</p>
+<pre><code>mkdir PX4
+cd PX4
+</code></pre>
+<p>Git clone and install PX4</p>
+<pre><code>git clone --recursive https://github.com/PX4/PX4-Autopilot.git -b v1.15.4
+cd PX4-Autopilot
+</code></pre>
+<blockquote>
+<p><em>NOTE</em>: You will need the <code>--recursive</code> to ensure all the dependencies are also pulled. If you forgot to and your builds are failing, in the root of the repository run <code>git submodule update --init --recursive</code>. </p>
+</blockquote>
+<p>Install PX4 dependencies including a new lightweight simulator called JMavsim.</p>
+<pre><code>cd Tools/setup/
+./ubuntu.sh
+cd ../../
+</code></pre>
+<blockquote>
+<p><em>NOTE</em>: In default, it will automatically install another version of gazebo i.e. gazebo garden. It is an old version of gazebo fortress which you are using for our previous aerostack2 project. It has been tested that it will not affect your settings. So you could just run default ubuntu.sh file or you could also comment off codes for gazebo garden installation as we are using another simulator called JMAVSIM for this session.</p>
+</blockquote>
+<h3 id="install-qgroundcontrol"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.5.3</span> Install QGroundControl<a class="headerlink" href="#install-qgroundcontrol" title="Permanent link">¶</a></h3>
+<p>Follow the following instructions for all platforms:</p>
+<ul>
+<li><a href="https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/quick_start.html">https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/quick_start.html</a></li>
+</ul>
+<p>Now start QGroundControl</p>
+<p>See <a href="https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/quick_start.html">https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/quick_start.html</a> for how to navigate and use QGC.</p>
+<h3 id="run-px4-stil"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.5.4</span> Run PX4 STIL<a class="headerlink" href="#run-px4-stil" title="Permanent link">¶</a></h3>
+<p>Open a terminal and navigate to the PX4_Autopilot repo you cloned earlier, see instructions here <a href="https://docs.px4.io/main/en/sim_jmavsim/">https://docs.px4.io/main/en/sim_jmavsim/</a></p>
+<pre><code class="language-bash"># Set Lat Long of UCL East
+export PX4_HOME_LAT=51.537668693830824
+export PX4_HOME_LON=-0.012029639288719024
+export PX4_HOME_ALT=28.5
+make px4_sitl_default jmavsim
+</code></pre>
+<blockquote>
+<p>If you get an error make sure you have recursively git cloned</p>
+</blockquote>
+<p>Tada! After waiting about a minute for the system to initialise itself (It will complain at you a bunch), QGC should show that the system is ready to fly. </p>
+<h2 id="tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.6</span> Tasks<a class="headerlink" href="#tasks" title="Permanent link">¶</a></h2>
+<ol>
+<li>Takeoff the drone and manually fly it around the olympic park using the joysticks in the bottom of the screen<ul>
+<li>See your trajectory in QGC</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Note: If you crash your drone somehow, you may need to restart your flight controller and jamvsim
+2. When in midair, right click on a location and you will get some options to fly in a straight line to various locations. </p>
+</blockquote>
+<ol>
+<li>
+<p>Land or return to the start location</p>
+</li>
+<li>
+<p>Have a play with the planning tools</p>
+<ul>
+<li>Once you have made a mission you will need to upload it (this may appear to fail)</li>
+<li>If you can't automatically start it, you may need to manually change the mode to <em>mission</em>. </li>
+</ul>
+</li>
+<li>
+<p>Imagine you were a drone inspection company, do you think this software is suitable for your role? </p>
+<ul>
+<li>What's this software good at?</li>
+<li>What's it missing? </li>
+</ul>
+</li>
+</ol>
+<p>For more details, refer to the <a href="https://docs.px4.io/">PX4 Developer Guide</a>.</p>
+<p>This is all we'll cover in this course, as this content could fill a whole other module. In the optional session we will be trying to put some of this into practice on a real drone in the flight arena. Specifically connecting some of this up to ROS2 and Aerostack2 and seeing how this performs! </p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../3_challenge_cw1/" title="Structural Inspection Path Planning Challenge"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../8b_practical_PX4_Aerostack2_ROS2/" title="13. Autonomous flight with PX4, ROS2 and aerostack2">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>Copyright © 2024 University College London AML Lab</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../3_challenge_cw1/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../8b_practical_PX4_Aerostack2_ROS2/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

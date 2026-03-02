@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>7. Introduction - UCL-MSC-RAI-COMP0240</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../kbd.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "7. Introduction";
+        var mkdocs_page_input_path = "3a_practical_crazyflie.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> UCL-MSC-RAI-COMP0240
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Practical 1 &amp; 2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1a_introduction/">1. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1b_intro_linux/">2. Ubuntu Installation and Linux Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_intro_ros2/">3. ROS2 Installation and ROS2 Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1d_aerostack2/">4. Aerostack2 Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 3 &amp; 4</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">7. Introduction</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#crazyflies">6.1 Crazyflies</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-are-crazyflies">6.1.1 What are Crazyflies</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#why-are-we-using-them">6.1.2 Why are we using them</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#safety">6.2 Safety</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#personal-safety">6.2.1 Personal Safety</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#battery-safety">6.2.2 Battery Safety</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#practical-tasks">6.3 Practical Tasks</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#preliminary-tasks">6.3.1 Preliminary Tasks</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#main-tasks">6.3.2 Main Tasks</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_practical_crazyflie/">8. Building Crazyflies</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4_practical_crazyflie/">9. Flying Crazyflies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 5</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_practical_crazyflie_aerostack2/">10. Crazyflie with Aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 6: Assignment - CW1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 7</span></p>
+<ul>
+<li class="toctree-l1"><a class="" href="../tbc.md">11. Flight Practice, Regulation and Laws (tbc at UCL HereEast)</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 8</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8a_practical_px4_sitl/">12. Introducing Pixhawk and PX4</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../8b_practical_PX4_Aerostack2_ROS2/">13. Autonomous flight with PX4, ROS2 and aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 9 &amp; 10: Assignment - CW2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7_challenge_multi_drone/">Multi-Drone Swarming Formation Flight Challenge</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">UCL-MSC-RAI-COMP0240</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">Practical 3 &amp; 4</li>
+<li class="breadcrumb-item active">7. Introduction</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="practical-3-4-building-and-flying-crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.</span> Practical 3 &amp; 4:  Building and flying Crazyflies<a class="headerlink" href="#practical-3-4-building-and-flying-crazyflies" title="Permanent link">¶</a></h1>
+<p>In this third and fourth practical we are jumping in and getting hands on with flying crazyflies - manually and hopefully if we're lucky autonomously doing simple things. </p>
+<div class="toc">
+<ul>
+<li><a href="#practical-3-4-building-and-flying-crazyflies">6. Practical 3 &amp; 4: Building and flying Crazyflies</a><ul>
+<li><a href="#crazyflies">6.1 Crazyflies</a><ul>
+<li><a href="#what-are-crazyflies">6.1.1 What are Crazyflies</a></li>
+<li><a href="#why-are-we-using-them">6.1.2 Why are we using them</a></li>
+</ul>
+</li>
+<li><a href="#safety">6.2 Safety</a><ul>
+<li><a href="#personal-safety">6.2.1 Personal Safety</a></li>
+<li><a href="#battery-safety">6.2.2 Battery Safety</a></li>
+</ul>
+</li>
+<li><a href="#practical-tasks">6.3 Practical Tasks</a><ul>
+<li><a href="#preliminary-tasks">6.3.1 Preliminary Tasks</a></li>
+<li><a href="#main-tasks">6.3.2 Main Tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.1</span> Crazyflies<a class="headerlink" href="#crazyflies" title="Permanent link">¶</a></h2>
+<p><img alt="crazyflie" src="../images/cf21.jpg"/></p>
+<h3 id="what-are-crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.1.1</span> What are Crazyflies<a class="headerlink" href="#what-are-crazyflies" title="Permanent link">¶</a></h3>
+<p>The Crazyflie 2.1+. is a versatile open source micro-drone flying development platform that only weighs 27g and fits in the palm of your hand. </p>
+<p>Checkout their website to learn more about them 
+- https://www.bitcraze.io/ </p>
+<p>You will see that they are used for R&amp;D activities all over as its a perfect platform for learning, researching and experimenting with all things drones and drone swarms in a lab setting. </p>
+<h3 id="why-are-we-using-them"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.1.2</span> Why are we using them<a class="headerlink" href="#why-are-we-using-them" title="Permanent link">¶</a></h3>
+<p>Inspired by aerial robotics courses from other institutions, we utilise the crazyflie as an initial teaching platform due to:</p>
+<ul>
+<li>Ease of use</li>
+<li>Size &amp; Safety</li>
+<li>Programmability </li>
+<li>Large Community</li>
+</ul>
+<p>Through using them, you will learn the basics of constructing a drone platform and how the various physical components fit together. This includes the drone itself but also how you might communicate with a drone through the radio. </p>
+<p>The crazyflie comes with a nice cross-platform user interface for connecting to, configuring and monitoring a drone. This interface allows you to connect a game pad for manual flight of the crazyflie, but also there is an andriod and IOS app for manual flying of the drone over bluetooth. </p>
+<p>Bitcraze and various research groups have released a lot of open source, freely available code for programming the drone in python and c++, with many examples. This allows you to more easily implement and experiment with different methods of autonomy for the drone. </p>
+<p>Finally due to the small size, there is very little chance of injury (<strong>PROVIDING YOU ARE WEARING YOUR SAFETY GLASSES</strong>) when flying, even if you do collide with something or someone. This makes it ideal for use during a tutorial with many people in a classroom setting. As you will see later, flying with anything larger will require flying within our dedicated flying arena. </p>
+<h2 id="safety"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2</span> Safety<a class="headerlink" href="#safety" title="Permanent link">¶</a></h2>
+<h3 id="personal-safety"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.1</span> Personal Safety<a class="headerlink" href="#personal-safety" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>WEAR YOUR SAFETY GLASSES AT ALL TIMES DURING THIS PRACTICAL</strong></li>
+<li>It is recommended to wear long sleves and trousers</li>
+<li>When the drone is flying, it should always be watched</li>
+</ul>
+<h3 id="battery-safety"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2.2</span> Battery Safety<a class="headerlink" href="#battery-safety" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>The Drones use small Lithium-Polymer batteries and as such we must be careful</strong> </p>
+</li>
+<li>
+<p><strong>DO NOT DROP, PIERCE, HAMMER OR OTHERWISE DAMAGE THE BATTERIES</strong> </p>
+</li>
+<li>
+<p><strong>IF A BATTERY LOOKS DAMAGED DO NOT USE IT AND TELL A STAFF MEMBER</strong></p>
+</li>
+<li>
+<p><strong>IF A BATTERY STARTS SMOKING OR IS ON FIRE TELL THE STAFF AND CALMLY MOVE AWAY FROM IT</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>We will have a metal sand bucket and long tongs and the battery will go in there </p>
+</blockquote>
+<ul>
+<li><strong>DO NOT ATTEMPT TO PUT OUT THE FIRE YOURSELF</strong> </li>
+</ul>
+<h2 id="practical-tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.3</span> Practical Tasks<a class="headerlink" href="#practical-tasks" title="Permanent link">¶</a></h2>
+<p>The following are tasks for you to hopefully solve and achieve throughout this session. Consider these questions when you do the next few tutorials. </p>
+<h3 id="preliminary-tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.3.1</span> Preliminary Tasks<a class="headerlink" href="#preliminary-tasks" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Get and put on your safety glasses</strong></li>
+<li>Sign out a single crazyflie and associated parts</li>
+<li>Clear out a designated 2x2m ish flying space </li>
+</ol>
+<h3 id="main-tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.3.2</span> Main Tasks<a class="headerlink" href="#main-tasks" title="Permanent link">¶</a></h3>
+<ol>
+<li>Build the crazyflie</li>
+<li>What are the different sensors and when should each one be used? </li>
+<li>Setup the software and crazy radio and connect your crazyflie<ul>
+<li>Can you see the live sensor feed? </li>
+</ul>
+</li>
+<li>Can you perform manual flight with your phone or game controller<ul>
+<li><strong>WATCH OUT - SMALL INPUTS NEEDED OTHERWISE IT WILL HIT THE CEILING / OTHER PEOPLE</strong></li>
+<li>How does the crazyflie respond to your controls - is it sluggish? fast to react? </li>
+<li>How stable is the drone? </li>
+<li>Do you think this is a good way to control a drone? </li>
+</ul>
+</li>
+<li>Using the crazyflie python library, write a simple script which (1) takesoff the drone, (2) flies to another point (3) lands<ul>
+<li>What are the commands needed to achieve takeoff? </li>
+<li>How accurate is the drones takeoff height? </li>
+<li>How well does it fly to the other point, can you characterise it? </li>
+<li>How good is the landing? </li>
+<li>How repeatable is the flight? </li>
+</ul>
+</li>
+<li>Now make the drone do something interesting<ul>
+<li>e.g. Fly a more interesting pattern? Perform an experiment to find the accuracy of the system? </li>
+</ul>
+</li>
+</ol>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../2_practical_gazebo_aruco/" title="5. Gazebo Aruco Mini-Challenge"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../3b_practical_crazyflie/" title="8. Building Crazyflies">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>Copyright © 2024 University College London AML Lab</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../2_practical_gazebo_aruco/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../3b_practical_crazyflie/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>13. Autonomous flight with PX4, ROS2 and aerostack2 - UCL-MSC-RAI-COMP0240</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../kbd.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "13. Autonomous flight with PX4, ROS2 and aerostack2";
+        var mkdocs_page_input_path = "8b_practical_PX4_Aerostack2_ROS2.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> UCL-MSC-RAI-COMP0240
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Practical 1 &amp; 2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1a_introduction/">1. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1b_intro_linux/">2. Ubuntu Installation and Linux Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_intro_ros2/">3. ROS2 Installation and ROS2 Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1d_aerostack2/">4. Aerostack2 Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 3 &amp; 4</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3a_practical_crazyflie/">7. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_practical_crazyflie/">8. Building Crazyflies</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4_practical_crazyflie/">9. Flying Crazyflies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 5</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_practical_crazyflie_aerostack2/">10. Crazyflie with Aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 6: Assignment - CW1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 7</span></p>
+<ul>
+<li class="toctree-l1"><a class="" href="../tbc.md">11. Flight Practice, Regulation and Laws (tbc at UCL HereEast)</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 8</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../8a_practical_px4_sitl/">12. Introducing Pixhawk and PX4</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">13. Autonomous flight with PX4, ROS2 and aerostack2</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#overview">12.1 Overview</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#step1-setup-the-simuatlion-environment">12.2 Step1: Setup the simuatlion environment</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-ros2-humble">12.2.1 Install ROS2 humble</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#install-gazebo-harmonic">12.2.2 Install Gazebo Harmonic</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#install-px4">12.2.3 Install PX4</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#install-aerostack">12.2.4 Install Aerostack</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-the-project">12.2.5 Setup the project</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#step2-test-your-mission-script-in-the-simulation-environment">12.3 Step2: Test your mission script in the simulation environment</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#step3-setup-and-bench-test-the-real-drone-qav250-in-here-east-flight-arena">12.4 Step3: Setup and bench test the real drone (qav250) in Here east flight arena</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#step4-conduct-your-mission-on-qav250">12.5 Step4: Conduct your mission on qav250</a>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 9 &amp; 10: Assignment - CW2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7_challenge_multi_drone/">Multi-Drone Swarming Formation Flight Challenge</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">UCL-MSC-RAI-COMP0240</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">Practical 8</li>
+<li class="breadcrumb-item active">13. Autonomous flight with PX4, ROS2 and aerostack2</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="practical-8b-autonomous-flight-with-pixhawk-aerostack2-ros2"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.</span> Practical 8b: Autonomous flight with Pixhawk, Aerostack2, ROS2<a class="headerlink" href="#practical-8b-autonomous-flight-with-pixhawk-aerostack2-ros2" title="Permanent link">¶</a></h1>
+<h2 id="overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.1</span> Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>This is an optional session in which you will be able to fly a real drone manualy and autonomously with the holistic software stack you have learned from this module (PX4,Aerostack2, and ROS2) in HereEast fly area. This session contains the following steps:</p>
+<ul>
+<li><strong>Step1</strong>: Setup the simulation environment</li>
+<li><strong>Step2</strong>: Test your mission script in the simulation environment</li>
+<li><strong>Step3</strong>: Setup and bench test the real drone (qav250) in Here east flight arena</li>
+<li><strong>Step4</strong>: Conduct your mission on the real drone </li>
+</ul>
+<h2 id="step1-setup-the-simuatlion-environment"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.2</span> Step1: Setup the simuatlion environment<a class="headerlink" href="#step1-setup-the-simuatlion-environment" title="Permanent link">¶</a></h2>
+<p>In order to conduct autonomously flight with a real drone at the end of this session, we need to simulate it beforehand out of reasons such as safety test and debugging. What we need for simualtion environment here is the exact software stack we will use in the real drone. It combines flight control firmware (PX4), ROS2, Aerostack2. In addition, we will use Gazebo as simulator for this time.</p>
+<h3 id="install-ros2-humble"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.2.1</span> Install ROS2 humble<a class="headerlink" href="#install-ros2-humble" title="Permanent link">¶</a></h3>
+<p>Please refer to ROS2 installation guide in <a href="https://ucl-msc-rai-comp0240.github.io/1c_intro_ros2/#">PRACTICAL1</a>.</p>
+<h3 id="install-gazebo-harmonic"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.2.2</span> Install Gazebo Harmonic<a class="headerlink" href="#install-gazebo-harmonic" title="Permanent link">¶</a></h3>
+<p>Due to compability issue, we are going to use Gazebo Harmonic rather than Gazebo fortress which we used before for gazebo aruco challenge. To install Gazebo Harmonic:</p>
+<pre><code class="language-bash">sudo apt-get update
+sudo apt-get install curl lsb-release gnupg
+sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] https://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list &gt; /dev/null
+sudo apt-get update
+sudo apt-get install gz-harmonic
+</code></pre>
+<h3 id="install-px4"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.2.3</span> Install PX4<a class="headerlink" href="#install-px4" title="Permanent link">¶</a></h3>
+<p>Please refer to PX4 installation guide in <a href="https://ucl-msc-rai-comp0240.github.io/6_practical_pixhawk_PX4/#using-px4-in-hitl-hardware-in-the-loop-simulation">PRACTICAL6</a>.</p>
+<h3 id="install-aerostack"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.2.4</span> Install Aerostack<a class="headerlink" href="#install-aerostack" title="Permanent link">¶</a></h3>
+<p>Please refer to Aerostack2 installation guide in <a href="https://ucl-msc-rai-comp0240.github.io/2_practical_gazebo_aruco/">PRACTICAL2-5.2Aerostack2 Installation</a>.</p>
+<h3 id="setup-the-project"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.2.5</span> Setup the project<a class="headerlink" href="#setup-the-project" title="Permanent link">¶</a></h3>
+<p>In this session, we will use anonther aerostack2 project called project_mavlink which allows PX4 communicating with ROS2 using the mavlink protocol through MAVROS bridge. We made some modification to the original project, so please use our github repo instead of the original one.</p>
+<p>Get the project locally:</p>
+<pre><code class="language-bash">mkdir -p ~/project_gazebo_ws/src
+cd ~/project_gazebo_ws/src
+git clone https://github.com/UCL-MSC-RAI-COMP0240/project_mavlink.git
+</code></pre>
+<h2 id="step2-test-your-mission-script-in-the-simulation-environment"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.3</span> Step2: Test your mission script in the simulation environment<a class="headerlink" href="#step2-test-your-mission-script-in-the-simulation-environment" title="Permanent link">¶</a></h2>
+<p>Launch the aerostack2:</p>
+<pre><code class="language-bash">cd ~/project_gazebo_ws/src/project_mavlink
+./launch_as2_gazebo.bash -n qav1
+</code></pre>
+<p>Start the PX4 SITL, it will launch the gazebo automatically:</p>
+<pre><code class="language-bash">cd PX4-Autopilot
+make px4_sitl gz_x500
+</code></pre>
+<p>Run the mission file: navigate to the mission monitoring panel by using ctrl+b and arrow keys ↑ ↓ ← →, and then </p>
+<pre><code class="language-bash">python3 mission.py
+</code></pre>
+<p>Stop the aerostack:</p>
+<pre><code class="language-bash">cd ~/project_gazebo_ws/src/project_mavlink
+./stop_tmuxinator_as2_gazebo.bash
+</code></pre>
+<h2 id="step3-setup-and-bench-test-the-real-drone-qav250-in-here-east-flight-arena"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.4</span> Step3: Setup and bench test the real drone (qav250) in Here east flight arena<a class="headerlink" href="#step3-setup-and-bench-test-the-real-drone-qav250-in-here-east-flight-arena" title="Permanent link">¶</a></h2>
+<p>Now we are ready to deploy our software stack onto a real drone and conduct a real flight. You will need to book a slot to UCL Here east flight area for the drone flight. Please use the following link to book. (Will add in soon)</p>
+<p>1.Get safety induction</p>
+<p>2.Familiarize yourself with infrastructure of UCL Here east Flight arena</p>
+<p>3.Familiarize yourself with the drone</p>
+<p>4.Bench testing </p>
+<h2 id="step4-conduct-your-mission-on-qav250"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.5</span> Step4: Conduct your mission on qav250<a class="headerlink" href="#step4-conduct-your-mission-on-qav250" title="Permanent link">¶</a></h2>
+<p>Before running your mission file, we need to ensure the drone's safety through manual flight and simple autonomously flight.</p>
+<p>1.Manual fly in position mode</p>
+<p>2.Autonomous fly with simple mission (just take off and land)</p>
+<p>3.Autonomous fly with your mission file</p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../8a_practical_px4_sitl/" title="12. Introducing Pixhawk and PX4"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../7_challenge_multi_drone/" title="Multi-Drone Swarming Formation Flight Challenge">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>Copyright © 2024 University College London AML Lab</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../8a_practical_px4_sitl/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../7_challenge_multi_drone/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>
