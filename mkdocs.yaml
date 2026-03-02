@@ -42,7 +42,7 @@ nav:
     - "11. Flight Practice, Regulation and Laws (tbc at UCL HereEast)": "tbc.md"
 
   - Practical 8:
-      - "12. Introducing Pixhawk and PX4": "8a_practical_pixhawk_PX4.md"
+      - "12. Introducing Pixhawk and PX4": "8a_practical_px4_sitl.md"
       - "13. Autonomous flight with PX4, ROS2 and aerostack2": "8b_practical_PX4_Aerostack2_ROS2.md"
 
   - "Practical 9 & 10: Assignment - CW2":
