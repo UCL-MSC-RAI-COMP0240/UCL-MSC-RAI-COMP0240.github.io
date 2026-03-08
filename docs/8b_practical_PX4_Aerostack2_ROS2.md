@@ -30,7 +30,7 @@ sudo apt-get install gz-harmonic
 
 ### Install PX4
 
-Please refer to PX4 installation guide in [PRACTICAL6](https://ucl-msc-rai-comp0240.github.io/6_practical_pixhawk_PX4/#using-px4-in-hitl-hardware-in-the-loop-simulation).
+Please refer to PX4 installation guide in [PRACTICAL8a](https://ucl-msc-rai-comp0240.github.io/8a_practical_px4_sitl/).
 
 ### Install Aerostack
 
@@ -74,7 +74,7 @@ cd ~/project_gazebo_ws/src/project_mavlink
 ./stop_tmuxinator_as2_gazebo.bash
 ```
 
-## Step3: Setup and bench test the real drone (qav250) in Here east flight arena
+## Step3: Setup and bench test the real drone (qav250) in Here east flight arena (optional session)
 Now we are ready to deploy our software stack onto a real drone and conduct a real flight. You will need to book a slot to UCL Here east flight area for the drone flight. Please use the following link to book. (Will add in soon)
 
 1.Get safety induction
@@ -85,7 +85,7 @@ Now we are ready to deploy our software stack onto a real drone and conduct a re
 
 4.Bench testing 
 
-## Step4: Conduct your mission on qav250 
+## Step4: Conduct your mission on qav250  (optional session)
 Before running your mission file, we need to ensure the drone's safety through manual flight and simple autonomously flight.
 
 1.Manual fly in position mode
@@ -94,3 +94,4 @@ Before running your mission file, we need to ensure the drone's safety through m
 
 
 3.Autonomous fly with your mission file
+
