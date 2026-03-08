@@ -85,7 +85,7 @@ Now we are ready to deploy our software stack onto a real drone and conduct a re
 
 4.Bench testing 
 
-##  (optional session) Step4: Conduct your mission on qav250  (optional session)
+##  (optional session) Step4: Conduct your mission on qav250
 Before running your mission file, we need to ensure the drone's safety through manual flight and simple autonomously flight.
 
 1.Manual fly in position mode
@@ -94,6 +94,7 @@ Before running your mission file, we need to ensure the drone's safety through m
 
 
 3.Autonomous fly with your mission file
+
 
 
 
