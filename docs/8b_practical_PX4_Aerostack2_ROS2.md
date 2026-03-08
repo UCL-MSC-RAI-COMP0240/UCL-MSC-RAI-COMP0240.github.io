@@ -74,7 +74,7 @@ cd ~/project_gazebo_ws/src/project_mavlink
 ./stop_tmuxinator_as2_gazebo.bash
 ```
 
-## Step3: Setup and bench test the real drone (qav250) in Here east flight arena (optional session)
+##  (optional session) Step3: Setup and bench test the real drone (qav250) in Here east flight arena
 Now we are ready to deploy our software stack onto a real drone and conduct a real flight. You will need to book a slot to UCL Here east flight area for the drone flight. Please use the following link to book. (Will add in soon)
 
 1.Get safety induction
@@ -85,7 +85,7 @@ Now we are ready to deploy our software stack onto a real drone and conduct a re
 
 4.Bench testing 
 
-## Step4: Conduct your mission on qav250  (optional session)
+##  (optional session) Step4: Conduct your mission on qav250  (optional session)
 Before running your mission file, we need to ensure the drone's safety through manual flight and simple autonomously flight.
 
 1.Manual fly in position mode
@@ -94,4 +94,5 @@ Before running your mission file, we need to ensure the drone's safety through m
 
 
 3.Autonomous fly with your mission file
+
 
