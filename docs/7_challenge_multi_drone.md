@@ -68,9 +68,9 @@ In groups of 2, you will be investigating, developing and testing your algorithm
 
 ![schematic](images/7_schematic.png)
 
-## Hardware Challenge Event at HereEast 26th March
+## Hardware Challenge Event at HereEast 16th and 23rd March
 
-In your groups, you will be given the opportunity to run a viable solution on real crazyflies on the 26th March and / or 2nd April at UCL HereEast - this is an optional non-assessed task.
+In your groups, you will be given the opportunity to run a viable solution on real crazyflies - this is an non-assessed task. But participation is required as part of the group assessment process. 
 
 I encourage as many groups as possible to join the event. We will be maintaining a leaderboard and points will be awarded based on success rate, reconfigurablity and time taken. A sign up sheet will be provided.
 
@@ -207,17 +207,17 @@ Regardless of the distribution of tasks, groups then need to jointly come togeth
   
 ## Coursework Submission
 
-The deadline for this coursework is 23rd April 2025, 16.00.
+The deadline for this coursework is 20th April 2025, 16.00.
 
 Submissions will uploaded into Moodle using the relevant **Coursework 2** submission links.
 
 You will need to submit 3 links on moodle items:
 
 1. Coursework 2 report: This report should be structured to clearly explain the problem, methodology, implementation, results and conclusions.
-2. 4min - Video Presentation: Narrative, demonstration and summary of results
+2. 5mins - Video Presentation: Narrative, demonstration and summary of results
 3. Code submission
 
-## Assessment Breakdown and Structure (Deadline 23rd April 16.00)
+## Assessment Breakdown and Structure (Deadline 20th April 16.00)
 
 Marking will be based on your submitted report, video and code only.
 
