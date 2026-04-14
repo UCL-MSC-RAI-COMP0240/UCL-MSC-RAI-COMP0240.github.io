@@ -207,7 +207,7 @@ Regardless of the distribution of tasks, groups then need to jointly come togeth
   
 ## Coursework Submission
 
-The deadline for this coursework is 20th April 2025, 16.00.
+The deadline for this coursework is 20th April 2026, 16.00.
 
 Submissions will uploaded into Moodle using the relevant **Coursework 2** submission links.
 
