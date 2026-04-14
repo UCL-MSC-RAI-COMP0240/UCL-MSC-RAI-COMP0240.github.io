@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>4. Aerostack2 Introduction - UCL-MSC-RAI-COMP0240</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../kbd.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "4. Aerostack2 Introduction";
+        var mkdocs_page_input_path = "1d_aerostack2.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> UCL-MSC-RAI-COMP0240
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Practical 1 &amp; 2</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1a_introduction/">1. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1b_intro_linux/">2. Ubuntu Installation and Linux Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_intro_ros2/">3. ROS2 Installation and ROS2 Re-Intro</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">4. Aerostack2 Introduction</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#aerostack2-practical-basics">4.1 Aerostack2 Practical Basics</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-hardware-simulation-layer">4.1.1 1. Hardware / Simulation Layer</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-ros2-middleware-layer">4.1.2 2. ROS2 Middleware Layer</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-aerostack2-core-libraries">4.1.3 3. Aerostack2 Core Libraries</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-aerostack2-project-repository-application-layer">4.1.4 4. Aerostack2 Project Repository (Application Layer)</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-user-mission-logic">4.1.5 5. User Mission Logic</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tasks-running-aerostack2-in-black-box-mode">4.2 Tasks: Running Aerostack2 in Black-Box Mode</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#task-1-clone-the-aerostack2-source-repository">4.2.1 Task 1 – Clone the Aerostack2 Source Repository</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-2-run-an-existing-aerostack2-example">4.2.2 Task 2 – Run an Existing Aerostack2 Example</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-3-observe-the-running-system-using-ros2-tools">4.2.3 Task 3 – Observe the Running System Using ROS2 Tools</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-4-execute-a-simple-mission">4.2.4 Task 4 – Execute a Simple Mission</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#background-to-robotic-frameworks-for-aerial-control">4.3 Background to Robotic Frameworks For Aerial Control</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#aerostack2">4.4 Aerostack2</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">4.4.1 Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#using-aerostack2">4.4.2 Using Aerostack2</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#core-aerostack-libraries">4.4.3 Core Aerostack Libraries</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#project-repository">4.4.4 Project Repository</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 3 &amp; 4</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3a_practical_crazyflie/">7. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_practical_crazyflie/">8. Building Crazyflies</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4_practical_crazyflie/">9. Flying Crazyflies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 5</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_practical_crazyflie_aerostack2/">10. Crazyflie with Aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 6: Assignment - CW1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 7</span></p>
+<ul>
+<li class="toctree-l1"><a class="" href="../tbc.md">11. Flight Practice, Regulation and Laws (tbc at UCL HereEast)</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 8</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8a_practical_px4_sitl/">12. Introducing Pixhawk and PX4</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../8b_practical_PX4_Aerostack2_ROS2/">13. Autonomous flight with PX4, ROS2 and aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 9 &amp; 10: Assignment - CW2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7_challenge_multi_drone/">Multi-Drone Swarming Formation Flight Challenge</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">UCL-MSC-RAI-COMP0240</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">Practical 1 &amp; 2</li>
+<li class="breadcrumb-item active">4. Aerostack2 Introduction</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="practical-2-introduction-to-aerostack2-framework-for-aerial-robotic-systems"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.</span> Practical 2: Introduction to Aerostack2 Framework For Aerial Robotic Systems<a class="headerlink" href="#practical-2-introduction-to-aerostack2-framework-for-aerial-robotic-systems" title="Permanent link">¶</a></h1>
+<div class="toc">
+<ul>
+<li><a href="#practical-2-introduction-to-aerostack2-framework-for-aerial-robotic-systems">4. Practical 2: Introduction to Aerostack2 Framework For Aerial Robotic Systems</a><ul>
+<li><a href="#aerostack2-practical-basics">4.1 Aerostack2 Practical Basics</a><ul>
+<li><a href="#1-hardware-simulation-layer">4.1.1 1. Hardware / Simulation Layer</a></li>
+<li><a href="#2-ros2-middleware-layer">4.1.2 2. ROS2 Middleware Layer</a></li>
+<li><a href="#3-aerostack2-core-libraries">4.1.3 3. Aerostack2 Core Libraries</a></li>
+<li><a href="#4-aerostack2-project-repository-application-layer">4.1.4 4. Aerostack2 Project Repository (Application Layer)</a></li>
+<li><a href="#5-user-mission-logic">4.1.5 5. User Mission Logic</a></li>
+</ul>
+</li>
+<li><a href="#tasks-running-aerostack2-in-black-box-mode">4.2 Tasks: Running Aerostack2 in Black-Box Mode</a><ul>
+<li><a href="#task-1-clone-the-aerostack2-source-repository">4.2.1 Task 1 – Clone the Aerostack2 Source Repository</a></li>
+<li><a href="#task-2-run-an-existing-aerostack2-example">4.2.2 Task 2 – Run an Existing Aerostack2 Example</a></li>
+<li><a href="#task-3-observe-the-running-system-using-ros2-tools">4.2.3 Task 3 – Observe the Running System Using ROS2 Tools</a></li>
+<li><a href="#task-4-execute-a-simple-mission">4.2.4 Task 4 – Execute a Simple Mission</a></li>
+</ul>
+</li>
+<li><a href="#background-to-robotic-frameworks-for-aerial-control">4.3 Background to Robotic Frameworks For Aerial Control</a></li>
+<li><a href="#aerostack2">4.4 Aerostack2</a><ul>
+<li><a href="#overview">4.4.1 Overview</a></li>
+<li><a href="#using-aerostack2">4.4.2 Using Aerostack2</a></li>
+<li><a href="#core-aerostack-libraries">4.4.3 Core Aerostack Libraries</a></li>
+<li><a href="#project-repository">4.4.4 Project Repository</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Aerostack2 is the <strong>primary aerial robotics platform</strong> used throughout this module. It provides a complete, research-grade framework for developing, simulating, and deploying aerial robotic systems using ROS2.</p>
+<p>At this stage of the course, the goal is early exposure and installation.</p>
+<p>You are <strong>not expected</strong> to:</p>
+<ul>
+<li>Understand every component of Aerostack2</li>
+<li>Modify low-level controllers or behaviours</li>
+<li>Debug complex multi-node launch issues</li>
+</ul>
+<p>Instead, the objectives of this session are to:</p>
+<ul>
+<li>Understand <em>why</em> a framework like Aerostack2 is needed</li>
+<li>See how a full aerial robotics stack is structured</li>
+<li>Successfully <strong>run an existing Aerostack2 project</strong></li>
+<li>Gain confidence interacting with the platform at a high level</li>
+</ul>
+<p>Aerostack2 will be revisited later in the module, where you will progressively take more responsibility for mission design, autonomy, and system configuration.</p>
+<p><strong>Please note we will be installing Aerostack2 via source</strong>. 
+See <a href="https://aerostack2.github.io/_00_getting_started/source_install.html">these instructions</a></p>
+<h2 id="aerostack2-practical-basics"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.1</span> Aerostack2 Practical Basics<a class="headerlink" href="#aerostack2-practical-basics" title="Permanent link">¶</a></h2>
+<p>Aerostack2 should be understood as a <strong>layered system</strong>, built on top of ROS2, rather than as a monolithic or “black-magic” framework.</p>
+<p>The key layers are:</p>
+<h3 id="1-hardware-simulation-layer"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.1.1</span> 1. Hardware / Simulation Layer<a class="headerlink" href="#1-hardware-simulation-layer" title="Permanent link">¶</a></h3>
+<p>This is the physical or simulated platform:</p>
+<ul>
+<li>Real drones (e.g. Crazyflie, PX4-based platforms)</li>
+<li>Gazebo for simulation</li>
+</ul>
+<p>This layer is responsible for:</p>
+<ul>
+<li>Physics</li>
+<li>Sensors</li>
+<li>Actuators</li>
+</ul>
+<h3 id="2-ros2-middleware-layer"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.1.2</span> 2. ROS2 Middleware Layer<a class="headerlink" href="#2-ros2-middleware-layer" title="Permanent link">¶</a></h3>
+<p>ROS2 provides the communication backbone:</p>
+<ul>
+<li>Nodes</li>
+<li>Topics</li>
+<li>Services</li>
+<li>Actions</li>
+</ul>
+<p>All Aerostack2 components are ultimately ROS2 nodes communicating through standard ROS2 interfaces.</p>
+<h3 id="3-aerostack2-core-libraries"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.1.3</span> 3. Aerostack2 Core Libraries<a class="headerlink" href="#3-aerostack2-core-libraries" title="Permanent link">¶</a></h3>
+<p>This layer provides reusable aerial robotics functionality:</p>
+<ul>
+<li>State estimation</li>
+<li>Motion control</li>
+<li>Behaviours (e.g. takeoff, land, go-to)</li>
+<li>Safety and emergency handling</li>
+</ul>
+<p>These are <strong>generic</strong>, reusable components that are independent of any specific application.</p>
+<h3 id="4-aerostack2-project-repository-application-layer"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.1.4</span> 4. Aerostack2 Project Repository (Application Layer)<a class="headerlink" href="#4-aerostack2-project-repository-application-layer" title="Permanent link">¶</a></h3>
+<p>This is where a specific application is defined.</p>
+<p>A project repository:</p>
+<ul>
+<li>Selects which Aerostack2 components are used</li>
+<li>Configures how they are launched</li>
+<li>Defines missions using Python scripts</li>
+</ul>
+<p>Examples include:</p>
+<ul>
+<li>Gazebo simulation projects</li>
+<li>Indoor flight projects</li>
+<li>Outdoor autonomous missions</li>
+</ul>
+<h3 id="5-user-mission-logic"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.1.5</span> 5. User Mission Logic<a class="headerlink" href="#5-user-mission-logic" title="Permanent link">¶</a></h3>
+<p>At the top level are:</p>
+<ul>
+<li>Python mission scripts</li>
+<li>High-level commands (takeoff, move, land)</li>
+<li>Mission sequencing</li>
+</ul>
+<p><strong>In this practical, you will only interact with this top layer.</strong></p>
+<p>Understanding this separation is critical:<br/>
+you can design and test aerial missions <strong>without modifying the underlying flight stack</strong>.</p>
+<hr/>
+<h2 id="tasks-running-aerostack2-in-black-box-mode"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.2</span> Tasks: Running Aerostack2 in Black-Box Mode<a class="headerlink" href="#tasks-running-aerostack2-in-black-box-mode" title="Permanent link">¶</a></h2>
+<p>In this practical, you will treat Aerostack2 as a <strong>black-box system</strong>:
+you will run it, observe it, and interact with it — but not modify its internals.</p>
+<h3 id="task-1-clone-the-aerostack2-source-repository"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.2.1</span> Task 1 – Clone the Aerostack2 Source Repository<a class="headerlink" href="#task-1-clone-the-aerostack2-source-repository" title="Permanent link">¶</a></h3>
+<p><strong>Goal:</strong> Ensure you have the Aerostack2 source code locally.</p>
+<ul>
+<li>Create or use an existing ROS2 workspace</li>
+<li>Clone the Aerostack2 repository into the <code>src</code> directory</li>
+<li>Install dependencies and build the workspace following the provided instructions</li>
+</ul>
+<hr/>
+<h3 id="task-2-run-an-existing-aerostack2-example"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.2.2</span> Task 2 – Run an Existing Aerostack2 Example<a class="headerlink" href="#task-2-run-an-existing-aerostack2-example" title="Permanent link">¶</a></h3>
+<p><strong>Goal:</strong> Verify that you can launch a complete aerial robotics system.</p>
+<ul>
+<li>Navigate to the example project (e.g. Project Gazebo)</li>
+<li>Launch the simulation using the provided scripts</li>
+<li>Start the ground station and the simulated drone</li>
+</ul>
+<hr/>
+<h3 id="task-3-observe-the-running-system-using-ros2-tools"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.2.3</span> Task 3 – Observe the Running System Using ROS2 Tools<a class="headerlink" href="#task-3-observe-the-running-system-using-ros2-tools" title="Permanent link">¶</a></h3>
+<p><strong>Goal:</strong> Connect Aerostack2 back to core ROS2 concepts.</p>
+<p>While the system is running:</p>
+<ul>
+<li>List active ROS2 nodes</li>
+<li>List active topics</li>
+<li>Identify which topics are likely related to:</li>
+<li>State estimation</li>
+<li>Control commands</li>
+<li>Mission execution</li>
+</ul>
+<p>You are not expected to understand everything — focus on recognising structure.</p>
+<hr/>
+<h3 id="task-4-execute-a-simple-mission"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.2.4</span> Task 4 – Execute a Simple Mission<a class="headerlink" href="#task-4-execute-a-simple-mission" title="Permanent link">¶</a></h3>
+<p><strong>Goal:</strong> Interact with Aerostack2 at the mission level using an existing Aerostack2 example project.</p>
+<p>Choose <strong>one</strong> of the following challenges:</p>
+<p><strong>Option A – Mission Execution</strong></p>
+<ul>
+<li>Run an existing example mission script</li>
+<li>Observe the sequence of actions (e.g. takeoff → move → land)</li>
+<li>Identify where in the code the mission logic lives</li>
+</ul>
+<p><strong>Option B – Mission Modification</strong></p>
+<ul>
+<li>Duplicate an existing mission script</li>
+<li>Change <strong>one simple parameter</strong> (e.g. altitude, duration, waypoint)</li>
+<li>Rerun the mission and observe the difference</li>
+</ul>
+<p>Do <strong>not</strong> modify configuration files or launch scripts.</p>
+<hr/>
+<h2 id="background-to-robotic-frameworks-for-aerial-control"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.3</span> Background to Robotic Frameworks For Aerial Control<a class="headerlink" href="#background-to-robotic-frameworks-for-aerial-control" title="Permanent link">¶</a></h2>
+<p>As robotic and autonomous systems proliferate into the wider world, there is a need to address the difficulties of system development and deployment at scale. There is evidence that industry is directly facing these challenges through the use of cloud computing, continuous integration and similar systems inspired from very successful and agile software development processes. This is made clear through offerings such as Amazon's <a href="https://aws.amazon.com/robomaker/">AWS Robomaker</a>, Google's cloud robotics and so on.</p>
+<p>However, there is a great lack of such systems in most academic settings. The result's oriented attitude of many labs often leads to each researcher building a bespoke solution in order to evaluate, validate or prove their goals. These bespoke solutions are often inflexible, not extensible, difficult to understand and, importantly, reuse, with any level of confidence. This becomes especially difficult when coupled with hardware, such as UAVs, where many operational details have been implicitly assumed or ignored for favour of getting the experiment running as quick as possible. In addition these solutions are often poorly structured and maintained  with little to no documentation meaning that it is difficult for researchers to build upon these systems. This is an exceptionally large hurdle to researchers who do not have strong software backgrounds, but wish to perform real world experiments which could improve the quality of research outputs.</p>
+<p>This is not to say that it is impossible for a research system to be developed into a reusable platform. There are many examples of research systems being ubiquitous within a group or being released outside the lab. For instance, the <a href="https://www.robotarium.gatech.edu/">Robotarium at Georgia Tech</a>, the Multi-Robot Systems Group at the Czech Technical University with their <a href="https://github.com/ctu-mrs/mrs_uav_system">experimental system</a>, and the PX4 autopilot which began its life as a collaboration between a number of labs at ETH Zurich. But what we see is that it takes a concerted effort and many years of coincidental work which provide incremental improvements to the system each time. Previously I had attempted to develop a system which solved this problem called <a href="https://github.com/StarlingUAS/ProjectStarling">starling</a> which had a number of flaws. </p>
+<p>Therefore as an example system for you to learn, we have chosen the <strong>aerostack2</strong> as our aerial robotic systems development platform. This will enable the following:</p>
+<ol>
+<li>Supports single or multiple drones with low (control) or high level (path planning) experimentation.</li>
+<li>Supports the transition between simulation to indoor flight to outdoor flight.</li>
+<li>Provides a simple and easy to use interface for researchers to implement experimentation without knowledge of hardware specifics.</li>
+</ol>
+<p>We hope that through using aerostack2, you develop an overview of the components required in an aerial system, and gain experiences which can then be applied to whatever systems you work with in the future.  </p>
+<h2 id="aerostack2"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.4</span> <a href="https://aerostack2.github.io/index.html">Aerostack2</a><a class="headerlink" href="#aerostack2" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://aerostack2.github.io/index.html">Link To Documentation</a></li>
+<li><a href="https://github.com/aerostack2/aerostack2?tab=readme-ov-file">Link To Github</a></li>
+</ul>
+<blockquote>
+<p>UCL fork of aerostack2: <a href="https://github.com/UCL-MSC-RAI-COMP0240/aerostack2">Github</a></p>
+</blockquote>
+<h3 id="overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.4.1</span> Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h3>
+<p>Aerostack2 (AS2) is an open source software framework that helps developers design and build the control architecture of aerial robotic systems, integrating multiple heterogeneous computational solutions (e.g., computer vision algorithms, motion controllers, self-localization and mapping methods, motion planning algorithms, etc.), built for ROS2 Humble.</p>
+<p>Aerostack2 is useful for building autonomous aerial systems in complex and dynamic environments and it is also a useful research tool for aerial robotics to test new algorithms and architectures.</p>
+<p>It was created to be available for communities of researchers and developers and it is currently an active open-source project with periodic software releases.</p>
+<p>Aerostack2 is versatile for building different system configurations with various degrees of autonomy. It’s most important features are:</p>
+<ul>
+<li>From teleoperation to autonomous flight. Aerostack2 can be used for teleoperation flights (with manual control) but it can also be used for building autonomous robot systems to perform aerial missions without operator assistance.  </li>
+<li>Single robots or multi-robot systems. Aerostack2 can be used to fly a swarm of heterogeneous drones to perform multi-aerial-robot missions. It has been validated to operate with several drones simultaneously, both in indoor and outdoor environments.  </li>
+<li>Flexible for different applications. Aerostack2 can be used by system designers to develop their own systems in a wide range of applications. Aerostack2 provides languages and graphical tools to configure specific aerial missions.  </li>
+<li>Hardware independent. Aerostack2 runs on conventional laptops and it has also run on onboard computers like Nvidia Jetson NX. Aerostack2 has been used in different aerial platforms, including, but not limited to: DJI platforms (Matrice 210RTKv2, Matrice 300, Ryze Tello), Pixhawk autopilots and Crazyflie drones. The framework can operate in simulation and in a real environment in a similar way, what simplifies the Sim2Real development. </li>
+<li>Complete modularity, allowing elements to be changed or interchanged without affecting the rest of the system. Plugin-based architecture allows to use different implementations for every tasks.  </li>
+<li>Project-oriented, allowing to install and use only the necessary packages and configurations for the application to be developed</li>
+</ul>
+<p><img alt="as2_1" src="../images/2_as2_1.jpg"/></p>
+<h3 id="using-aerostack2"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.4.2</span> Using Aerostack2<a class="headerlink" href="#using-aerostack2" title="Permanent link">¶</a></h3>
+<p>In practice, a Aerostack ROS2 working project comprises of two parts:</p>
+<ol>
+<li>The Core Aerostack Libraries<ul>
+<li>This provides the core ROS2 nodes, functionalities and interfaces and will be described in more detail below. It is simply another ROS2 library like any other. </li>
+</ul>
+</li>
+<li>An Aerostack2 Project Repository (Application)<ul>
+<li>This is a project folder which interacts and manages a specific application you want to develop with aerostack2. This contains a number of scripts, as well as the python api interface scripts for easy implementation of applications. </li>
+</ul>
+</li>
+</ol>
+<p><img alt="as2_ss" src="../images/2_software_stack.jpg"/></p>
+<h3 id="core-aerostack-libraries"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.4.3</span> Core Aerostack Libraries<a class="headerlink" href="#core-aerostack-libraries" title="Permanent link">¶</a></h3>
+<p>Aerostack2 provides existing implementations of, and methods of extending key parts of a flight control stack. This includes:</p>
+<ol>
+<li><strong>Support of different vehicle platforms</strong> - both real drone platforms such as a crazyflie or PX4 and also gazebo for simulation </li>
+<li><strong>Robotic Functions</strong> - essential software components and algorithms essential for aerial robotics functionality such as <ul>
+<li>State Estimation (External Source, Ground Truth, Motion Capture)</li>
+<li>Motion Control (PID, Differential Flatness)</li>
+<li>Emergency Handling </li>
+</ul>
+</li>
+<li><strong>Behaviours</strong> - Individual built-in components that implement specific high level robotic functionalities such as the following. This allows a mission plan to be expressed as a sequence of activated behaviours in series or in parallel. A key aspect of behaviours is that each individually has state defining whether a behaviour can be activated, if it is still performing that behaviour, deactivating the behaviour and so on. <ul>
+<li>Motion Control (e.g. Taking Off, Landing, Go_to )</li>
+<li>Perception (e.g. Detect Marker, Record Video, Control Gimbal)</li>
+<li>Planning (e.g. Trajectory Generation)</li>
+</ul>
+</li>
+<li><strong>Mission Control</strong> - Highest level user facing components for designing and implementing missions of behaviours. <ul>
+<li>Behaviour Trees </li>
+<li>Python API</li>
+<li>Mission Monitoring (Rviz)</li>
+</ul>
+</li>
+</ol>
+<p>See <a href="https://aerostack2.github.io/_01_aerostack2_concepts/architecture/index.html">this page for more details</a></p>
+<p>The core libraries can be installed for <code>apt-get</code> if no changes are necessary. </p>
+<p>However in this course, we will be building from scratch as it allows us to make quick fixes versions within our repository (<a href="https://github.com/UCL-MSC-RAI-COMP0240/aerostack2">UCL AS2 REPO</a>). To install aerostack, you create a new ROS2 workspace and clone our aerostack into the src folder, download dependencies, and build as usual </p>
+<p>See <a href="https://aerostack2.github.io/_00_getting_started/source_install.html">these instructions</a></p>
+<p>We will be diving further into a specific example in the next article. </p>
+<h3 id="project-repository"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.4.4</span> Project Repository<a class="headerlink" href="#project-repository" title="Permanent link">¶</a></h3>
+<p>The mission control elements of aerostack2 combined with ROS2 allow a high degree of separation between the core libraries and any application specific code. This is great because it means that the core of aerostack is application agnostic, allowing it to be applied to various different specific applications. The specific application then comes in the form of its own repository which is in charge of specifying which nodes are to be run, and in what configuration for a particular use case. A python script can then be used to run the core mission logic, invoking behaviours and telling the drone what to do and when. </p>
+<p>AS2 developers have built up a recommended pattern of usage for invoking and using aerostack2 functionality. This primarily revolves around the use of the linux command line, bash scripts and a tool called <code>tmux</code>.  </p>
+<ol>
+<li>Tmux is a 'terminal multiplexer' which allows the operation of multiple terminals simultaneously from within the same window. Combined with the <code>tmuxinator</code> tool which can define configurations of tmux windows, tmux serves to run all of the many ROS2 nodes. This makes things easier as we would ordinarly need to manual start, or replaces a standard ROS2 launch file whilst making monitoring easier in these larger complex systems. </li>
+<li>A launch bash script, often called <code>launch_as2.bash</code> is then used to spin up all of the ROS2 nodes representing a single drone by managing the various environment variables and runtime options, and then invoking tmux. A second bash script is used to represent the ground station <code>launch_ground_station.bash</code> which launches central processes such as visualisation, motion capture, rosbag recording or other external data sources. </li>
+<li>Finally a mission can be defined in python using AS2's python API and the ROS2 API. Then either from within the drone or ground station tmux, this mission can be started. </li>
+</ol>
+<p>Lets take a look at the <a href="https://github.com/aerostack2/project_gazebo">project gazebo</a> example project for working with gazebo - all of the simulation based projects are based on this repository. </p>
+<ul>
+<li><a href="https://github.com/aerostack2/project_gazebo">Project Gazebo</a></li>
+</ul>
+<p><img alt="pg" src="../images/2_project_gazebo.png"/></p>
+<p>All projects in aerostack2 are structured in the same way. The project is divided into the following directories:</p>
+<ul>
+<li><strong>tmuxinator</strong>: Contains the tmuxinator launch file, which is used to launch all aerostack2 nodes.</li>
+<li><strong>aerostack2.yaml</strong>: Tmuxinator launch file for each drone. The list of nodes to be launched is defined here.</li>
+<li><strong>ground_station.yaml</strong>: Tmuxinator launch file for the ground station. The list of nodes to be launched is defined here.</li>
+<li><strong>config</strong>: Contains the configuration files for the launchers of the nodes in the drones.</li>
+<li><strong>config_ground_station</strong>: Contains the configuration files for the launchers of the nodes in the ground station.</li>
+<li><strong>launch_as2.bash</strong>: Script to launch nodes defined in <em>tmuxinator/aerostack2.yaml</em>.</li>
+<li><strong>launch_ground_station.bash</strong>: Script to launch nodes defined in <em>tmuxinator/ground_station.yaml</em>.</li>
+<li><strong>mission_*.py</strong>: Different python mission files that can be executed.</li>
+<li><strong>stop.bash</strong>: Script to stop all nodes launched by <em>launch_as2.bash</em> and <em>launch_ground_station.bash</em>.</li>
+<li><strong>rosbag/record_rosbag.bash</strong>: Script to record a rosbag. Can be modified to record only the topics that are needed.</li>
+<li><strong>trees*</strong>: Contains the behavior trees that can be executed. They can be selected in the <em>aerostack2.yaml</em> file.</li>
+<li><strong>utils</strong>: Contains utils scripts for launchers.</li>
+</ul>
+<p>Both python and bash scripts have a help message that can be displayed by running the script with the <code>-h</code> option. For example, <code>./launch_as2.bash -h</code> will display the help message for the <code>launch_as2.bash</code> script.</p>
+<blockquote>
+<p>Note: Whilst this is the main template, the different projects will have variants depending on their needs and therefore might look and contain slightly different things. </p>
+</blockquote>
+<p>We will go into more details of usage instructions in the next article, but here is the link to how to run this example: <a href="https://aerostack2.github.io/_02_examples/gazebo/project_gazebo/index.html">Link</a></p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../1c_intro_ros2/" title="3. ROS2 Installation and ROS2 Re-Intro"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../2_practical_gazebo_aruco/" title="5. Gazebo Aruco Mini-Challenge">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>Copyright © 2024 University College London AML Lab</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../1c_intro_ros2/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../2_practical_gazebo_aruco/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

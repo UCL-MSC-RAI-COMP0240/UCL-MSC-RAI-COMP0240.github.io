@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>9. Flying Crazyflies - UCL-MSC-RAI-COMP0240</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../kbd.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "9. Flying Crazyflies";
+        var mkdocs_page_input_path = "4_practical_crazyflie.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> UCL-MSC-RAI-COMP0240
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Practical 1 &amp; 2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1a_introduction/">1. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1b_intro_linux/">2. Ubuntu Installation and Linux Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_intro_ros2/">3. ROS2 Installation and ROS2 Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1d_aerostack2/">4. Aerostack2 Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 3 &amp; 4</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3a_practical_crazyflie/">7. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_practical_crazyflie/">8. Building Crazyflies</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">9. Flying Crazyflies</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#manual-flight">8.1 Manual flight</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#before-you-fly">8.1.1 Before you fly</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#crazyradio-20-preparation-and-configuration-guide">8.2 Crazyradio 2.0 Preparation and Configuration Guide</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-prepare-flash-the-crazyradio-20-firmware-this-is-for-information-only-the-radios-have-already-been-updated">8.2.1 1. Prepare &amp; Flash the Crazyradio 2.0 Firmware [This is for information only. The radios have already been updated]</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-install-usb-driver-using-zadig-for-windows">8.2.2 2. Install USB Driver Using Zadig for Windows</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-set-up-cfclient-in-your-miniforge-environment">8.2.3 3. Set Up cfclient in Your Miniforge Environment</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-connect-and-verify">8.2.4 4. Connect and Verify</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-changing-the-radio-frequency-channel-check-your-crazyflie-box-for-your-specific-radio-challenge-this-has-already-been-set-to-your-specific-radio">8.2.5 5. Changing the Radio Frequency Channel [Check your Crazyflie box for your specific radio challenge. This has already been set to your specific radio]</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#flying">8.2.6 Flying</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#assisted-manual-flight">8.3 Assisted manual flight</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#autonomous-flight">8.4 Autonomous Flight</a>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 5</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_practical_crazyflie_aerostack2/">10. Crazyflie with Aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 6: Assignment - CW1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 7</span></p>
+<ul>
+<li class="toctree-l1"><a class="" href="../tbc.md">11. Flight Practice, Regulation and Laws (tbc at UCL HereEast)</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 8</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8a_practical_px4_sitl/">12. Introducing Pixhawk and PX4</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../8b_practical_PX4_Aerostack2_ROS2/">13. Autonomous flight with PX4, ROS2 and aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 9 &amp; 10: Assignment - CW2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7_challenge_multi_drone/">Multi-Drone Swarming Formation Flight Challenge</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">UCL-MSC-RAI-COMP0240</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">Practical 3 &amp; 4</li>
+<li class="breadcrumb-item active">9. Flying Crazyflies</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="practical-4-flying-crazyflies"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.</span> Practical 4: Flying crazyflies<a class="headerlink" href="#practical-4-flying-crazyflies" title="Permanent link">¶</a></h1>
+<div class="toc">
+<ul>
+<li><a href="#practical-4-flying-crazyflies">8. Practical 4: Flying crazyflies</a><ul>
+<li><a href="#manual-flight">8.1 Manual flight</a><ul>
+<li><a href="#before-you-fly">8.1.1 Before you fly</a></li>
+</ul>
+</li>
+<li><a href="#crazyradio-20-preparation-and-configuration-guide">8.2 Crazyradio 2.0 Preparation and Configuration Guide</a><ul>
+<li><a href="#1-prepare-flash-the-crazyradio-20-firmware-this-is-for-information-only-the-radios-have-already-been-updated">8.2.1 1. Prepare &amp; Flash the Crazyradio 2.0 Firmware [This is for information only. The radios have already been updated]</a></li>
+<li><a href="#2-install-usb-driver-using-zadig-for-windows">8.2.2 2. Install USB Driver Using Zadig for Windows</a></li>
+<li><a href="#3-set-up-cfclient-in-your-miniforge-environment">8.2.3 3. Set Up cfclient in Your Miniforge Environment</a></li>
+<li><a href="#4-connect-and-verify">8.2.4 4. Connect and Verify</a></li>
+<li><a href="#5-changing-the-radio-frequency-channel-check-your-crazyflie-box-for-your-specific-radio-challenge-this-has-already-been-set-to-your-specific-radio">8.2.5 5. Changing the Radio Frequency Channel [Check your Crazyflie box for your specific radio challenge. This has already been set to your specific radio]</a></li>
+<li><a href="#flying">8.2.6 Flying</a></li>
+</ul>
+</li>
+<li><a href="#assisted-manual-flight">8.3 Assisted manual flight</a></li>
+<li><a href="#autonomous-flight">8.4 Autonomous Flight</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><strong>PLEASE READ THIS ENTIRE TUTORIAL IN DETAIL BEFORE YOU START</strong></p>
+<h2 id="manual-flight"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.1</span> Manual flight<a class="headerlink" href="#manual-flight" title="Permanent link">¶</a></h2>
+<h3 id="before-you-fly"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.1.1</span> Before you fly<a class="headerlink" href="#before-you-fly" title="Permanent link">¶</a></h3>
+<p>If you have followed the tutorial, you should have a built crazyflie 2.1 which you can connect to your laptop via a crazyradio or your mobile phone via bluetooth! </p>
+<p>We recommend using laptop-based method to fly first, as so far the stablization of crazyflie will only rely on your operation which makes very difficult to control through unprecise mobile phone interface. You could try fly through phones later.</p>
+<p>To mannually fly crazyflies through laptops, you need a game controller. Either playstation or xBox could work.</p>
+<h2 id="crazyradio-20-preparation-and-configuration-guide"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.2</span> Crazyradio 2.0 Preparation and Configuration Guide<a class="headerlink" href="#crazyradio-20-preparation-and-configuration-guide" title="Permanent link">¶</a></h2>
+<p>This guide explains how to prepare and flash the Crazyradio 2.0 firmware, install the necessary USB driver using Zadig (for Windows), set up cfclient in your Miniforge environment, connect and verify your Crazyflie, and change the radio frequency channel.</p>
+<hr/>
+<h3 id="1-prepare-flash-the-crazyradio-20-firmware-this-is-for-information-only-the-radios-have-already-been-updated"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.2.1</span> 1. Prepare &amp; Flash the Crazyradio 2.0 Firmware [This is for information only. The radios have already been updated]<a class="headerlink" href="#1-prepare-flash-the-crazyradio-20-firmware-this-is-for-information-only-the-radios-have-already-been-updated" title="Permanent link">¶</a></h3>
+<p><strong>Reference:</strong> <a href="https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyradio-2-0/">Getting Started with Crazyradio 2.0</a></p>
+<ol>
+<li>
+<p><strong>Assemble the hardware:</strong><br/>
+   Screw the provided antenna onto the Crazyradio 2.0 dongle.</p>
+</li>
+<li>
+<p><strong>Enter bootloader mode:</strong><br/>
+   Press and hold the onboard button while plugging the dongle into your USB port. You should see a pulsating red LED indicating bootloader mode.</p>
+</li>
+<li>
+<p><strong>Download and flash firmware:</strong> </p>
+</li>
+<li>Visit the <a href="https://github.com/bitcraze/crazyradio2-firmware/releases/tag/1.1">Crazyradio2 Firmware Releases (v1.1)</a> page.</li>
+<li>Get the latest compatible firmware file (a <code>.uf2</code> file, e.g. named like <code>crazyradio2-CRPA-emulation-[version].uf2</code>) from Bitcraze’s release page or documentation.</li>
+<li>Open your file explorer, locate the drive (usually named “Crazyradio2”), and drag &amp; drop the <code>.uf2</code> file onto it.</li>
+<li>Once flashed (the drive disappears), unplug and reinsert the dongle. A brief white LED flash confirms the new firmware is running.</li>
+</ol>
+<hr/>
+<h3 id="2-install-usb-driver-using-zadig-for-windows"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.2.2</span> 2. Install USB Driver Using Zadig for Windows<a class="headerlink" href="#2-install-usb-driver-using-zadig-for-windows" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Download and run Zadig:</strong></li>
+<li>Get the <a href="https://zadig.akeo.ie/">Zadig tool</a> from its official website.</li>
+<li>
+<p>Open Zadig and enable <strong>List All Devices</strong> from the <strong>Options</strong> menu.</p>
+</li>
+<li>
+<p><strong>Install the driver:</strong></p>
+</li>
+<li>In the device dropdown, select your Crazyradio (often shown as “Crazyradio PA” or similar).</li>
+<li>Choose a libusb driver (e.g. <code>libusb-win32</code> or <code>libusbK</code>) and click <strong>Install</strong> (or <strong>Replace Driver</strong>).</li>
+</ul>
+<p><em>This step is essential for Windows to allow proper USB communication with the Crazyradio 2.0.</em></p>
+<p><em>The Zadig usb driver installation step is not necessary for Linux or macOS, instead follow the link below.</em>
+https://www.bitcraze.io/documentation/repository/crazyflie-lib-python/master/installation/usb_permissions/</p>
+<p>These steps enable you to use the USB Radio and Crazyflie 2 over USB without requiring root access. You’ll be able to work with Crazyflie 2 and Crazyradio without needing administrative privileges, eliminating the need to run commands with sudo during development and testing.</p>
+<hr/>
+<h3 id="3-set-up-cfclient-in-your-miniforge-environment"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.2.3</span> 3. Set Up cfclient in Your Miniforge Environment<a class="headerlink" href="#3-set-up-cfclient-in-your-miniforge-environment" title="Permanent link">¶</a></h3>
+<p><strong>Reference:</strong> <a href="https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/installation/install/">cfclient Installation Instructions</a></p>
+<ul>
+<li><strong>Install cfclient (or the full crazyflie-clients-python package):</strong></li>
+</ul>
+<p>For the stable release where you plan to develop or customize, clone the repository and install in editable mode:</p>
+<pre><code class="language-bash">git clone https://github.com/bitcraze/crazyflie-clients-python
+cd crazyflie-clients-python
+pip install -e .
+</code></pre>
+<ul>
+<li><strong>Launch the GUI</strong>
+Run the following command to to open the cfclient interface.</li>
+</ul>
+<pre><code class="language-bash">cfclient 
+</code></pre>
+<h3 id="4-connect-and-verify"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.2.4</span> 4. Connect and Verify<a class="headerlink" href="#4-connect-and-verify" title="Permanent link">¶</a></h3>
+<ul>
+<li>Power on your Crazyflie: Make sure your Crazyflie is switched on.</li>
+<li>
+<p>Scan in cfclient: Click the Scan button in the GUI. The Crazyradio (now emulating a Crazyradio PA) should detect your Crazyflie.</p>
+</li>
+<li>
+<p>Troubleshoot if needed: If the Crazyradio isn’t listed, recheck the Zadig driver installation and ensure the dongle is correctly flashed and reinserted.</p>
+</li>
+</ul>
+<p><strong>Note:</strong> Do not fly at this stage before changing the Crazyradio radio frequency channel.</p>
+<h3 id="5-changing-the-radio-frequency-channel-check-your-crazyflie-box-for-your-specific-radio-challenge-this-has-already-been-set-to-your-specific-radio"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.2.5</span> 5. Changing the Radio Frequency Channel [Check your Crazyflie box for your specific radio challenge. This has already been set to your specific radio]<a class="headerlink" href="#5-changing-the-radio-frequency-channel-check-your-crazyflie-box-for-your-specific-radio-challenge-this-has-already-been-set-to-your-specific-radio" title="Permanent link">¶</a></h3>
+<p><strong>Reference:</strong> cfclient Userguide</p>
+<ol>
+<li><strong>Prepare Your Setup:</strong></li>
+<li>Ensure that the Crazyradio 2.0 dongle is correctly flashed and that the proper Zadig driver is installed on your Windows 11 machine (as described above).</li>
+<li>
+<p>Launch cfclient from your Miniforge terminal.</p>
+</li>
+<li>
+<p><strong>Initial Connection:</strong></p>
+</li>
+<li>Connect to your Crazyflie using the default connection URI. For example:</li>
+</ol>
+<pre><code class="language-bash">radio://0/80/250k
+</code></pre>
+<ol>
+<li><strong>Open the Configuration Dialog:</strong></li>
+<li>
+<p>In cfclient, click on the <strong>Connect</strong> menu and select <strong>Configure 2.x</strong> (or <strong>Configure 2.0</strong> if that’s what your firmware uses). This opens the configuration dialog for radio-related parameters.</p>
+</li>
+<li>
+<p><strong>Set the New Channel:</strong></p>
+</li>
+<li>Locate the <strong>Radio channel</strong> parameter in the dialog.</li>
+<li>
+<p>Enter the desired channel value (the Crazyflie supports channels from 0 up to 82, where the channel number sets the frequency offset from 2400 MHz; for instance, channel 15 corresponds to 2415 MHz).</p>
+</li>
+<li>
+<p><strong>Write and Save the Settings:</strong></p>
+</li>
+<li>
+<p>Click the <strong>Write</strong> button to save the new channel value permanently to the Crazyflie’s EEPROM.</p>
+</li>
+<li>
+<p><strong>Restart and Reconnect:</strong></p>
+</li>
+<li>Disconnect the Crazyflie, then power-cycle it so that it boots using the new radio channel setting.</li>
+<li>Update the connection URI in cfclient to reflect the new channel. For example, if you set the channel to 50, use a URI like:</li>
+</ol>
+<pre><code class="language-bash">radio://0/50/2M
+</code></pre>
+<p>– Click Scan again and connect; the Crazyflie should now be visible on the new channel.</p>
+<p><strong>Channel Selection Note:</strong><br/>
+The Crazyflie’s channel system works by adding the channel number to a base frequency of 2400 MHz. For example:<br/>
+- <strong>Channel 20</strong> corresponds to 2400 MHz + 20 MHz = <strong>2420 MHz</strong>.<br/>
+- <strong>Channel 70</strong> corresponds to 2400 MHz + 70 MHz = <strong>2470 MHz</strong>.  </p>
+<p><strong>Important:</strong><br/>
+- When operating in the UK, the 2.4 GHz band is legally restricted to approximately 2400 MHz–2483.5 MHz. Therefore, channels should be chosen so that the resulting frequency does not exceed this range.<br/>
+- Always maintain at least 2 MHz spacing between channels to minimize interference, and coordinate with your peers to ensure no two drones are set to the same channel.</p>
+<p><strong>WARNING</strong> </p>
+<ul>
+<li>At this point, you <strong>must</strong> ensure that the crazyflie has external sensing otherwise the drone will be in <strong>manual</strong> flight mode and will have no ability to help you fly or stabilise <strong>it will drift</strong>. </li>
+<li>The joysticks will be mapped directly to roll/pitch/yaw and thrust. </li>
+<li>The joysticks control might be quite sensitive so use <strong>small movements</strong> until you get the hang of it</li>
+<li>You must be as smooth as you can with your joystick control - try not to twitch in the opposite direction when something happens - this results in a hard to recover drone! </li>
+<li>Familiarise yourself with the location of the <strong>emergency stop</strong> if you feel uncomfortable press it at any time (the crazyflies can handle heavy landings)</li>
+</ul>
+<p>To understand the coordinate system and roll pitch and yaw see the following link:
+- <a href="https://www.bitcraze.io/documentation/system/platform/cf2-coordinate-system/">https://www.bitcraze.io/documentation/system/platform/cf2-coordinate-system/</a></p>
+<p>When you are ready to fly, <strong>notify an instructor</strong> and place the crazyflie in the middle of your flying space. </p>
+<h3 id="flying"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.2.6</span> Flying<a class="headerlink" href="#flying" title="Permanent link">¶</a></h3>
+<p>The instructor will first check all is good with your drone and you have a good setup before you fly.</p>
+<blockquote>
+<p><strong>Note:</strong> A batery only has around 5 minutes of flying time - keep an eye on it and swap it out if necessary. </p>
+</blockquote>
+<p>Just like being introduced to any new drone, you will first try to get a feel for how the drone will react to your control. Here is a list of actions you can go through to check and learn how your drone flies. </p>
+<ol>
+<li>
+<p><strong>Arming only test</strong> - In this test you will simply arm, wait a second, and then disarm he drone - you will <em>not</em> move the sticks. When you arm the drone, the motors will start spinning at minimum RPM, but not takeoff or otherwise move. Disarming the drone will then stop the motors. Does the drone arm and disarm again straight after without needing a restart</p>
+</li>
+<li>
+<p><strong>Arming ESTOP test</strong> - In this test you will familiarise yourself with, and ensure that the emergency stop button works. Arm the drone and then press the estop. The motors should stop and the GUI should show emergency stop has been pressed. </p>
+</li>
+<li>
+<p><strong>Floor thrust test</strong> - In this test you will start to familiarise yourself with the thrust control of the controller and response from the drone. You will want to gently increase the thrust, and you should start to see the drone looking like it wants to get off the ground. Try and get a feel for its response! Also worth noting if the drone appears to pivot to one side instead of thrusting equally from all four motors - you may need to compensate a little using the yaw and pitch. </p>
+</li>
+<li>
+<p><strong>Gentle Takeoff and Landing</strong> - In this test you will attempt to have the drone takeoff and gently land in a controlled fashion. Building upon the previous, you should gently increase thrust until the drone leaves the ground. When it leaves the ground, try and hold the right thrust level if you can, otherwise reduce the thrust and try and land softly on the ground. </p>
+<ul>
+<li><strong>Important</strong> A lot of beginner flyers will jerk the stick when it takes off - either plunging it into the ceiling or floor. Try to avoid this by holding your nerve and staying in control. </li>
+<li><strong>If you feel out of control hit the ESTOP</strong></li>
+<li>Landing Tip - Thust up a little bit just before you hit the floor, this will reduce the impact on the drone. </li>
+</ul>
+</li>
+<li>
+<p><strong>Hovering</strong> - Once you are happy and in control with takeoff and landing, you should try and hold the hover for longer, correcting for horizontal drift using the roll/pitch correction. </p>
+<ul>
+<li><strong>If you feel out of control hit the ESTOP</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Controlled Flight (no yaw)</strong>- Hopefully at this point you should be feeling a lot more in control of the drone (but you probably need a bit of practice!). Now try and slowly fly some shapes (square, circle etc) with the drone always facing away from you (no yaw). </p>
+</li>
+<li>
+<p><strong>Controlled Flight</strong> - Now try flying the same shapes, but this time using yaw instead of rolling, i.e. always facing in the direction you want to move. It is recommended you try this by first yawing on the spot then moving forward. When you get more confident, you will be able to yaw while moving - this is the closest you'll get to FPV flying in this course! </p>
+<blockquote>
+<p>If working in a pair, don't forget to swap over!</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="assisted-manual-flight"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.3</span> Assisted manual flight<a class="headerlink" href="#assisted-manual-flight" title="Permanent link">¶</a></h2>
+<p>At this point, you may have noticed that the drone doesn't have any external sensing capability. </p>
+<blockquote>
+<p>You may also have noticed in the GUI and on the control scheme, there is a button labelled <em>Assist Mode</em> this will perform an automatic takeoff and activate hover mode as long as its pressed down. </p>
+</blockquote>
+<p>Unlike UGV,Drones need a method of external sensing on top of internal IMU and gyroscope in order to hover in place and not drift, especially if autonomously flying. </p>
+<p>What you need to do now is to check which sensor can help you to achieve assisted mannual flight.</p>
+<p>For commercial and custom drones there are a variety of sensors available, as will be shown in lectures, and this includes sensors like: </p>
+<ul>
+<li>Cameras (Monocular, Stereo, Depth)</li>
+<li>LIDAR (Single Beam, Wedge and 360)</li>
+<li>Laser Rangefinders</li>
+<li>Optical Flow Cameras</li>
+<li>External Position Tracking (Motion Capture, UWB, etc)</li>
+</ul>
+<p>For use with the crazyflies there are several sensor add-on boards available which we may have for the tutorial.</p>
+<ol>
+<li><a href="https://www.bitcraze.io/products/loco-positioning-deck/">Loco Positioning System</a> (** we are not using this today)<ul>
+<li>Hopefully we will have access to the loco positioning system which uses ultra wide band signals from multiple anchors placed around the room. </li>
+<li>This enables a tagging board on the drone to work out the drones position to centimeter level accuracy</li>
+<li>You will have been given a Loco Tag add-on board, this will need to be placed on top of the GPIO stack - it replaces the battery holder! <ul>
+<li>Ensure that it is facing in the correct direction!</li>
+</ul>
+</li>
+<li>With this the drone will be able to hover and know its location in the real world</li>
+<li>Read more about how it works here: <a href="https://www.bitcraze.io/documentation/system/positioning/loco-positioning-system/">https://www.bitcraze.io/documentation/system/positioning/loco-positioning-system/</a></li>
+<li>About General Positioning Systems and crazyflies: <a href="https://www.bitcraze.io/documentation/system/positioning/">https://www.bitcraze.io/documentation/system/positioning/</a></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>For the anchors We will likely need to use the Time Difference of Arrival 3 (TDOA3 Mode) to enable all the drones to fly with lots more anchors - consider why this might be. </p>
+</blockquote>
+<ol>
+<li>
+<p><a href="https://www.bitcraze.io/products/flow-deck-v2/">Flow Deck V2</a></p>
+<ul>
+<li>This is a sensor which can be attached to the bottom of the crazyflie and provides hardware optical flow and height information</li>
+<li>If you don't know what Optical Flow is, it is a method of estimating horizontal motion from a camera image <ul>
+<li>See this opencv tutorial for more information: <a href="https://docs.opencv.org/3.4/d4/dee/tutorial_optical_flow.html">https://docs.opencv.org/3.4/d4/dee/tutorial_optical_flow.html</a> </li>
+</ul>
+</li>
+<li>It also has a Time of Flight sensor for measuring its height above ground level</li>
+<li>Together these allow the drone to stabily hover in one location, and estimate its location relative to its take-off location! </li>
+<li>Place the sensor on the bottom of the GPIO stack on the underside of the drone<ul>
+<li>Ensure that it is facing in the correct direction!</li>
+</ul>
+</li>
+<li>Read about the usage here: <a href="https://www.bitcraze.io/documentation/tutorials/getting-started-with-flow-deck/">https://www.bitcraze.io/documentation/tutorials/getting-started-with-flow-deck/</a> </li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.bitcraze.io/products/multi-ranger-deck/">Multi-Ranger Deck</a></p>
+<ul>
+<li>This board has 5 distance time of flight sensors on it allowing the simple perception of the area around the drone. </li>
+<li>This perception gives the drone the capability to react to its surroundings and perform simple obstacle avoidance, detection, wall following and other tasks. </li>
+<li>It also allows to start working on environment-aware problems like Simultaneous Localization And Mapping (SLAM) algorithms.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.bitcraze.io/products/led-ring-deck/">LED Ring Deck</a> (** we are not using these today)</p>
+<ul>
+<li>While not a sensor, its an attachment that can go on the bottom of the deck! </li>
+<li>These will hopefully be used for the light-show challenge</li>
+<li>Note that they go on the bottom and do not work at the same time as the flow deck. As a result, will need the loco positioning system to work properly. </li>
+</ul>
+</li>
+</ol>
+<p>There are a number of other sensors and other details too</p>
+<ul>
+<li>Checkout this <a href="https://www.bitcraze.io/documentation/system/platform/cf2-expansiondecks/">link for a full list of expansion decks</a> </li>
+</ul>
+<blockquote>
+<p>See that link for tips on mounting the decks if confused</p>
+</blockquote>
+<h2 id="autonomous-flight"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.4</span> Autonomous Flight<a class="headerlink" href="#autonomous-flight" title="Permanent link">¶</a></h2>
+<p>Having hopefully flown the drone manually, you should now be beginning to form some intuitions as to how a drone flies, its features, things to watch out for and so on. Now we move onto starting to consider a key part of this course - which is autonomy. </p>
+<p>Autonomy is a bit different for drones over other robots you may have used in the past. Unlike ground vehicles, we have to consider the effects of a 3rd dimension, and need some form of cascaded control to stay in the air. Also whilst the inverse kinematics calculations for arms are not necessary for drones - features such as smooth trajectory generation and following, and mission planning are neccesary. </p>
+<p>Thankfully, crazyflie offers a simple starting point with a python api for autonomous flight. This will get you back up to speed with programming and testing robots before we delve into more complex autonomous systems which you would see flavours of in the real world. Remember at the end of the day, all of these different frameworks are just tools - we hope that through learning to use these tools, you also absorb and learn more generalisable features of drone autonomy which you could apply to the many other open source and proprietary systems which exist out there!  </p>
+<p>For crazyflie autonomy, try out the following links which show a simple getting started! </p>
+<ul>
+<li>Flow Deck <a href="https://www.bitcraze.io/documentation/tutorials/getting-started-with-stem-drone-bundle/">tutorial</a></li>
+<li>Multi-Ranger Deck <a href="https://www.bitcraze.io/documentation/tutorials/getting-started-with-stem-ranging-bundle/">tutorial</a></li>
+<li>Loco Deck <a href="https://www.bitcraze.io/documentation/tutorials/getting-started-with-flying-using-lps/">tutorial</a></li>
+<li>Example Scripts <a href="https://github.com/bitcraze/crazyflie-lib-python/tree/master/examples">Link</a></li>
+</ul>
+<p><strong>Your goal here is to have the drone fly in some shapes autonomosly</strong></p>
+<blockquote>
+<p>As a bonus, see if you can start to work out how to use the LED Deck! </p>
+</blockquote>
+<p>You will likely needed to look up a little of the documentation for the api but I'm sure you can mostly use the examples to work out the best way to program the drones to do what you need. Don't worry about making things too complicated, as we will be quickly moving on to ROS2 for drone control! </p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../3b_practical_crazyflie/" title="8. Building Crazyflies"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../5_practical_crazyflie_aerostack2/" title="10. Crazyflie with Aerostack2">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>Copyright © 2024 University College London AML Lab</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../3b_practical_crazyflie/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../5_practical_crazyflie_aerostack2/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

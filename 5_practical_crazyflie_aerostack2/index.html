@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>10. Crazyflie with Aerostack2 - UCL-MSC-RAI-COMP0240</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../kbd.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "10. Crazyflie with Aerostack2";
+        var mkdocs_page_input_path = "5_practical_crazyflie_aerostack2.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> UCL-MSC-RAI-COMP0240
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Practical 1 &amp; 2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1a_introduction/">1. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1b_intro_linux/">2. Ubuntu Installation and Linux Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_intro_ros2/">3. ROS2 Installation and ROS2 Re-Intro</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1d_aerostack2/">4. Aerostack2 Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 3 &amp; 4</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3a_practical_crazyflie/">7. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_practical_crazyflie/">8. Building Crazyflies</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4_practical_crazyflie/">9. Flying Crazyflies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 5</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">10. Crazyflie with Aerostack2</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#clone-and-build-aerostack2-package-as2_platform_crazyflie">9.1 Clone and build aerostack2 package: as2_platform_crazyflie</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#clone-project_crazyflie-into-your-aerostack2-workspace">9.2 Clone project_crazyflie into your aerostack2 workspace</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#change-radio-channel-in-config-file">9.3 Change radio channel in config file</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#teleoperate-and-autonomously-fly-crazyflie-via-aerostack2">9.4 Teleoperate and autonomously fly crazyflie via aerostack2</a>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 6: Assignment - CW1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 7</span></p>
+<ul>
+<li class="toctree-l1"><a class="" href="../tbc.md">11. Flight Practice, Regulation and Laws (tbc at UCL HereEast)</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 8</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8a_practical_px4_sitl/">12. Introducing Pixhawk and PX4</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../8b_practical_PX4_Aerostack2_ROS2/">13. Autonomous flight with PX4, ROS2 and aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 9 &amp; 10: Assignment - CW2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7_challenge_multi_drone/">Multi-Drone Swarming Formation Flight Challenge</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">UCL-MSC-RAI-COMP0240</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">Practical 5</li>
+<li class="breadcrumb-item active">10. Crazyflie with Aerostack2</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="practical-5-crazyflie-with-aerostack2"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.</span> Practical 5: Crazyflie with aerostack2<a class="headerlink" href="#practical-5-crazyflie-with-aerostack2" title="Permanent link">¶</a></h1>
+<p>In this fifth practical, we will reimplement manual flight and scripted autonomous flight of crazyflies via aerostack2. </p>
+<div class="toc">
+<ul>
+<li><a href="#practical-5-crazyflie-with-aerostack2">9. Practical 5: Crazyflie with aerostack2</a><ul>
+<li><a href="#clone-and-build-aerostack2-package-as2_platform_crazyflie">9.1 Clone and build aerostack2 package: as2_platform_crazyflie</a></li>
+<li><a href="#clone-project_crazyflie-into-your-aerostack2-workspace">9.2 Clone project_crazyflie into your aerostack2 workspace</a></li>
+<li><a href="#change-radio-channel-in-config-file">9.3 Change radio channel in config file</a></li>
+<li><a href="#teleoperate-and-autonomously-fly-crazyflie-via-aerostack2">9.4 Teleoperate and autonomously fly crazyflie via aerostack2</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="clone-and-build-aerostack2-package-as2_platform_crazyflie"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.1</span> Clone and build aerostack2 package: as2_platform_crazyflie<a class="headerlink" href="#clone-and-build-aerostack2-package-as2_platform_crazyflie" title="Permanent link">¶</a></h2>
+<p>First step is to clone and build another aerostack2 package called as2_platform_crazyflie.</p>
+<p>Please follow the instructions here before aerostack2 common interface.</p>
+<ul>
+<li><a href="https://aerostack2.github.io/_03_aerial_platforms/_crazyflie/index.html">https://aerostack2.github.io/_03_aerial_platforms/_crazyflie/index.html</a></li>
+</ul>
+<p><strong>NOTE: Use source installation and clone the package in the src folder under your aerostack2 workspace.</strong> </p>
+<p>**NOTE: The documentation may use the "git@.." and you may have issues with ssh. Go to the github repository and use the "https://..." version! </p>
+<h2 id="clone-project_crazyflie-into-your-aerostack2-workspace"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.2</span> Clone project_crazyflie into your aerostack2 workspace<a class="headerlink" href="#clone-project_crazyflie-into-your-aerostack2-workspace" title="Permanent link">¶</a></h2>
+<p>Then, you need to clone the project_crazyflie into your aerostack2 workspace.</p>
+<p>Follow the instructions here.</p>
+<ul>
+<li><a href="https://github.com/aerostack2/project_crazyflie?tab=readme-ov-file">https://github.com/aerostack2/project_crazyflie?tab=readme-ov-file</a></li>
+</ul>
+<h2 id="change-radio-channel-in-config-file"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.3</span> Change radio channel in config file<a class="headerlink" href="#change-radio-channel-in-config-file" title="Permanent link">¶</a></h2>
+<p>To be able to connect to your crazyflie, you need to change the setting of radio channel in the package's config file. </p>
+<p>This can be done by accessing the config/config.yaml: configuration file for the Crazyflie drones.</p>
+<p><strong>NOTE: Make sure the radio channel set in the config file matches the channel you plan to use in the cfclient GUI, as done in the previous lab. Inconsistent channels will prevent the drone from connecting.</strong> </p>
+<p>Please read through instructions here. </p>
+<ul>
+<li><a href="https://aerostack2.github.io/_02_examples/crazyflie/project_crazyflie/">https://aerostack2.github.io/_02_examples/crazyflie/project_crazyflie/</a></li>
+</ul>
+<h2 id="teleoperate-and-autonomously-fly-crazyflie-via-aerostack2"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.4</span> Teleoperate and autonomously fly crazyflie via aerostack2<a class="headerlink" href="#teleoperate-and-autonomously-fly-crazyflie-via-aerostack2" title="Permanent link">¶</a></h2>
+<p>Now, you should be able to lanuch the project, connect to, teleoperate, and autonomously fly your crazyflie. </p>
+<p>Follow instructions here.</p>
+<ul>
+<li><a href="https://github.com/aerostack2/project_crazyflie?tab=readme-ov-file​​">https://github.com/aerostack2/project_crazyflie?tab=readme-ov-file​​</a></li>
+</ul>
+<p><strong>NOTE: 1.Before launch any bash file, disconnect your crazyflie with your cfclient which may occupy the radio channel. 2. After each flight, you have to manually restart your crazyflie.</strong> </p>
+<p><strong>NOTE: 2. After each flight, you have to manually restart your crazyflie.If you find the Crazyflie remains unresponsive after a flight or changing configs, physically unplug the battery for a few seconds, then reconnect it.</strong> </p>
+<p><strong>NOTE: 3. Always test your Crazyflie in an open, safe area free of obstacles, and with safety googles on, especially when first trying autonomous flight. Keep emergency stop in mind if something goes wrong.</strong></p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../4_practical_crazyflie/" title="9. Flying Crazyflies"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../3_challenge_cw1/" title="Structural Inspection Path Planning Challenge">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>Copyright © 2024 University College London AML Lab</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../4_practical_crazyflie/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../3_challenge_cw1/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

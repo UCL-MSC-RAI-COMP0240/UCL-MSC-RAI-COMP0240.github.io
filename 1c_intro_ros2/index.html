@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>3. ROS2 Installation and ROS2 Re-Intro - UCL-MSC-RAI-COMP0240</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../kbd.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "3. ROS2 Installation and ROS2 Re-Intro";
+        var mkdocs_page_input_path = "1c_intro_ros2.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> UCL-MSC-RAI-COMP0240
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Practical 1 &amp; 2</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1a_introduction/">1. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1b_intro_linux/">2. Ubuntu Installation and Linux Re-Intro</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">3. ROS2 Installation and ROS2 Re-Intro</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#tasks">3.1 Tasks</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#task-1-verify-your-ros2-environment">3.1.1 Task 1 – Verify Your ROS2 Environment</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-2-create-and-build-a-ros2-workspace">3.1.2 Task 2 – Create and Build a ROS2 Workspace</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-3-create-a-ros2-package">3.1.3 Task 3 – Create a ROS2 Package</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-4-run-and-inspect-ros2-nodes">3.1.4 Task 4 – Run and Inspect ROS2 Nodes</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-5-debug-a-common-ros2-workflow-error">3.1.5 Task 5 – Debug a Common ROS2 Workflow Error</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-6-verify-gazebo-installation">3.1.6 Task 6 – Verify Gazebo Installation</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">3.2 Installation</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-ros2-humble">3.2.1 Installation ROS2 Humble</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#environment-configuration-source-ros2-automatically">3.2.2 Environment Configuration - Source ROS2 Automatically</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-ignition-gazebo-fortress">3.2.3 Installing Ignition Gazebo Fortress</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-brief-introduction-to-ros">3.3 A Brief Introduction to ROS</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#why-does-ros-exist">3.3.1 Why does ROS exist?</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-ros">3.3.2 What is ROS</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ros-concepts-through-an-example">3.3.3 ROS concepts through an example</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ros2-vs-ros1">3.3.4 ROS2 vs ROS1</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ros2-in-practice-workflow-concepts">3.3.5 ROS2 in Practice - Workflow Concepts</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#nodes">3.3.6 Nodes</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#topics">3.3.7 Topics</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#services">3.3.8 Services</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#parameters">3.3.9 Parameters</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#launching-ros2-systems">3.3.10 Launching ROS2 Systems</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#debugging-workflow">3.3.11 Debugging Workflow</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#common-ros2-issues">3.3.12 Common ROS2 Issues</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#recommended-development-practices">3.3.13 Recommended Development Practices</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#about-gazebo">3.4 About Gazebo</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1d_aerostack2/">4. Aerostack2 Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 3 &amp; 4</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2_practical_gazebo_aruco/">5. Gazebo Aruco Mini-Challenge</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3a_practical_crazyflie/">7. Introduction</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_practical_crazyflie/">8. Building Crazyflies</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4_practical_crazyflie/">9. Flying Crazyflies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 5</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_practical_crazyflie_aerostack2/">10. Crazyflie with Aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 6: Assignment - CW1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_challenge_cw1/">Structural Inspection Path Planning Challenge</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 7</span></p>
+<ul>
+<li class="toctree-l1"><a class="" href="../tbc.md">11. Flight Practice, Regulation and Laws (tbc at UCL HereEast)</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 8</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../8a_practical_px4_sitl/">12. Introducing Pixhawk and PX4</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../8b_practical_PX4_Aerostack2_ROS2/">13. Autonomous flight with PX4, ROS2 and aerostack2</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Practical 9 &amp; 10: Assignment - CW2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../7_challenge_multi_drone/">Multi-Drone Swarming Formation Flight Challenge</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">UCL-MSC-RAI-COMP0240</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">Practical 1 &amp; 2</li>
+<li class="breadcrumb-item active">3. ROS2 Installation and ROS2 Re-Intro</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="practical-1-pre-setup-ros2-installation-intro-to-ros2-and-development-workflow"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> Practical 1: Pre-Setup - ROS2 Installation, Intro to ROS2 and Development Workflow<a class="headerlink" href="#practical-1-pre-setup-ros2-installation-intro-to-ros2-and-development-workflow" title="Permanent link">¶</a></h1>
+<div class="toc">
+<ul>
+<li><a href="#practical-1-pre-setup-ros2-installation-intro-to-ros2-and-development-workflow">3. Practical 1: Pre-Setup - ROS2 Installation, Intro to ROS2 and Development Workflow</a><ul>
+<li><a href="#tasks">3.1 Tasks</a><ul>
+<li><a href="#task-1-verify-your-ros2-environment">3.1.1 Task 1 – Verify Your ROS2 Environment</a></li>
+<li><a href="#task-2-create-and-build-a-ros2-workspace">3.1.2 Task 2 – Create and Build a ROS2 Workspace</a></li>
+<li><a href="#task-3-create-a-ros2-package">3.1.3 Task 3 – Create a ROS2 Package</a></li>
+<li><a href="#task-4-run-and-inspect-ros2-nodes">3.1.4 Task 4 – Run and Inspect ROS2 Nodes</a></li>
+<li><a href="#task-5-debug-a-common-ros2-workflow-error">3.1.5 Task 5 – Debug a Common ROS2 Workflow Error</a></li>
+<li><a href="#task-6-verify-gazebo-installation">3.1.6 Task 6 – Verify Gazebo Installation</a></li>
+</ul>
+</li>
+<li><a href="#installation">3.2 Installation</a><ul>
+<li><a href="#installation-ros2-humble">3.2.1 Installation ROS2 Humble</a></li>
+<li><a href="#environment-configuration-source-ros2-automatically">3.2.2 Environment Configuration - Source ROS2 Automatically</a></li>
+<li><a href="#installing-ignition-gazebo-fortress">3.2.3 Installing Ignition Gazebo Fortress</a></li>
+</ul>
+</li>
+<li><a href="#a-brief-introduction-to-ros">3.3 A Brief Introduction to ROS</a><ul>
+<li><a href="#why-does-ros-exist">3.3.1 Why does ROS exist?</a></li>
+<li><a href="#what-is-ros">3.3.2 What is ROS</a></li>
+<li><a href="#ros-concepts-through-an-example">3.3.3 ROS concepts through an example</a></li>
+<li><a href="#ros2-vs-ros1">3.3.4 ROS2 vs ROS1</a></li>
+<li><a href="#ros2-in-practice-workflow-concepts">3.3.5 ROS2 in Practice - Workflow Concepts</a></li>
+<li><a href="#nodes">3.3.6 Nodes</a></li>
+<li><a href="#topics">3.3.7 Topics</a></li>
+<li><a href="#services">3.3.8 Services</a></li>
+<li><a href="#parameters">3.3.9 Parameters</a></li>
+<li><a href="#launching-ros2-systems">3.3.10 Launching ROS2 Systems</a></li>
+<li><a href="#debugging-workflow">3.3.11 Debugging Workflow</a></li>
+<li><a href="#common-ros2-issues">3.3.12 Common ROS2 Issues</a></li>
+<li><a href="#recommended-development-practices">3.3.13 Recommended Development Practices</a></li>
+</ul>
+</li>
+<li><a href="#about-gazebo">3.4 About Gazebo</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>This page introduces ROS2 as a development and debugging workflow, not just a dependency to install. The objective is to ensure that you can build, run, inspect, and debug ROS2 systems efficiently, which is essential for aerial robotics development.</p>
+<p>The course uses ROS2 Humble on Ubuntu 22.04.</p>
+<h2 id="tasks"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1</span> Tasks<a class="headerlink" href="#tasks" title="Permanent link">¶</a></h2>
+<p>This practical introduces the core ROS2 development workflow that will be used throughout the module:</p>
+<p><strong>create → build → source → run → inspect → debug</strong></p>
+<p>Complete all tasks in order. Do not skip tasks, as later steps depend on earlier setup. </p>
+<p>For reference: ROS2 tutorials <a href="https://docs.ros.org/en/humble/Tutorials.html">ROS2 Tutorials</a> </p>
+<hr/>
+<h3 id="task-1-verify-your-ros2-environment"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1.1</span> Task 1 – Verify Your ROS2 Environment<a class="headerlink" href="#task-1-verify-your-ros2-environment" title="Permanent link">¶</a></h3>
+<p><strong>Purpose</strong><br/>
+Before working with ROS2, you must confirm that your system is correctly configured. Many ROS2 issues arise from environment problems rather than code errors.</p>
+<p><strong>What to do</strong></p>
+<ul>
+<li>Open a new terminal</li>
+<li>Confirm your Ubuntu version</li>
+<li>Check that ROS2 is installed and accessible</li>
+<li>Identify the active ROS2 distribution</li>
+<li>Run a basic ROS2 command</li>
+</ul>
+<hr/>
+<h3 id="task-2-create-and-build-a-ros2-workspace"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1.2</span> Task 2 – Create and Build a ROS2 Workspace<a class="headerlink" href="#task-2-create-and-build-a-ros2-workspace" title="Permanent link">¶</a></h3>
+<p><strong>Purpose</strong><br/>
+All ROS2 development takes place inside a workspace. Understanding workspace structure and build behaviour is essential for all future practicals.</p>
+<p><strong>What to do</strong> </p>
+<ul>
+<li>Create a new ROS2 workspace with a <code>src</code> directory</li>
+<li>Build the workspace using <code>colcon</code></li>
+<li>Source the workspace<ul>
+<li>Verify that the workspace overlay is active</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h3 id="task-3-create-a-ros2-package"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1.3</span> Task 3 – Create a ROS2 Package<a class="headerlink" href="#task-3-create-a-ros2-package" title="Permanent link">¶</a></h3>
+<p><strong>Purpose</strong><br/>
+In ROS2, packages are the fundamental unit of software organisation. Every node, launch file, and library lives inside a package.</p>
+<p><strong>What to do</strong></p>
+<ul>
+<li>Create a new ROS2 package inside the <code>src</code> directory</li>
+<li>Rebuild the workspace</li>
+<li>Source the workspace again</li>
+<li>Confirm that ROS2 can discover your package</li>
+</ul>
+<hr/>
+<h3 id="task-4-run-and-inspect-ros2-nodes"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1.4</span> Task 4 – Run and Inspect ROS2 Nodes<a class="headerlink" href="#task-4-run-and-inspect-ros2-nodes" title="Permanent link">¶</a></h3>
+<p><strong>Purpose</strong><br/>
+ROS2 systems consist of multiple nodes communicating via topics. You must be able to inspect a running system to understand and debug behaviour.</p>
+<p><strong>What to do</strong></p>
+<ul>
+<li>Run a ROS2 demo node</li>
+<li>Open a second terminal to inspect the system</li>
+<li>List all running nodes</li>
+<li>List active topics</li>
+<li>Inspect one topic to identify its message type</li>
+</ul>
+<hr/>
+<h3 id="task-5-debug-a-common-ros2-workflow-error"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1.5</span> Task 5 – Debug a Common ROS2 Workflow Error<a class="headerlink" href="#task-5-debug-a-common-ros2-workflow-error" title="Permanent link">¶</a></h3>
+<p><strong>Purpose</strong><br/>
+This task demonstrates a very common ROS2 error caused by missing environment setup.</p>
+<p><strong>What to do</strong></p>
+<ul>
+<li>Stop the running node</li>
+<li>Open a new terminal without sourcing any setup files</li>
+<li>Attempt to run the same node</li>
+<li>Observe the error message</li>
+<li>Fix the issue by sourcing the correct setup file</li>
+<li>Rerun the node successfully</li>
+</ul>
+<hr/>
+<h3 id="task-6-verify-gazebo-installation"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1.6</span> Task 6 – Verify Gazebo Installation<a class="headerlink" href="#task-6-verify-gazebo-installation" title="Permanent link">¶</a></h3>
+<p><strong>Purpose</strong><br/>
+Gazebo will be used in later practicals for simulation. You must confirm that it is correctly installed and can launch on your system.</p>
+<p><strong>What to do</strong></p>
+<ul>
+<li>Check that Gazebo is installed</li>
+<li>Launch Gazebo from the terminal</li>
+<li>Confirm that it opens successfully</li>
+<li>Close Gazebo cleanly</li>
+</ul>
+<p>If Gazebo does not launch correctly, note the error message and inform the teaching team. Do not attempt advanced graphics fixes during the session.</p>
+<hr/>
+<h2 id="installation"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h2>
+<h3 id="installation-ros2-humble"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.1</span> Installation ROS2 Humble<a class="headerlink" href="#installation-ros2-humble" title="Permanent link">¶</a></h3>
+<p>All instructions assume Ubuntu 22.04. If you are using WSL 2 or a virtualised environment, ensure this is configured correctly before proceeding.</p>
+<p>For full installation details, refer to the official documentation:<br/>
+https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html</p>
+<p>Update your system:</p>
+<pre><code class="language-bash">sudo apt update
+sudo apt upgrade
+</code></pre>
+<pre><code class="language-bash"># Check and set the locale to UTF-8
+locale
+sudo apt update &amp;&amp; sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+locale  # Verify settings
+</code></pre>
+<pre><code class="language-bash"># Install required packages
+sudo apt install software-properties-common
+sudo apt install python3-colcon-common-extensions
+sudo add-apt-repository universe
+sudo apt update
+sudo apt install curl -y
+</code></pre>
+<pre><code class="language-bash"># Download and add the ROS2 GPG key
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+</code></pre>
+<pre><code class="language-bash"># Add the ROS2 repository to your sources list
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release &amp;&amp; echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list &gt; /dev/null
+</code></pre>
+<p>You will need to install both the desktop and build tools</p>
+<pre><code class="language-bash">sudo apt install ros-humble-desktop
+sudo apt install ros-dev-tools
+</code></pre>
+<h3 id="environment-configuration-source-ros2-automatically"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.2</span> Environment Configuration - Source ROS2 Automatically<a class="headerlink" href="#environment-configuration-source-ros2-automatically" title="Permanent link">¶</a></h3>
+<p>ROS2 relies on environment setup. If this step is incorrect, ROS commands will not function. To do this, it is recommended that you add the startup script to your <code>~/.bashrc</code> script</p>
+<ul>
+<li>Open .bashrc and edit the file</li>
+</ul>
+<pre><code class="language-bash">nano ~/.bashrc 
+</code></pre>
+<p>The bashrc file should have been opened, then scroll to bottom of bashrc and append the following to the end, save (<code>Ctrl+O</code>) and exit (<code>Ctrl+X</code>)</p>
+<pre><code class="language-bash">source /opt/ros/humble/setup.bash
+</code></pre>
+<p>This will ensure that ROS2 is auto-enabled for all terminals which you setup. Ensure your system uses UTF-8, install the required packages, and add the official ROS2 repository.</p>
+<p>You can also edit .bashrc in the terminal without opening the file. This will add new entries to the bottom of the file.</p>
+<p>-Restrict ROS communication to the local machine (recommended for teaching labs):</p>
+<pre><code class="language-console">echo 'export ROS_LOCALHOST_ONLY=1' &gt;&gt; ~/.bashrc
+</code></pre>
+<p>-Apply the changes:</p>
+<pre><code class="language-console">source ~/.bashrc
+</code></pre>
+<p>-Verify:</p>
+<pre><code class="language-console">ros2 --version
+</code></pre>
+<p>Expected output should reference humble.</p>
+<blockquote>
+<p><strong>Note</strong>: In our tutorials please set <code>ROS_LOCALHOST_ONLY=1</code> otherwise everybody's ROS traffic will interfere with everybody else in the class! Outside of class we would usually segregate ROS traffic only its own network to avoid interference.</p>
+</blockquote>
+<h3 id="installing-ignition-gazebo-fortress"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.3</span> Installing Ignition Gazebo Fortress<a class="headerlink" href="#installing-ignition-gazebo-fortress" title="Permanent link">¶</a></h3>
+<p>Gazebo is the simulation environment that is most often used with ROS2. There are many different versions of gazebo - for us we are using the new version designed for Ubuntu 22.04 known as Gazebo Fortress.</p>
+<p>The recommended compatible gazebo version for Ubuntu 22.04 and Humble is Fortress where installation instructions are <a href="https://gazebosim.org/docs/fortress/install_ubuntu">here</a>. But in short:</p>
+<pre><code>sudo apt-get update
+sudo apt-get install lsb-release wget gnupg
+
+sudo wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list &gt; /dev/null
+sudo apt-get update
+sudo apt-get install ignition-fortress
+</code></pre>
+<p>You can check succesful installation by using the <code>ign</code> cli command</p>
+<h2 id="a-brief-introduction-to-ros"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3</span> A Brief Introduction to ROS<a class="headerlink" href="#a-brief-introduction-to-ros" title="Permanent link">¶</a></h2>
+<p>This section is adapted from <a href="https://dev.to/caelinsutch/a-brief-introduction-to-the-robot-operating-system-ros-15m5">this article</a></p>
+<p>ROS stands for the Robot Operating System, yet it isn't an actual operating system. It's a framework designed to expedite the development time of robot platforms. To understand what ROS is, we should understand why ROS exists in the first place.</p>
+<h3 id="why-does-ros-exist"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.1</span> Why does ROS exist?<a class="headerlink" href="#why-does-ros-exist" title="Permanent link">¶</a></h3>
+<p>In general, software developers avoid hardware like the plague. It's messy, doesn't have consistent behavior, and there's no ctrl-z in sight.</p>
+<p>Most beginner programmers think you have to have a deep knowledge of electronics and even mechanics to program robots. They think that the hardware and software are so tightly coupled, you have to know both in depth to build anything useful.</p>
+<p>Software developers became software developers for a reason, so they don't have to deal with hardware. For example, let's say you have to debug a faulty sensor. You first have to take out the sensor from the enclosure, test the sensor thoroughly with a multi meter and various test cases, document its behavior, then examine the hardware -level code to ensure that there were no bugs, and so on. That's a lot of interaction with the hardware that's not fun for someone who just wants to write some cool software.</p>
+<p>It's harder to attract good programmers if the programming is coupled deeply with hardware. This is where ROS comes into play. With ROS, you can completely abstract the hardware from software, and instead interact with an API that gives access to that data. You can forget about the hardware, and focus on developing the software that makes the robot do what you want.</p>
+<h3 id="what-is-ros"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.2</span> What is ROS<a class="headerlink" href="#what-is-ros" title="Permanent link">¶</a></h3>
+<p>ROS is essentially a framework that sits on top of an operating system which defines how particular ROS compatible programs communicate and share data with each other. Essentially ROS defines an interface between which compatible programs can communicate and interact with each other. Over the years that ROS has existed, many people have developed thousands of ROS compatible packages which can be used in a modular fashion.</p>
+<h3 id="ros-concepts-through-an-example"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.3</span> ROS concepts through an example<a class="headerlink" href="#ros-concepts-through-an-example" title="Permanent link">¶</a></h3>
+<p>To make it more concrete, imagine that on your drone you have a camera. There are also two processes which require, as inputs, that camera image. Say, a machine learning program, and a position estimation program. Traditionally, you would have to manually serialise (compress) and stream the image over a port which the other two programs could read from. But if the port changes or, say, the camera changes, lots of things have to be reconfigured.</p>
+<p>However, this sort of interaction can be made streamlined in ROS. Let us consider the programs we have as ROS <strong>nodes</strong>, i.e. a program which is responsible for one single modular purpose, with particular inputs or outputs:</p>
+<ol>
+<li>A camera image streaming node<ul>
+<li>OUT: camera image</li>
+</ul>
+</li>
+<li>A machine vision system for recognising objects<ul>
+<li>IN: camera image</li>
+<li>OUT: list of recognised objects</li>
+</ul>
+</li>
+<li>A simultaneous localisation and mapping system.<ul>
+<li>IN: camera image</li>
+<li>OUT: vehicle position</li>
+</ul>
+</li>
+</ol>
+<p>These outputs of a node define ROS <strong>topics</strong>, i.e. a single stream of one type of data. Each topic has a particular name which can be referred to. In our example, some of the topics might be:</p>
+<ul>
+<li><code>/drone/camera</code> for the camera image</li>
+<li><code>/drone/recognised_objects</code> for the machine vision system</li>
+<li><code>/drone/slam_position</code> for the SLAM system</li>
+</ul>
+<p>Then, we see that there are two avenues of communication created from these node inputs and outputs.</p>
+<div class="mermaid">graph LR
+A[Camera] --&gt;|out| node[drone/camera]
+node --in--&gt; C[Machine Vision]
+node --in--&gt; D[SLAM]
+style node fill:#f9f,stroke:#333,stroke-width:4px
+</div>
+<p>Now ROS follows a <strong>publisher/subscriber</strong> model of communication. What that means is that nodes <strong>publish</strong> data to <code>topics</code> as outputs. But that data is only sent across the network if a different nodes also <strong>subscribes</strong> to the same topic. So in our example we end up having</p>
+<ol>
+<li>A camera image streaming node<ul>
+<li>OUT: publishing to <code>/drone/camera</code></li>
+</ul>
+</li>
+<li>A machine vision system for recognising objects<ul>
+<li>IN: subscribed to <code>/drone/camera</code></li>
+<li>OUT: publishing to <code>/drone/recognised_objects</code></li>
+</ul>
+</li>
+<li>A simultaneous localisation and mapping system.<ul>
+<li>IN: subscribed to <code>/drone/camera</code></li>
+<li>OUT: publishing to <code>/drone/slam_position</code></li>
+</ul>
+</li>
+</ol>
+<div class="mermaid">graph LR
+A[Camera] --&gt;|out| node[drone/camera]
+node --in--&gt; C[Vision]
+C --&gt;|out| node1[drone/recognised_objects]
+node --in--&gt; D[SLAM]
+D --&gt;|out| node2[drone/slam_position]
+
+style node fill:#f9f,stroke:#333,stroke-width:4px
+style node1 fill:#f9f,stroke:#333,stroke-width:4px
+style node2 fill:#f9f,stroke:#333,stroke-width:4px
+</div>
+<p>Finally, the data that is sent is not just anything. The data or <strong>message</strong> is a specifically templated packet of data containing things specified for that paricular use case. In our example for <code>/drone/slam_position</code> topic, the message might be of type <a href="https://github.com/ros2/common_interfaces/blob/master/geometry_msgs/msg/Point.msg"><code>geometry_msgs/msg/Point.msg</code></a> which is defined like so:</p>
+<pre><code># This contains the position of a point in free space
+float64 x
+float64 y
+float64 z
+</code></pre>
+<p>In other words the message that the <code>/drone/slam_position</code> topic publishes must have a <code>msg.x</code>, <code>msg.y</code> and <code>msg.z</code> field, and the subscriber will only receivea message with those fields. There are a number of messages in the standard ROS library, but many libraries also define their own - as have we in some parts of Starling.</p>
+<p>This can be summarised in this diagram from the <a href="https://docs.ros.org/en/foxy/Tutorials/Understanding-ROS2-Nodes.html">ROS tutorials</a> demonstrates it very nicely:</p>
+<p><img alt="ros2 node diagram" src="../images/ros2node_topic_and_service.gif"/></p>
+<p>The bottom half of this shows how topics get sent from a publisher to a subscriber.</p>
+<p>Interestingly, if you put two topics together, you get some notion of two way communication. This is the basis of a <strong>service</strong> which can be seen in the top of the diagram. A <strong>service</strong> is made of a Request topic and a Response topic, but functions as a single communication type to the user. Similar to messages, a service has a defined request and response types (e.g. see <a href="https://github.com/ros2/common_interfaces/blob/master/std_srvs/srv/SetBool.srv"><code>std_srvs/srv/SetBool.srv</code></a>).  A service request will often wait until a response is received before continuing.</p>
+<p>Then if you combine two services and a topic, you can imitate a request for something which takes time. This in ROS is known as an <strong>action</strong>. For example requesting a robot to move from one location to another. You first request the move, which you get a response as to whether its started. This is followed by constant feedback along a particular topic. Then ended with a task complete service response. In this a whole set of messages are defined.  </p>
+<p>Note that everything happens asyncronously and in parallel, when a node subscribes or sends a requests, it doesn't know when the response will arrive. It only knows it will (hopefully) arrive at some point. When a packet is received the subscriber can then run a method - this method is usually known as a <strong>callback</strong>, but that will be covered in a later tutorial.</p>
+<p>Finally, each node is configured by a set of <strong>parameters</strong> which are broadcast to all other nodes. Parameters are often configuration values for particular methods in a node, and can sometimes be changed on startup (or dynamically through a service), to allow the node to provide adjustable functionality. For example the value of a timeout or frequency of a loop.</p>
+<p>So in summary, the key concepts and terminology are:</p>
+<ul>
+<li><strong>Nodes</strong></li>
+<li><strong>Topics</strong></li>
+<li><strong>Publishers and Subscribers</strong></li>
+<li><strong>Messages</strong></li>
+<li><strong>Services</strong></li>
+<li><strong>Actions</strong></li>
+<li><strong>Parameters</strong></li>
+</ul>
+<h3 id="ros2-vs-ros1"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.4</span> ROS2 vs ROS1<a class="headerlink" href="#ros2-vs-ros1" title="Permanent link">¶</a></h3>
+<p>There are 2 versions of ROS: ROS1 and ROS2. ROS1, initially created in 2007 by Willow Garage, has become huge among the open source robotics community. However over the years they realised that there are a number of important features which are missing - and adding all of these would simply break ROS1. Also the most recent ROS1 distribution (ROS Noetic) is soon to reach the end of its supported life (EOL 2025) with no more ROS1 there after! (See <a href="https://roboticsbackend.com/ros1-vs-ros2-practical-overview/#Why_ROS2_and_not_keep_ROS1">this article</a> for more details!)</p>
+<p>Therefore, to future proof the system, and to ensure all users get a well rounded experience that will hopefully translate to industry experience, Starling has been implemented in ROS2. Specifically, this tutorial uses the <strong>Humble Hawksbill</strong> (AKA Humble) Long Term Support (LTS) distribution throughout.</p>
+<p>There are some interesting changes between ROS1 and ROS2, but the core elements described above remain identical. For those interested, ROS2 follows a much more decentralised paradigm, and does not require a central ROSnode as it uses the distributed DDS communication protocol for its internal communication. All nodes therefore broadcast their own topics allowing for easy decentralised discovery - perfect for multi-robot applications.</p>
+<blockquote>
+<p><strong>Note:</strong> Main thing to be aware of is if you are debugging and searching for ROS questions on the internet, be aware that there are many existing questions for ROS1 which will no longer apply for ROS2.</p>
+</blockquote>
+<h3 id="ros2-in-practice-workflow-concepts"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.5</span> ROS2 in Practice - Workflow Concepts<a class="headerlink" href="#ros2-in-practice-workflow-concepts" title="Permanent link">¶</a></h3>
+<p>In this course, to recap, ROS2 should be understood as a distributed software framework that allows multiple processes to communicate in a structured and inspectable way. Rather than treating ROS2 as a black box, you are expected to understand how to observe and reason about a running system.</p>
+<p>The concepts below are the minimum required to develop, debug, and extend ROS2-based systems.</p>
+<h3 id="nodes"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.6</span> Nodes<a class="headerlink" href="#nodes" title="Permanent link">¶</a></h3>
+<p>A <strong>node</strong> is an executable process that performs computation. In practice, nodes typically implement:
+- perception (e.g. sensor processing)
+- estimation (e.g. localisation)
+- control (e.g. flight commands)
+- coordination and logic</p>
+<p>Each node runs independently and communicates with other nodes using ROS2 communication primitives.</p>
+<p>Common inspection commands:</p>
+<pre><code class="language-bash">ros2 node list
+ros2 node info /node_name
+</code></pre>
+<p>Use these to:
+- confirm a node has launched successfully
+- check which topics, services, and parameters a node uses
+- diagnose crashes or missing functionality</p>
+<h3 id="topics"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.7</span> Topics<a class="headerlink" href="#topics" title="Permanent link">¶</a></h3>
+<p>Topics
+Topics are asynchronous data streams used for continuous data flow. Typical examples include:
+- sensor measurements
+- state estimates
+- control commands</p>
+<p>Topics follow a publish–subscribe model:
+- publishers send messages
+- subscribers receive messages
+- communication is decoupled and non-blocking</p>
+<p>Common inspection commands:</p>
+<pre><code class="language-bash">ros2 topic list
+ros2 topic echo /topic_name
+ros2 topic hz /topic_name
+</code></pre>
+<p>Use topics to:
+- verify that data is being produced
+- inspect message values in real time
+- confirm expected update rates</p>
+<p>If a robot appears unresponsive, checking topics is often the first debugging step.</p>
+<h3 id="services"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.8</span> Services<a class="headerlink" href="#services" title="Permanent link">¶</a></h3>
+<p>Services provide synchronous, request–response communication. Unlike topics, services:</p>
+<ul>
+<li>block until a response is received</li>
+<li>are typically used for discrete actions</li>
+</ul>
+<p>Common uses include:
+- enabling or disabling controllers
+- resetting systems
+- switching operating modes</p>
+<p>Inspection commands:</p>
+<pre><code class="language-bash">ros2 service list
+ros2 service type /service_name
+ros2 service call /service_name &lt;service_type&gt; &lt;request&gt;
+</code></pre>
+<p>Services are particularly useful for testing system behaviour interactively.</p>
+<h3 id="parameters"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.9</span> Parameters<a class="headerlink" href="#parameters" title="Permanent link">¶</a></h3>
+<p>Parameters are runtime configuration values associated with nodes. They allow you to modify system behaviour without recompiling code.</p>
+<p>Typical uses:
+- controller gains
+- thresholds and limits
+- enabling or disabling features</p>
+<p>Inspection commands:</p>
+<pre><code class="language-bash">ros2 param list
+ros2 param get /node_name parameter_name
+ros2 param set /node_name parameter_name value
+</code></pre>
+<p>Parameters are a key mechanism for tuning aerial robotics systems during experimentation.</p>
+<h3 id="launching-ros2-systems"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.10</span> Launching ROS2 Systems<a class="headerlink" href="#launching-ros2-systems" title="Permanent link">¶</a></h3>
+<p>Realistic robotics systems consist of multiple nodes that must be started in a coordinated way. ROS2 uses launch files to manage this process.</p>
+<p>A launch file typically:
+- starts multiple nodes
+- sets parameters
+- configures namespaces and remappings
+- controls logging and output</p>
+<p>Example:</p>
+<pre><code class="language-bash">ros2 launch &lt;package_name&gt; &lt;launch_file&gt;.py
+</code></pre>
+<p>When using launch files:
+- always monitor terminal output
+- warnings and errors often indicate misconfiguration
+- a successful launch does not guarantee correct behaviour</p>
+<p>Learning to read and interpret launch output is an essential skill.</p>
+<h3 id="debugging-workflow"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.11</span> Debugging Workflow<a class="headerlink" href="#debugging-workflow" title="Permanent link">¶</a></h3>
+<p>When a ROS2 system does not behave as expected, debugging should be systematic, not trial-and-error. Use the following workflow as your first response:</p>
+<p>1: Check the Environment</p>
+<pre><code class="language-bash">echo $ROS_DISTRO
+</code></pre>
+<p>Ensure the correct ROS distribution is sourced.</p>
+<ol>
+<li>Check Node Execution</li>
+</ol>
+<pre><code class="language-bash">ros2 node list
+</code></pre>
+<p>If a node is missing:
+- it may have failed to launch
+- it may have crashed
+- it may not be included in the launch file</p>
+<p>3: Check Data Flow</p>
+<pre><code class="language-bash">ros2 topic list
+ros2 topic echo /topic_name
+</code></pre>
+<p>Confirm:
+- expected topics exist
+- messages are being published
+- values are reasonable</p>
+<p>4: Check Parameters</p>
+<pre><code class="language-bash">ros2 param list
+</code></pre>
+<p>Incorrect or missing parameters are a common source of failures.</p>
+<p>5: Inspect Logs</p>
+<pre><code class="language-bash">ls log/
+</code></pre>
+<p>Logs often contain detailed error messages not visible in the terminal.</p>
+<p>This workflow resolves the majority of ROS-related issues encountered in this module.</p>
+<h3 id="common-ros2-issues"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.12</span> Common ROS2 Issues<a class="headerlink" href="#common-ros2-issues" title="Permanent link">¶</a></h3>
+<ol>
+<li>ROS Commands Not Found</li>
+</ol>
+<p>Cause:
+- ROS environment not sourced</p>
+<p>Symptom:</p>
+<pre><code class="language-bash">ros2: command not found
+</code></pre>
+<p>Fix:</p>
+<pre><code class="language-bash">source /opt/ros/humble/setup.bash
+</code></pre>
+<ol>
+<li>Nodes Cannot Communicate
+Cause:</li>
+<li>network interference (VPNs, firewalls)</li>
+<li>incorrect DDS configuration</li>
+</ol>
+<p>Fix:
+- disable VPNs
+- ensure ROS_LOCALHOST_ONLY=1 is set for lab work</p>
+<ol>
+<li>Workspace Changes Have No Effect
+Cause:</li>
+<li>workspace not rebuilt</li>
+<li>workspace not sourced</li>
+</ol>
+<p>Fix:</p>
+<pre><code class="language-bash">colcon build
+source install/setup.bash
+</code></pre>
+<ol>
+<li>Silent Failures
+Cause:</li>
+<li>node crashes after launch</li>
+<li>launch file continues running</li>
+</ol>
+<p>Fix:
+- carefully inspect terminal output
+- check log files</p>
+<h3 id="recommended-development-practices"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.13</span> Recommended Development Practices<a class="headerlink" href="#recommended-development-practices" title="Permanent link">¶</a></h3>
+<p>To work efficiently with ROS2:
+- Treat ROS tools as diagnostic instruments
+- Build and test incrementally
+- Use multiple terminals:
+    - one for launching systems
+    - one or more for inspection</p>
+<ul>
+<li>Keep workspaces minimal and organised</li>
+<li>Avoid unnecessary complexity early on</li>
+</ul>
+<p>These practices reflect how ROS2 is used in both research and industry settings.</p>
+<h2 id="about-gazebo"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4</span> About Gazebo<a class="headerlink" href="#about-gazebo" title="Permanent link">¶</a></h2>
+<p>Gazebo Fortress is a powerful and widely used open-source robotics simulation tool that allows developers and researchers to test, design, and validate their robots in virtual environments before deploying them in the real world. It provides a highly realistic simulation environment, complete with accurate physics, sensor emulation, and 3D visualization. Gazebo Fortress is the latest release in the Gazebo simulation suite, offering enhanced features such as improved physics engines, better integration with ROS2, and support for multi-robot systems. Students can use Gazebo to simulate everything from autonomous drones navigating complex environments to robotic arms performing precision tasks, all without the risk of damaging physical hardware. One of its standout features is the ability to create custom worlds and robots, making it a versatile tool for exploring robotics concepts and conducting experiments. Gazebo’s tight integration with ROS2 also allows students to seamlessly test ROS2-based algorithms and systems within the simulator, bridging the gap between virtual testing and real-world implementation.</p>
+<p>Technically, Gazebo operates as a standalone simulation engine but shares key concepts with ROS2, including the use of the <strong>publish-subscribe architecture</strong>. In Gazebo, simulation components such as sensors, robots, and environmental factors communicate through topics, similar to ROS2 nodes. This allows for seamless integration between ROS2 and Gazebo, where ROS2 nodes can subscribe to Gazebo topics (e.g., sensor data) or publish commands (e.g., velocity or actuator inputs). The system we use in this course makes heavy use of Gazebo as the simulation platform for drone activities to enable development. It will not be likely that you will interact with Gazebo direcly, and instead through a ROS2 interface, however having some context is useful! </p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../1b_intro_linux/" title="2. Ubuntu Installation and Linux Re-Intro"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../1d_aerostack2/" title="4. Aerostack2 Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>Copyright © 2024 University College London AML Lab</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../1b_intro_linux/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../1d_aerostack2/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
